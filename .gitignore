@@ -19,7 +19,7 @@ __pycache__/
 .adb*/
 .android*/
 launcher_project/build/
-**/build/
+/launcher_project/diagnostics/*/worktrees/*/build/
 **/dist/
 **/classes/
 **/test_classes/
