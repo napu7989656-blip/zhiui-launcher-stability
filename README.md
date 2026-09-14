@@ -1,38 +1,27 @@
-# 智UI Launcher 稳定性修复
+# 智UI Launcher 项目迁移
 
-面向比亚迪海豚 2021 款时尚版、车机 13.1.22.2409213.1 的既有 Launcher 增量分析与修复项目。不是全新 Launcher；反编译内容不等于原始 Java/Kotlin 源码。
+面向比亚迪海豚 2021 款时尚版、车机 13.1.22.2409213.1。基于既有 APK 增量修改；apktool 的 smali/资源是可重建修改树，JADX 输出仅用于理解，不是原始 Java/Kotlin 源码。
 
-## 当前检查点
+## 换机恢复
 
-R28：媒体 URI 读取/清理、媒体生命周期与晚到重试、影像配置容错、共享位图回收、关闭引用交接及 EGL 清理异常隔离。
+普通 Git 仓库提供 R28 修改树、自有模块、脚本和项目记录。完整保留资料通过 Release 的 project_R28_*.7z.* 加密分卷提供，包括 APK、V2/V3.11/R28 代码、项目密钥和私密配置。只克隆 Git 仓库不足以恢复全部资料。
 
-- 当前修改树：`launcher_project/diagnostics/stability_local_20260905_r1/worktrees/base10_camera_egl_r28`
-- 源码与成品局部回归：473 组；累计166个文件可归属；API127个既有候选无新增。
-- **完整本地计划尚未完成，R28 未实车验证。** 下一步包括 Surface/Texture 清理、打开关闭并发和后续完整门禁。
-- 继续工作前阅读 `AGENTS.md`、`PROJECT_MAP.md` 和 `智UI稳定性修复_新对话交接_20260913.md`。
+1. 下载全部 project_R28_* 分卷、7zip-portable.zip 和恢复脚本。
+2. 从原电脑单独带走 C:/Users/L/ZhiUI_Migration_20260914/OFFLINE_PASSWORD_DO_NOT_UPLOAD.txt，口令不要提交 GitHub。
+3. 在空目录逐个解压各批次的 .7z.001；同一批次的所有分卷放在一起，各批次解压到同一恢复目录。apk/ 是项目，output/zhiui/ 是既有交付资料。
+4. 新电脑已有安卓环境；SDK、JDK、JADX 和模拟器不上传。现有脚本使用固定工具路径，先配置到新电脑实际路径，推荐将项目恢复到 D:/apk。
 
-## 仓库内容
+包含密钥的恢复目录不可直接执行 git add .。使用本仓库管理选定代码，密钥、凭据日志和完整本地资料保留在普通 Git 工作树之外。
 
-包含当前 apktool 修改树、自有 Java 模块与测试、历次补丁/变更记录、脚本、项目地图和交接文档。JADX只用于理解；当前行为以Manifest/资源/smali交叉确认。历史生成工作树、最终回解树、日志、APK、工具和实车照片没有上传。第三方内容保持原有权利归属，本仓库未授予再分发许可，默认使用私有仓库。
+## 保留版本
 
-## 本地构建前提
+- 权威基线及同字节别名：ORIGINAL_BASELINE.apk、original.apk、智UI_V0.4.2.apk。
+- 已实车验证恢复版本：zhiui-final-v2.apk。
+- 最新完整功能来源：V3.11 APK 及修改树，供后续功能回引使用。
+- 当前修复检查点：R28 APK 及完整修改树。
 
-现有脚本沿用 `D:/apk` 和固定 Android/JDK 工具路径，具体见 `launcher_project/build.ps1`。此仓库并非独立的一键编译原源码工程。完整历史回归还需要原本地归档中的父工作树、reference/final_redecode目录和工具；本仓库没有伪造或省略这些依赖的存在。
+R28已有源码/成品各473组局部分项检查记录，累计修改166个文件。完整本地计划、V2/V3功能回引及实车验证尚未完成，不能标为全功能稳定版。中间版本、重复工作树、实车截图、模拟器和缓存按用户要求清理。
 
-自行在受控本地环境补齐：
+历史比较脚本可能引用已删除的父版本；保留其结果作为历史证据，再次执行前需调整到保留检查点。不得将历史结果当作换机后的重跑结果。用户已要求直接删除、跳过备份校验，不得声称存在已验证的历史回滚备份。
 
-1. 权威基线 `ORIGINAL_BASELINE.apk`，SHA256 `93042E48C12ED395E8F5D450BE1285E0397897F685EE95AC4080763B6E6DCCD9`。
-2. 已验证恢复包 `zhiui-final-v2.apk`，SHA256 `ADA7BD1DA144470F8C05BD24F0A7D8A27D00C435C0146D517F455D9F112FF1DC`。
-3. 固定版本的 apktool/JDK/Android SDK 和原有项目开发 keystore。通过 `ZHIUI_KEYSTORE_PASSWORD`、`ZHIUI_KEY_PASSWORD` 环境变量提供口令，不提交口令或密钥。使用直接 `build.ps1` 或先设置环境变量再运行包装脚本；缺少本地凭据日志时不要依赖它的回退读取。
-
-当前检查点构建示例（先补齐以上依赖，使用新的输出文件名）：
-
-```powershell
-& D:/apk/launcher_project/build.ps1 -DecodedDir D:/apk/launcher_project/diagnostics/stability_local_20260905_r1/worktrees/base10_camera_egl_r28 -OutputName zhiui-r28-rebuild-local.apk
-```
-
-构建/签名通过不代表实车功能通过。保留原车桌面及V2恢复路径；不主动运行车辆控制接口，不自行卸载，不将未验证包放入正式交付目录。
-
-## 上传边界
-
-只生成独立上传副本，原工作区、基线、keystore、历史 APK、照片和日志均未删除或修改。已识别的本地口令若出现在选定文本中，仅在副本替换为 `LOCAL_SECRET_NOT_INCLUDED`。上传清单和检查报告保存在仓库外的 `github_upload` 目录。
+继续工作阅读 PROJECT_HANDOFF.md、AGENTS.md、PROJECT_MAP.md。不得操作车辆底层控制接口，不自行卸载车机应用，保留 V2 和原车桌面恢复路径。
