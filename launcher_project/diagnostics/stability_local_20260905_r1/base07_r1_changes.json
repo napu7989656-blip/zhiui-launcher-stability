@@ -1,0 +1,17 @@
+[
+  {
+    "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+    "before_sha": "8E3C415256BBB52A2B93186CE4D53D52F55D650E4643F8254665184D31F2961A",
+    "after_sha": "AEAC3CA41AF3219A65A18B007502D449E0A826E55FFDE11408D3FB1BDA007D7F"
+  },
+  {
+    "path": "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+    "before_sha": "",
+    "after_sha": "4604BFF4D5B1F70DA91755B1E4CB8DD4C54FF318A737FCE2216402A082DA4E78"
+  },
+  {
+    "path": "smali/com/byd/launcher/stability/WallpaperDelivery.smali",
+    "before_sha": "",
+    "after_sha": "716C0A7CD91A838FA3B311329669A80EED4D72475707746BAB3A5F95A8E5FC0C"
+  }
+]

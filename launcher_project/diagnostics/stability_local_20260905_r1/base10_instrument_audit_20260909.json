@@ -1,0 +1,29 @@
+{
+  "status": "EXISTING_INSTRUMENT_FRESHNESS_RISKS_CONFIRMED_NO_PATCH",
+  "checkpoint": "base10_r6",
+  "artifacts_checked": [
+    "worktrees/base10_read_keys_r6",
+    "final_redecode/base10_r6"
+  ],
+  "actual_instruction_checks": {
+    "ie_selector28": "resolved from packed-switch, :pswitch_0; getBacklightBrightness",
+    "cache_late_old_overwrite": "execute actual iput instructions, new step9 then old step3 => cache3",
+    "root_lookup": "actual de iget resolves replacement ff root, not captured old root",
+    "worker_after_dispose": "after injected stop past entry guard, actual cache iput still writes step2"
+  },
+  "static_findings": [
+    "Instrument initialization je selector1 posts original be without instrument generation",
+    "Refresh success mutates Iota cache and Kappa retry count in worker",
+    "Invalid refresh sets Theta pending before Handler.postDelayed, ignores Boolean return",
+    "ee selector3 clears Theta and calls refresh; no query/panel identity",
+    "User adjustment timestamp Eta is checked before starting refresh, not when result commits"
+  ],
+  "required_fix": [
+    "Shared generation for instrument initialization and refresh",
+    "Guard cache, UI and retry-state commits together",
+    "Bind cached/queried de results to original panel",
+    "Invalidate on close, dispose and user adjustment while preserving original action bodies",
+    "Own retry callback, handle enqueue rejection and interruption"
+  ],
+  "limits": "Injected ordering with actual selected smali instructions and owner/root doubles; no full worker, query, ART, Android UI or vehicle execution. Retry rejection observation is static, not a reproduced live lock. No APK/code patch in this audit."
+}

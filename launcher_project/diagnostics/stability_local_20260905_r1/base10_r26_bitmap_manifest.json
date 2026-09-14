@@ -1,0 +1,19 @@
+{
+  "edits": [
+    {
+      "path": "smali/o/qi.smali",
+      "before": "    :cond_22\n    iget-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;\n\n    if-eqz v0, :cond_23\n\n    invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z\n\n    move-result v0\n\n    if-nez v0, :cond_23\n\n    iget-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;\n\n    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V\n\n",
+      "after": "    :cond_22\n"
+    },
+    {
+      "path": "smali/o/ˋ.smali",
+      "before": "    :cond_e\n    iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;\n\n    .line 309\n    .line 310\n    if-eqz v3, :cond_f\n\n    .line 311\n    .line 312\n    invoke-virtual {v3}, Landroid/graphics/Bitmap;->isRecycled()Z\n\n    .line 313\n    .line 314\n    .line 315\n    move-result v3\n\n    .line 316\n    if-nez v3, :cond_f\n\n    .line 317\n    .line 318\n    iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;\n\n    .line 319\n    .line 320\n    invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V\n\n    .line 321\n    .line 322\n    .line 323\n",
+      "after": "    :cond_e\n"
+    },
+    {
+      "path": "smali/o/ki.smali",
+      "before": "    :try_start_c\n    iget-object v0, v2, Lo/qi;->Ζ:Landroid/graphics/Bitmap;\n\n    .line 374\n    .line 375\n    if-eqz v0, :cond_c\n\n    .line 376\n    .line 377\n    invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z\n\n    .line 378\n    .line 379\n    .line 380\n    move-result v0\n\n    .line 381\n    if-nez v0, :cond_c\n\n    .line 382\n    .line 383\n    iget-object v0, v2, Lo/qi;->Ζ:Landroid/graphics/Bitmap;\n\n    .line 384\n    .line 385\n    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V\n\n    .line 386\n    .line 387\n    .line 388\n    iput-object v3, v2, Lo/qi;->Ζ:Landroid/graphics/Bitmap;\n\n    .line 389\n    .line 390\n",
+      "after": "    :try_start_c\n    iput-object v3, v2, Lo/qi;->Ζ:Landroid/graphics/Bitmap;\n\n"
+    }
+  ]
+}

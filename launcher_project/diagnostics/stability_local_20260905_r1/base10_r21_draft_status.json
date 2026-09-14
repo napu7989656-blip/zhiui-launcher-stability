@@ -1,0 +1,9 @@
+{
+  "status": "INTEGRATED_SCOPED_LOCAL_PASS",
+  "remaining": [
+    "URI cleanup/cache/bounds",
+    "manager/listener lifecycle",
+    "full P1/P2/P3",
+    "ART/OEM validation"
+  ]
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "failure": "none",
+    "null_frame": false,
+    "releases": 1,
+    "propagated": "",
+    "passed": true
+  },
+  {
+    "failure": "none",
+    "null_frame": true,
+    "releases": 1,
+    "propagated": "",
+    "passed": true
+  },
+  {
+    "failure": "data",
+    "null_frame": false,
+    "releases": 1,
+    "propagated": "",
+    "passed": true
+  },
+  {
+    "failure": "frame",
+    "null_frame": false,
+    "releases": 1,
+    "propagated": "",
+    "passed": true
+  },
+  {
+    "failure": "release",
+    "null_frame": false,
+    "releases": 1,
+    "propagated": "",
+    "passed": true
+  },
+  {
+    "failure": "fatal",
+    "null_frame": false,
+    "releases": 1,
+    "propagated": "Error",
+    "passed": true
+  },
+  {
+    "failure": "constructor",
+    "null_frame": false,
+    "releases": 0,
+    "propagated": "Exception",
+    "passed": true
+  }
+]

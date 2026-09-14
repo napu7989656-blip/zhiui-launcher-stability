@@ -1,0 +1,23 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "5A0859609037E40644569ADADA241080C58DCE6F2D98DA6C70F39FC4CA977486",
+  "delta_files": 1,
+  "cumulative_files": 166,
+  "source_final_case_groups": 440,
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.NavBarService",
+      "exit_code": 3,
+      "log": "base10_r27_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "review": [
+    "Removed only service onDestroy premature wrapper clear. Service qi field still clears; qi owns wrapper for already-queued close. Exact inverse preserves all other instructions.",
+    "Five actual scheduling/handoff cases plus435 inherited pass source/final. Parent late worker loses wrapper; candidate null/empty wrapper paths run full close with substitutes, live wrapper stops at first callback-detach invocation before native reflection.",
+    "Both worker-before-destroy and worker-after-destroy preserve the expected wrapper identity. Repeated field-release tail remains harmless. No actual camera release, native, renderer or GC guarantee.",
+    "JADX service exit3 retains one unrelated ImageButton/String method error; onDestroy now retains wrapper and clears service owner as intended, reviewed against final smali; historical unrelated decompilation error retained. No new API calls, one delta and166 cumulative files,22 protected packages unchanged,127 API candidates with no additions."
+  ],
+  "limits": "Does not serialize open/close, dispose old reconnect owner, handle all cleanup exceptions or bound external native work. Wrapper is deliberately reachable until owner/task/callback lifetime ends; complete lifetime audit pending."
+}

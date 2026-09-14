@@ -1,0 +1,1 @@
+package android.animation; public class Animator { public interface AnimatorListener {} }

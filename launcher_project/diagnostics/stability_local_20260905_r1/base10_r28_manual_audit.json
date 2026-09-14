@@ -1,0 +1,24 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "64C59826408BECB330B44C13A9968FA317ED4D7E8E7F32E7F55466E892F4825D",
+  "delta_files": 1,
+  "cumulative_files": 166,
+  "source_final_case_groups": 473,
+  "review": [
+    "qi EGL cleanup has four independent Exception handlers around the original four calls. Each resumes at the next original field read; three locals retained, exception temp v0 overwritten before next use. Original call order, null guards and field-clear tail retained.",
+    "Diagnostic Log.w(Throwable) uses a separate Exception guard so logging failure cannot skip later stages. Does not catch VM-fatal Errors or interrupt native blocking.",
+    "33 actual-smali cases plus440 inherited pass source/final:16 failure subsets,4 logging failures,8 resource-presence combinations,1 false-return preservation,4 actual close-tail continuations. All four parent exceptions reproduced with skipped downstream calls.",
+    "One delta file,166 cumulative,22 protected packages unchanged,127 API candidates without additions. Build/sign/align/parse/redecode/content gates passed; JADX changed method and helper reviewed against final smali.",
+    "Clear fields after all attempts does not prove EGL release success; false results remain unchecked and null-display behavior unchanged. Resource-thread ownership, concurrent open/close, partial initialization and Surface/Texture cleanup remain open."
+  ],
+  "jadx": [
+    {
+      "cls": "o.qi",
+      "exit_code": 0,
+      "log": "base10_r28_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "No real EGL/native/camera/ART/vehicle execution. No full plan or whole camera resource lifetime pass."
+}

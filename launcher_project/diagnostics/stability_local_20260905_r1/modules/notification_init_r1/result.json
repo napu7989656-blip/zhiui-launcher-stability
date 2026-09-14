@@ -1,0 +1,1 @@
+{"output": "PASS 51 verified-initialization assertions", "apk_integration": false, "limits": "Production workflow and parser; Android reads/commands replaced with explicit Host snapshots and faults."}

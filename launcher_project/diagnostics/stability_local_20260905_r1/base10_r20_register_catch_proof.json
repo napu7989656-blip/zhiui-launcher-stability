@@ -1,0 +1,13 @@
+{
+  "final_smali": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\final_redecode\\base10_r20\\smali\\o\\a9.smali",
+  "ranges": [
+    {
+      "catch_start": ":try_start_0",
+      "catch_end": ":try_end_0",
+      "instructions": [
+        "invoke-virtual {v3, v0, p1}, Landroid/media/session/MediaController;->registerCallback(Landroid/media/session/MediaController$Callback;Landroid/os/Handler;)V"
+      ]
+    }
+  ],
+  "conclusion": "JADX expands try beyond true DEX range; only registerCallback is caught by added handler."
+}

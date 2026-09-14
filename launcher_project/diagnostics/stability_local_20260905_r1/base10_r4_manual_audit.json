@@ -1,0 +1,77 @@
+{
+  "status": "LOCAL_CHECKPOINT_PASS; GENERATIONS_AND_OTHER_WORKERS_PENDING",
+  "read_category": 6,
+  "producers": [
+    "ff.\u038c -> ag16 snapshot tile status",
+    "ie5 poll -> ie22 current tile status"
+  ],
+  "typed_getters": "Lo/ef has only ke/le implementations in baseline DEX; le returns false; ke getter/subtitle paths statically classified in base10_tile_read_audit.json",
+  "workers": {
+    "ag": {
+      "sha256": "9beebce7e1851407223edf7f90ef9bcf4ad3010619c2e9ca72cccbfb76601ad1",
+      "calls": [
+        "invoke-virtual {v3}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-interface {v4}, Ljava/util/List;->size()I",
+        "invoke-interface {v4}, Ljava/util/List;->size()I",
+        "invoke-interface {v4}, Ljava/util/List;->size()I",
+        "invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;",
+        "invoke-interface {v7}, Lo/ef;->get()Z",
+        "invoke-virtual {v7}, Lo/ke;->\u02cf()Ljava/lang/String;",
+        "invoke-interface {v4, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;",
+        "invoke-direct {v7, v8}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V",
+        "invoke-static {v0, v7, v8}, Lo/v1;->\u037b(Ljava/lang/Exception;Ljava/lang/StringBuilder;Ljava/lang/String;)V",
+        "invoke-direct/range {v2 .. v7}, Lo/sj;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V",
+        "invoke-virtual {v0, v8}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z"
+      ]
+    },
+    "ie": {
+      "sha256": "91102059893b1769cd9ec5a222eabf7c1167dc4e895ce54cd7d8b463cbd3bb32",
+      "calls": [
+        "invoke-virtual {v1}, Ljava/util/concurrent/CopyOnWriteArrayList;->iterator()Ljava/util/Iterator;",
+        "invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z",
+        "invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;",
+        "invoke-static {}, Ljava/lang/System;->currentTimeMillis()J",
+        "invoke-interface {v2}, Lo/ef;->get()Z",
+        "invoke-virtual {v2}, Lo/ke;->\u02cf()Ljava/lang/String;",
+        "invoke-direct/range {v4 .. v9}, Lo/fe;-><init>(Lo/ff;Lo/df;ZLjava/lang/String;I)V",
+        "invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z",
+        "invoke-direct {v3, v4}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V",
+        "invoke-static {v2, v3, v12}, Lo/v1;->\u037b(Ljava/lang/Exception;Ljava/lang/StringBuilder;Ljava/lang/String;)V"
+      ]
+    }
+  },
+  "total_integrated_read_sites": 9,
+  "pool": "same process-wide 2 workers / 8 queued; no new pool",
+  "remaining_raw_thread_methods": [
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02cb(Landroid/view/View;)V",
+      "thread_starts": 1
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0389(ILjava/lang/String;)V",
+      "thread_starts": 1
+    },
+    {
+      "path": "smali/o/ie.smali",
+      "method": "public final run()V",
+      "thread_starts": 9
+    }
+  ],
+  "limits": [
+    "User action bodies and original requests unchanged",
+    "Glass background worker still pending",
+    "Running native calls not interrupted",
+    "Same-controller generations and stale panel results still pending",
+    "No vehicle/API calls executed",
+    "Bounded concurrency/queue does not guarantee completion deadlines for vendor calls",
+    "Two already-running reads of the same owner/key may overlap; no generation freshness guarantee yet"
+  ],
+  "next_priority": [
+    "Per-owner/key read ordering and per-panel generation before UI result publication",
+    "Glass-background task bound and interrupt-aware 300ms wait",
+    "Audit user-action work separately; do not classify clicks/slider commands as replaceable status reads",
+    "Full V2/V3 fixes and local integration/upgrade/rollback gate"
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "1CB7C514ACE70C0912CEB7768667729B9DFB5934166CEDDD6D66CC787CF7D3F8",
+  "delta_files": 3,
+  "cumulative_files": 166,
+  "source_final_case_groups": 431,
+  "jadx": [
+    {
+      "cls": "o.qi",
+      "exit_code": 0,
+      "log": "base10_r26_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.ki",
+      "exit_code": 0,
+      "log": "base10_r26_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.ˋ",
+      "exit_code": 1,
+      "log": "base10_r26_jadx_2_debug.txt",
+      "output_exists": false,
+      "requires_manual_inspection": true
+    }
+  ],
+  "review": [
+    "qi CPU/preview RGB565 replacement drops recycle of potentially published bitmap; ki close clears Z/H without recycle, including already-recycled owner reference. Other bodies exact inverse unchanged.",
+    "13 actual-smali groups plus418 inherited, source/final pass. Production/native/renderer/GC timing not executed.",
+    "JADX qi exit0 agrees; ki default run placeholder, show-bad-code exit0 exposes null assignments. Anonymous callback default DONT_GENERATE, no-inline-anonymous/show-bad-code exit0 exposes replacement without recycle. Existing callback guard pseudocode inversion is not trusted; unchanged smali is authority.",
+    "Three delta/166 cumulative files,22 protected hashes unchanged,API127 no new. Build/sign/align/parse/final decode passed.",
+    "Discovered fourth retirement in service onDestroy after async close scheduling; not changed in R26. R26b will remove that explicit recycle. All four direct Z holder classes inventoried; complete camera lifetime not solved."
+  ],
+  "limits": "Shared mutable frame reuse, renderer lifetime, async camera resource ownership and cleanup exceptions remain open. No full plan or vehicle pass."
+}

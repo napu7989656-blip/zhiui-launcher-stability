@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:background="@drawable/overlay_bg" android:padding="20.0dp" android:layout_width="wrap_content" android:layout_height="320.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="14.0sp" android:textColor="#ffffff" android:id="@id/tv_temp_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="温度" />
+    <TextView android:textSize="36.0sp" android:textStyle="bold" android:textColor="#ffffff" android:id="@id/tv_temp_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="4.0dp" android:text="25°" />
+    <ProgressBar android:id="@id/pb_temp" android:layout_width="200.0dp" android:layout_height="8.0dp" android:layout_marginTop="12.0dp" android:max="16" android:progress="8" android:rotation="270.0" android:progressTint="#ff7043" android:progressBackgroundTint="#33ffffff" style="?android:progressBarStyleHorizontal" />
+</LinearLayout>

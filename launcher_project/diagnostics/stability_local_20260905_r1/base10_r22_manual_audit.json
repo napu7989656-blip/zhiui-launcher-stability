@@ -1,0 +1,41 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "0ECE7827499211583DEBE73343F2EBAC3CBE7FCC1DCA76322CE095C9D2188E83",
+  "delta_files": 13,
+  "cumulative_files": 157,
+  "source_final_case_groups": 371,
+  "review": [
+    "URI helper delegates to own Java reader; active Host overload forwards the exact request and actual Application Context. Both snapshot URI sources use the overload. Original session/metadata/rating/title code unchanged.",
+    "No background URI cache reads/writes; existing valid-main-thread display cache kept. Avoids stale cache mutation and stale same-URL image reuse, at cost of rereading repeated HTTP URLs.",
+    "Encoded input <=4 MiB, bounded 8 KiB read buffer, 6-second monotonic per-URI budget across redirects/read/decode checks, shrinking HTTP timeouts <=2 seconds; <=3 redirects, HTTP(S) only. Source dimensions <=32768 per axis and <=64 million pixels; sampled output <=1024 per axis checked again after decode.",
+    "HTTP final smali keeps stream v5 and connection v4 through catchall_2; both normal/redirect/error paths call close then disconnect. JADX falsely prints close(null) in exception path and omits disconnect in some finally blocks. read() Java pseudo-source also misreconstructs zero-progress counter reset; final smali and production Java remain authoritative.",
+    "Content stream catchall closes actual handle; decode-result p0 is assigned before deadline/size validation; typed catch_1 recycles rejected bitmap, catchall_2 moves p0 to v0 for recycle then original error rethrow. No metadata/cache borrowed bitmap is passed to reader recycling.",
+    "JVM executed exact production class bytes: 133 IO/dimension assertions, 32 Android substitute assertions, inherited Work12050/Pipeline38; 371 source and final bridge/inherited groups. No ART/native decoder or external network claim.",
+    "P3 scanner old put omission reproduced; get/put static/instance/missing-field 36 checks pass. Full rescan baseline/candidate still127, no new declarations issue. goto and packed-switch verifier untouched.",
+    "APK13 incremental/157 cumulative files,22 protected APKs unchanged. R21 remains intact; all URI changes exactly invert to R21."
+  ],
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.stability.ArtworkInput",
+      "exit_code": 0,
+      "log": "base10_r22_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.MediaUriReader",
+      "exit_code": 0,
+      "log": "base10_r22_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.a9",
+      "exit_code": 3,
+      "log": "base10_r22_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "6s is a boundary-checked budget, not hard termination of ContentProvider/Binder/native/DNS/HTTP internal header reads or close. No extra timeout threads. Request invalidation aborts at next check, not asynchronous disconnect. Each retry/fallback starts its own <=6s budget. URI bitmap handoff remains GC-managed after leaving reader; never blindly recycle potentially borrowed scale/UI objects. Full media manager lifecycle and P1/P2/P3 remain open; no vehicle test."
+}

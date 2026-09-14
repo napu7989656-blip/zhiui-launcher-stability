@@ -1,0 +1,9 @@
+# R11 导航读取补丁审查进度（2026-09-09）
+
+R10人工收尾已完成，见base10_r10_本地修复记录.md。R11草稿已审查并执行，生成独立worktrees/base10_nav_action_reads_r11；尚未构建或完成专用测试，不能安装交付。
+
+已核对：je构造器在nav_capture_done标签前、原导航分支内捕获NavRead；仪表selector1跳过该分支，因此不受随后p4被复用的影响。je的pswitch_1与默认goto_1为导航初始化/轮询，selector1仍为仪表。se的selector2为导航，onProgressChanged保留fromUser区别，onStop默认导航分支在原命令任务创建前结束拖动保护。de selector1的原同步execAdbCmd路径在正常、断连和Exception出口汇合goto_1，NavAction只在该汇合点结束界面等待，原命令及参数未改变。所有检查均为本地文件分析，没有执行查询或操作命令。
+
+下一步：为新NavRead/NavDeliver/NavAction及实际je/se/de接线编写专用smali测试；覆盖构造selector、迟到读取、严格活动/预备根、关闭重开、拖动/程序性更新、旧/新操作结束、拒绝/异常与15秒界面等待。复用原23导航场景需适配新增NavRead队列以及最新父树断言，不能直接运行旧测试再忽略失败。继承SOC测试对de/se/je整文件等同性的旧断言需改为经精确逆补丁或未改方法证明，不能整类豁免。之后补累计差异归属、构建、成品回解、签名/API和JADX-smali交叉检查。
+
+R11沿用ReadAfterAction的15秒界面等待上限，不代表导航操作完成保证或实际命令超时；原命令仍带2000ms参数，二者不可混写。P1等待中断/背景任务、P2完整V2/V3回引及P3总体门禁仍未完成。

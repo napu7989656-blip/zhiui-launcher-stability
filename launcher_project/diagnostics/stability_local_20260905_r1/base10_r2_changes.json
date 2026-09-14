@@ -1,0 +1,12 @@
+[
+  {
+    "path": "smali/o/ie.smali",
+    "before_sha": "3A4C4ADFC31B45CAA9FDCD07DD25B4173DE86E58C9E42F789AEAF4D1A856039D",
+    "after_sha": "4FCEC912F7DA5F34A09854AB0C721C7CE7CE731AB6C8F437BCE0FC1C985E7827"
+  },
+  {
+    "path": "smali/com/byd/launcher/stability/QuickSettingsThemeApply.smali",
+    "before_sha": "",
+    "after_sha": "A0FB377B6D4B4B3560B9356659BC20A4165E7D05A18D408EDBAB5864B0FB99F2"
+  }
+]

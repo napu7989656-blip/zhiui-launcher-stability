@@ -1,0 +1,42 @@
+--- r26/smali/com/byd/launcher/NavBarService.smali
++++ r26b/smali/com/byd/launcher/NavBarService.smali
+@@ -4993,39 +4993,8 @@
+ 
+     .line 289
+     :try_start_8
+-    iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+-
+-    .line 290
+-    .line 291
+-    if-eqz v3, :cond_14
+-
+-    .line 292
+-    .line 293
+-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->isRecycled()Z
+-
+-    .line 294
+-    .line 295
+-    .line 296
+-    move-result v3
+-
+-    .line 297
+-    if-nez v3, :cond_14
+-
+-    .line 298
+-    .line 299
+-    iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+-
+-    .line 300
+-    .line 301
+-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
+-
+-    .line 302
+-    .line 303
+-    .line 304
+     iput-object v2, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+ 
+-    .line 305
+-    .line 306
+     :cond_14
+     iput-object v2, v0, Lo/qi;->Η:Landroid/graphics/Bitmap;
+ 

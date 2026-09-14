@@ -1,0 +1,5 @@
+{
+  "output": "PASS 7 assertions; exact production pipeline releases staged final image on RuntimeException and Error, without releasing borrowed source.",
+  "production_classes": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\modules\\blur_pipeline_prod_r1\\classes",
+  "limits": "Original production classes used; algorithm/bitmap/Android host are doubles."
+}

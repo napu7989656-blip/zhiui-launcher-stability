@@ -1,0 +1,85 @@
+{
+  "candidate": "D:\\apk\\zhiui-stability-local-base06-r1.apk",
+  "sha256": "C25FC761A71348018418AEFBA371FC480CD0766C3759D3D66858D40C5696F402",
+  "bytes": 30063935,
+  "parent": "base07_wallpaper_delivery_r1",
+  "source_files": 6708,
+  "changed_files": [
+    "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+    "smali/o/c0.smali",
+    "smali/o/ea.smali",
+    "smali/o/lII.smali",
+    "smali/o/llI.smali",
+    "smali/o/vl.smali",
+    "smali/o/zk.smali"
+  ],
+  "unexpected_source_changes": [],
+  "unexpected_final_business_changes": [],
+  "normalized_final_differences": [
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "res/values/ids.xml",
+      "kind": "identical XML declarations; order/whitespace only"
+    },
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/c0.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "res/values/public.xml",
+      "kind": "identical XML declarations; order/whitespace only"
+    },
+    {
+      "path": "smali/o/lII.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/tj.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/llI.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/zk.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/vl.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ea.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/sj.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/y7.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    }
+  ],
+  "status": "SINGLE_PATCH_LOCAL_PASS; NOT_FULL_PLAN_PASS; NOT_VEHICLE_TESTED"
+}

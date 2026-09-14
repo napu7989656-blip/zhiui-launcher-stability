@@ -1,0 +1,402 @@
+--- base10_r4/smali/o/ff.smali
++++ base10_r5/smali/o/ff.smali
+@@ -12,6 +12,7 @@
+ 
+ 
+ # instance fields
++.field public final stabilityNavReads:Lcom/byd/launcher/stability/LatestRead;
+ .field public stabilityLayoutListener:Lo/ze;
+ .field public volatile stabilityDisposed:Z
+ .field public ʹ:Landroid/view/View;
+@@ -142,6 +143,10 @@
+ 
+     .line 1
+     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    new-instance v0, Lcom/byd/launcher/stability/LatestRead;
++    invoke-direct {v0}, Lcom/byd/launcher/stability/LatestRead;-><init>()V
++    iput-object v0, p0, Lo/ff;->stabilityNavReads:Lcom/byd/launcher/stability/LatestRead;
+ 
+     new-instance v0, Lcom/byd/launcher/stability/QuickSettingsHandler;
+ 
+@@ -461,6 +466,8 @@
+ 
+     .line 10
+     :cond_0
++    iget-object v0, p0, Lo/ff;->stabilityNavReads:Lcom/byd/launcher/stability/LatestRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestRead;->invalidate()V
+     iget-boolean v0, p0, Lo/ff;->ͺ:Z
+ 
+     .line 11
+@@ -2892,6 +2899,8 @@
+     if-eqz v0, :stability_owner_alive
+     return-void
+     :stability_owner_alive
++    iget-object v0, p0, Lo/ff;->stabilityNavReads:Lcom/byd/launcher/stability/LatestRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestRead;->invalidate()V
+ 
+     .line 1
+     const/4 v0, 0x0
+@@ -5862,6 +5871,8 @@
+     .locals 6
+     const/4 v0, 0x1
+     iput-boolean v0, p0, Lo/ff;->stabilityDisposed:Z
++    iget-object v2, p0, Lo/ff;->stabilityNavReads:Lcom/byd/launcher/stability/LatestRead;
++    invoke-virtual {v2}, Lcom/byd/launcher/stability/LatestRead;->invalidate()V
+     invoke-static {p0}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->cancelQueued(Ljava/lang/Object;)V
+     const/4 v1, 0x0
+     iput-object v1, p0, Lo/ff;->Ύ:Lo/cf;
+--- base10_r4/smali/o/je.smali
++++ base10_r5/smali/o/je.smali
+@@ -7,6 +7,8 @@
+ 
+ 
+ # instance fields
++.field public final stabilityNavTicket:Lcom/byd/launcher/stability/LatestRead$Ticket;
++.field public final stabilityNavRoot:Landroid/view/View;
+ .field public final synthetic Ͱ:I
+ 
+ .field public final synthetic ͱ:Lo/ff;
+@@ -18,7 +20,7 @@
+ 
+ # direct methods
+ .method public synthetic constructor <init>(Lo/ff;Landroid/widget/SeekBar;Landroid/widget/TextView;I)V
+-    .locals 0
++    .locals 1
+ 
+     .line 1
+     iput p4, p0, Lo/je;->Ͱ:I
+@@ -38,6 +40,16 @@
+     .line 8
+     .line 9
+     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    const/4 v0, 0x1
++    if-eq p4, v0, :nav_capture_done
++    iget-object v0, p1, Lo/ff;->stabilityNavReads:Lcom/byd/launcher/stability/LatestRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestRead;->issue()Lcom/byd/launcher/stability/LatestRead$Ticket;
++    move-result-object v0
++    iput-object v0, p0, Lo/je;->stabilityNavTicket:Lcom/byd/launcher/stability/LatestRead$Ticket;
++    iget-object v0, p1, Lo/ff;->ͳ:Landroid/view/View;
++    iput-object v0, p0, Lo/je;->stabilityNavRoot:Landroid/view/View;
++    :nav_capture_done
+ 
+     .line 10
+     .line 11
+@@ -420,11 +432,11 @@
+ 
+     .line 182
+     .line 183
+-    iput v3, v0, Lo/ff;->Λ:I
++    # Nav v3 cache is committed with the accepted result on the main Handler.
+ 
+     .line 184
+     .line 185
+-    iget-object v0, v0, Lo/ff;->Ͱ:Landroid/os/Handler;
++    # Owned Handler selected by NavVolumeApply.submit.
+ 
+     .line 186
+     .line 187
+@@ -440,7 +452,7 @@
+     .line 191
+     .line 192
+     .line 193
+-    invoke-virtual {v0, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    invoke-static {p0, v3, v4}, Lcom/byd/launcher/stability/NavVolumeApply;->submit(Lo/je;ILjava/lang/Runnable;)V
+ 
+     .line 194
+     .line 195
+@@ -474,11 +486,11 @@
+ 
+     .line 208
+     .line 209
+-    iput v4, v0, Lo/ff;->Λ:I
++    # Nav v4 cache is committed with the accepted result on the main Handler.
+ 
+     .line 210
+     .line 211
+-    iget-object v0, v0, Lo/ff;->Ͱ:Landroid/os/Handler;
++    # Owned Handler selected by NavVolumeApply.submit.
+ 
+     .line 212
+     .line 213
+@@ -491,7 +503,7 @@
+     .line 216
+     .line 217
+     .line 218
+-    invoke-virtual {v0, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    invoke-static {p0, v4, v5}, Lcom/byd/launcher/stability/NavVolumeApply;->submit(Lo/je;ILjava/lang/Runnable;)V
+ 
+     .line 219
+     .line 220
+--- base10_r4/smali/com/byd/launcher/stability/LatestRead$1.smali
++++ base10_r5/smali/com/byd/launcher/stability/LatestRead$1.smali
+@@ -0,0 +1,14 @@
++.class synthetic Lcom/byd/launcher/stability/LatestRead$1;
++.super Ljava/lang/Object;
++.source "LatestRead.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/LatestRead;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x1008
++    name = null
++.end annotation
+--- base10_r4/smali/com/byd/launcher/stability/LatestRead$Ticket.smali
++++ base10_r5/smali/com/byd/launcher/stability/LatestRead$Ticket.smali
+@@ -0,0 +1,73 @@
++.class public final Lcom/byd/launcher/stability/LatestRead$Ticket;
++.super Ljava/lang/Object;
++.source "LatestRead.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/LatestRead;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x19
++    name = "Ticket"
++.end annotation
++
++
++# instance fields
++.field private final identity:Ljava/lang/Object;
++
++.field private final state:Lcom/byd/launcher/stability/LatestRead;
++
++
++# direct methods
++.method private constructor <init>(Lcom/byd/launcher/stability/LatestRead;Ljava/lang/Object;)V
++    .locals 0
++
++    .line 18
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    .line 19
++    iput-object p1, p0, Lcom/byd/launcher/stability/LatestRead$Ticket;->state:Lcom/byd/launcher/stability/LatestRead;
++
++    .line 20
++    iput-object p2, p0, Lcom/byd/launcher/stability/LatestRead$Ticket;->identity:Ljava/lang/Object;
++
++    return-void
++.end method
++
++.method synthetic constructor <init>(Lcom/byd/launcher/stability/LatestRead;Ljava/lang/Object;Lcom/byd/launcher/stability/LatestRead$1;)V
++    .locals 0
++
++    .line 15
++    invoke-direct {p0, p1, p2}, Lcom/byd/launcher/stability/LatestRead$Ticket;-><init>(Lcom/byd/launcher/stability/LatestRead;Ljava/lang/Object;)V
++
++    return-void
++.end method
++
++
++# virtual methods
++.method public isCurrent()Z
++    .locals 2
++
++    .line 22
++    iget-object v0, p0, Lcom/byd/launcher/stability/LatestRead$Ticket;->state:Lcom/byd/launcher/stability/LatestRead;
++
++    invoke-static {v0}, Lcom/byd/launcher/stability/LatestRead;->access$100(Lcom/byd/launcher/stability/LatestRead;)Ljava/lang/Object;
++
++    move-result-object v0
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/LatestRead$Ticket;->identity:Ljava/lang/Object;
++
++    if-ne v0, v1, :cond_0
++
++    const/4 v0, 0x1
++
++    goto :goto_0
++
++    :cond_0
++    const/4 v0, 0x0
++
++    :goto_0
++    return v0
++.end method
+--- base10_r4/smali/com/byd/launcher/stability/LatestRead.smali
++++ base10_r5/smali/com/byd/launcher/stability/LatestRead.smali
+@@ -0,0 +1,106 @@
++.class public final Lcom/byd/launcher/stability/LatestRead;
++.super Ljava/lang/Object;
++.source "LatestRead.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/MemberClasses;
++    value = {
++        Lcom/byd/launcher/stability/LatestRead$Ticket;
++    }
++.end annotation
++
++
++# instance fields
++.field private volatile current:Ljava/lang/Object;
++
++
++# direct methods
++.method public constructor <init>()V
++    .locals 1
++
++    .line 4
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    .line 5
++    new-instance v0, Ljava/lang/Object;
++
++    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
++
++    iput-object v0, p0, Lcom/byd/launcher/stability/LatestRead;->current:Ljava/lang/Object;
++
++    return-void
++.end method
++
++.method static synthetic access$100(Lcom/byd/launcher/stability/LatestRead;)Ljava/lang/Object;
++    .locals 0
++
++    .line 4
++    iget-object p0, p0, Lcom/byd/launcher/stability/LatestRead;->current:Ljava/lang/Object;
++
++    return-object p0
++.end method
++
++
++# virtual methods
++.method public declared-synchronized invalidate()V
++    .locals 1
++
++    monitor-enter p0
++
++    .line 13
++    :try_start_0
++    new-instance v0, Ljava/lang/Object;
++
++    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
++
++    iput-object v0, p0, Lcom/byd/launcher/stability/LatestRead;->current:Ljava/lang/Object;
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    monitor-exit p0
++
++    return-void
++
++    :catchall_0
++    move-exception v0
++
++    monitor-exit p0
++
++    throw v0
++.end method
++
++.method public declared-synchronized issue()Lcom/byd/launcher/stability/LatestRead$Ticket;
++    .locals 3
++
++    monitor-enter p0
++
++    .line 8
++    :try_start_0
++    new-instance v0, Ljava/lang/Object;
++
++    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
++
++    .line 9
++    iput-object v0, p0, Lcom/byd/launcher/stability/LatestRead;->current:Ljava/lang/Object;
++
++    .line 10
++    new-instance v1, Lcom/byd/launcher/stability/LatestRead$Ticket;
++
++    const/4 v2, 0x0
++
++    invoke-direct {v1, p0, v0, v2}, Lcom/byd/launcher/stability/LatestRead$Ticket;-><init>(Lcom/byd/launcher/stability/LatestRead;Ljava/lang/Object;Lcom/byd/launcher/stability/LatestRead$1;)V
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    monitor-exit p0
++
++    return-object v1
++
++    :catchall_0
++    move-exception v0
++
++    monitor-exit p0
++
++    throw v0
++.end method
+--- base10_r4/smali/com/byd/launcher/stability/NavVolumeApply.smali
++++ base10_r5/smali/com/byd/launcher/stability/NavVolumeApply.smali
+@@ -0,0 +1,66 @@
++.class public final Lcom/byd/launcher/stability/NavVolumeApply;
++.super Ljava/lang/Object;
++.implements Ljava/lang/Runnable;
++.field private final job:Lo/je;
++.field private final value:I
++.field private final delegate:Ljava/lang/Runnable;
++
++.method public constructor <init>(Lo/je;ILjava/lang/Runnable;)V
++    .locals 0
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    iput-object p1, p0, Lcom/byd/launcher/stability/NavVolumeApply;->job:Lo/je;
++    iput p2, p0, Lcom/byd/launcher/stability/NavVolumeApply;->value:I
++    iput-object p3, p0, Lcom/byd/launcher/stability/NavVolumeApply;->delegate:Ljava/lang/Runnable;
++    return-void
++.end method
++
++.method public static submit(Lo/je;ILjava/lang/Runnable;)V
++    .locals 2
++    new-instance v0, Lcom/byd/launcher/stability/NavVolumeApply;
++    invoke-direct {v0, p0, p1, p2}, Lcom/byd/launcher/stability/NavVolumeApply;-><init>(Lo/je;ILjava/lang/Runnable;)V
++    iget-object v1, p0, Lo/je;->ͱ:Lo/ff;
++    iget-object v1, v1, Lo/ff;->Ͱ:Landroid/os/Handler;
++    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    return-void
++.end method
++
++.method public final run()V
++    .locals 5
++    iget-object v0, p0, Lcom/byd/launcher/stability/NavVolumeApply;->job:Lo/je;
++    iget-object v1, v0, Lo/je;->ͱ:Lo/ff;
++    invoke-static {v1}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v2
++    if-nez v2, :done
++    iget-object v2, v1, Lo/ff;->ˋ:Landroid/content/Context;
++    sget-object v3, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;
++    if-ne v2, v3, :done
++    iget-object v2, v0, Lo/je;->stabilityNavTicket:Lcom/byd/launcher/stability/LatestRead$Ticket;
++    if-eqz v2, :done
++    invoke-virtual {v2}, Lcom/byd/launcher/stability/LatestRead$Ticket;->isCurrent()Z
++    move-result v2
++    if-eqz v2, :done
++    iget-object v2, v0, Lo/je;->stabilityNavRoot:Landroid/view/View;
++    if-eqz v2, :done
++    iget-object v3, v1, Lo/ff;->ͳ:Landroid/view/View;
++    if-eq v2, v3, :apply
++    iget-object v3, v1, Lo/ff;->Ώ:Landroid/view/View;
++    if-ne v2, v3, :done
++    :apply
++    iget v2, p0, Lcom/byd/launcher/stability/NavVolumeApply;->value:I
++    if-ltz v2, :done
++    iget-object v3, p0, Lcom/byd/launcher/stability/NavVolumeApply;->delegate:Ljava/lang/Runnable;
++    if-eqz v3, :done
++    :try_start
++    iput v2, v1, Lo/ff;->Λ:I
++    invoke-interface {v3}, Ljava/lang/Runnable;->run()V
++    :try_end
++    .catch Ljava/lang/Exception; {:try_start .. :try_end} :failed
++    :done
++    return-void
++    :failed
++    move-exception v4
++    const-string v2, "QuickSettingsMgr"
++    const-string v3, "Navigation volume result publication failed"
++    invoke-static {v2, v3, v4}, Lo/q3;->ͺ(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V
++    return-void
++.end method

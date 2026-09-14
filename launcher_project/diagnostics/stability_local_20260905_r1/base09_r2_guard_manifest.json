@@ -1,0 +1,542 @@
+[
+  {
+    "signature": "onClick(Landroid/view/View;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/\u03d8;->\u02cf:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 14,
+    "field": "\u02cf:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/\u03d8.smali",
+    "owner": "Lo/\u03d8;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/\u03d3;->\u0372:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 12,
+    "field": "\u0372:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/\u03d3.smali",
+    "owner": "Lo/\u03d3;"
+  },
+  {
+    "signature": "onClick(Landroid/view/View;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/\u03b0;->\u02cf:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 8,
+    "field": "\u02cf:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/\u03b0.smali",
+    "owner": "Lo/\u03b0;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/\u03ab;->\u0371:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 19,
+    "field": "\u0371:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/\u03ab.smali",
+    "owner": "Lo/\u03ab;"
+  },
+  {
+    "signature": "onGlobalLayout()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ze;->\u02cf:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 10,
+    "field": "\u02cf:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ze.smali",
+    "owner": "Lo/ze;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ye;->\u0372:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 6,
+    "field": "\u0372:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ye.smali",
+    "owner": "Lo/ye;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/x9;->\u0372:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 18,
+    "field": "\u0372:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/x9.smali",
+    "owner": "Lo/x9;"
+  },
+  {
+    "signature": "onError(Ljava/lang/String;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/we;->\u02cf:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 2,
+    "field": "\u02cf:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/we.smali",
+    "owner": "Lo/we;"
+  },
+  {
+    "signature": "onSuccess(Lorg/json/JSONObject;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/we;->\u02cf:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 3,
+    "field": "\u02cf:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/we.smali",
+    "owner": "Lo/we;"
+  },
+  {
+    "signature": "\u02cb(FF)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/we;->\u02cf:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 4,
+    "field": "\u02cf:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/we.smali",
+    "owner": "Lo/we;"
+  },
+  {
+    "signature": "onAnimationEnd(Landroid/animation/Animator;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ua;->\u02cf:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 1,
+    "field": "\u02cf:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/ua.smali",
+    "owner": "Lo/ua;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/td;->\u0371:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 29,
+    "field": "\u0371:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/td.smali",
+    "owner": "Lo/td;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/sj;->\u0373:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 10,
+    "field": "\u0373:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/sj.smali",
+    "owner": "Lo/sj;"
+  },
+  {
+    "signature": "onProgressChanged(Landroid/widget/SeekBar;IZ)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/se;->\u0370:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 2,
+    "field": "\u0370:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/se.smali",
+    "owner": "Lo/se;"
+  },
+  {
+    "signature": "onStopTrackingTouch(Landroid/widget/SeekBar;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/se;->\u0370:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 5,
+    "field": "\u0370:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/se.smali",
+    "owner": "Lo/se;"
+  },
+  {
+    "signature": "onProgressChanged(Landroid/widget/SeekBar;IZ)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/re;->\u0370:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 3,
+    "field": "\u0370:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/re.smali",
+    "owner": "Lo/re;"
+  },
+  {
+    "signature": "onStartTrackingTouch(Landroid/widget/SeekBar;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/re;->\u0370:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 1,
+    "field": "\u0370:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/re.smali",
+    "owner": "Lo/re;"
+  },
+  {
+    "signature": "onStopTrackingTouch(Landroid/widget/SeekBar;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/re;->\u0370:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 14,
+    "field": "\u0370:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/re.smali",
+    "owner": "Lo/re;"
+  },
+  {
+    "signature": "onReceive(Landroid/content/Context;Landroid/content/Intent;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/qe;->\u02cb:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 3,
+    "field": "\u02cb:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/qe.smali",
+    "owner": "Lo/qe;"
+  },
+  {
+    "signature": "onLayoutChange(Landroid/view/View;IIIIIIII)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ne;->\u02cb:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 0,
+    "field": "\u02cb:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ne.smali",
+    "owner": "Lo/ne;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/lb;->\u0373:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 18,
+    "field": "\u0373:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/lb.smali",
+    "owner": "Lo/lb;"
+  },
+  {
+    "signature": "get()Z",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ke;->\u02cf:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    const/4 v0, 0x0\n    return v0\n    :stability_owner_alive\n",
+    "locals_before": 7,
+    "field": "\u02cf:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ke.smali",
+    "owner": "Lo/ke;"
+  },
+  {
+    "signature": "\u02cb(Ljava/util/ArrayList;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ke;->\u02cf:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 1,
+    "field": "\u02cf:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ke.smali",
+    "owner": "Lo/ke;"
+  },
+  {
+    "signature": "\u02cf()Ljava/lang/String;",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ke;->\u02cf:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    const-string v0, \"\"\n    return-object v0\n    :stability_owner_alive\n",
+    "locals_before": 6,
+    "field": "\u02cf:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ke.smali",
+    "owner": "Lo/ke;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/je;->\u0371:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 13,
+    "field": "\u0371:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/je.smali",
+    "owner": "Lo/je;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ie;->\u0371:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 15,
+    "field": "\u0371:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ie.smali",
+    "owner": "Lo/ie;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/h2;->\u0372:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 15,
+    "field": "\u0372:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/h2.smali",
+    "owner": "Lo/h2;"
+  },
+  {
+    "signature": "onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ge;->\u02cb:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    const/4 v0, 0x0\n    return v0\n    :stability_owner_alive\n",
+    "locals_before": 11,
+    "field": "\u02cb:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ge.smali",
+    "owner": "Lo/ge;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/fe;->\u0371:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 5,
+    "field": "\u0371:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/fe.smali",
+    "owner": "Lo/fe;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ee;->\u0371:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 22,
+    "field": "\u0371:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ee.smali",
+    "owner": "Lo/ee;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/de;->\u0371:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 7,
+    "field": "\u0371:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/de.smali",
+    "owner": "Lo/de;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ce;->\u0371:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 10,
+    "field": "\u0371:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ce.smali",
+    "owner": "Lo/ce;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/bg;->\u0372:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 8,
+    "field": "\u0372:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/bg.smali",
+    "owner": "Lo/bg;"
+  },
+  {
+    "signature": "\u02cb()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ag;->\u0371:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 12,
+    "field": "\u0371:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/ag.smali",
+    "owner": "Lo/ag;"
+  },
+  {
+    "signature": "\u02cf()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ag;->\u0371:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 12,
+    "field": "\u0371:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/ag.smali",
+    "owner": "Lo/ag;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ag;->\u0371:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 22,
+    "field": "\u0371:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/ag.smali",
+    "owner": "Lo/ag;"
+  },
+  {
+    "signature": "onChange(Z)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/af;->\u02cf:Ljava/lang/Object;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 4,
+    "field": "\u02cf:Ljava/lang/Object;",
+    "guard_kind": "controller",
+    "path": "smali/o/af.smali",
+    "owner": "Lo/af;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/ae;->\u0371:Lo/ff;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 9,
+    "field": "\u0371:Lo/ff;",
+    "guard_kind": "controller",
+    "path": "smali/o/ae.smali",
+    "owner": "Lo/ae;"
+  },
+  {
+    "signature": "dispatchTouchEvent(Landroid/view/MotionEvent;)Z",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lcom/byd/launcher/widget/SwipeDismissFrameLayout;->\u0373:Lo/uh;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    const/4 v0, 0x0\n    return v0\n    :stability_owner_alive\n",
+    "locals_before": 9,
+    "field": "\u0373:Lo/uh;",
+    "guard_kind": "controller",
+    "path": "smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali",
+    "owner": "Lcom/byd/launcher/widget/SwipeDismissFrameLayout;"
+  },
+  {
+    "signature": "onClick(Landroid/view/View;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/k9;->\u02cf:Lcom/byd/launcher/NavBarService;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 12,
+    "field": "\u02cf:Lcom/byd/launcher/NavBarService;",
+    "guard_kind": "service",
+    "path": "smali/o/k9.smali",
+    "owner": "Lo/k9;"
+  },
+  {
+    "signature": "onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/zb;->\u0377:Lcom/byd/launcher/NavBarService;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    const/4 v0, 0x0\n    return v0\n    :stability_owner_alive\n",
+    "locals_before": 9,
+    "field": "\u0377:Lcom/byd/launcher/NavBarService;",
+    "guard_kind": "service",
+    "path": "smali/o/zb.smali",
+    "owner": "Lo/zb;"
+  },
+  {
+    "signature": "run()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    move-object/from16 v0, p0\n    iget-object v0, v0, Lo/m9;->\u0371:Lcom/byd/launcher/NavBarService;\n    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 12,
+    "field": "\u0371:Lcom/byd/launcher/NavBarService;",
+    "guard_kind": "service",
+    "path": "smali/o/m9.smali",
+    "owner": "Lo/m9;"
+  },
+  {
+    "signature": "\u02b9()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 9,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u02cb(Landroid/view/View;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 3,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u02cf()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 11,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u0370(Lo/df;ZLjava/lang/String;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 5,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u0372()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 37,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u0373()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 5,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u037b()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 3,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u037d()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 4,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u0386()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 6,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u0388(Ljava/util/ArrayList;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 3,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u0389(ILjava/lang/String;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 3,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u038a()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 13,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u038c()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 13,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u038e(I)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 12,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u038f(Landroid/widget/SeekBar;Landroid/widget/TextView;Landroid/widget/ImageView;)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 8,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/ff.smali",
+    "owner": "Lo/ff;"
+  },
+  {
+    "signature": "\u02cb()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 3,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/f4.smali",
+    "owner": "Lo/f4;"
+  },
+  {
+    "signature": "\u02cf()V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 2,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/f4.smali",
+    "owner": "Lo/f4;"
+  },
+  {
+    "signature": "\u0370(Ljava/lang/String;Ljava/util/ArrayList;Lo/e4;II)V",
+    "prefix": "\n    # BASE-09: stop only callbacks owned by a disposed controller/editor.\n    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z\n    move-result v0\n    if-eqz v0, :stability_owner_alive\n    return-void\n    :stability_owner_alive\n",
+    "locals_before": 9,
+    "field": null,
+    "guard_kind": "controller",
+    "path": "smali/o/f4.smali",
+    "owner": "Lo/f4;"
+  }
+]

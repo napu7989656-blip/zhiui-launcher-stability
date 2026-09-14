@@ -1,0 +1,23 @@
+{
+  "controller_context": "NavBarService.stabilityCreateStatusBar receiver, v1=p0; sole allocation site",
+  "constructor_slice": "    new-instance v0, Lo/ff;\n\n    iget-object v2, v1, Lcom/byd/launcher/NavBarService;->\u02cf:Landroid/view/WindowManager;\n\n    invoke-direct {v0, v1, v2}, Lo/ff;-><init>(Landroid/content/Context;Landroid/view/WindowManager;)V\n\n    iput-object v0, v1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;\n\n    new-instance v2, Lo/ia;\n\n    invoke-direct {v2, v1, v13}, Lo/ia;-><init>(Lcom/byd/launcher/NavBarService;I)V\n\n    .line 12\n    iput-object v2, v0, Lo/ff;->\u038e:Lo/cf;\n\n    .line 13\n\n\n",
+  "background_selector": 6,
+  "publication": "QuickSettingsThemeApply posted to ff.\u0370; QuickSettingsHandler main Looper",
+  "service_identity": "Captured context must equal current O0 before any preference/UI mutation",
+  "preference_check": "Observed mode must still match at publication; does not establish epoch or detect A-B-A",
+  "exception_boundary": "Exception in preference read/write, Calendar or UI publication caught on main; original cursor cleanup stays on worker",
+  "unchanged": [
+    "original query and URI",
+    "mode mapping",
+    "cursor success/failure cleanup",
+    "all unrelated ie selectors",
+    "existing vehicle commands"
+  ],
+  "next": [
+    "read-worker bounds",
+    "query/panel generations",
+    "other background publications and interrupted waits"
+  ],
+  "status": "LOCAL_CHECKPOINT_PASS; BASE10_THREAD_BOUNDS_AND_GENERATIONS_OPEN; NOT_ART_OR_VEHICLE",
+  "jadx_error": "Only inherited NavBarService.\u0395(ImageButton,String) RegionMakerVisitor error, debug log verified"
+}

@@ -1,0 +1,204 @@
+--- r9b/smali/o/ff.smali
++++ r10/smali/o/ff.smali
+@@ -12,6 +12,7 @@
+ 
+ 
+ # instance fields
++.field public final stabilityThemeSlot:Lcom/byd/launcher/stability/TileSlot;
+ .field public final stabilitySocActionGate:Lcom/byd/launcher/stability/ReadAfterAction;
+ .field public final stabilitySocSlot:Lcom/byd/launcher/stability/TileSlot;
+ .field public volatile stabilitySocTracking:Z
+@@ -148,6 +149,10 @@
+ 
+     .line 1
+     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    new-instance v0, Lcom/byd/launcher/stability/TileSlot;
++    invoke-direct {v0}, Lcom/byd/launcher/stability/TileSlot;-><init>()V
++    iput-object v0, p0, Lo/ff;->stabilityThemeSlot:Lcom/byd/launcher/stability/TileSlot;
++
+     new-instance v0, Lcom/byd/launcher/stability/ReadAfterAction;
+     invoke-direct {v0}, Lcom/byd/launcher/stability/ReadAfterAction;-><init>()V
+     iput-object v0, p0, Lo/ff;->stabilitySocActionGate:Lcom/byd/launcher/stability/ReadAfterAction;
+@@ -495,6 +500,7 @@
+     invoke-virtual {v0}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/ThemeRead;->close(Lo/ff;)V
+     iget-boolean v0, p0, Lo/ff;->ͺ:Z
+ 
+     .line 11
+@@ -2932,6 +2938,7 @@
+     invoke-virtual {v0}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/ThemeRead;->close(Lo/ff;)V
+ 
+     .line 1
+     const/4 v0, 0x0
+@@ -5910,6 +5917,7 @@
+     invoke-virtual {v2}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/ThemeRead;->close(Lo/ff;)V
+     invoke-static {p0}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->cancelQueued(Ljava/lang/Object;)V
+     const/4 v1, 0x0
+     iput-object v1, p0, Lo/ff;->Ύ:Lo/cf;
+--- r9b/smali/o/ie.smali
++++ r10/smali/o/ie.smali
+@@ -7,6 +7,7 @@
+ 
+ 
+ # instance fields
++.field public final stabilityThemeRead:Lcom/byd/launcher/stability/ThemeRead;
+ .field public final stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
+ .field public final stabilityTileBatch:Lcom/byd/launcher/stability/TileBatch;
+ .field public final stabilityInstrumentRequest:Lcom/byd/launcher/stability/InstrumentReads$Request;
+@@ -57,6 +58,12 @@
+     invoke-direct {v1, v0}, Lcom/byd/launcher/stability/SocRead;-><init>(Lo/ff;)V
+     iput-object v1, p0, Lo/ie;->stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
+     :soc_capture_done
++    const/4 v0, 0x6
++    if-ne p2, v0, :theme_capture_done
++    new-instance v0, Lcom/byd/launcher/stability/ThemeRead;
++    invoke-direct {v0, p1}, Lcom/byd/launcher/stability/ThemeRead;-><init>(Lo/ff;)V
++    iput-object v0, p0, Lo/ie;->stabilityThemeRead:Lcom/byd/launcher/stability/ThemeRead;
++    :theme_capture_done
+     return-void
+ .end method
+ 
+@@ -2378,6 +2385,12 @@
+ 
+     .line 1132
+     :pswitch_16
++    iget-object v0, p0, Lo/ie;->stabilityThemeRead:Lcom/byd/launcher/stability/ThemeRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/ThemeRead;->current()Z
++    move-result v0
++    if-nez v0, :theme_worker_current
++    return-void
++    :theme_worker_current
+     iget-object v0, p0, Lo/ie;->ͱ:Lo/ff;
+ 
+     .line 1133
+@@ -2585,8 +2598,8 @@
+     .line 1228
+     new-instance v1, Lcom/byd/launcher/stability/QuickSettingsThemeApply;
+     invoke-direct {v1, v0, v3, v6}, Lcom/byd/launcher/stability/QuickSettingsThemeApply;-><init>(Lo/ff;II)V
+-    iget-object v0, v0, Lo/ff;->Ͱ:Landroid/os/Handler;
+-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    iget-object v0, p0, Lo/ie;->stabilityThemeRead:Lcom/byd/launcher/stability/ThemeRead;
++    invoke-virtual {v0, v1}, Lcom/byd/launcher/stability/ThemeRead;->post(Ljava/lang/Runnable;)V
+     :try_end_d
+     .catchall {:try_start_d .. :try_end_d} :catchall_2
+ 
+--- r9b/smali/o/ci.smali
++++ r10/smali/o/ci.smali
+@@ -291,6 +291,7 @@
+ 
+     :cond_2
+     :goto_0
++    invoke-static {}, Lcom/byd/launcher/stability/ThemeRead;->preferenceChanged()V
+     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
+ 
+     return-void
+--- r9b/smali/com/byd/launcher/stability/ThemeRead.smali
++++ r10/smali/com/byd/launcher/stability/ThemeRead.smali
+@@ -0,0 +1,73 @@
++.class public final Lcom/byd/launcher/stability/ThemeRead;
++.super Ljava/lang/Object;
++.field private static volatile preferenceEpoch:Ljava/lang/Object;
++.field private final owner:Lo/ff;
++.field private final expectedEpoch:Ljava/lang/Object;
++.field private final ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++.method static constructor <clinit>()V
++    .locals 1
++    new-instance v0, Ljava/lang/Object;
++    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
++    sput-object v0, Lcom/byd/launcher/stability/ThemeRead;->preferenceEpoch:Ljava/lang/Object;
++    return-void
++.end method
++.method public static preferenceChanged()V
++    .locals 1
++    new-instance v0, Ljava/lang/Object;
++    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
++    sput-object v0, Lcom/byd/launcher/stability/ThemeRead;->preferenceEpoch:Ljava/lang/Object;
++    return-void
++.end method
++.method public constructor <init>(Lo/ff;)V
++    .locals 1
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    iput-object p1, p0, Lcom/byd/launcher/stability/ThemeRead;->owner:Lo/ff;
++    sget-object v0, Lcom/byd/launcher/stability/ThemeRead;->preferenceEpoch:Ljava/lang/Object;
++    iput-object v0, p0, Lcom/byd/launcher/stability/ThemeRead;->expectedEpoch:Ljava/lang/Object;
++    iget-object v0, p1, Lo/ff;->stabilityThemeSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->begin()Lcom/byd/launcher/stability/TileSlot$Ticket;
++    move-result-object v0
++    iput-object v0, p0, Lcom/byd/launcher/stability/ThemeRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    return-void
++.end method
++.method public current()Z
++    .locals 3
++    iget-object v0, p0, Lcom/byd/launcher/stability/ThemeRead;->owner:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v1
++    if-nez v1, :no
++    iget-object v1, v0, Lo/ff;->ˋ:Landroid/content/Context;
++    sget-object v2, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;
++    if-ne v1, v2, :no
++    iget-object v1, p0, Lcom/byd/launcher/stability/ThemeRead;->expectedEpoch:Ljava/lang/Object;
++    sget-object v2, Lcom/byd/launcher/stability/ThemeRead;->preferenceEpoch:Ljava/lang/Object;
++    if-ne v1, v2, :no
++    iget-object v0, p0, Lcom/byd/launcher/stability/ThemeRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot$Ticket;->isCurrent()Z
++    move-result v0
++    return v0
++    :no
++    const/4 v0, 0x0
++    return v0
++.end method
++.method public post(Ljava/lang/Runnable;)V
++    .locals 4
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/ThemeRead;->current()Z
++    move-result v0
++    if-eqz v0, :done
++    iget-object v0, p0, Lcom/byd/launcher/stability/ThemeRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    iget-object v2, p0, Lcom/byd/launcher/stability/ThemeRead;->owner:Lo/ff;
++    new-instance v1, Lcom/byd/launcher/stability/TileSnapshots;
++    invoke-direct {v1, v2}, Lcom/byd/launcher/stability/TileSnapshots;-><init>(Lo/ff;)V
++    new-instance v3, Lcom/byd/launcher/stability/ThemeDeliver;
++    invoke-direct {v3, p0, p1}, Lcom/byd/launcher/stability/ThemeDeliver;-><init>(Lcom/byd/launcher/stability/ThemeRead;Ljava/lang/Runnable;)V
++    invoke-virtual {v0, v1, v3}, Lcom/byd/launcher/stability/TileSlot$Ticket;->post(Lcom/byd/launcher/stability/TileSlot$Queue;Ljava/lang/Runnable;)Z
++    :done
++    return-void
++.end method
++.method public static close(Lo/ff;)V
++    .locals 1
++    iget-object v0, p0, Lo/ff;->stabilityThemeSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->invalidate()V
++    return-void
++.end method
+--- r9b/smali/com/byd/launcher/stability/ThemeDeliver.smali
++++ r10/smali/com/byd/launcher/stability/ThemeDeliver.smali
+@@ -0,0 +1,23 @@
++.class public final Lcom/byd/launcher/stability/ThemeDeliver;
++.super Ljava/lang/Object;
++.implements Ljava/lang/Runnable;
++.field private final read:Lcom/byd/launcher/stability/ThemeRead;
++.field private final delegate:Ljava/lang/Runnable;
++.method public constructor <init>(Lcom/byd/launcher/stability/ThemeRead;Ljava/lang/Runnable;)V
++    .locals 0
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    iput-object p1, p0, Lcom/byd/launcher/stability/ThemeDeliver;->read:Lcom/byd/launcher/stability/ThemeRead;
++    iput-object p2, p0, Lcom/byd/launcher/stability/ThemeDeliver;->delegate:Ljava/lang/Runnable;
++    return-void
++.end method
++.method public run()V
++    .locals 1
++    iget-object v0, p0, Lcom/byd/launcher/stability/ThemeDeliver;->read:Lcom/byd/launcher/stability/ThemeRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/ThemeRead;->current()Z
++    move-result v0
++    if-eqz v0, :done
++    iget-object v0, p0, Lcom/byd/launcher/stability/ThemeDeliver;->delegate:Ljava/lang/Runnable;
++    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
++    :done
++    return-void
++.end method

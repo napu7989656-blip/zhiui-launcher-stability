@@ -1,0 +1,7 @@
+[
+  {
+    "path": "smali/o/ke.smali",
+    "before": "    .sparse-switch\n        0x2 -> :voice\n        0x3 -> :energy\n        0x6 -> :soc\n        0x8 -> :hdc\n    .end sparse-switch",
+    "after": "    .sparse-switch\n        0x1 -> :mobile\n        0x2 -> :voice\n        0x3 -> :energy\n        0x4 -> :mobile\n        0x6 -> :soc\n        0x7 -> :mobile\n        0x8 -> :hdc\n        0x9 -> :mobile\n    .end sparse-switch"
+  }
+]

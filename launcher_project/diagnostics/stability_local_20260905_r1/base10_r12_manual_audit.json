@@ -1,0 +1,46 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "05575825A4F09761D076F91A8DD22FE03157C9D4E20A8645AB860DD19BD3AFAF",
+  "delta_files": 4,
+  "cumulative_files": 98,
+  "source_final_cases": 194,
+  "review": [
+    "ff static integer query: pre-interrupt before IPC, timeout returns -1 without reading callback array, typed catch before generic restores interrupt and exits",
+    "ie selector28 and je selector1: normal awaited array path retained, timeout sets -1 into existing invalid-value path, InterruptedException restores and returns without result/retry",
+    "TileSnapshots.post rejects interrupted worker before batch/UI routing; SOC callers reject -1 by original range checks",
+    "te/ve callbacks only write per-query arrays and countdown; no UI/controller owner, late callbacks do not republish",
+    "final smali locals and catch ranges reviewed: specific InterruptedException handler precedes generic Exception on actual await ranges"
+  ],
+  "jadx": [
+    {
+      "cls": "o.ff",
+      "exit_code": 3,
+      "log": "base10_r12_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.ie",
+      "exit_code": 3,
+      "log": "base10_r12_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.je",
+      "exit_code": 0,
+      "log": "base10_r12_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.TileSnapshots",
+      "exit_code": 3,
+      "log": "base10_r12_jadx_3_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "jadx_caveats": "ie.run is an incomplete decompile with type-inference warning; related task also reports the known NavBarService RegionMaker error. je Java incorrectly renders empty owner guard and nested exception ordering; final smali has early return and typed catch before generic. Java is not executable source or proof of exception order.",
+  "limits": "11 injected wait-decision/handler cases plus 183 inherited per source/final. No actual IPC/ART/OEM/vehicle execution. Background glass/other waits and all V2/V3 reintegration remain incomplete."
+}

@@ -1,0 +1,17 @@
+{
+  "status": "R8_LOCAL_GATES_PASS_WITH_SUBTITLE_FOLLOWUP_R8B",
+  "apk": "D:/apk/zhiui-stability-local-base10-r8.apk",
+  "sha256": "ABD596023500F39E654CDDAF9BA85A2321F09CCFB361154CF7EDF8CFAD382676",
+  "source_final_cases": 74,
+  "jvm_tile_assertions": 20024,
+  "jvm_pool_assertions": 31044,
+  "delta_files": 21,
+  "cumulative_files": 85,
+  "jadx": {
+    "TileSnapshots": "exit3: sole ERROR inherited NavBarService.\u0395(ImageButton,String) RegionMakerVisitor; own helper output inspected against final smali",
+    "TileSlot": "exit0; pending/current monitor and callback exception path inspected",
+    "ke": "exit0; stabilityRead maps preserved; JADX misrenders alias 1/4/7/9 commit as empty breaks; actual sparse-switch targets final mobile iput verified by source/final execution"
+  },
+  "followup": "Pure read defers cache writes, but subtitle ke selectors4/7 read old cache on worker; r8b moves only these local-cache subtitle branches after accepted main cache commit",
+  "limits": "No ART/OEM/native/vehicle verification. Read queues bounded; no forced interruption of running native reads."
+}

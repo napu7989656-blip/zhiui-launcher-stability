@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:gravity="center" android:orientation="vertical" android:padding="4.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <FrameLayout android:id="@id/slot_frame" android:layout_width="56.0dp" android:layout_height="56.0dp">
+        <LinearLayout android:gravity="center" android:orientation="vertical" android:id="@id/slot_bg" android:background="@drawable/qs_tile_bg_off" android:layout_width="match_parent" android:layout_height="match_parent">
+            <ImageView android:id="@id/slot_icon" android:layout_width="32.0dp" android:layout_height="32.0dp" android:scaleType="fitCenter" />
+        </LinearLayout>
+        <View android:id="@id/slot_selected_border" android:visibility="gone" android:layout_width="match_parent" android:layout_height="match_parent" />
+    </FrameLayout>
+    <TextView android:textSize="9.0sp" android:textColor="#99ffffff" android:ellipsize="end" android:gravity="center" android:id="@id/slot_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="2.0dp" android:maxWidth="60.0dp" android:maxLines="1" />
+</LinearLayout>

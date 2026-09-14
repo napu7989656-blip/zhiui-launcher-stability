@@ -1,0 +1,24 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "7A60DFA3C91265A3C9265DECE86D22BAC7B3BFC484F9074228258303D1F3AE8B",
+  "delta_files": 1,
+  "cumulative_files": 166,
+  "source_final_case_groups": 435,
+  "review": [
+    "Service onDestroy bitmap retirement clears Z/H without explicit recycle. Exact inverse preserves all other onDestroy operations, including remaining asynchronous resource handoff issues.",
+    "Four new actual retirement groups plus431 inherited=435 source/final groups. Parent recycle reproduced; all four direct Z holder classes inventoried. No whole service destruction, renderer, GC, native camera or vehicle execution.",
+    "JADX service exit3 has one historical ImageButton/String method error; onDestroy null assignments visible at lines1376-1377, checked against final smali and exact inverse. R26 supplemental callback/ki JADX outputs establish the prior three changes.",
+    "One delta/166 cumulative files,22 protected hashes unchanged,API127 no new; build/sign/align/parse/redecode/content pass.",
+    "R26b completes explicit recycle removal at all four direct camera Z retirement sites. Does not fix shared mutable frame reuse, asynchronous camera cleanup/handoff or old owner callbacks."
+  ],
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.NavBarService",
+      "exit_code": 3,
+      "log": "base10_r26b_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "No complete camera lifecycle, full local plan, ART/OEM/vehicle or bounded GC guarantee."
+}

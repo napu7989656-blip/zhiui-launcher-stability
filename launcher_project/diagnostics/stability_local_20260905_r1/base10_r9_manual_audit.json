@@ -1,0 +1,10 @@
+{
+  "status": "LOCAL_READ_PUBLICATION_GATES_PASS_ACTION_WAIT_FOLLOWUP_R9B",
+  "sha256": "8A719DE849E28ED2091A18B1724A009FBFBA768996B793C4F1DA5D97840A6A87",
+  "delta_files": 6,
+  "cumulative_files": 87,
+  "source_final_cases": 114,
+  "jadx": "SocRead and SocApply exit0; query ticket, panel epoch, drag gate and wrapped delegate checked against final smali",
+  "test_harness_fix": "Initial final test used source label names. Apktool renames labels; extractor now follows actual branch operand. Original failure log preserved; resume branch/gate logs separately stored.",
+  "remaining": "Latest existing SOC action is asynchronous; r9b adds bounded UI-read wait through original callback or 15000ms existing callback timeout, without changing any command."
+}

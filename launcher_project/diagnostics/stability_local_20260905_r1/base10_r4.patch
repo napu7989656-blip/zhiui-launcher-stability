@@ -1,0 +1,52 @@
+--- base10_r3/smali/o/ff.smali
++++ base10_r4/smali/o/ff.smali
+@@ -4793,7 +4793,7 @@
+     .line 258
+     .line 259
+     .line 260
+-    new-instance v0, Ljava/lang/Thread;
++    const/4 v0, 0x6
+ 
+     .line 261
+     .line 262
+@@ -4810,12 +4810,12 @@
+     .line 267
+     .line 268
+     .line 269
+-    invoke-direct {v0, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
++    invoke-static {p0, v0, v2}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->execute(Ljava/lang/Object;ILjava/lang/Runnable;)Z
+ 
+     .line 270
+     .line 271
+     .line 272
+-    invoke-virtual {v0}, Ljava/lang/Thread;->start()V
++
+ 
+     .line 273
+     .line 274
+--- base10_r3/smali/o/ie.smali
++++ base10_r4/smali/o/ie.smali
+@@ -2998,7 +2998,7 @@
+     .line 1449
+     .line 1450
+     :goto_18
+-    new-instance v2, Ljava/lang/Thread;
++    const/4 v2, 0x6
+ 
+     .line 1451
+     .line 1452
+@@ -3011,12 +3011,12 @@
+     .line 1455
+     .line 1456
+     .line 1457
+-    invoke-direct {v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
++    invoke-static {v0, v2, v3}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->execute(Ljava/lang/Object;ILjava/lang/Runnable;)Z
+ 
+     .line 1458
+     .line 1459
+     .line 1460
+-    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
++
+ 
+     .line 1461
+     .line 1462

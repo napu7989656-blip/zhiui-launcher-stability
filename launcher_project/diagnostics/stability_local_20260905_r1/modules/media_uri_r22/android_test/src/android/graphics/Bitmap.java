@@ -1,0 +1,1 @@
+package android.graphics; public class Bitmap {public int width=200,height=200,recycles;public boolean failSize;public int getWidth(){if(failSize)throw new IllegalStateException();return width;}public int getHeight(){return height;}public void recycle(){recycles++;} }

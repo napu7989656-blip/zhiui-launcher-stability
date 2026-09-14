@@ -1,0 +1,583 @@
+[
+  {
+    "wrapper": "Lo/Ill;->ˋ(Landroid/content/res/Configuration;)I",
+    "platform_targets": [
+      "Landroid/content/res/Configuration;->fontWeightAdjustment:I"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/resources/TypefaceUtils.smali",
+        "method": "public static maybeCopyWithFontWeightAdjustment(Landroid/content/res/Configuration;Landroid/graphics/Typeface;)Landroid/graphics/Typeface;",
+        "line": 52,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Ill;->ͽ(Landroid/view/WindowInsets;)Landroid/view/RoundedCorner;",
+    "platform_targets": [
+      "Landroid/view/WindowInsets;->getRoundedCorner(I)Landroid/view/RoundedCorner;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/bottomsheet/BottomSheetBehavior.smali",
+        "method": "private calculateInterpolationWithCornersRemoved()F",
+        "line": 1028,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Ill;->Ά(Landroid/view/WindowInsets;I)Landroid/view/RoundedCorner;",
+    "platform_targets": [
+      "Landroid/view/WindowInsets;->getRoundedCorner(I)Landroid/view/RoundedCorner;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/motion/MaterialMainContainerBackHelper.smali",
+        "method": "private getRoundedCornerRadius(Landroid/view/WindowInsets;I)I",
+        "line": 277,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Ill;->Έ(Landroid/content/ClipData$Item;)Landroid/view/textclassifier/TextLinks;",
+    "platform_targets": [
+      "Landroid/content/ClipData$Item;->getTextLinks()Landroid/view/textclassifier/TextLinks;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/content/IntentSanitizer$Api16Impl$Api31Impl.smali",
+        "method": "public static checkOtherMembers(ILandroid/content/ClipData$Item;Landroidx/core/util/Consumer;)V",
+        "line": 30,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Ill;->Β(Landroid/view/WindowInsets;)Landroid/view/RoundedCorner;",
+    "platform_targets": [
+      "Landroid/view/WindowInsets;->getRoundedCorner(I)Landroid/view/RoundedCorner;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/bottomsheet/BottomSheetBehavior.smali",
+        "method": "private calculateInterpolationWithCornersRemoved()F",
+        "line": 1028,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/qm;->Ͳ(Landroid/view/WindowInsets;I)Landroid/graphics/Insets;",
+    "platform_targets": [
+      "Landroid/view/WindowInsets;->getInsetsIgnoringVisibility(I)Landroid/graphics/Insets;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsCompat$Impl30.smali",
+        "method": "public getInsetsIgnoringVisibility(I)Landroidx/core/graphics/Insets;",
+        "line": 113,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/qm;->Ͷ()Landroid/view/WindowInsets;",
+    "platform_targets": [
+      "Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsCompat$Impl30.smali",
+        "method": "public static constructor <clinit>()V",
+        "line": 29,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/qm;->ͼ(Landroid/view/WindowInsets$Builder;ILandroid/graphics/Insets;)V",
+    "platform_targets": [
+      "Landroid/view/WindowInsets$Builder;->setInsetsIgnoringVisibility(ILandroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsCompat$BuilderImpl30.smali",
+        "method": "public setInsetsIgnoringVisibility(ILandroidx/core/graphics/Insets;)V",
+        "line": 67,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/qm;->ͽ(Landroid/view/WindowInsets$Builder;IZ)V",
+    "platform_targets": [
+      "Landroid/view/WindowInsets$Builder;->setVisible(IZ)Landroid/view/WindowInsets$Builder;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsCompat$BuilderImpl30.smali",
+        "method": "public setVisible(IZ)V",
+        "line": 89,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/qm;->Ί(Landroid/view/WindowInsets;I)Z",
+    "platform_targets": [
+      "Landroid/view/WindowInsets;->isVisible(I)Z"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsCompat$Impl30.smali",
+        "method": "public isVisible(I)Z",
+        "line": 135,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/qm;->ΐ(Landroid/view/WindowInsets;I)Landroid/graphics/Insets;",
+    "platform_targets": [
+      "Landroid/view/WindowInsets;->getInsets(I)Landroid/graphics/Insets;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsCompat$Impl30.smali",
+        "method": "public getInsets(I)Landroidx/core/graphics/Insets;",
+        "line": 91,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/qm;->Β(Landroid/view/WindowInsets$Builder;ILandroid/graphics/Insets;)V",
+    "platform_targets": [
+      "Landroid/view/WindowInsets$Builder;->setInsets(ILandroid/graphics/Insets;)Landroid/view/WindowInsets$Builder;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsCompat$BuilderImpl30.smali",
+        "method": "public setInsets(ILandroidx/core/graphics/Insets;)V",
+        "line": 45,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/sm;->ͱ(Landroid/view/Window;)Landroid/view/WindowInsetsController;",
+    "platform_targets": [
+      "Landroid/view/Window;->getInsetsController()Landroid/view/WindowInsetsController;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsControllerCompat$Impl30.smali",
+        "method": "public constructor <init>(Landroid/view/Window;Landroidx/core/view/WindowInsetsControllerCompat;Landroidx/core/view/SoftwareKeyboardControllerCompat;)V",
+        "line": 43,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/sm;->Ͳ(Landroid/view/WindowManager;)Landroid/view/WindowMetrics;",
+    "platform_targets": [
+      "Landroid/view/WindowManager;->getCurrentWindowMetrics()Landroid/view/WindowMetrics;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/internal/WindowUtils$Api30Impl.smali",
+        "method": "public static getCurrentWindowBounds(Landroid/view/WindowManager;)Landroid/graphics/Rect;",
+        "line": 30,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->Ͷ(Landroid/view/View;)Landroid/view/WindowInsetsController;",
+    "platform_targets": [
+      "Landroid/view/View;->getWindowInsetsController()Landroid/view/WindowInsetsController;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/SoftwareKeyboardControllerCompat$Impl30.smali",
+        "method": "public hide()V",
+        "line": 97,
+        "has_sdk_check_in_same_method": false
+      },
+      {
+        "path": "smali/androidx/core/view/SoftwareKeyboardControllerCompat$Impl30.smali",
+        "method": "public show()V",
+        "line": 183,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->ͷ()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;",
+    "platform_targets": [
+      "Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_PRESS_AND_HOLD:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat.smali",
+        "method": "public static constructor <clinit>()V",
+        "line": 174,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->ͺ()Ljava/io/FileDescriptor;",
+    "platform_targets": [
+      "Landroid/system/Os;->memfd_create(Ljava/lang/String;I)Ljava/io/FileDescriptor;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/color/ColorResourcesLoaderCreator.smali",
+        "method": "public static create(Landroid/content/Context;Ljava/util/Map;)Landroid/content/res/loader/ResourcesLoader;",
+        "line": 25,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->ͻ(Landroid/content/pm/ShortcutManager;I)Ljava/util/List;",
+    "platform_targets": [
+      "Landroid/content/pm/ShortcutManager;->getShortcuts(I)Ljava/util/List;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/content/pm/ShortcutManagerCompat.smali",
+        "method": "public static getShortcuts(Landroid/content/Context;I)Ljava/util/List;",
+        "line": 1206,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->ͽ(Landroid/content/pm/ShortcutManager;Landroid/content/pm/ShortcutInfo;)V",
+    "platform_targets": [
+      "Landroid/content/pm/ShortcutManager;->pushDynamicShortcut(Landroid/content/pm/ShortcutInfo;)V"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/content/pm/ShortcutManagerCompat.smali",
+        "method": "public static pushDynamicShortcut(Landroid/content/Context;Landroidx/core/content/pm/ShortcutInfoCompat;)Z",
+        "line": 1503,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->Ά(Landroid/content/pm/ShortcutManager;Ljava/util/List;)V",
+    "platform_targets": [
+      "Landroid/content/pm/ShortcutManager;->removeLongLivedShortcuts(Ljava/util/List;)V"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/content/pm/ShortcutManagerCompat.smali",
+        "method": "public static removeLongLivedShortcuts(Landroid/content/Context;Ljava/util/List;)V",
+        "line": 1975,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->Έ(Landroid/content/res/Resources;[Landroid/content/res/loader/ResourcesLoader;)V",
+    "platform_targets": [
+      "Landroid/content/res/Resources;->addLoaders([Landroid/content/res/loader/ResourcesLoader;)V"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/color/ResourcesLoaderUtils.smali",
+        "method": "public static addResourcesLoaderToContext(Landroid/content/Context;Ljava/util/Map;)Z",
+        "line": 21,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->Ί(Landroid/graphics/Outline;Landroid/graphics/Path;)V",
+    "platform_targets": [
+      "Landroid/graphics/Outline;->setPath(Landroid/graphics/Path;)V"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/drawable/DrawableUtils.smali",
+        "method": "public static setOutlineToPath(Landroid/graphics/Outline;Landroid/graphics/Path;)V",
+        "line": 638,
+        "has_sdk_check_in_same_method": true
+      },
+      {
+        "path": "smali/com/google/android/material/shape/ShapeableDelegateV33$1.smali",
+        "method": "public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V",
+        "line": 34,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->Ό(Landroid/view/Surface;)V",
+    "platform_targets": [
+      "Landroid/view/Surface;->setFrameRate(FI)V"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/o/kd.smali",
+        "method": "public final surfaceCreated(Landroid/view/SurfaceHolder;)V",
+        "line": 63,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "DIRECT_CALLER_GUARDED_SDK_GE_30_SMALI_REVIEWED",
+    "guard": "sget SDK_INT; const/16 0x1e; if-lt skips wrapper; SDK29 cannot take this invocation. Other behavior of caller not certified."
+  },
+  {
+    "wrapper": "Lo/Κ;->Ύ(Landroid/view/View;Landroid/view/WindowInsetsAnimation$Callback;)V",
+    "platform_targets": [
+      "Landroid/view/View;->setWindowInsetsAnimationCallback(Landroid/view/WindowInsetsAnimation$Callback;)V"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/WindowInsetsAnimationCompat$Impl30.smali",
+        "method": "public static setCallback(Landroid/view/View;Landroidx/core/view/WindowInsetsAnimationCompat$Callback;)V",
+        "line": 143,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->Ώ(Landroid/view/Window;)V",
+    "platform_targets": [
+      "Landroid/view/Window;->setDecorFitsSystemWindows(Z)V"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/byd/launcher/MainActivity.smali",
+        "method": "public final ͱ()V",
+        "line": 2937,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "DIRECT_CALLER_GUARDED_SDK_GE_30_SMALI_REVIEWED",
+    "guard": "sget SDK_INT; const/16 0x1e; if-lt skips wrapper; SDK29 cannot take this invocation. Other behavior of caller not certified."
+  },
+  {
+    "wrapper": "Lo/Κ;->Γ(Landroid/content/pm/ShortcutInfo;)Z",
+    "platform_targets": [
+      "Landroid/content/pm/ShortcutInfo;->isCached()Z"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/content/pm/ShortcutInfoCompat$Builder.smali",
+        "method": "public constructor <init>(Landroid/content/Context;Landroid/content/pm/ShortcutInfo;)V",
+        "line": 50,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Κ;->Ζ()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;",
+    "platform_targets": [
+      "Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_IME_ENTER:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat.smali",
+        "method": "public static constructor <clinit>()V",
+        "line": 174,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Λ;->ˋ()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;",
+    "platform_targets": [
+      "Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_DRAG_START:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat.smali",
+        "method": "public static constructor <clinit>()V",
+        "line": 174,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Λ;->ˏ()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;",
+    "platform_targets": [
+      "Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_DRAG_DROP:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat.smali",
+        "method": "public static constructor <clinit>()V",
+        "line": 174,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Λ;->Ͱ()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;",
+    "platform_targets": [
+      "Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_DRAG_CANCEL:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat.smali",
+        "method": "public static constructor <clinit>()V",
+        "line": 174,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Μ;->ʹ(Landroid/view/View;)Landroid/window/OnBackInvokedDispatcher;",
+    "platform_targets": [
+      "Landroid/view/View;->findOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/com/google/android/material/motion/MaterialBackOrchestrator$Api33BackCallbackDelegate.smali",
+        "method": "public startListeningForBackCallbacks(Lcom/google/android/material/motion/MaterialBackHandler;Landroid/view/View;Z)V",
+        "line": 85,
+        "has_sdk_check_in_same_method": false
+      },
+      {
+        "path": "smali/com/google/android/material/motion/MaterialBackOrchestrator$Api33BackCallbackDelegate.smali",
+        "method": "public stopListeningForBackCallbacks(Landroid/view/View;)V",
+        "line": 135,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Μ;->ˋ()I",
+    "platform_targets": [
+      "Landroid/provider/MediaStore;->getPickImagesMaxLimit()I"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/activity/result/contract/ActivityResultContracts$PickMultipleVisualMedia$Companion.smali",
+        "method": "public final getMaxItems$activity_release()I",
+        "line": 37,
+        "has_sdk_check_in_same_method": false
+      },
+      {
+        "path": "smali/androidx/activity/result/contract/ActivityResultContracts$PickMultipleVisualMedia.smali",
+        "method": "public createIntent(Landroid/content/Context;Landroidx/activity/result/PickVisualMediaRequest;)Landroid/content/Intent;",
+        "line": 133,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Μ;->ͱ()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;",
+    "platform_targets": [
+      "Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SHOW_TEXT_SUGGESTIONS:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat.smali",
+        "method": "public static constructor <clinit>()V",
+        "line": 174,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Μ;->ͳ(Landroid/app/Activity;)Landroid/window/OnBackInvokedDispatcher;",
+    "platform_targets": [
+      "Landroid/app/Activity;->getOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/appcompat/app/AppCompatDelegateImpl$Api33Impl.smali",
+        "method": "public static getOnBackInvokedDispatcher(Landroid/app/Activity;)Landroid/window/OnBackInvokedDispatcher;",
+        "line": 30,
+        "has_sdk_check_in_same_method": false
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Μ;->Ͷ(Landroidx/activity/ComponentDialog;)Landroid/window/OnBackInvokedDispatcher;",
+    "platform_targets": [
+      "Landroid/app/Dialog;->getOnBackInvokedDispatcher()Landroid/window/OnBackInvokedDispatcher;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/activity/ComponentDialog.smali",
+        "method": "public onCreate(Landroid/os/Bundle;)V",
+        "line": 246,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Μ;->ͽ(Ljava/util/Locale;Ljava/util/Locale;)Z",
+    "platform_targets": [
+      "Landroid/os/LocaleList;->matchesLanguageAndScript(Ljava/util/Locale;Ljava/util/Locale;)Z"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/os/LocaleListCompat.smali",
+        "method": "public static matchesLanguageAndScript(Ljava/util/Locale;Ljava/util/Locale;)Z",
+        "line": 458,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  },
+  {
+    "wrapper": "Lo/Ν;->ˋ()Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;",
+    "platform_targets": [
+      "Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;->ACTION_SCROLL_IN_DIRECTION:Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;"
+    ],
+    "direct_callers": [
+      {
+        "path": "smali/androidx/core/view/accessibility/AccessibilityNodeInfoCompat$AccessibilityActionCompat.smali",
+        "method": "public static constructor <clinit>()V",
+        "line": 174,
+        "has_sdk_check_in_same_method": true
+      }
+    ],
+    "status": "CALLER_GUARD_REVIEW_PENDING"
+  }
+]

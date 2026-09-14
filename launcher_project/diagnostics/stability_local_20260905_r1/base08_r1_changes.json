@@ -1,0 +1,12 @@
+[
+  {
+    "path": "smali/com/byd/launcher/NavBarService.smali",
+    "before_sha": "387AE6FEB19B1F20D17AFB1074B40F9537CE944AEE0AA7A3D490097D549FAB89",
+    "after_sha": "6C0AA7483DC3B3C5ECC144E5A5ADC7C52AEFE6146ABF95649FA2540E8FB960E7"
+  },
+  {
+    "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+    "before_sha": "",
+    "after_sha": "DD501AE399566D556B9B4B06CCA992009042FC3C063B8502B0323C85B9311EAA"
+  }
+]

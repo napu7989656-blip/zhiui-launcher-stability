@@ -1,0 +1,116 @@
+{
+  "status": "GETTERS_STATIC_REVIEWED; PRODUCER_PATCH_PENDING",
+  "getters": {
+    "ke.get()Z": {
+      "sha256": "a431e102e5c70cf4d646573146f6342bcf266bcfc6a7c5767cadd4d958217942",
+      "calls": [
+        "invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;",
+        "invoke-virtual {v0, v1}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;",
+        "invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-static {v1, v2}, Lo/ff;->\u037c(Ljava/lang/String;Ljava/lang/String;)I",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-static {v5, v2}, Lo/ff;->\u037c(Ljava/lang/String;Ljava/lang/String;)I",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;",
+        "invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->isEnabled()Z",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-static {v5, v2}, Lo/ff;->\u037c(Ljava/lang/String;Ljava/lang/String;)I",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-static {v1, v2}, Lo/ff;->\u037c(Ljava/lang/String;Ljava/lang/String;)I",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;",
+        "invoke-virtual {v1, v2}, Landroid/media/AudioManager;->isStreamMute(I)Z",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-virtual {v1, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;",
+        "invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-virtual {v2, v5, v6}, Ljava/lang/Class;->getMethod(Ljava/lang/String;[Ljava/lang/Class;)Ljava/lang/reflect/Method;",
+        "invoke-virtual {v2, v1, v5}, Ljava/lang/reflect/Method;->invoke(Ljava/lang/Object;[Ljava/lang/Object;)Ljava/lang/Object;",
+        "invoke-virtual {v1}, Ljava/lang/Boolean;->booleanValue()Z"
+      ],
+      "constants": [
+        "const-string v2, \"value\"",
+        "const-string v1, \"wifi\"",
+        "const-string v1, \"getHDCState\"",
+        "const-string v5, \"getSocSaveSwitch\"",
+        "const-string v5, \"getEnergyFeedback\"",
+        "const-string v1, \"getEngineVoiceSimulatorState\"",
+        "const-string v2, \"state\"",
+        "const-string v2, \"audio\"",
+        "const-string v2, \"connectivity\"",
+        "const-string v5, \"getMobileDataEnabled\""
+      ]
+    },
+    "ke.\u02cf()Ljava/lang/String;": {
+      "sha256": "ecc30a695a316d8160c944e41f0024008bba9eba36a196979c1c530c882638f5",
+      "calls": [
+        "invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;",
+        "invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->isEnabled()Z",
+        "invoke-virtual {v0}, Landroid/bluetooth/BluetoothAdapter;->getName()Ljava/lang/String;",
+        "invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z",
+        "invoke-virtual {v0}, Ljava/lang/String;->length()I",
+        "invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V",
+        "invoke-virtual {v0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;",
+        "invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+        "invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+        "invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;",
+        "invoke-static {v0}, Lo/ci;->\u0370(Landroid/content/Context;)I",
+        "invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;",
+        "invoke-virtual {v0}, Landroid/content/Context;->getApplicationContext()Landroid/content/Context;",
+        "invoke-virtual {v0, v4}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;",
+        "invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->isWifiEnabled()Z",
+        "invoke-virtual {v0}, Landroid/net/wifi/WifiManager;->getConnectionInfo()Landroid/net/wifi/WifiInfo;",
+        "invoke-virtual {v0}, Landroid/net/wifi/WifiInfo;->getSSID()Ljava/lang/String;",
+        "invoke-virtual {v0, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z",
+        "invoke-virtual {v0}, Ljava/lang/String;->isEmpty()Z",
+        "invoke-virtual {v0, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;",
+        "invoke-virtual {v0}, Ljava/lang/String;->length()I",
+        "invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V",
+        "invoke-virtual {v0, v2, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;",
+        "invoke-virtual {v4, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+        "invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;",
+        "invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;"
+      ],
+      "constants": [
+        "const-string v0, \"\"",
+        "const-string v1, \"\\u2026\"",
+        "const-string v0, \"\\u84dd\\u7259 \\u5df2\\u5f00\"",
+        "const-string v0, \"\\u84dd\\u7259\"",
+        "const-string v0, \"\\u5f3a\\u5236\\u4fdd\\u7535\"",
+        "const-string v0, \"\\u667a\\u80fd\\u4fdd\\u7535\"",
+        "const-string v0, \"\\u8f83\\u5927\"",
+        "const-string v0, \"\\u6807\\u51c6\"",
+        "const-string v0, \"\\u6df1\\u8272\\u6a21\\u5f0f\"",
+        "const-string v0, \"\\u81ea\\u52a8\"",
+        "const-string v0, \"\\u6d45\\u8272\"",
+        "const-string v0, \"\\u6df1\\u8272\"",
+        "const-string v4, \"wifi\"",
+        "const-string v4, \"<unknown ssid>\"",
+        "const-string v4, \"\\\"\"",
+        "const-string v5, \"\"",
+        "const-string v0, \"WiFi \\u5df2\\u5f00\"",
+        "const-string v0, \"WiFi\""
+      ]
+    },
+    "le.get()Z": {
+      "sha256": "c58b2a2ec88b9ff7dc39defd4521977bf06667a636f3ef3eab773d1ac584c9a3",
+      "calls": [],
+      "constants": []
+    }
+  },
+  "ef_implementors": [
+    "Lo/ke;",
+    "Lo/le;"
+  ],
+  "tile_workers": [
+    "ag selector16 computes status/subtitles, posts sj selector4",
+    "ie selector22 polls current tile list and posts fe selector0"
+  ],
+  "risk": "ke also has an unrelated list-edit method; only get()Z and subtitle() are reached by these two workers. Mixed class does not imply all methods are read-only.",
+  "next": "Confirm producer identities and tile action binding isolation before moving both workers into bounded pool; no IPC execution",
+  "limits": "No vendor behavior/ART verification; platform getters and fixed get* requests inspected statically"
+}

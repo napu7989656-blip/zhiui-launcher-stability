@@ -1,0 +1,163 @@
+[
+  {
+    "path": "smali/o/ea.smali",
+    "methods": [
+      {
+        "method": "public final run()V",
+        "line": 38,
+        "instructions": [
+          "iget-object v1, v0, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v1, v1, Lo/ff;->\u0377:Z",
+          "iget-object v1, v0, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v1, v1, Lo/ff;->\u0377:Z",
+          "iget-object v1, v0, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v1, v1, Lo/ff;->\u0377:Z"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/le.smali",
+    "methods": [
+      {
+        "method": "public final get()Z",
+        "line": 56,
+        "instructions": [
+          "sget-object v0, Lo/ff;->\u03a1:Landroid/view/animation/PathInterpolator;",
+          "sget-object v0, Lo/ff;->\u03a1:Landroid/view/animation/PathInterpolator;",
+          "sget-object v0, Lo/ff;->\u03a1:Landroid/view/animation/PathInterpolator;",
+          "sget-object v0, Lo/ff;->\u03a1:Landroid/view/animation/PathInterpolator;"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/k9.smali",
+    "methods": [
+      {
+        "method": "public final onClick(Landroid/view/View;)V",
+        "line": 38,
+        "instructions": [
+          "iget-object v0, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v0, v0, Lo/ff;->\u0377:Z",
+          "iget-object p1, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "invoke-virtual {p1}, Lo/ff;->\u02b9()V",
+          "iget-object v0, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iput-object v1, v0, Lo/ff;->\u0372:Landroid/view/ViewGroup;",
+          "iget-object v0, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "invoke-virtual {v0, p1}, Lo/ff;->\u038e(I)V",
+          "iget-object v0, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v0, v0, Lo/ff;->\u0377:Z",
+          "iget-object v0, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "invoke-virtual {v0}, Lo/ff;->\u02b9()V",
+          "iget-object v1, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v1, v1, Lo/ff;->\u0377:Z",
+          "iget-object v0, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "invoke-virtual {v0}, Lo/ff;->\u02b9()V",
+          "iget-object v0, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v0, v0, Lo/ff;->\u0377:Z",
+          "iget-object p1, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "invoke-virtual {p1}, Lo/ff;->\u02b9()V"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/m9.smali",
+    "methods": [
+      {
+        "method": "public final run()V",
+        "line": 38,
+        "instructions": [
+          "iget-object v0, v0, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "invoke-virtual {v0}, Lo/ff;->\u037b()V"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/llI.smali",
+    "methods": [
+      {
+        "method": "public final run()V",
+        "line": 38,
+        "instructions": [
+          "iget-object v4, v0, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v4, v4, Lo/ff;->\u0377:Z",
+          "iget-object v5, v0, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "invoke-virtual {v5}, Lo/ff;->\u02b9()V",
+          "iget-object v2, v0, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean v2, v2, Lo/ff;->\u0377:Z"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/zk.smali",
+    "methods": [
+      {
+        "method": "public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V",
+        "line": 38,
+        "instructions": [
+          "iget-object p2, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iput-boolean v2, p2, Lo/ff;->\u037a:Z",
+          "invoke-virtual {p2}, Lo/ff;->\u0386()V"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/zb.smali",
+    "methods": [
+      {
+        "method": "public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+        "line": 74,
+        "instructions": [
+          "iget-object p2, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iget-boolean p2, p2, Lo/ff;->\u0377:Z",
+          "iget-object p2, p1, Lcom/byd/launcher/NavBarService;->\u0389:Lo/ff;",
+          "iput v0, p2, Lo/ff;->\u0391:I",
+          "iput-object v1, p2, Lo/ff;->\u0372:Landroid/view/ViewGroup;",
+          "invoke-virtual {p2, p1}, Lo/ff;->\u038e(I)V"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/lII.smali",
+    "methods": [
+      {
+        "method": "public final run()V",
+        "line": 32,
+        "instructions": [
+          "sget-object v0, Lo/ff;->\u03a1:Landroid/view/animation/PathInterpolator;"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/oe.smali",
+    "methods": [
+      {
+        "method": "public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+        "line": 32,
+        "instructions": [
+          "sget-object p1, Lo/ff;->\u03a1:Landroid/view/animation/PathInterpolator;"
+        ]
+      }
+    ]
+  },
+  {
+    "path": "smali/o/ue.smali",
+    "methods": [
+      {
+        "method": "public final run()V",
+        "line": 50,
+        "instructions": [
+          "invoke-static {v1}, Lo/ff;->\u037a(I)I",
+          "invoke-static {v1}, Lo/ff;->\u037a(I)I"
+        ]
+      }
+    ]
+  }
+]

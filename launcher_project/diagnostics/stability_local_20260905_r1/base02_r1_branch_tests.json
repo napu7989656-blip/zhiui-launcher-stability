@@ -1,0 +1,38 @@
+[
+  {
+    "artifact": "parent",
+    "page_callback_present": false,
+    "passed": false,
+    "error": "Adapter is still attached"
+  },
+  {
+    "artifact": "parent",
+    "page_callback_present": true,
+    "passed": false,
+    "error": "Adapter is still attached"
+  },
+  {
+    "artifact": "patched",
+    "page_callback_present": false,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "patched",
+    "page_callback_present": true,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "final_apk",
+    "page_callback_present": false,
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "final_apk",
+    "page_callback_present": true,
+    "passed": true,
+    "error": ""
+  }
+]

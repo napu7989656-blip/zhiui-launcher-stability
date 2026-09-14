@@ -1,0 +1,38 @@
+--- r8/smali/com/byd/launcher/stability/TileState.smali
++++ r8b/smali/com/byd/launcher/stability/TileState.smali
+@@ -31,3 +31,24 @@
+     :done
+     return-void
+ .end method
++
++.method public static subtitle(Lo/ff;Lo/df;Ljava/lang/String;)Ljava/lang/String;
++    .locals 3
++    iget-object v0, p1, Lo/df;->ʹ:Lo/bf;
++    instance-of v1, v0, Lo/ke;
++    if-eqz v1, :original
++    check-cast v0, Lo/ke;
++    iget-object v1, v0, Lo/ke;->ˏ:Lo/ff;
++    if-ne p0, v1, :original
++    iget v1, v0, Lo/ke;->ˋ:I
++    const/4 v2, 0x4
++    if-eq v1, v2, :cached
++    const/4 v2, 0x7
++    if-ne v1, v2, :original
++    :cached
++    invoke-virtual {v0}, Lo/ke;->ˏ()Ljava/lang/String;
++    move-result-object v0
++    return-object v0
++    :original
++    return-object p2
++.end method
+--- r8/smali/o/fe.smali
++++ r8b/smali/o/fe.smali
+@@ -85,6 +85,8 @@
+     iget-object v4, p0, Lo/fe;->ͱ:Lo/ff;
+ 
+     invoke-static {v4, v3, v2}, Lcom/byd/launcher/stability/TileState;->commit(Lo/ff;Lo/df;Z)V
++    invoke-static {v4, v3, v1}, Lcom/byd/launcher/stability/TileState;->subtitle(Lo/ff;Lo/df;Ljava/lang/String;)Ljava/lang/String;
++    move-result-object v1
+ 
+     .line 10
+     .line 11

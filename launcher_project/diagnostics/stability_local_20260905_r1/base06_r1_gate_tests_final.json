@@ -1,0 +1,17 @@
+[
+  {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base07_wallpaper_delivery_r1",
+    "status": "PASS",
+    "evidence": "Actual smali prefix gates and preserved dispatch; compiled Java tested separately; no external calls executed"
+  },
+  {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base06_policy_readonly_r1",
+    "status": "PASS",
+    "evidence": "Actual smali prefix gates and preserved dispatch; compiled Java tested separately; no external calls executed"
+  },
+  {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\final_redecode\\base06_r1",
+    "status": "PASS",
+    "evidence": "Actual smali prefix gates and preserved dispatch; compiled Java tested separately; no external calls executed"
+  }
+]

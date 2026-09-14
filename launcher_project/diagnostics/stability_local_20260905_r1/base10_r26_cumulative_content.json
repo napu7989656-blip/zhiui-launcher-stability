@@ -1,0 +1,3871 @@
+{
+  "changed_files": [
+    "res/values/ids.xml",
+    "res/values/public.xml",
+    "smali/com/byd/launcher/MainActivity.smali",
+    "smali/com/byd/launcher/NavBarService.smali",
+    "smali/com/byd/launcher/stability/ArtworkInput$Budget.smali",
+    "smali/com/byd/launcher/stability/ArtworkInput$Clock.smali",
+    "smali/com/byd/launcher/stability/ArtworkInput$Connections.smali",
+    "smali/com/byd/launcher/stability/ArtworkInput$Gate.smali",
+    "smali/com/byd/launcher/stability/ArtworkInput.smali",
+    "smali/com/byd/launcher/stability/BitmapCleanup.smali",
+    "smali/com/byd/launcher/stability/BlurPipeline$1.smali",
+    "smali/com/byd/launcher/stability/BlurPipeline$2.smali",
+    "smali/com/byd/launcher/stability/BlurPipeline$3.smali",
+    "smali/com/byd/launcher/stability/BlurPipeline$4.smali",
+    "smali/com/byd/launcher/stability/BlurPipeline$Child.smali",
+    "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+    "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+    "smali/com/byd/launcher/stability/BlurPipeline.smali",
+    "smali/com/byd/launcher/stability/CameraPreferences.smali",
+    "smali/com/byd/launcher/stability/GlassDeliver.smali",
+    "smali/com/byd/launcher/stability/GlassRead.smali",
+    "smali/com/byd/launcher/stability/InitProcess$1.smali",
+    "smali/com/byd/launcher/stability/InitProcess$Clock.smali",
+    "smali/com/byd/launcher/stability/InitProcess$Gate.smali",
+    "smali/com/byd/launcher/stability/InitProcess$Result.smali",
+    "smali/com/byd/launcher/stability/InitProcess.smali",
+    "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+    "smali/com/byd/launcher/stability/InstrumentReads$1.smali",
+    "smali/com/byd/launcher/stability/InstrumentReads$2.smali",
+    "smali/com/byd/launcher/stability/InstrumentReads$3.smali",
+    "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+    "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+    "smali/com/byd/launcher/stability/InstrumentReads.smali",
+    "smali/com/byd/launcher/stability/LatestRead$1.smali",
+    "smali/com/byd/launcher/stability/LatestRead$Ticket.smali",
+    "smali/com/byd/launcher/stability/LatestRead.smali",
+    "smali/com/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0.smali",
+    "smali/com/byd/launcher/stability/LatestVisualWork$1.smali",
+    "smali/com/byd/launcher/stability/LatestVisualWork$Delivery.smali",
+    "smali/com/byd/launcher/stability/LatestVisualWork$Host.smali",
+    "smali/com/byd/launcher/stability/LatestVisualWork$Job.smali",
+    "smali/com/byd/launcher/stability/LatestVisualWork$Request.smali",
+    "smali/com/byd/launcher/stability/LatestVisualWork$Result.smali",
+    "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+    "smali/com/byd/launcher/stability/ListenerList.smali",
+    "smali/com/byd/launcher/stability/MainBlurHost.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkMetadata.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkPipeline$1.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkPipeline$2.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkPipeline$Host.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkPipeline$Input.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkWork$$ExternalSyntheticLambda0.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkWork$1.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkWork$Delivery.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkWork$Host.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkWork$Job.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkWork$Request.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkWork$Result.smali",
+    "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+    "smali/com/byd/launcher/stability/MediaManagerStart.smali",
+    "smali/com/byd/launcher/stability/MediaUriReader$1.smali",
+    "smali/com/byd/launcher/stability/MediaUriReader$2.smali",
+    "smali/com/byd/launcher/stability/MediaUriReader$3.smali",
+    "smali/com/byd/launcher/stability/MediaUriReader.smali",
+    "smali/com/byd/launcher/stability/NavAction.smali",
+    "smali/com/byd/launcher/stability/NavDeliver.smali",
+    "smali/com/byd/launcher/stability/NavRead.smali",
+    "smali/com/byd/launcher/stability/NavVolumeApply.smali",
+    "smali/com/byd/launcher/stability/NotificationInit$Host.smali",
+    "smali/com/byd/launcher/stability/NotificationInit.smali",
+    "smali/com/byd/launcher/stability/NotificationInitCallback.smali",
+    "smali/com/byd/launcher/stability/NotificationInitHost.smali",
+    "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsHandler.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsLifetime.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$1.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsThemeApply.smali",
+    "smali/com/byd/launcher/stability/ReadAfterAction$1.smali",
+    "smali/com/byd/launcher/stability/ReadAfterAction$Token.smali",
+    "smali/com/byd/launcher/stability/ReadAfterAction.smali",
+    "smali/com/byd/launcher/stability/SocAction.smali",
+    "smali/com/byd/launcher/stability/SocApply.smali",
+    "smali/com/byd/launcher/stability/SocRead.smali",
+    "smali/com/byd/launcher/stability/StatusBarResources.smali",
+    "smali/com/byd/launcher/stability/ThemeDeliver.smali",
+    "smali/com/byd/launcher/stability/ThemeRead.smali",
+    "smali/com/byd/launcher/stability/TileApply.smali",
+    "smali/com/byd/launcher/stability/TileBatch$1.smali",
+    "smali/com/byd/launcher/stability/TileBatch$Entry.smali",
+    "smali/com/byd/launcher/stability/TileBatch.smali",
+    "smali/com/byd/launcher/stability/TileSlot$1.smali",
+    "smali/com/byd/launcher/stability/TileSlot$Pending.smali",
+    "smali/com/byd/launcher/stability/TileSlot$Queue.smali",
+    "smali/com/byd/launcher/stability/TileSlot$Ticket.smali",
+    "smali/com/byd/launcher/stability/TileSlot.smali",
+    "smali/com/byd/launcher/stability/TileSnapshots.smali",
+    "smali/com/byd/launcher/stability/TileState.smali",
+    "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+    "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+    "smali/com/byd/launcher/stability/WallpaperDelivery.smali",
+    "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+    "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+    "smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali",
+    "smali/o/a2.smali",
+    "smali/o/a8.smali",
+    "smali/o/a9.smali",
+    "smali/o/ae.smali",
+    "smali/o/af.smali",
+    "smali/o/ag.smali",
+    "smali/o/ak.smali",
+    "smali/o/bg.smali",
+    "smali/o/c0.smali",
+    "smali/o/c8.smali",
+    "smali/o/ce.smali",
+    "smali/o/ci.smali",
+    "smali/o/de.smali",
+    "smali/o/df.smali",
+    "smali/o/ea.smali",
+    "smali/o/ee.smali",
+    "smali/o/f4.smali",
+    "smali/o/fe.smali",
+    "smali/o/ff.smali",
+    "smali/o/ge.smali",
+    "smali/o/h2.smali",
+    "smali/o/ie.smali",
+    "smali/o/je.smali",
+    "smali/o/k9.smali",
+    "smali/o/ke.smali",
+    "smali/o/ki.smali",
+    "smali/o/lII.smali",
+    "smali/o/lb.smali",
+    "smali/o/llI.smali",
+    "smali/o/m9.smali",
+    "smali/o/ne.smali",
+    "smali/o/oa.smali",
+    "smali/o/qe.smali",
+    "smali/o/qi.smali",
+    "smali/o/re.smali",
+    "smali/o/se.smali",
+    "smali/o/sj.smali",
+    "smali/o/td.smali",
+    "smali/o/tj.smali",
+    "smali/o/tk.smali",
+    "smali/o/u8.smali",
+    "smali/o/ua.smali",
+    "smali/o/vl.smali",
+    "smali/o/wa.smali",
+    "smali/o/we.smali",
+    "smali/o/x9.smali",
+    "smali/o/y7.smali",
+    "smali/o/y8.smali",
+    "smali/o/ye.smali",
+    "smali/o/z8.smali",
+    "smali/o/zb.smali",
+    "smali/o/ze.smali",
+    "smali/o/zk.smali",
+    "smali/o/\u02cb.smali",
+    "smali/o/\u03ab.smali",
+    "smali/o/\u03b0.smali",
+    "smali/o/\u03d3.smali",
+    "smali/o/\u03d8.smali"
+  ],
+  "methods_accounted": [
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public constructor <init>()V",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final onDestroy()V",
+      "line": 2421,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final \u0371()V",
+      "line": 2963,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final \u0377()V",
+      "line": 3188,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final \u038a()V",
+      "line": 3487,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final onDestroy()V",
+      "line": 4540,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public onServiceConnected()V",
+      "line": 6469,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final \u039a()V",
+      "line": 13735,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "private final stabilityCreateStatusBar(I)V",
+      "line": 25909,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final \u03e7()V",
+      "line": 27974,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final \u03ea()V",
+      "line": 28664,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final \u03e0(I)V",
+      "line": 29416,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final stabilityReleaseStatusListeners()Z",
+      "line": 29436,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final stabilityReleaseStatusBar()Z",
+      "line": 29472,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "private stabilityRegisterHomeReceiver()V",
+      "line": 29510,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput$Budget.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/ArtworkInput$Clock;Lcom/byd/launcher/stability/ArtworkInput$Gate;)V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput$Budget.smali",
+      "method": "public remaining()I",
+      "line": 48,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput$Clock.smali",
+      "method": "public abstract millis()J",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput$Connections.smali",
+      "method": "public abstract open(Ljava/net/URL;)Ljava/net/HttpURLConnection;",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput$Gate.smali",
+      "method": "public abstract current()Z",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput.smali",
+      "method": "private constructor <init>()V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput.smali",
+      "method": "public static close(Ljava/io/InputStream;)V",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput.smali",
+      "method": "private static disconnect(Ljava/net/HttpURLConnection;)V",
+      "line": 49,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput.smali",
+      "method": "public static http(Ljava/net/URL;Lcom/byd/launcher/stability/ArtworkInput$Budget;Lcom/byd/launcher/stability/ArtworkInput$Connections;)[B",
+      "line": 62,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput.smali",
+      "method": "public static read(Ljava/io/InputStream;Lcom/byd/launcher/stability/ArtworkInput$Budget;Ljava/net/HttpURLConnection;)[B",
+      "line": 352,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ArtworkInput.smali",
+      "method": "public static sample(II)I",
+      "line": 477,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BitmapCleanup.smali",
+      "method": "public static release(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V",
+      "line": 3,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$1.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Host;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$1.smali",
+      "method": "public failed(Ljava/lang/RuntimeException;)V",
+      "line": 58,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$1.smali",
+      "method": "public post(Ljava/lang/Runnable;)Z",
+      "line": 69,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$1.smali",
+      "method": "public remove(Ljava/lang/Runnable;)V",
+      "line": 84,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$2.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;)V",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$2.smali",
+      "method": "public run()V",
+      "line": 64,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$3.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;)V",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$3.smali",
+      "method": "public run()V",
+      "line": 64,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$4.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;J)V",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$4.smali",
+      "method": "public deliver()V",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$4.smali",
+      "method": "public discard()V",
+      "line": 98,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Child.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Object;Ljava/lang/Runnable;I)V",
+      "line": 31,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Child.smali",
+      "method": "cancel()V",
+      "line": 50,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Child.smali",
+      "method": "public run()V",
+      "line": 88,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/LatestVisualWork$Request;Ljava/lang/Object;)V",
+      "line": 45,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+      "method": "cancelChildren()V",
+      "line": 77,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+      "method": "current()Z",
+      "line": 109,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+      "method": "public deliver()V",
+      "line": 162,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+      "method": "public discard()V",
+      "line": 233,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+      "method": "postChild(Ljava/lang/Object;Ljava/lang/Runnable;I)Z",
+      "line": 292,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+      "method": "release(Ljava/lang/Object;)V",
+      "line": 394,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+      "method": "retain(Ljava/lang/Object;)V",
+      "line": 429,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract commit(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;)V",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract current()Z",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract failed(Ljava/lang/RuntimeException;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract post(Ljava/lang/Runnable;J)Z",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract postChild(Ljava/lang/Object;Ljava/lang/Runnable;)Z",
+      "line": 30,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract release(Ljava/lang/Object;)V",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract remove(Ljava/lang/Runnable;)V",
+      "line": 36,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract removeChild(Ljava/lang/Object;Ljava/lang/Runnable;)V",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract retry()Z",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+      "method": "public abstract service()Ljava/lang/Object;",
+      "line": 45,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static constructor <clinit>()V",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/BlurPipeline$Host;)V",
+      "line": 71,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static synthetic access$000(Lcom/byd/launcher/stability/BlurPipeline;)Ljava/lang/Runnable;",
+      "line": 106,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static synthetic access$002(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/Runnable;)Ljava/lang/Runnable;",
+      "line": 115,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static synthetic access$100()Ljava/lang/ThreadLocal;",
+      "line": 124,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static synthetic access$200(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Host;",
+      "line": 133,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static synthetic access$300(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/Runnable;Lcom/byd/launcher/stability/BlurPipeline$Frame;J)V",
+      "line": 142,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static synthetic access$400(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Frame;",
+      "line": 151,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static synthetic access$500(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/RuntimeException;)V",
+      "line": 160,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "static synthetic access$600()Ljava/lang/ThreadLocal;",
+      "line": 169,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static blurred(Ljava/lang/Object;)V",
+      "line": 178,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "private cancelFrame()V",
+      "line": 200,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "private cancelTrigger()V",
+      "line": 224,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static deliveryCurrent()Z",
+      "line": 256,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "private enqueueTrigger(Ljava/lang/Runnable;Lcom/byd/launcher/stability/BlurPipeline$Frame;J)V",
+      "line": 287,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static postChild(Ljava/lang/Object;Ljava/lang/Runnable;I)Z",
+      "line": 334,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static publish(Ljava/lang/Runnable;)V",
+      "line": 365,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "private report(Ljava/lang/RuntimeException;)V",
+      "line": 396,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static retain(Ljava/lang/Object;)V",
+      "line": 411,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static retry(Ljava/lang/Runnable;J)V",
+      "line": 431,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static source(Ljava/lang/Object;)V",
+      "line": 465,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static unused(Ljava/lang/Object;)V",
+      "line": 485,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public static workerCurrent()Z",
+      "line": 505,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public close()V",
+      "line": 538,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public current()Z",
+      "line": 557,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public execute(Ljava/lang/Runnable;)Z",
+      "line": 584,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/BlurPipeline.smali",
+      "method": "public schedule(Ljava/lang/Runnable;)V",
+      "line": 647,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/CameraPreferences.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/CameraPreferences.smali",
+      "method": "public static flag(Landroid/content/SharedPreferences;Ljava/lang/String;Z)Z",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/CameraPreferences.smali",
+      "method": "public static integer(Landroid/content/SharedPreferences;Ljava/lang/String;I)I",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/GlassDeliver.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/GlassRead;Ljava/lang/Runnable;)V",
+      "line": 6,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/GlassDeliver.smali",
+      "method": "public run()V",
+      "line": 13,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/GlassRead.smali",
+      "method": "public constructor <init>(Lo/ff;Landroid/view/View;)V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/GlassRead.smali",
+      "method": "public current()Z",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/GlassRead.smali",
+      "method": "public post(Ljava/lang/Runnable;)V",
+      "line": 54,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/GlassRead.smali",
+      "method": "public prepare(Ljava/lang/Runnable;)V",
+      "line": 68,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/GlassRead.smali",
+      "method": "public static close(Lo/ff;)V",
+      "line": 82,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$1.smali",
+      "method": "constructor <init>()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$1.smali",
+      "method": "public nanoTime()J",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$1.smali",
+      "method": "public sleep()V",
+      "line": 43,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$Clock.smali",
+      "method": "public abstract nanoTime()J",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$Clock.smali",
+      "method": "public abstract sleep()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$Gate.smali",
+      "method": "public abstract current()Z",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$Result.smali",
+      "method": "private constructor <init>(ZILjava/lang/String;)V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$Result.smali",
+      "method": "synthetic constructor <init>(ZILjava/lang/String;Lcom/byd/launcher/stability/InitProcess$1;)V",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess$Result.smali",
+      "method": "public successful()Z",
+      "line": 53,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess.smali",
+      "method": "static constructor <clinit>()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess.smali",
+      "method": "private constructor <init>()V",
+      "line": 34,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess.smali",
+      "method": "private static check(Lcom/byd/launcher/stability/InitProcess$Gate;)V",
+      "line": 43,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess.smali",
+      "method": "private static close(Ljava/io/Closeable;)V",
+      "line": 90,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess.smali",
+      "method": "static collect(Ljava/lang/Process;JIILcom/byd/launcher/stability/InitProcess$Gate;Lcom/byd/launcher/stability/InitProcess$Clock;)Lcom/byd/launcher/stability/InitProcess$Result;",
+      "line": 107,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InitProcess.smali",
+      "method": "public static run([Ljava/lang/String;IILcom/byd/launcher/stability/InitProcess$Gate;)Lcom/byd/launcher/stability/InitProcess$Result;",
+      "line": 461,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public constructor <init>(Lo/ff;)V",
+      "line": 6,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public root()Ljava/lang/Object;",
+      "line": 13,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public cached()I",
+      "line": 20,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public delays()[I",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public commit(I)V",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public retryState(IZ)V",
+      "line": 40,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public refresh()V",
+      "line": 48,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public post(Ljava/lang/Runnable;J)Z",
+      "line": 55,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public remove(Ljava/lang/Runnable;)V",
+      "line": 64,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public failed(Ljava/lang/RuntimeException;)V",
+      "line": 72,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReadHost.smali",
+      "method": "public usable(Ljava/lang/Object;)Z",
+      "line": 80,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$1.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/InstrumentReads;Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Runnable;)V",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$1.smali",
+      "method": "public run()V",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$2.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/InstrumentReads;Lcom/byd/launcher/stability/InstrumentReads$Request;ILjava/lang/Runnable;)V",
+      "line": 31,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$2.smali",
+      "method": "public run()V",
+      "line": 70,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$3.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/InstrumentReads;Lcom/byd/launcher/stability/InstrumentReads$Request;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$3.smali",
+      "method": "public run()V",
+      "line": 58,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract cached()I",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract commit(I)V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract delays()[I",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract failed(Ljava/lang/RuntimeException;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract post(Ljava/lang/Runnable;J)Z",
+      "line": 30,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract refresh()V",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract remove(Ljava/lang/Runnable;)V",
+      "line": 36,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract retryState(IZ)V",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract root()Ljava/lang/Object;",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+      "method": "public abstract usable(Ljava/lang/Object;)Z",
+      "line": 45,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "private constructor <init>(Lcom/byd/launcher/stability/InstrumentReads;Ljava/lang/Object;Ljava/lang/Object;Z)V",
+      "line": 30,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "synthetic constructor <init>(Lcom/byd/launcher/stability/InstrumentReads;Ljava/lang/Object;Ljava/lang/Object;ZLcom/byd/launcher/stability/InstrumentReads$1;)V",
+      "line": 48,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "static synthetic access$1200(Lcom/byd/launcher/stability/InstrumentReads$Request;)Z",
+      "line": 57,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "static synthetic access$500(Lcom/byd/launcher/stability/InstrumentReads$Request;)Ljava/lang/Object;",
+      "line": 66,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "static synthetic access$600(Lcom/byd/launcher/stability/InstrumentReads$Request;)Z",
+      "line": 75,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "static synthetic access$602(Lcom/byd/launcher/stability/InstrumentReads$Request;Z)Z",
+      "line": 84,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "static synthetic access$900(Lcom/byd/launcher/stability/InstrumentReads$Request;)Ljava/lang/Object;",
+      "line": 93,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "public complete(ILjava/lang/Runnable;)V",
+      "line": 104,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+      "method": "public invalid()V",
+      "line": 115,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/InstrumentReads$Host;)V",
+      "line": 34,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/InstrumentReads;)Ljava/lang/Runnable;",
+      "line": 53,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$1000(Lcom/byd/launcher/stability/InstrumentReads;)V",
+      "line": 62,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$102(Lcom/byd/launcher/stability/InstrumentReads;Ljava/lang/Runnable;)Ljava/lang/Runnable;",
+      "line": 71,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$1100(Lcom/byd/launcher/stability/InstrumentReads;)I",
+      "line": 80,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$1102(Lcom/byd/launcher/stability/InstrumentReads;I)I",
+      "line": 89,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$1300(Lcom/byd/launcher/stability/InstrumentReads;Lcom/byd/launcher/stability/InstrumentReads$Request;)V",
+      "line": 98,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$1400(Lcom/byd/launcher/stability/InstrumentReads;)Ljava/lang/Runnable;",
+      "line": 107,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$1402(Lcom/byd/launcher/stability/InstrumentReads;Ljava/lang/Runnable;)Ljava/lang/Runnable;",
+      "line": 116,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$1500(Lcom/byd/launcher/stability/InstrumentReads;Lcom/byd/launcher/stability/InstrumentReads$Request;ILjava/lang/Runnable;)V",
+      "line": 125,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$200(Lcom/byd/launcher/stability/InstrumentReads;)Ljava/lang/Object;",
+      "line": 134,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$300(Lcom/byd/launcher/stability/InstrumentReads;)Z",
+      "line": 143,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$400(Lcom/byd/launcher/stability/InstrumentReads;)Lcom/byd/launcher/stability/InstrumentReads$Host;",
+      "line": 152,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$700(Lcom/byd/launcher/stability/InstrumentReads;)Ljava/lang/Runnable;",
+      "line": 161,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$702(Lcom/byd/launcher/stability/InstrumentReads;Ljava/lang/Runnable;)Ljava/lang/Runnable;",
+      "line": 170,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "static synthetic access$800(Lcom/byd/launcher/stability/InstrumentReads;Lcom/byd/launcher/stability/InstrumentReads$Request;)Z",
+      "line": 179,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "private cancelRetry()V",
+      "line": 190,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "private current(Lcom/byd/launcher/stability/InstrumentReads$Request;)Z",
+      "line": 213,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "private post(Ljava/lang/Runnable;J)Z",
+      "line": 244,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "private declared-synchronized publish(Lcom/byd/launcher/stability/InstrumentReads$Request;ILjava/lang/Runnable;)V",
+      "line": 272,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "private remove(Ljava/lang/Runnable;)V",
+      "line": 342,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "private scheduleRetry(Lcom/byd/launcher/stability/InstrumentReads$Request;)V",
+      "line": 369,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "public declared-synchronized applyCached(Ljava/lang/Runnable;)V",
+      "line": 454,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "public declared-synchronized begin(Z)Lcom/byd/launcher/stability/InstrumentReads$Request;",
+      "line": 523,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "public declared-synchronized invalidate()V",
+      "line": 579,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/InstrumentReads.smali",
+      "method": "public declared-synchronized tracking(Z)V",
+      "line": 639,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestRead$Ticket.smali",
+      "method": "private constructor <init>(Lcom/byd/launcher/stability/LatestRead;Ljava/lang/Object;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestRead$Ticket.smali",
+      "method": "synthetic constructor <init>(Lcom/byd/launcher/stability/LatestRead;Ljava/lang/Object;Lcom/byd/launcher/stability/LatestRead$1;)V",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestRead$Ticket.smali",
+      "method": "public isCurrent()Z",
+      "line": 50,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestRead.smali",
+      "method": "public constructor <init>()V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestRead.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/LatestRead;)Ljava/lang/Object;",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestRead.smali",
+      "method": "public declared-synchronized invalidate()V",
+      "line": 46,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestRead.smali",
+      "method": "public declared-synchronized issue()Lcom/byd/launcher/stability/LatestRead$Ticket;",
+      "line": 73,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0.smali",
+      "method": "public synthetic constructor <init>()V",
+      "line": 10,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0.smali",
+      "method": "public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Delivery.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork$Request;Lcom/byd/launcher/stability/LatestVisualWork$Result;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Delivery.smali",
+      "method": "discard()V",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Delivery.smali",
+      "method": "public run()V",
+      "line": 78,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Host.smali",
+      "method": "public abstract failed(Ljava/lang/RuntimeException;)V",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Host.smali",
+      "method": "public abstract post(Ljava/lang/Runnable;)Z",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Host.smali",
+      "method": "public abstract remove(Ljava/lang/Runnable;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Job.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork$Request;Ljava/lang/Runnable;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Job.smali",
+      "method": "public run()V",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Request.smali",
+      "method": "private constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Request.smali",
+      "method": "synthetic constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$1;)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Request.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork;",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Request.smali",
+      "method": "public current()Z",
+      "line": 55,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Request.smali",
+      "method": "public execute(Ljava/lang/Runnable;)Z",
+      "line": 104,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Request.smali",
+      "method": "public post(Lcom/byd/launcher/stability/LatestVisualWork$Result;)Z",
+      "line": 236,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Result.smali",
+      "method": "public abstract deliver()V",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork$Result.smali",
+      "method": "public abstract discard()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static constructor <clinit>()V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork$Host;)V",
+      "line": 82,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$200()Ljava/lang/Object;",
+      "line": 106,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$300(Lcom/byd/launcher/stability/LatestVisualWork;)Z",
+      "line": 115,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$400(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Request;",
+      "line": 124,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$402(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork$Request;",
+      "line": 133,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$500()Ljava/util/concurrent/ThreadPoolExecutor;",
+      "line": 142,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$600(Lcom/byd/launcher/stability/LatestVisualWork;)V",
+      "line": 151,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$700(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;",
+      "line": 160,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$702(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Delivery;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;",
+      "line": 169,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$800(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Host;",
+      "line": 178,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic access$900(Lcom/byd/launcher/stability/LatestVisualWork;Ljava/lang/RuntimeException;)V",
+      "line": 187,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "private cancelQueued()V",
+      "line": 196,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "private clearPending()V",
+      "line": 246,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "static synthetic lambda$static$0(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 281,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "private report(Ljava/lang/RuntimeException;)V",
+      "line": 298,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "public begin()Lcom/byd/launcher/stability/LatestVisualWork$Request;",
+      "line": 315,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "public close()V",
+      "line": 364,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+      "method": "public invalidate()V",
+      "line": 399,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ListenerList.smali",
+      "method": "private constructor <init>(ZLjava/lang/String;[Ljava/lang/String;)V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ListenerList.smali",
+      "method": "private static component(Ljava/lang/String;)Ljava/lang/String;",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ListenerList.smali",
+      "method": "public static parse(Ljava/lang/String;Z)Lcom/byd/launcher/stability/ListenerList;",
+      "line": 164,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ListenerList.smali",
+      "method": "private static unknown()Lcom/byd/launcher/stability/ListenerList;",
+      "line": 305,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ListenerList.smali",
+      "method": "public adding(Ljava/lang/String;)Ljava/lang/String;",
+      "line": 324,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ListenerList.smali",
+      "method": "public contains(Ljava/lang/String;)Z",
+      "line": 402,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/MainActivity;)V",
+      "line": 6,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public current()Z",
+      "line": 12,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public service()Ljava/lang/Object;",
+      "line": 31,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public post(Ljava/lang/Runnable;J)Z",
+      "line": 36,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public remove(Ljava/lang/Runnable;)V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public postChild(Ljava/lang/Object;Ljava/lang/Runnable;)Z",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public removeChild(Ljava/lang/Object;Ljava/lang/Runnable;)V",
+      "line": 70,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public commit(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;)V",
+      "line": 85,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public retry()Z",
+      "line": 95,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public release(Ljava/lang/Object;)V",
+      "line": 109,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MainBlurHost.smali",
+      "method": "public failed(Ljava/lang/RuntimeException;)V",
+      "line": 116,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public constructor <init>(Lo/a9;)V",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public current(Ljava/lang/Object;)Z",
+      "line": 12,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public post(Ljava/lang/Runnable;)Z",
+      "line": 28,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public remove(Ljava/lang/Runnable;)V",
+      "line": 37,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public failed(Ljava/lang/RuntimeException;)V",
+      "line": 45,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public small(Ljava/lang/Object;)Z",
+      "line": 53,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public cached()Ljava/lang/Object;",
+      "line": 71,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public load(Ljava/lang/String;)Ljava/lang/Object;",
+      "line": 78,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public load(Ljava/lang/String;Lcom/byd/launcher/stability/MediaArtworkWork$Request;)Ljava/lang/Object;",
+      "line": 86,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public scale(Ljava/lang/Object;)Ljava/lang/Object;",
+      "line": 95,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public pause(J)V",
+      "line": 103,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+      "method": "public commit(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Z)V",
+      "line": 109,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkMetadata.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkMetadata.smali",
+      "method": "public static from(Landroid/media/MediaMetadata;)Lcom/byd/launcher/stability/MediaArtworkPipeline$Input;",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$1.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/MediaArtworkPipeline;Lcom/byd/launcher/stability/MediaArtworkWork$Request;Lcom/byd/launcher/stability/MediaArtworkPipeline$Input;Ljava/lang/String;Ljava/lang/String;)V",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$1.smali",
+      "method": "public run()V",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$2.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/MediaArtworkPipeline;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Z)V",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$2.smali",
+      "method": "public deliver()V",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$2.smali",
+      "method": "public discard()V",
+      "line": 99,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$Host.smali",
+      "method": "public abstract cached()Ljava/lang/Object;",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$Host.smali",
+      "method": "public abstract commit(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Z)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$Host.smali",
+      "method": "public abstract load(Ljava/lang/String;Lcom/byd/launcher/stability/MediaArtworkWork$Request;)Ljava/lang/Object;",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$Host.smali",
+      "method": "public abstract pause(J)V",
+      "line": 30,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$Host.smali",
+      "method": "public abstract scale(Ljava/lang/Object;)Ljava/lang/Object;",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$Host.smali",
+      "method": "public abstract small(Ljava/lang/Object;)Z",
+      "line": 41,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$Input.smali",
+      "method": "public constructor <init>(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/Object;Ljava/lang/String;)V",
+      "line": 28,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline$Input.smali",
+      "method": "private static nonempty(Ljava/lang/String;)Ljava/lang/String;",
+      "line": 55,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/MediaArtworkPipeline$Host;)V",
+      "line": 22,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "static synthetic access$000(Lcom/byd/launcher/stability/MediaArtworkPipeline;Lcom/byd/launcher/stability/MediaArtworkWork$Request;)Z",
+      "line": 52,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/MediaArtworkPipeline;Lcom/byd/launcher/stability/MediaArtworkWork$Request;Lcom/byd/launcher/stability/MediaArtworkPipeline$Input;)Ljava/lang/Object;",
+      "line": 63,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "static synthetic access$200(Lcom/byd/launcher/stability/MediaArtworkPipeline;)Lcom/byd/launcher/stability/MediaArtworkPipeline$Host;",
+      "line": 74,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "static synthetic access$300(Lcom/byd/launcher/stability/MediaArtworkPipeline;Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Z)Lcom/byd/launcher/stability/MediaArtworkWork$Result;",
+      "line": 83,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "private failed(Ljava/lang/RuntimeException;)V",
+      "line": 94,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "private read(Lcom/byd/launcher/stability/MediaArtworkWork$Request;Lcom/byd/launcher/stability/MediaArtworkPipeline$Input;)Ljava/lang/Object;",
+      "line": 109,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "private result(Ljava/lang/Object;Ljava/lang/String;Ljava/lang/String;Z)Lcom/byd/launcher/stability/MediaArtworkWork$Result;",
+      "line": 187,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "private valid(Lcom/byd/launcher/stability/MediaArtworkWork$Request;)Z",
+      "line": 210,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "public close()V",
+      "line": 243,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "public invalidate()V",
+      "line": 254,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+      "method": "public update(Ljava/lang/Object;Lcom/byd/launcher/stability/MediaArtworkPipeline$Input;Ljava/lang/String;Ljava/lang/String;)V",
+      "line": 265,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$$ExternalSyntheticLambda0.smali",
+      "method": "public synthetic constructor <init>()V",
+      "line": 10,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$$ExternalSyntheticLambda0.smali",
+      "method": "public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Delivery.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/MediaArtworkWork$Request;Lcom/byd/launcher/stability/MediaArtworkWork$Result;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Delivery.smali",
+      "method": "discard()V",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Delivery.smali",
+      "method": "public run()V",
+      "line": 78,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Host.smali",
+      "method": "public abstract current(Ljava/lang/Object;)Z",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Host.smali",
+      "method": "public abstract failed(Ljava/lang/RuntimeException;)V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Host.smali",
+      "method": "public abstract post(Ljava/lang/Runnable;)Z",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Host.smali",
+      "method": "public abstract remove(Ljava/lang/Runnable;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Job.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/MediaArtworkWork$Request;Ljava/lang/Runnable;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Job.smali",
+      "method": "public run()V",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Request.smali",
+      "method": "private constructor <init>(Lcom/byd/launcher/stability/MediaArtworkWork;Ljava/lang/Object;)V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Request.smali",
+      "method": "synthetic constructor <init>(Lcom/byd/launcher/stability/MediaArtworkWork;Ljava/lang/Object;Lcom/byd/launcher/stability/MediaArtworkWork$1;)V",
+      "line": 40,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Request.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/MediaArtworkWork$Request;)Lcom/byd/launcher/stability/MediaArtworkWork;",
+      "line": 49,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Request.smali",
+      "method": "public current()Z",
+      "line": 60,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Request.smali",
+      "method": "public execute(Ljava/lang/Runnable;)Z",
+      "line": 147,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Request.smali",
+      "method": "public post(Lcom/byd/launcher/stability/MediaArtworkWork$Result;)Z",
+      "line": 285,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Result.smali",
+      "method": "public abstract deliver()V",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork$Result.smali",
+      "method": "public abstract discard()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static constructor <clinit>()V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/MediaArtworkWork$Host;)V",
+      "line": 82,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$200()Ljava/lang/Object;",
+      "line": 106,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$300(Lcom/byd/launcher/stability/MediaArtworkWork;)Z",
+      "line": 115,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$400(Lcom/byd/launcher/stability/MediaArtworkWork;)Lcom/byd/launcher/stability/MediaArtworkWork$Request;",
+      "line": 124,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$402(Lcom/byd/launcher/stability/MediaArtworkWork;Lcom/byd/launcher/stability/MediaArtworkWork$Request;)Lcom/byd/launcher/stability/MediaArtworkWork$Request;",
+      "line": 133,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$500(Lcom/byd/launcher/stability/MediaArtworkWork;)Lcom/byd/launcher/stability/MediaArtworkWork$Host;",
+      "line": 142,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$600(Lcom/byd/launcher/stability/MediaArtworkWork;Ljava/lang/RuntimeException;)V",
+      "line": 151,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$700()Ljava/util/concurrent/ThreadPoolExecutor;",
+      "line": 160,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$800(Lcom/byd/launcher/stability/MediaArtworkWork;)V",
+      "line": 169,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$900(Lcom/byd/launcher/stability/MediaArtworkWork;)Lcom/byd/launcher/stability/MediaArtworkWork$Delivery;",
+      "line": 178,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic access$902(Lcom/byd/launcher/stability/MediaArtworkWork;Lcom/byd/launcher/stability/MediaArtworkWork$Delivery;)Lcom/byd/launcher/stability/MediaArtworkWork$Delivery;",
+      "line": 187,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "private cancelQueued()V",
+      "line": 196,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "private clearPending()V",
+      "line": 246,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "static synthetic lambda$static$0(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 281,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "private report(Ljava/lang/RuntimeException;)V",
+      "line": 298,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "public begin(Ljava/lang/Object;)Lcom/byd/launcher/stability/MediaArtworkWork$Request;",
+      "line": 315,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "public close()V",
+      "line": 384,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+      "method": "public invalidate()V",
+      "line": 419,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaManagerStart.smali",
+      "method": "public constructor <init>(Lo/a9;)V",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaManagerStart.smali",
+      "method": "public run()V",
+      "line": 11,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaUriReader$1.smali",
+      "method": "constructor <init>()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaUriReader$1.smali",
+      "method": "public millis()J",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaUriReader$2.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/MediaArtworkWork$Request;)V",
+      "line": 25,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaUriReader$2.smali",
+      "method": "public current()Z",
+      "line": 43,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaUriReader$3.smali",
+      "method": "constructor <init>()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaUriReader$3.smali",
+      "method": "public open(Ljava/net/URL;)Ljava/net/HttpURLConnection;",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaUriReader.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/MediaUriReader.smali",
+      "method": "public static load(Landroid/content/Context;Ljava/lang/String;Lcom/byd/launcher/stability/MediaArtworkWork$Request;)Landroid/graphics/Bitmap;",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavAction.smali",
+      "method": "public static begin(Lo/ff;)Lcom/byd/launcher/stability/ReadAfterAction$Token;",
+      "line": 3,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavAction.smali",
+      "method": "public static finishJob(Lo/de;)V",
+      "line": 14,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavDeliver.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/NavRead;Ljava/lang/Runnable;)V",
+      "line": 6,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavDeliver.smali",
+      "method": "public run()V",
+      "line": 13,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavRead.smali",
+      "method": "public constructor <init>(Lo/ff;)V",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavRead.smali",
+      "method": "public current()Z",
+      "line": 22,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavRead.smali",
+      "method": "public post(Ljava/lang/Runnable;)V",
+      "line": 46,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavRead.smali",
+      "method": "public static tracking(Lo/ff;Z)V",
+      "line": 60,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavRead.smali",
+      "method": "public static changed(Lo/ff;)V",
+      "line": 67,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavRead.smali",
+      "method": "public static close(Lo/ff;)V",
+      "line": 73,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavVolumeApply.smali",
+      "method": "public constructor <init>(Lo/je;ILjava/lang/Runnable;)V",
+      "line": 8,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavVolumeApply.smali",
+      "method": "public static submit(Lo/je;ILjava/lang/Runnable;)V",
+      "line": 17,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NavVolumeApply.smali",
+      "method": "public final run()V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit$Host.smali",
+      "method": "public abstract adb(Ljava/lang/String;)V",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit$Host.smali",
+      "method": "public abstract current()Z",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit$Host.smali",
+      "method": "public abstract process([Ljava/lang/String;)V",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit$Host.smali",
+      "method": "public abstract read()Lcom/byd/launcher/stability/ListenerList;",
+      "line": 37,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit.smali",
+      "method": "private constructor <init>()V",
+      "line": 15,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit.smali",
+      "method": "private static adb(Lcom/byd/launcher/stability/NotificationInit$Host;Ljava/lang/String;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit.smali",
+      "method": "private static current(Lcom/byd/launcher/stability/NotificationInit$Host;)Z",
+      "line": 59,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit.smali",
+      "method": "public static ensure(Lcom/byd/launcher/stability/NotificationInit$Host;Ljava/lang/String;)Z",
+      "line": 94,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit.smali",
+      "method": "private static process(Lcom/byd/launcher/stability/NotificationInit$Host;[Ljava/lang/String;)V",
+      "line": 344,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInit.smali",
+      "method": "private static read(Lcom/byd/launcher/stability/NotificationInit$Host;)Lcom/byd/launcher/stability/ListenerList;",
+      "line": 379,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInitCallback.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/NotificationInitHost;Ljava/lang/Runnable;)V",
+      "line": 6,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInitCallback.smali",
+      "method": "public run()V",
+      "line": 13,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInitHost.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/NavBarService;)V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInitHost.smali",
+      "method": "public current()Z",
+      "line": 14,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInitHost.smali",
+      "method": "public read()Lcom/byd/launcher/stability/ListenerList;",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInitHost.smali",
+      "method": "public adb(Ljava/lang/String;)V",
+      "line": 81,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/NotificationInitHost.smali",
+      "method": "public process([Ljava/lang/String;)V",
+      "line": 94,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "public static configure(Landroid/view/View;)V",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "public static describe(Ljava/lang/String;Z)Ljava/lang/String;",
+      "line": 97,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "public static isWrite(Ljava/lang/String;)Z",
+      "line": 211,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "private static label(Landroid/view/View;Ljava/lang/String;)V",
+      "line": 351,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "private static lock(Landroid/view/View;)V",
+      "line": 367,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsHandler.smali",
+      "method": "public constructor <init>(Ljava/lang/Object;)V",
+      "line": 11,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsHandler.smali",
+      "method": "public dispatchMessage(Landroid/os/Message;)V",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsHandler.smali",
+      "method": "public sendMessageAtTime(Landroid/os/Message;J)Z",
+      "line": 47,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsLifetime.smali",
+      "method": "public static isDisposed(Ljava/lang/Object;)Z",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsLifetime.smali",
+      "method": "public static isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$1.smali",
+      "method": "constructor <init>()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$1.smali",
+      "method": "public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "constructor <init>(Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Runnable;)V",
+      "line": 31,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/QuickSettingsReadExecutor$Read;)Ljava/lang/Object;",
+      "line": 52,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "static synthetic access$200(Lcom/byd/launcher/stability/QuickSettingsReadExecutor$Read;)I",
+      "line": 61,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "static synthetic access$300(Lcom/byd/launcher/stability/QuickSettingsReadExecutor$Read;)Ljava/lang/Object;",
+      "line": 70,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "public run()V",
+      "line": 81,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "static constructor <clinit>()V",
+      "line": 23,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "private constructor <init>()V",
+      "line": 79,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "static synthetic access$000()Ljava/util/concurrent/atomic/AtomicInteger;",
+      "line": 88,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "public static cancelQueued(Ljava/lang/Object;)V",
+      "line": 97,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "public static execute(Ljava/lang/Object;ILjava/lang/Object;Ljava/lang/Runnable;)Z",
+      "line": 163,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "public static execute(Ljava/lang/Object;ILjava/lang/Runnable;)Z",
+      "line": 303,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "public static clearQueue(Landroid/os/Handler;)Z",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "public static disposePanel(Landroid/view/WindowManager;Landroid/view/ViewGroup;Landroid/view/View;)Z",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "public static removeLayoutListener(Landroid/view/View;Landroid/view/ViewTreeObserver;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)Z",
+      "line": 112,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "private static stopAnimations(Landroid/view/View;)Z",
+      "line": 173,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "public static unregisterObserver(Landroid/content/Context;Landroid/database/ContentObserver;)Z",
+      "line": 263,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsThemeApply.smali",
+      "method": "public constructor <init>(Lo/ff;II)V",
+      "line": 10,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsThemeApply.smali",
+      "method": "public run()V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction$Token.smali",
+      "method": "private constructor <init>(Lcom/byd/launcher/stability/ReadAfterAction;J)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction$Token.smali",
+      "method": "synthetic constructor <init>(Lcom/byd/launcher/stability/ReadAfterAction;JLcom/byd/launcher/stability/ReadAfterAction$1;)V",
+      "line": 37,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction$Token.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/ReadAfterAction$Token;)J",
+      "line": 46,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction$Token.smali",
+      "method": "public finish()Z",
+      "line": 57,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction.smali",
+      "method": "public constructor <init>()V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction.smali",
+      "method": "static synthetic access$200(Lcom/byd/launcher/stability/ReadAfterAction;)Lcom/byd/launcher/stability/ReadAfterAction$Token;",
+      "line": 28,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction.smali",
+      "method": "static synthetic access$202(Lcom/byd/launcher/stability/ReadAfterAction;Lcom/byd/launcher/stability/ReadAfterAction$Token;)Lcom/byd/launcher/stability/ReadAfterAction$Token;",
+      "line": 37,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction.smali",
+      "method": "public declared-synchronized begin(J)Lcom/byd/launcher/stability/ReadAfterAction$Token;",
+      "line": 48,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction.smali",
+      "method": "public declared-synchronized blocked(J)Z",
+      "line": 77,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ReadAfterAction.smali",
+      "method": "public declared-synchronized reset()V",
+      "line": 140,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocAction.smali",
+      "method": "public static begin(Lo/ff;)Lcom/byd/launcher/stability/ReadAfterAction$Token;",
+      "line": 3,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocAction.smali",
+      "method": "public static finish(Lo/ff;Lcom/byd/launcher/stability/ReadAfterAction$Token;)V",
+      "line": 14,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocAction.smali",
+      "method": "public static finishJob(Lo/bg;)V",
+      "line": 25,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocAction.smali",
+      "method": "public static finishCallback(Lo/oa;)V",
+      "line": 37,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocApply.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/SocRead;Ljava/lang/Runnable;)V",
+      "line": 6,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocApply.smali",
+      "method": "public run()V",
+      "line": 13,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocRead.smali",
+      "method": "public constructor <init>(Lo/ff;)V",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocRead.smali",
+      "method": "public current()Z",
+      "line": 22,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocRead.smali",
+      "method": "public post(Ljava/lang/Runnable;)V",
+      "line": 46,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocRead.smali",
+      "method": "public static tracking(Lo/ff;Z)V",
+      "line": 60,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocRead.smali",
+      "method": "public static changed(Lo/ff;)V",
+      "line": 67,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/SocRead.smali",
+      "method": "public static close(Lo/ff;)V",
+      "line": 73,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "public static cancel(Landroid/os/Handler;Ljava/lang/Runnable;)Z",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "private static detached(Landroid/view/View;)Z",
+      "line": 45,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "public static removeWindow(Landroid/view/WindowManager;Landroid/view/View;)Z",
+      "line": 73,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "public static unregisterNetwork(Landroid/content/Context;Landroid/net/ConnectivityManager$NetworkCallback;)Z",
+      "line": 116,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "public static unregisterReceiver(Landroid/content/Context;Landroid/content/BroadcastReceiver;)Z",
+      "line": 163,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ThemeDeliver.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/ThemeRead;Ljava/lang/Runnable;)V",
+      "line": 6,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ThemeDeliver.smali",
+      "method": "public run()V",
+      "line": 13,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ThemeRead.smali",
+      "method": "static constructor <clinit>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ThemeRead.smali",
+      "method": "public static preferenceChanged()V",
+      "line": 14,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ThemeRead.smali",
+      "method": "public constructor <init>(Lo/ff;)V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ThemeRead.smali",
+      "method": "public current()Z",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ThemeRead.smali",
+      "method": "public post(Ljava/lang/Runnable;)V",
+      "line": 53,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/ThemeRead.smali",
+      "method": "public static close(Lo/ff;)V",
+      "line": 68,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileApply.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/stability/TileBatch;Lo/df;Ljava/lang/Runnable;)V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileApply.smali",
+      "method": "public run()V",
+      "line": 15,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileBatch$Entry.smali",
+      "method": "private constructor <init>(Lcom/byd/launcher/stability/TileSlot$Ticket;Ljava/lang/Object;Ljava/lang/Object;)V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileBatch$Entry.smali",
+      "method": "synthetic constructor <init>(Lcom/byd/launcher/stability/TileSlot$Ticket;Ljava/lang/Object;Ljava/lang/Object;Lcom/byd/launcher/stability/TileBatch$1;)V",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileBatch.smali",
+      "method": "public constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lcom/byd/launcher/stability/TileSlot$Queue;)V",
+      "line": 36,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileBatch.smali",
+      "method": "public capture(Ljava/lang/Object;Lcom/byd/launcher/stability/TileSlot;Ljava/lang/Object;Ljava/lang/Object;)V",
+      "line": 63,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileBatch.smali",
+      "method": "public current(Ljava/lang/Object;)Z",
+      "line": 89,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileBatch.smali",
+      "method": "public entry(Ljava/lang/Object;)Lcom/byd/launcher/stability/TileBatch$Entry;",
+      "line": 122,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileBatch.smali",
+      "method": "public post(Ljava/lang/Object;Ljava/lang/Runnable;)Z",
+      "line": 137,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Pending.smali",
+      "method": "constructor <init>(Lcom/byd/launcher/stability/TileSlot$Ticket;Lcom/byd/launcher/stability/TileSlot$Queue;Ljava/lang/Runnable;)V",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Pending.smali",
+      "method": "public run()V",
+      "line": 47,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Queue.smali",
+      "method": "public abstract failed(Ljava/lang/RuntimeException;)V",
+      "line": 18,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Queue.smali",
+      "method": "public abstract post(Ljava/lang/Runnable;)Z",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Queue.smali",
+      "method": "public abstract remove(Ljava/lang/Runnable;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Ticket.smali",
+      "method": "private constructor <init>(Lcom/byd/launcher/stability/TileSlot;)V",
+      "line": 22,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Ticket.smali",
+      "method": "synthetic constructor <init>(Lcom/byd/launcher/stability/TileSlot;Lcom/byd/launcher/stability/TileSlot$1;)V",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Ticket.smali",
+      "method": "static synthetic access$400(Lcom/byd/launcher/stability/TileSlot$Ticket;)Lcom/byd/launcher/stability/TileSlot;",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Ticket.smali",
+      "method": "public isCurrent()Z",
+      "line": 53,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot$Ticket.smali",
+      "method": "public post(Lcom/byd/launcher/stability/TileSlot$Queue;Ljava/lang/Runnable;)Z",
+      "line": 92,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot.smali",
+      "method": "public constructor <init>()V",
+      "line": 23,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/TileSlot;)Lcom/byd/launcher/stability/TileSlot$Ticket;",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot.smali",
+      "method": "static synthetic access$200(Lcom/byd/launcher/stability/TileSlot;)V",
+      "line": 41,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot.smali",
+      "method": "static synthetic access$300(Lcom/byd/launcher/stability/TileSlot;)Lcom/byd/launcher/stability/TileSlot$Pending;",
+      "line": 50,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot.smali",
+      "method": "static synthetic access$302(Lcom/byd/launcher/stability/TileSlot;Lcom/byd/launcher/stability/TileSlot$Pending;)Lcom/byd/launcher/stability/TileSlot$Pending;",
+      "line": 59,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot.smali",
+      "method": "private cancel()V",
+      "line": 68,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot.smali",
+      "method": "public declared-synchronized begin()Lcom/byd/launcher/stability/TileSlot$Ticket;",
+      "line": 105,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSlot.smali",
+      "method": "public declared-synchronized invalidate()V",
+      "line": 136,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public constructor <init>(Lo/ff;)V",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public post(Ljava/lang/Runnable;)Z",
+      "line": 11,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public remove(Ljava/lang/Runnable;)V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public failed(Ljava/lang/RuntimeException;)V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public static capture(Lo/ff;Lo/df;)Lcom/byd/launcher/stability/TileBatch;",
+      "line": 33,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public static capture(Lo/ff;Ljava/util/List;)Lcom/byd/launcher/stability/TileBatch;",
+      "line": 41,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public static usable(Lcom/byd/launcher/stability/TileBatch;)Z",
+      "line": 69,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public static accept(Lcom/byd/launcher/stability/TileBatch;Lo/df;)Z",
+      "line": 97,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public static read(Lcom/byd/launcher/stability/TileBatch;Lo/df;Lo/ef;)Z",
+      "line": 125,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public static action(Lo/df;)V",
+      "line": 137,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public static invalidate(Lo/ff;)V",
+      "line": 146,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "private static row(Lcom/byd/launcher/stability/TileBatch;Lo/df;Ljava/lang/Runnable;)V",
+      "line": 169,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileSnapshots.smali",
+      "method": "public static post(Lcom/byd/launcher/stability/TileBatch;Ljava/lang/Runnable;)Z",
+      "line": 176,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileState.smali",
+      "method": "public static read(Lo/ef;)Z",
+      "line": 3,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileState.smali",
+      "method": "public static commit(Lo/ff;Lo/df;Z)V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/TileState.smali",
+      "method": "public static subtitle(Lo/ff;Lo/df;Ljava/lang/String;)Ljava/lang/String;",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+      "method": "public static read(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+      "method": "private static releaseQuietly(Landroid/media/MediaMetadataRetriever;)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+      "method": "constructor <init>(Ljava/lang/Runnable;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+      "method": "static synthetic access$000(Lcom/byd/launcher/stability/WallpaperDelivery$Pending;)Ljava/util/concurrent/CountDownLatch;",
+      "line": 48,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+      "method": "public run()V",
+      "line": 59,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery.smali",
+      "method": "private constructor <init>()V",
+      "line": 15,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery.smali",
+      "method": "public static deliver(Landroid/os/Handler;Ljava/lang/Runnable;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "private constructor <init>()V",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "public static create()Ljava/util/concurrent/ExecutorService;",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public constructor <init>(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V",
+      "line": 12,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public static submit(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public final run()V",
+      "line": 41,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali",
+      "method": "public final dispatchTouchEvent(Landroid/view/MotionEvent;)Z",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a2.smali",
+      "method": "public static \u02cf(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;",
+      "line": 471,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a2.smali",
+      "method": "public static \u0392(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;",
+      "line": 2036,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a8.smali",
+      "method": "public final run()V",
+      "line": 43,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/NavBarService;)V",
+      "line": 130,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public final \u02b9(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+      "line": 298,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public final \u02cb(Ljava/lang/Runnable;)V",
+      "line": 307,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public final \u02cf()V",
+      "line": 334,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public final \u0370(Landroid/media/MediaMetadata;)V",
+      "line": 361,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public final \u0376(Ljava/util/List;)V",
+      "line": 1243,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public final \u037a()V",
+      "line": 2035,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public stabilityCurrent()Z",
+      "line": 2192,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public stabilityCloseArtwork()V",
+      "line": 2215,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public stabilityUpdateArtwork(Landroid/media/MediaMetadata;Ljava/lang/String;Ljava/lang/String;)V",
+      "line": 2224,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public stabilityDispose()V",
+      "line": 2246,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/a9.smali",
+      "method": "public stabilityStart()V",
+      "line": 2321,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ae.smali",
+      "method": "public final run()V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/af.smali",
+      "method": "public final onChange(Z)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "method": "public synthetic constructor <init>(ILjava/lang/Object;Ljava/lang/Object;)V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "method": "private final \u02cb()V",
+      "line": 53,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "method": "private final \u02cf()V",
+      "line": 581,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "line": 905,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/MainActivity;Ljava/util/List;)V",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public static \u0373(Landroid/graphics/Bitmap;)V",
+      "line": 526,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 685,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final onDetachedFromRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V",
+      "line": 1599,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final \u02cb(I)Landroid/graphics/Bitmap;",
+      "line": 1635,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final \u0372(I)V",
+      "line": 1773,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/bg.smali",
+      "method": "public synthetic constructor <init>(Ljava/lang/Object;II)V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/bg.smali",
+      "method": "public final run()V",
+      "line": 55,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/c0.smali",
+      "method": "public static execAdbCmd(Ljava/lang/String;I)Ljava/lang/String;",
+      "line": 232,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/c0.smali",
+      "method": "public static \u02cb(ILjava/lang/String;)Ljava/lang/String;",
+      "line": 622,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/c8.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ce.smali",
+      "method": "public synthetic constructor <init>(Lo/ff;Lo/df;I)V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ce.smali",
+      "method": "public final run()V",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ci.smali",
+      "method": "public static \u0376(Landroid/content/Context;I)V",
+      "line": 244,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/de.smali",
+      "method": "public synthetic constructor <init>(Lo/ff;II)V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/de.smali",
+      "method": "public final run()V",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/df.smali",
+      "method": "public constructor <init>(Ljava/lang/String;Ljava/lang/String;ILo/ie;Lo/ef;Lo/ke;Lo/ie;)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ea.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ea.smali",
+      "method": "private stabilityInitCurrent()Z",
+      "line": 2948,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ee.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "method": "public final \u02cb()V",
+      "line": 47,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "method": "public final \u02cf()V",
+      "line": 115,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "method": "public final \u0370(Ljava/lang/String;Ljava/util/ArrayList;Lo/e4;II)V",
+      "line": 166,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "method": "public final stabilityDispose()Z",
+      "line": 595,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/fe.smali",
+      "method": "public final run()V",
+      "line": 56,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public constructor <init>(Landroid/content/Context;Landroid/view/WindowManager;)V",
+      "line": 152,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public static \u037c(Ljava/lang/String;Ljava/lang/String;)I",
+      "line": 345,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02b9()V",
+      "line": 505,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02cb(Landroid/view/View;)V",
+      "line": 990,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02cf()V",
+      "line": 1057,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0370(Lo/df;ZLjava/lang/String;)V",
+      "line": 1944,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0372()V",
+      "line": 2106,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0373()V",
+      "line": 2536,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u037b()V",
+      "line": 2862,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u037d()V",
+      "line": 2897,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0386()V",
+      "line": 2964,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0388(Ljava/util/ArrayList;)V",
+      "line": 3357,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0389(ILjava/lang/String;)V",
+      "line": 3401,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038a()V",
+      "line": 3427,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038c()V",
+      "line": 4352,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038e(I)V",
+      "line": 4917,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038f(Landroid/widget/SeekBar;Landroid/widget/TextView;Landroid/widget/ImageView;)V",
+      "line": 5715,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final stabilityDispose()Z",
+      "line": 5952,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ge.smali",
+      "method": "public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 56,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ie.smali",
+      "method": "public synthetic constructor <init>(Lo/ff;I)V",
+      "line": 20,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ie.smali",
+      "method": "public final run()V",
+      "line": 72,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/je.smali",
+      "method": "public synthetic constructor <init>(Lo/ff;Landroid/widget/SeekBar;Landroid/widget/TextView;I)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/je.smali",
+      "method": "public final run()V",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/k9.smali",
+      "method": "public final onClick(Landroid/view/View;)V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "public final get()Z",
+      "line": 40,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "public final \u02cb(Ljava/util/ArrayList;)V",
+      "line": 584,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "public final \u02cf()Ljava/lang/String;",
+      "line": 623,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "public final stabilityRead()Z",
+      "line": 1120,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "public final stabilityCommit(Z)V",
+      "line": 1669,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ki.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/lII.smali",
+      "method": "public final run()V",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/lb.smali",
+      "method": "public final run()V",
+      "line": 58,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/llI.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/m9.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ne.smali",
+      "method": "public final onLayoutChange(Landroid/view/View;IIIIIIII)V",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/oa.smali",
+      "method": "public final onError(Ljava/lang/String;)V",
+      "line": 45,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/oa.smali",
+      "method": "public final onSuccess(Lorg/json/JSONObject;)V",
+      "line": 291,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/qe.smali",
+      "method": "public onReceive(Landroid/content/Context;Landroid/content/Intent;)V",
+      "line": 28,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/qi.smali",
+      "method": "public constructor <init>(Landroid/content/Context;Landroid/view/WindowManager;)V",
+      "line": 123,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/qi.smali",
+      "method": "public final \u0376([BIIII)V",
+      "line": 863,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/re.smali",
+      "method": "public final onProgressChanged(Landroid/widget/SeekBar;IZ)V",
+      "line": 50,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/re.smali",
+      "method": "public final onStartTrackingTouch(Landroid/widget/SeekBar;)V",
+      "line": 352,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/re.smali",
+      "method": "public final onStopTrackingTouch(Landroid/widget/SeekBar;)V",
+      "line": 410,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/se.smali",
+      "method": "public final onProgressChanged(Landroid/widget/SeekBar;IZ)V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/se.smali",
+      "method": "public final onStartTrackingTouch(Landroid/widget/SeekBar;)V",
+      "line": 273,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/se.smali",
+      "method": "public final onStopTrackingTouch(Landroid/widget/SeekBar;)V",
+      "line": 299,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/sj.smali",
+      "method": "public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V",
+      "line": 23,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/sj.smali",
+      "method": "public final run()V",
+      "line": 65,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/td.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/tj.smali",
+      "method": "public final run()V",
+      "line": 43,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/tk.smali",
+      "method": "public final run()V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/u8.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ua.smali",
+      "method": "public final onAnimationEnd(Landroid/animation/Animator;)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/vl.smali",
+      "method": "public final \u03a7()V",
+      "line": 7733,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/wa.smali",
+      "method": "public onReceive(Landroid/content/Context;Landroid/content/Intent;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/wa.smali",
+      "method": "public stabilityCurrent()Z",
+      "line": 87,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/we.smali",
+      "method": "public final onError(Ljava/lang/String;)V",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/we.smali",
+      "method": "public final onSuccess(Lorg/json/JSONObject;)V",
+      "line": 104,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/we.smali",
+      "method": "public final \u02cb(FF)V",
+      "line": 211,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/x9.smali",
+      "method": "public synthetic constructor <init>(Lo/ff;ZLandroid/view/View;)V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/x9.smali",
+      "method": "public final run()V",
+      "line": 62,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 1185,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/y8.smali",
+      "method": "public final onMetadataChanged(Landroid/media/MediaMetadata;)V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/y8.smali",
+      "method": "public final onPlaybackStateChanged(Landroid/media/session/PlaybackState;)V",
+      "line": 71,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/y8.smali",
+      "method": "public final onSessionDestroyed()V",
+      "line": 155,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/y8.smali",
+      "method": "public stabilityCurrent()Z",
+      "line": 208,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/y8.smali",
+      "method": "public stabilityRecoveryCurrent()Z",
+      "line": 226,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ye.smali",
+      "method": "public final run()V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/z8.smali",
+      "method": "public final run()V",
+      "line": 31,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/zb.smali",
+      "method": "public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "line": 74,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ze.smali",
+      "method": "public final onGlobalLayout()V",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ze.smali",
+      "method": "public final stabilityRelease()Z",
+      "line": 368,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/zk.smali",
+      "method": "public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u02cb.smali",
+      "method": "public final invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u03ab.smali",
+      "method": "public final run()V",
+      "line": 77,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u03b0.smali",
+      "method": "public final onClick(Landroid/view/View;)V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u03d3.smali",
+      "method": "public final run()V",
+      "line": 72,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u03d8.smali",
+      "method": "public final onClick(Landroid/view/View;)V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    }
+  ],
+  "protected_apks": [
+    {
+      "apk": "ORIGINAL_BASELINE.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "original.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "\u667aUI_V0.4.2.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "Launcher_Rebuild_Test.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v2.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.1-wallpaper-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.10-lyrics-expanded-no-clock-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.11-lyrics-click-music-app-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.2-wallpaper-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.3-wallpaper-statusbar-stability-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.4-netease-lyrics-auth-prep.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.1-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.2-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.3-statusbar-flicker-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.6-lrclib-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.7-dd-aircon-popup-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.7-dd-aircon-popup.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.8-global-system-bars-toggle-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.9-home-return-fix-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-stability-s1-systembars-r1.apk",
+      "unchanged": true
+    }
+  ],
+  "original_resource_declarations_preserved": true,
+  "shared_vehicle_selectors_unchanged": true,
+  "status": "CUMULATIVE_CONTENT_PASS_THROUGH_base10_r26; FULL_V2_V3_AUDIT_AND_FEATURE_REINTEGRATION_INCOMPLETE; NO_VEHICLE_TEST"
+}

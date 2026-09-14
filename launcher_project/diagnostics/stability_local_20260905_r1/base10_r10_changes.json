@@ -1,0 +1,7 @@
+[
+  "smali/com/byd/launcher/stability/ThemeDeliver.smali",
+  "smali/com/byd/launcher/stability/ThemeRead.smali",
+  "smali/o/ci.smali",
+  "smali/o/ff.smali",
+  "smali/o/ie.smali"
+]

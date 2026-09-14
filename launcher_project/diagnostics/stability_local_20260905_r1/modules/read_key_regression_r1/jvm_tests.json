@@ -1,0 +1,20 @@
+[
+  {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_nav_freshness_r5",
+    "keys": [
+      1,
+      2,
+      1
+    ],
+    "output": "REPRODUCED parent collision: [old_nav, new_nav]; production executor, real JVM workers, isolated lifetime/Log doubles."
+  },
+  {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_read_keys_r6",
+    "keys": [
+      1,
+      2,
+      2
+    ],
+    "output": "PASS corrected categories: [instrument, new_nav]; production executor, real JVM workers, isolated lifetime/Log doubles."
+  }
+]

@@ -1,0 +1,39 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "2511C58898A47B685469CEE55EA221AB8A1AD907F58C3C6ED1FFBFAD8D8CB4ED",
+  "delta_files": 8,
+  "cumulative_files": 98,
+  "source_final_cases": 183,
+  "review": [
+    "NavRead/NavDeliver: registers, immutable capture, TileSnapshots strict active/cached identity, tracking/action gate and per-slot result ownership checked against final smali and JADX",
+    "je selector0/default captures nav before instrument p4 reuse; selector1 bypasses nav; both worker paths guard before query",
+    "se selector2 drag begins, fromUser change invalidates, stop precedes existing de job creation; other selectors restored exactly",
+    "de selector1 captures token; normal, disconnected and caught Exception paths converge on finish; old finish cannot end newer gate",
+    "ff slot/gate initialized before tasks; three close/dispose entries plus grid rebuild reset; original cache commit and delegates retained"
+  ],
+  "production_modules": "TileSlot, TileBatch, ReadAfterAction unchanged from R10; prior real JVM tests retained. Smali interpreter queue/gate doubles do not establish ART or concurrency.",
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.stability.NavRead",
+      "exit_code": 0,
+      "log": "base10_r11_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.NavDeliver",
+      "exit_code": 0,
+      "log": "base10_r11_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.NavAction",
+      "exit_code": 0,
+      "log": "base10_r11_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "183 scoped cases per source/final artifact, includes 144 inherited. Inherited whole-class equality for de/se/je uses exact inverse proof; behaviour executes candidate. Original command not run. 15s UI wait is not command completion/timeout guarantee. Full BASE-10/P1-P3 and vehicle tests remain incomplete."
+}

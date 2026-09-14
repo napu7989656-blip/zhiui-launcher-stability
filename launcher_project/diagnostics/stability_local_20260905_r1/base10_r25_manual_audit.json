@@ -1,0 +1,39 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "CBC668B482B3855CA8FA720DF8C9E2A2A57985DF25259C17C4DC2573459A65FE",
+  "delta_files": 3,
+  "cumulative_files": 164,
+  "source_final_case_groups": 418,
+  "review": [
+    "Six typed preference reads only: five qi constructor bindings and one tk settings flag. Original keys/defaults/register destinations retained; exact inverse verifies all other code unchanged.",
+    "CameraPreferences handles null and ClassCastException only, retains valid values including extreme integers, never coerces or writes preferences. Other runtime failures propagate. Exact production Java classes tested with99 assertions before D8; Android substitutes excluded from DEX.",
+    "18 new actual smali binding/catch-dispatch groups plus400 inherited =418 source/final groups. Tests never execute native class initialization, camera reflection or vehicle commands.",
+    "JADX helper and qi exit0 agree with final smali; tk exit3, changed setChecked helper call is present and exact inverse confirms unchanged surrounding body. JADX is interpretation only.",
+    "Three delta files,164 cumulative,22 protected packages unchanged,127 API candidates with no additions; build/sign/align/parse/redecode/content gates pass.",
+    "Independent close-tail audit reproduces four downstream cleanup gaps after Surface, listener detach, SurfaceTexture or EGL exception. Camera cleanup, ownership and concurrency not fixed by R25."
+  ],
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.stability.CameraPreferences",
+      "exit_code": 0,
+      "log": "base10_r25_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.qi",
+      "exit_code": 0,
+      "log": "base10_r25_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.tk",
+      "exit_code": 3,
+      "log": "base10_r25_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "No ART/OEM/vehicle validation. No geometry bounds, camera resource lifetime or complete local plan pass."
+}

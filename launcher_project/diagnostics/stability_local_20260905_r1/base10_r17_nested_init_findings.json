@@ -1,0 +1,30 @@
+{
+  "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_init_owner_r17",
+  "source_sha256": {
+    "smali/com/byd/launcher/NavBarService.smali": "76acfd6863c1c15f871ad8a0faee06d2b7ae27f2b3bdf7825f5c12eba4d01753",
+    "smali/o/ea.smali": "c3d6e47f7af44137cce0a9645682dd055ebcc50d0cf72f0dfda617fb0b70e6af",
+    "smali/o/m9.smali": "46aca73eba4717b8c34eb4100d889c9ab9963a98d9f8eb503ae2155d8efe35f1",
+    "smali/o/c0.smali": "8581711b9e17ba3c9957213aa1e033969d401be31a0808ee5616ef9e4a6fefcf",
+    "smali/o/g0.smali": "da0f6db86e07b13a741539754a97e319787f09f6c8e91eb6abd29b7721151fbc"
+  },
+  "cases": [
+    {
+      "input": "null",
+      "reported_success": false
+    },
+    {
+      "input": "error_sentinel",
+      "reported_success": false
+    },
+    {
+      "input": "empty_failure",
+      "reported_success": true
+    },
+    {
+      "input": "permission_error",
+      "reported_success": true
+    }
+  ],
+  "confirmed": "Wrapper exception path returns empty text; actual listener success branch treats that non-null empty text as success.",
+  "limits": "Actual isolated smali success decision, framework string comparison doubled with Java reference truthiness. No ADB, permission changes, process execution, ART or vehicle test. Permission-denied string is an injected negative case, not a captured device result."
+}

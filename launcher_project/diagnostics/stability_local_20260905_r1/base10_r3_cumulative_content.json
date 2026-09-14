@@ -1,0 +1,983 @@
+{
+  "changed_files": [
+    "res/values/ids.xml",
+    "res/values/public.xml",
+    "smali/com/byd/launcher/MainActivity.smali",
+    "smali/com/byd/launcher/NavBarService.smali",
+    "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsHandler.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsLifetime.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$1.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsThemeApply.smali",
+    "smali/com/byd/launcher/stability/StatusBarResources.smali",
+    "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+    "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+    "smali/com/byd/launcher/stability/WallpaperDelivery.smali",
+    "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+    "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+    "smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali",
+    "smali/o/ae.smali",
+    "smali/o/af.smali",
+    "smali/o/ag.smali",
+    "smali/o/ak.smali",
+    "smali/o/bg.smali",
+    "smali/o/c0.smali",
+    "smali/o/ce.smali",
+    "smali/o/de.smali",
+    "smali/o/ea.smali",
+    "smali/o/ee.smali",
+    "smali/o/f4.smali",
+    "smali/o/fe.smali",
+    "smali/o/ff.smali",
+    "smali/o/ge.smali",
+    "smali/o/h2.smali",
+    "smali/o/ie.smali",
+    "smali/o/je.smali",
+    "smali/o/k9.smali",
+    "smali/o/ke.smali",
+    "smali/o/lII.smali",
+    "smali/o/lb.smali",
+    "smali/o/llI.smali",
+    "smali/o/m9.smali",
+    "smali/o/ne.smali",
+    "smali/o/qe.smali",
+    "smali/o/re.smali",
+    "smali/o/se.smali",
+    "smali/o/sj.smali",
+    "smali/o/td.smali",
+    "smali/o/tj.smali",
+    "smali/o/ua.smali",
+    "smali/o/vl.smali",
+    "smali/o/we.smali",
+    "smali/o/x9.smali",
+    "smali/o/y7.smali",
+    "smali/o/ye.smali",
+    "smali/o/zb.smali",
+    "smali/o/ze.smali",
+    "smali/o/zk.smali",
+    "smali/o/\u03ab.smali",
+    "smali/o/\u03b0.smali",
+    "smali/o/\u03d3.smali",
+    "smali/o/\u03d8.smali"
+  ],
+  "methods_accounted": [
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final onDestroy()V",
+      "line": 2415,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final \u0371()V",
+      "line": 2955,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final onDestroy()V",
+      "line": 4540,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "private final stabilityCreateStatusBar(I)V",
+      "line": 27015,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final \u03e7()V",
+      "line": 29080,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final \u03ea()V",
+      "line": 29770,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final \u03e0(I)V",
+      "line": 30522,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final stabilityReleaseStatusListeners()Z",
+      "line": 30542,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final stabilityReleaseStatusBar()Z",
+      "line": 30578,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "public static configure(Landroid/view/View;)V",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "public static describe(Ljava/lang/String;Z)Ljava/lang/String;",
+      "line": 97,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "public static isWrite(Ljava/lang/String;)Z",
+      "line": 211,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "private static label(Landroid/view/View;Ljava/lang/String;)V",
+      "line": 351,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "method": "private static lock(Landroid/view/View;)V",
+      "line": 367,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsHandler.smali",
+      "method": "public constructor <init>(Ljava/lang/Object;)V",
+      "line": 11,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsHandler.smali",
+      "method": "public dispatchMessage(Landroid/os/Message;)V",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsHandler.smali",
+      "method": "public sendMessageAtTime(Landroid/os/Message;J)Z",
+      "line": 47,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsLifetime.smali",
+      "method": "public static isDisposed(Ljava/lang/Object;)Z",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsLifetime.smali",
+      "method": "public static isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$1.smali",
+      "method": "constructor <init>()V",
+      "line": 21,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$1.smali",
+      "method": "public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "constructor <init>(Ljava/lang/Object;ILjava/lang/Runnable;)V",
+      "line": 29,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "static synthetic access$100(Lcom/byd/launcher/stability/QuickSettingsReadExecutor$Read;)Ljava/lang/Object;",
+      "line": 47,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "static synthetic access$200(Lcom/byd/launcher/stability/QuickSettingsReadExecutor$Read;)I",
+      "line": 56,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+      "method": "public run()V",
+      "line": 67,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "static constructor <clinit>()V",
+      "line": 23,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "private constructor <init>()V",
+      "line": 79,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "static synthetic access$000()Ljava/util/concurrent/atomic/AtomicInteger;",
+      "line": 88,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "public static cancelQueued(Ljava/lang/Object;)V",
+      "line": 97,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+      "method": "public static execute(Ljava/lang/Object;ILjava/lang/Runnable;)Z",
+      "line": 163,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "public static clearQueue(Landroid/os/Handler;)Z",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "public static disposePanel(Landroid/view/WindowManager;Landroid/view/ViewGroup;Landroid/view/View;)Z",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "public static removeLayoutListener(Landroid/view/View;Landroid/view/ViewTreeObserver;Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;)Z",
+      "line": 112,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "private static stopAnimations(Landroid/view/View;)Z",
+      "line": 173,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "method": "public static unregisterObserver(Landroid/content/Context;Landroid/database/ContentObserver;)Z",
+      "line": 263,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsThemeApply.smali",
+      "method": "public constructor <init>(Lo/ff;II)V",
+      "line": 10,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsThemeApply.smali",
+      "method": "public run()V",
+      "line": 19,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "private constructor <init>()V",
+      "line": 7,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "public static cancel(Landroid/os/Handler;Ljava/lang/Runnable;)Z",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "private static detached(Landroid/view/View;)Z",
+      "line": 45,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "public static removeWindow(Landroid/view/WindowManager;Landroid/view/View;)Z",
+      "line": 73,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "public static unregisterNetwork(Landroid/content/Context;Landroid/net/ConnectivityManager$NetworkCallback;)Z",
+      "line": 116,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "method": "public static unregisterReceiver(Landroid/content/Context;Landroid/content/BroadcastReceiver;)Z",
+      "line": 163,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+      "method": "public static read(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+      "method": "private static releaseQuietly(Landroid/media/MediaMetadataRetriever;)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+      "method": "constructor <init>(Ljava/lang/Runnable;)V",
+      "line": 27,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+      "method": "static synthetic access$000(Lcom/byd/launcher/stability/WallpaperDelivery$Pending;)Ljava/util/concurrent/CountDownLatch;",
+      "line": 48,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery$Pending.smali",
+      "method": "public run()V",
+      "line": 59,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery.smali",
+      "method": "private constructor <init>()V",
+      "line": 15,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperDelivery.smali",
+      "method": "public static deliver(Landroid/os/Handler;Ljava/lang/Runnable;)V",
+      "line": 24,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "private constructor <init>()V",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "public static create()Ljava/util/concurrent/ExecutorService;",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public constructor <init>(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V",
+      "line": 12,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public static submit(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public final run()V",
+      "line": 41,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali",
+      "method": "public final dispatchTouchEvent(Landroid/view/MotionEvent;)Z",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ae.smali",
+      "method": "public final run()V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/af.smali",
+      "method": "public final onChange(Z)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "method": "private final \u02cb()V",
+      "line": 42,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "method": "private final \u02cf()V",
+      "line": 570,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "line": 894,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/MainActivity;Ljava/util/List;)V",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public static \u0373(Landroid/graphics/Bitmap;)V",
+      "line": 526,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 685,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final onDetachedFromRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V",
+      "line": 1599,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final \u02cb(I)Landroid/graphics/Bitmap;",
+      "line": 1635,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final \u0372(I)V",
+      "line": 1773,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/bg.smali",
+      "method": "public final run()V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/c0.smali",
+      "method": "public static execAdbCmd(Ljava/lang/String;I)Ljava/lang/String;",
+      "line": 232,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/c0.smali",
+      "method": "public static \u02cb(ILjava/lang/String;)Ljava/lang/String;",
+      "line": 622,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ce.smali",
+      "method": "public final run()V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/de.smali",
+      "method": "public final run()V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ea.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ee.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "method": "public final \u02cb()V",
+      "line": 47,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "method": "public final \u02cf()V",
+      "line": 115,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "method": "public final \u0370(Ljava/lang/String;Ljava/util/ArrayList;Lo/e4;II)V",
+      "line": 166,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "method": "public final stabilityDispose()Z",
+      "line": 595,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/fe.smali",
+      "method": "public final run()V",
+      "line": 56,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public constructor <init>(Landroid/content/Context;Landroid/view/WindowManager;)V",
+      "line": 140,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02b9()V",
+      "line": 433,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02cb(Landroid/view/View;)V",
+      "line": 909,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02cf()V",
+      "line": 979,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0370(Lo/df;ZLjava/lang/String;)V",
+      "line": 1866,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0372()V",
+      "line": 2028,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0373()V",
+      "line": 2458,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u037b()V",
+      "line": 2784,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u037d()V",
+      "line": 2819,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0386()V",
+      "line": 2886,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0388(Ljava/util/ArrayList;)V",
+      "line": 3270,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0389(ILjava/lang/String;)V",
+      "line": 3314,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038a()V",
+      "line": 3340,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038c()V",
+      "line": 4265,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038e(I)V",
+      "line": 4826,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038f(Landroid/widget/SeekBar;Landroid/widget/TextView;Landroid/widget/ImageView;)V",
+      "line": 5624,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final stabilityDispose()Z",
+      "line": 5861,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ge.smali",
+      "method": "public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "line": 51,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 56,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ie.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/je.smali",
+      "method": "public final run()V",
+      "line": 50,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/k9.smali",
+      "method": "public final onClick(Landroid/view/View;)V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "public final get()Z",
+      "line": 40,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "public final \u02cb(Ljava/util/ArrayList;)V",
+      "line": 584,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "public final \u02cf()Ljava/lang/String;",
+      "line": 623,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/lII.smali",
+      "method": "public final run()V",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/lb.smali",
+      "method": "public final run()V",
+      "line": 58,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/llI.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/m9.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ne.smali",
+      "method": "public final onLayoutChange(Landroid/view/View;IIIIIIII)V",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/qe.smali",
+      "method": "public onReceive(Landroid/content/Context;Landroid/content/Intent;)V",
+      "line": 28,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/re.smali",
+      "method": "public final onProgressChanged(Landroid/widget/SeekBar;IZ)V",
+      "line": 50,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/re.smali",
+      "method": "public final onStartTrackingTouch(Landroid/widget/SeekBar;)V",
+      "line": 347,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/re.smali",
+      "method": "public final onStopTrackingTouch(Landroid/widget/SeekBar;)V",
+      "line": 401,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/se.smali",
+      "method": "public final onProgressChanged(Landroid/widget/SeekBar;IZ)V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/se.smali",
+      "method": "public final onStopTrackingTouch(Landroid/widget/SeekBar;)V",
+      "line": 276,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/sj.smali",
+      "method": "public final run()V",
+      "line": 56,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/td.smali",
+      "method": "public final run()V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/tj.smali",
+      "method": "public final run()V",
+      "line": 43,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ua.smali",
+      "method": "public final onAnimationEnd(Landroid/animation/Animator;)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/vl.smali",
+      "method": "public final \u03a7()V",
+      "line": 7733,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/we.smali",
+      "method": "public final onError(Ljava/lang/String;)V",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/we.smali",
+      "method": "public final onSuccess(Lorg/json/JSONObject;)V",
+      "line": 104,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/we.smali",
+      "method": "public final \u02cb(FF)V",
+      "line": 211,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/x9.smali",
+      "method": "public final run()V",
+      "line": 58,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 1185,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ye.smali",
+      "method": "public final run()V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/zb.smali",
+      "method": "public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+      "line": 74,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ze.smali",
+      "method": "public final onGlobalLayout()V",
+      "line": 32,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ze.smali",
+      "method": "public final stabilityRelease()Z",
+      "line": 368,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/zk.smali",
+      "method": "public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u03ab.smali",
+      "method": "public final run()V",
+      "line": 77,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u03b0.smali",
+      "method": "public final onClick(Landroid/view/View;)V",
+      "line": 38,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u03d3.smali",
+      "method": "public final run()V",
+      "line": 72,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/\u03d8.smali",
+      "method": "public final onClick(Landroid/view/View;)V",
+      "line": 44,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    }
+  ],
+  "protected_apks": [
+    {
+      "apk": "ORIGINAL_BASELINE.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "original.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "\u667aUI_V0.4.2.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "Launcher_Rebuild_Test.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v2.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.1-wallpaper-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.10-lyrics-expanded-no-clock-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.11-lyrics-click-music-app-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.2-wallpaper-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.3-wallpaper-statusbar-stability-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.4-netease-lyrics-auth-prep.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.1-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.2-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.3-statusbar-flicker-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.6-lrclib-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.7-dd-aircon-popup-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.7-dd-aircon-popup.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.8-global-system-bars-toggle-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.9-home-return-fix-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-stability-s1-systembars-r1.apk",
+      "unchanged": true
+    }
+  ],
+  "original_resource_declarations_preserved": true,
+  "shared_vehicle_selectors_unchanged": true,
+  "status": "CUMULATIVE_CONTENT_PASS_THROUGH_base10_r3; FULL_V2_V3_AUDIT_AND_FEATURE_REINTEGRATION_INCOMPLETE; NO_VEHICLE_TEST"
+}

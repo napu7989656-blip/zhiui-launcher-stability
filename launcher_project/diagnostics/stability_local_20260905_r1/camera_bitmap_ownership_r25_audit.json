@@ -1,0 +1,31 @@
+{
+  "status": "TWO_CONDITIONAL_OWNERSHIP_GAPS_REPRODUCED_NOT_FIXED",
+  "cases": [
+    {
+      "mode": "display_then_close",
+      "operations": [
+        "setImageBitmap_recycled=False",
+        "egl_cleanup_substitute",
+        "recycle"
+      ],
+      "view_retains_recycled_bitmap": true,
+      "owner_bitmap_fields_cleared": true
+    },
+    {
+      "mode": "close_between_check_and_display",
+      "operations": [
+        "after_ui_isRecycled_false",
+        "egl_cleanup_substitute",
+        "recycle",
+        "setImageBitmap_recycled=True"
+      ],
+      "view_retains_recycled_bitmap": true,
+      "owner_bitmap_fields_cleared": true
+    }
+  ],
+  "source_hashes": {
+    "ki.smali": "57047ba3aa9e727c0ccb299daf24ea3e18a6e5e9a475665b592efb7b704598fd",
+    "qi.smali": "350da366956db54b826130ff02f5021ebec1bd1e90e2bb6de272359f44729964"
+  },
+  "scope": "Actual UI selector and close-tail instructions. Injected sequential/interleaved schedule with visible view and shared published bitmap; no actual threads, Android renderer, native camera or vehicle calls. Does not prove OEM scheduling frequency or every close caller. Validates consequence if an old close overlaps visible/new frame; reconnect/open-close reachability still under audit."
+}

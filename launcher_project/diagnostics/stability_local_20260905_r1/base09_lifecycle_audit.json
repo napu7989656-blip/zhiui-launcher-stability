@@ -1,0 +1,1204 @@
+{
+  "issue": "BASE-09",
+  "reproduction": [
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base08_statusbar_rollback_r1",
+      "stopped_flags": {
+        "\u037a": false,
+        "\u0377": false
+      },
+      "late_selector": 4,
+      "posted_selector": 0,
+      "trace": [
+        "Lo/ff;->\u037b()V",
+        "Lo/ie;-><init>(Lo/ff;I)V",
+        "Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z",
+        "WOULD_CONSTRUCT_AND_INFLATE_USING_STOPPED_CONTROLLER_CONTEXT"
+      ],
+      "status": "REPRODUCED_AT_INFLATION_BOUNDARY; no Android code or vehicle commands executed"
+    },
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\final_redecode\\base08_r1",
+      "stopped_flags": {
+        "\u037a": false,
+        "\u0377": false
+      },
+      "late_selector": 4,
+      "posted_selector": 0,
+      "trace": [
+        "Lo/ff;->\u037b()V",
+        "Lo/ie;-><init>(Lo/ff;I)V",
+        "Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z",
+        "WOULD_CONSTRUCT_AND_INFLATE_USING_STOPPED_CONTROLLER_CONTEXT"
+      ],
+      "status": "REPRODUCED_AT_INFLATION_BOUNDARY; no Android code or vehicle commands executed"
+    }
+  ],
+  "holders": [
+    {
+      "path": "smali\\o\\\u03d8.smali",
+      "sha256": "D584C7FCF992B6BE971C40B9557FDB96EC267FBEB459BFFE6C207124D6CE7351",
+      "fields": [
+        ".field public final synthetic \u02cf:Ljava/lang/Object;",
+        ".field public final synthetic \u0370:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onClick(Landroid/view/View;)V",
+          "line": 44,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\\u03d3.smali",
+      "sha256": "CFE589F6FB22A09ED869A247005B1688CF224017A17532788294411E2321CB38",
+      "fields": [
+        ".field public final synthetic \u02b9:Ljava/lang/Object;",
+        ".field public final synthetic \u0372:Ljava/lang/Object;",
+        ".field public final synthetic \u0373:Ljava/lang/Object;",
+        ".field public final synthetic \u0376:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 72,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\\u03b0.smali",
+      "sha256": "C785F50174B0124DB45FBA7C042137BC94CE236F703613A9CB57A0423F3BD845",
+      "fields": [
+        ".field public final synthetic \u02cf:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onClick(Landroid/view/View;)V",
+          "line": 38,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\\u03ab.smali",
+      "sha256": "F34FF4F40A910522028E93F41F03E1BCF431EB069605A19AAE243EF92E646EE0",
+      "fields": [
+        ".field public final synthetic \u0371:Ljava/lang/Object;",
+        ".field public final synthetic \u0372:Ljava/lang/Object;",
+        ".field public final synthetic \u0373:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 77,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ze.smali",
+      "sha256": "9E470A6BF74E0FF26657175D2475052AB50598DBF1B47963CB997C3E0B5F057D",
+      "fields": [
+        ".field public final synthetic \u02cf:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onGlobalLayout()V",
+          "line": 31,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ye.smali",
+      "sha256": "595B0FDFAC1DA93E591D63635AD5DDD6925DB058F872D67B0EE019559A80832B",
+      "fields": [
+        ".field public final synthetic \u0372:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 35,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\x9.smali",
+      "sha256": "6C01341A66266075313EBC29CF54A56036EA2E0276B639EF08282D3E3B2E6EEF",
+      "fields": [
+        ".field public final synthetic \u0372:Ljava/lang/Object;",
+        ".field public final synthetic \u0373:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 58,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\we.smali",
+      "sha256": "0E7EF6A1BD6A5EA514ED4FCB1D4D5EBCFE072FA2D65885D2CCD3E3CA0F424C65",
+      "fields": [
+        ".field public final synthetic \u02cf:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onError(Ljava/lang/String;)V",
+          "line": 39,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final onSuccess(Lorg/json/JSONObject;)V",
+          "line": 95,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u02cb(FF)V",
+          "line": 193,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ua.smali",
+      "sha256": "AA3DC0B39E688B45279DCAEF2C8A09305D1CF2B8CF66CD1210FF17D0A43E2614",
+      "fields": [
+        ".field public final synthetic \u02cf:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onAnimationEnd(Landroid/animation/Animator;)V",
+          "line": 35,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\td.smali",
+      "sha256": "4BBD275FAEAA9B9783841569D8D5B61AACE9E92155D61BD7776FBEA6C3E87B20",
+      "fields": [
+        ".field public final synthetic \u0371:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 38,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\sj.smali",
+      "sha256": "09FE3CA2067559A8C5FDAA0E3B20BCEF20AF3BD3E23DD336D75CAC2B5DFF848E",
+      "fields": [
+        ".field public final synthetic \u02b9:Ljava/lang/Object;",
+        ".field public final synthetic \u0371:Ljava/lang/Object;",
+        ".field public final synthetic \u0372:Ljava/lang/Object;",
+        ".field public final synthetic \u0373:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 56,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\se.smali",
+      "sha256": "6297DD8DB3E1928F6EF4054EB49E1D6A26B7455C78269FFE1A509CB213F429CB",
+      "fields": [
+        ".field public final synthetic \u0370:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onProgressChanged(Landroid/widget/SeekBar;IZ)V",
+          "line": 44,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final onStartTrackingTouch(Landroid/widget/SeekBar;)V",
+          "line": 260,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final onStopTrackingTouch(Landroid/widget/SeekBar;)V",
+          "line": 267,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\re.smali",
+      "sha256": "22F7FEFB3006DB989017ADF2FA44D66B4513B68F322BDFB56CD73F5229779ABF",
+      "fields": [
+        ".field public final synthetic \u02cf:Ljava/lang/Object;",
+        ".field public final synthetic \u0370:Ljava/lang/Object;",
+        ".field public final synthetic \u0371:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onProgressChanged(Landroid/widget/SeekBar;IZ)V",
+          "line": 50,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final onStartTrackingTouch(Landroid/widget/SeekBar;)V",
+          "line": 338,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final onStopTrackingTouch(Landroid/widget/SeekBar;)V",
+          "line": 383,
+          "explicit_ff_cast": false
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\qe.smali",
+      "sha256": "164092C3B0B9D6CB2A5D6266482E592CB114364EB96FA91C35CFB8D28A5A6425",
+      "fields": [
+        ".field public final synthetic \u02cb:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public onReceive(Landroid/content/Context;Landroid/content/Intent;)V",
+          "line": 28,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ne.smali",
+      "sha256": "23B671C620C2672883A7A9D668212E1A67BEED935296BD2152963DFD25EABB20",
+      "fields": [
+        ".field public final synthetic \u02cb:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onLayoutChange(Landroid/view/View;IIIIIIII)V",
+          "line": 39,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\lb.smali",
+      "sha256": "A35D120C380281B35B637A4EEB14F7CC003217193809C18A20B0F152E7515923",
+      "fields": [
+        ".field public final synthetic \u0373:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 58,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ke.smali",
+      "sha256": "F639B3CF745FB172A12FA25C702CA8F80DD4DC4C69A05152D83DC9EB36736432",
+      "fields": [
+        ".field public final synthetic \u02cf:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final get()Z",
+          "line": 40,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final \u02cb(Ljava/util/ArrayList;)V",
+          "line": 574,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final \u02cf()Ljava/lang/String;",
+          "line": 604,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\je.smali",
+      "sha256": "61084DECE1344D361CD80878AFFF460411B355FE27BBE5CB8D17C8287B95CEE2",
+      "fields": [
+        ".field public final synthetic \u0371:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 50,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ie.smali",
+      "sha256": "2BA91C21A959A398C45A298FB49F913E6AFE37050EF7046DFF0F64469A17B7D1",
+      "fields": [
+        ".field public final synthetic \u0371:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 38,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\h2.smali",
+      "sha256": "B44BFE0D27820191CF4477B8CA08941CE75FBC0A02F9CC063D857565AF6AC48B",
+      "fields": [
+        ".field public final synthetic \u0372:Ljava/lang/Object;",
+        ".field public final synthetic \u0373:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 56,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ge.smali",
+      "sha256": "26CC81DCEF9EF0D235FEE0187ABD34C9CC4D77DF594DAF5035D1FB8AD9A58E42",
+      "fields": [
+        ".field public final synthetic \u02cb:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z",
+          "line": 51,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\fe.smali",
+      "sha256": "72D8A02426DF6BE205B2434B460699FB9708D40F47F953931841F31EC364303C",
+      "fields": [
+        ".field public final synthetic \u0371:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 56,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ee.smali",
+      "sha256": "8B924E1F42BFF1EAB554730B1B1FD70607C2E1A8637389D8B08074ACAF32D932",
+      "fields": [
+        ".field public final synthetic \u0371:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 38,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\de.smali",
+      "sha256": "7DA51DDA340CCD170777B374A23F10E717D29167A5F83FBBC884DA388A0AA6EF",
+      "fields": [
+        ".field public final synthetic \u0371:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 44,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ce.smali",
+      "sha256": "68549540AF294FD9972AB87C29370D6C8DB71A6F0E24F6753220121B85FE54BE",
+      "fields": [
+        ".field public final synthetic \u0371:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 44,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\bg.smali",
+      "sha256": "21350AA21E08B50630BD827BF61AEA69E9E687F42A64BFD17B0E03F7C249C2F3",
+      "fields": [
+        ".field public final synthetic \u0372:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 44,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ag.smali",
+      "sha256": "74E4D41AEB16B09D59FAF98D229AF1D52CDD9AC20669BDEBF885B408ECDB2993",
+      "fields": [
+        ".field public final synthetic \u0371:Ljava/lang/Object;",
+        ".field public final synthetic \u0372:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "private final \u02cb()V",
+          "line": 42,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "private final \u02cf()V",
+          "line": 561,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final run()V",
+          "line": 876,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\af.smali",
+      "sha256": "132C590FA0DDA5D13CABC99478CFC7C621224AD14524BA4BF0B0C83628E4CF66",
+      "fields": [
+        ".field public final synthetic \u02cf:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public final onChange(Z)V",
+          "line": 35,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\o\\ae.smali",
+      "sha256": "084527B7FB437CBE1CABDDF62DF1BE3FC08398E2230E79219E0FA12E1C96D43C",
+      "fields": [
+        ".field public final synthetic \u0371:Lo/ff;"
+      ],
+      "methods": [
+        {
+          "signature": "public final run()V",
+          "line": 44,
+          "explicit_ff_cast": true
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\com\\byd\\launcher\\widget\\SwipeDismissFrameLayout.smali",
+      "sha256": "0591FF181D36E7C65532816E6A60FC0D02E3DDBA110FCC5A226321A46322FD6D",
+      "fields": [],
+      "methods": [
+        {
+          "signature": "public final dispatchTouchEvent(Landroid/view/MotionEvent;)Z",
+          "line": 51,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public getInterceptDownY()F",
+          "line": 836,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public setSwipeCallback(Lo/uh;)V",
+          "line": 844,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public setSwipeEnabled(Z)V",
+          "line": 853,
+          "explicit_ff_cast": false
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    },
+    {
+      "path": "smali\\com\\byd\\launcher\\NavBarService.smali",
+      "sha256": "6C0AA7483DC3B3C5ECC144E5A5ADC7C52AEFE6146ABF95649FA2540E8FB960E7",
+      "fields": [
+        ".field public \u0389:Lo/ff;",
+        ".field public \u03c1:Ljava/lang/Object;"
+      ],
+      "methods": [
+        {
+          "signature": "public static \u02b9(Lcom/byd/launcher/NavBarService;)V",
+          "line": 844,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u02cb(Lcom/byd/launcher/NavBarService;)V",
+          "line": 1088,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u02cf(Lcom/byd/launcher/NavBarService;)V",
+          "line": 1302,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public static \u0370(Lcom/byd/launcher/NavBarService;Ljava/lang/String;Ljava/lang/String;Landroid/view/View;)V",
+          "line": 1588,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u0371(Lcom/byd/launcher/NavBarService;Ljava/lang/String;)V",
+          "line": 2116,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u0372(Lcom/byd/launcher/NavBarService;)V",
+          "line": 2212,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u0373(Lcom/byd/launcher/NavBarService;)V",
+          "line": 2307,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u037d(Landroid/widget/ImageButton;ZZ)V",
+          "line": 2958,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u039b()V",
+          "line": 2991,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u03b0()Z",
+          "line": 3346,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u03b1(Ljava/lang/String;)Z",
+          "line": 3365,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u03b2()Z",
+          "line": 3434,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u03b3(Ljava/lang/String;)Z",
+          "line": 3459,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u03bb(Landroid/content/SharedPreferences;Ljava/lang/String;[Ljava/lang/String;)[Ljava/lang/String;",
+          "line": 3514,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u03e5(I)V",
+          "line": 3588,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public static \u03e8(Landroid/widget/ImageButton;Ljava/lang/String;I)V",
+          "line": 3657,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V",
+          "line": 3848,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final onConfigurationChanged(Landroid/content/res/Configuration;)V",
+          "line": 4442,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final onCreate()V",
+          "line": 4470,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final onDestroy()V",
+          "line": 4540,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public onInterrupt()V",
+          "line": 5230,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final onKeyEvent(Landroid/view/KeyEvent;)Z",
+          "line": 5236,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public onServiceConnected()V",
+          "line": 6551,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final onTaskRemoved(Landroid/content/Intent;)V",
+          "line": 7368,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final startActivity(Landroid/content/Intent;)V",
+          "line": 7394,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final startActivity(Landroid/content/Intent;Landroid/os/Bundle;)V",
+          "line": 7423,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0376()V",
+          "line": 7452,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0377(Landroid/widget/ImageButton;Z)V",
+          "line": 7523,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u037a(Landroid/view/View;)V",
+          "line": 7580,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u037b(Landroid/widget/ImageButton;)V",
+          "line": 7595,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u037c(Landroid/widget/ImageButton;Ljava/lang/String;)V",
+          "line": 7626,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0386(ILjava/lang/String;)V",
+          "line": 8313,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0388(Z)V",
+          "line": 8885,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0389(Z)V",
+          "line": 9550,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u038a()V",
+          "line": 9849,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u038c(Z)V",
+          "line": 10334,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u038e(Z)V",
+          "line": 10351,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u038f(Landroid/widget/ImageButton;Ljava/lang/String;)V",
+          "line": 10480,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0390(I)V",
+          "line": 10536,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0391()V",
+          "line": 10651,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0392()Z",
+          "line": 10689,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0393()V",
+          "line": 10978,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0394()Z",
+          "line": 11117,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0395(Landroid/widget/ImageButton;Ljava/lang/String;)V",
+          "line": 12662,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0396(J)V",
+          "line": 13263,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0397()V",
+          "line": 13291,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0398()V",
+          "line": 13543,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u0399(I)I",
+          "line": 13816,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u039a()V",
+          "line": 13839,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u039c()V",
+          "line": 14996,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u039d(Z)V",
+          "line": 15044,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u039e()V",
+          "line": 15125,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u039f()V",
+          "line": 15198,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a0()V",
+          "line": 15344,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a1()V",
+          "line": 15418,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a3(Ljava/lang/String;)Lo/vb;",
+          "line": 15586,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a4()[Landroid/widget/ImageButton;",
+          "line": 15622,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a5(Landroid/view/View;)Landroid/os/Bundle;",
+          "line": 15685,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a6()[I",
+          "line": 15749,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a7(I)Ljava/lang/String;",
+          "line": 15826,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a8()I",
+          "line": 15969,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03a9()I",
+          "line": 16005,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03aa()V",
+          "line": 16041,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03ab()V",
+          "line": 16116,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03ac()V",
+          "line": 16185,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03ad()V",
+          "line": 16242,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final \u03ae(I)V",
+          "line": 16467,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03af()V",
+          "line": 16596,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03b4()Z",
+          "line": 16655,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03b5()Z",
+          "line": 16733,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03b6(Landroid/view/View;)V",
+          "line": 16766,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03b7(Landroid/view/View;)V",
+          "line": 16855,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03b8(Landroid/view/View;)V",
+          "line": 17042,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03b9(Landroid/view/View;Ljava/lang/String;)V",
+          "line": 17089,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03ba()V",
+          "line": 17507,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03bc(I)Landroid/graphics/Bitmap;",
+          "line": 17554,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03bd()V",
+          "line": 18183,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03be()V",
+          "line": 18593,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03bf()V",
+          "line": 18834,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c0(Ljava/lang/String;Ljava/lang/String;)Landroid/graphics/Bitmap;",
+          "line": 18947,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c1(Ljava/lang/String;[Ljava/lang/String;)Landroid/graphics/Bitmap;",
+          "line": 19183,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c2(I)V",
+          "line": 19278,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c3()V",
+          "line": 19304,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c4(Ljava/lang/String;IZZ)V",
+          "line": 19380,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c5()V",
+          "line": 19474,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c6()V",
+          "line": 19500,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final \u03c7()V",
+          "line": 19829,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c8(I)V",
+          "line": 19947,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03c9()V",
+          "line": 20078,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03ca()V",
+          "line": 20165,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03cb()V",
+          "line": 20383,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03cc()V",
+          "line": 20508,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03cd()V",
+          "line": 20604,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03ce()V",
+          "line": 20930,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03cf()V",
+          "line": 21010,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d0(Ljava/lang/Runnable;)V",
+          "line": 21086,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d1(ILjava/lang/String;)V",
+          "line": 21158,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d2()V",
+          "line": 21195,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d3()V",
+          "line": 21223,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d4()V",
+          "line": 21266,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d5(I)V",
+          "line": 21277,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d6(Ljava/lang/String;)V",
+          "line": 21430,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d7(IZ)V",
+          "line": 22025,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d8(I)V",
+          "line": 22086,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03d9(I)V",
+          "line": 22141,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03da(Z)V",
+          "line": 22190,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03db()V",
+          "line": 22249,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03dc()V",
+          "line": 22389,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03dd()V",
+          "line": 23230,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03de()V",
+          "line": 25162,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03df(I)V",
+          "line": 26330,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "private final stabilityCreateStatusBar(I)V",
+          "line": 27032,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final \u03e1(Ljava/lang/String;)V",
+          "line": 27631,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03e2(II)V",
+          "line": 27648,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03e3(I)V",
+          "line": 28018,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final \u03e4()V",
+          "line": 28617,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03e6()V",
+          "line": 28833,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03e7()V",
+          "line": 29097,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03e9(Landroid/widget/ImageButton;Ljava/lang/String;)V",
+          "line": 29103,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03ea()V",
+          "line": 29787,
+          "explicit_ff_cast": true
+        },
+        {
+          "signature": "public final \u03eb(Ljava/lang/String;)V",
+          "line": 30495,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final \u03e0(I)V",
+          "line": 30539,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final stabilityReleaseStatusListeners()Z",
+          "line": 30559,
+          "explicit_ff_cast": false
+        },
+        {
+          "signature": "public final stabilityReleaseStatusBar()Z",
+          "line": 30595,
+          "explicit_ff_cast": false
+        }
+      ],
+      "status": "CALLBACK_OWNERSHIP_REVIEW_PENDING; field/cast candidate list, not proof every method needs editing"
+    }
+  ],
+  "required_next_checks": [
+    "Separate permanent dispose from ordinary close; cancel owned queues without scheduling restoration",
+    "Retain failed-to-remove resources and isolate cleanup exceptions so service teardown continues",
+    "Audit Object-typed shared callback owners, in-flight work and delivery guards without changing unrelated/vehicle selectors",
+    "Verify cached/open/embedded root and animation ownership before choosing disposal operations"
+  ],
+  "limitation": "Restricted execution covers actual selector 4 -> warmup 0 branches only. Does not execute full onDestroy, wait 500ms, run ART or measure a vehicle leak."
+}

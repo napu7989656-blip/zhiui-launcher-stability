@@ -1,0 +1,1450 @@
+--- base08_r1/smali/o/Ϙ.smali
++++ base09_r2/smali/o/Ϙ.smali
+@@ -43,6 +43,15 @@
+ # virtual methods
+ .method public final onClick(Landroid/view/View;)V
+     .locals 14
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/Ϙ;->ˏ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     iget v0, p0, Lo/Ϙ;->ˋ:I
+ 
+--- base08_r1/smali/o/ϓ.smali
++++ base09_r2/smali/o/ϓ.smali
+@@ -71,6 +71,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 12
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ϓ;->Ͳ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/ϓ;->Ͱ:I
+--- base08_r1/smali/o/ΰ.smali
++++ base09_r2/smali/o/ΰ.smali
+@@ -37,6 +37,15 @@
+ # virtual methods
+ .method public final onClick(Landroid/view/View;)V
+     .locals 8
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ΰ;->ˏ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/ΰ;->ˋ:I
+--- base08_r1/smali/o/Ϋ.smali
++++ base09_r2/smali/o/Ϋ.smali
+@@ -76,6 +76,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 19
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/Ϋ;->ͱ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     move-object/from16 v1, p0
+--- base08_r1/smali/o/ze.smali
++++ base09_r2/smali/o/ze.smali
+@@ -30,6 +30,15 @@
+ # virtual methods
+ .method public final onGlobalLayout()V
+     .locals 10
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ze;->ˏ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/ze;->ˋ:Landroid/widget/GridLayout;
+--- base08_r1/smali/o/ye.smali
++++ base09_r2/smali/o/ye.smali
+@@ -34,6 +34,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 6
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ye;->Ͳ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/ye;->Ͳ:Lo/ff;
+--- base08_r1/smali/o/x9.smali
++++ base09_r2/smali/o/x9.smali
+@@ -57,6 +57,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 18
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/x9;->Ͳ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     move-object/from16 v0, p0
+--- base08_r1/smali/o/we.smali
++++ base09_r2/smali/o/we.smali
+@@ -38,6 +38,15 @@
+ # virtual methods
+ .method public final onError(Ljava/lang/String;)V
+     .locals 2
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/we;->ˏ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/we;->ˋ:I
+@@ -95,6 +104,15 @@
+ .method public final onSuccess(Lorg/json/JSONObject;)V
+     .locals 3
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/we;->ˏ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget v0, p0, Lo/we;->ˋ:I
+ 
+@@ -193,6 +211,15 @@
+ .method public final ˋ(FF)V
+     .locals 4
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/we;->ˏ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     const/high16 v0, -0x3d600000    # -80.0f
+ 
+--- base08_r1/smali/o/ua.smali
++++ base09_r2/smali/o/ua.smali
+@@ -34,6 +34,15 @@
+ # virtual methods
+ .method public final onAnimationEnd(Landroid/animation/Animator;)V
+     .locals 1
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ua;->ˏ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget p1, p0, Lo/ua;->ˋ:I
+--- base08_r1/smali/o/td.smali
++++ base09_r2/smali/o/td.smali
+@@ -37,6 +37,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 29
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/td;->ͱ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     move-object/from16 v1, p0
+--- base08_r1/smali/o/sj.smali
++++ base09_r2/smali/o/sj.smali
+@@ -55,6 +55,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 10
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/sj;->ͳ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/sj;->Ͱ:I
+--- base08_r1/smali/o/se.smali
++++ base09_r2/smali/o/se.smali
+@@ -43,6 +43,15 @@
+ # virtual methods
+ .method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
+     .locals 2
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/se;->Ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget p1, p0, Lo/se;->ˋ:I
+@@ -267,6 +276,15 @@
+ .method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
+     .locals 5
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/se;->Ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget v0, p0, Lo/se;->ˋ:I
+ 
+--- base08_r1/smali/o/re.smali
++++ base09_r2/smali/o/re.smali
+@@ -49,6 +49,15 @@
+ # virtual methods
+ .method public final onProgressChanged(Landroid/widget/SeekBar;IZ)V
+     .locals 3
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/re;->Ͱ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/re;->ˋ:I
+@@ -338,6 +347,15 @@
+ .method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
+     .locals 1
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/re;->Ͱ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget v0, p0, Lo/re;->ˋ:I
+ 
+@@ -382,6 +400,15 @@
+ 
+ .method public final onStopTrackingTouch(Landroid/widget/SeekBar;)V
+     .locals 14
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/re;->Ͱ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/re;->ˋ:I
+--- base08_r1/smali/o/qe.smali
++++ base09_r2/smali/o/qe.smali
+@@ -27,6 +27,15 @@
+ # virtual methods
+ .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
+     .locals 3
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/qe;->ˋ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget-object p1, p0, Lo/qe;->ˋ:Lo/ff;
+--- base08_r1/smali/o/ne.smali
++++ base09_r2/smali/o/ne.smali
+@@ -37,7 +37,16 @@
+ 
+ # virtual methods
+ .method public final onLayoutChange(Landroid/view/View;IIIIIIII)V
+-    .locals 0
++    .locals 1
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ne;->ˋ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget-object p1, p0, Lo/ne;->ˋ:Lo/ff;
+--- base08_r1/smali/o/lb.smali
++++ base09_r2/smali/o/lb.smali
+@@ -57,6 +57,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 18
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/lb;->ͳ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     move-object/from16 v1, p0
+--- base08_r1/smali/o/ke.smali
++++ base09_r2/smali/o/ke.smali
+@@ -39,6 +39,16 @@
+ # virtual methods
+ .method public final get()Z
+     .locals 7
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ke;->ˏ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    const/4 v0, 0x0
++    return v0
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/ke;->ˋ:I
+@@ -574,6 +584,15 @@
+ .method public final ˋ(Ljava/util/ArrayList;)V
+     .locals 1
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ke;->ˏ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget-object v0, p0, Lo/ke;->ˏ:Lo/ff;
+ 
+@@ -603,6 +622,16 @@
+ 
+ .method public final ˏ()Ljava/lang/String;
+     .locals 6
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ke;->ˏ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    const-string v0, ""
++    return-object v0
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/ke;->ˋ:I
+--- base08_r1/smali/o/je.smali
++++ base09_r2/smali/o/je.smali
+@@ -49,6 +49,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 13
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/je;->ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/je;->Ͱ:I
+--- base08_r1/smali/o/ie.smali
++++ base09_r2/smali/o/ie.smali
+@@ -37,6 +37,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 15
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ie;->ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/ie;->Ͱ:I
+--- base08_r1/smali/o/h2.smali
++++ base09_r2/smali/o/h2.smali
+@@ -55,6 +55,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 15
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/h2;->Ͳ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/h2;->Ͱ:I
+--- base08_r1/smali/o/ge.smali
++++ base09_r2/smali/o/ge.smali
+@@ -50,6 +50,16 @@
+ # virtual methods
+ .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+     .locals 11
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ge;->ˋ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    const/4 v0, 0x0
++    return v0
++    :stability_owner_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/ge;->ˋ:Lo/ff;
+--- base08_r1/smali/o/fe.smali
++++ base09_r2/smali/o/fe.smali
+@@ -56,6 +56,15 @@
+ .method public final run()V
+     .locals 5
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/fe;->ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget v0, p0, Lo/fe;->Ͱ:I
+ 
+--- base08_r1/smali/o/ee.smali
++++ base09_r2/smali/o/ee.smali
+@@ -37,6 +37,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 22
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ee;->ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     move-object/from16 v1, p0
+--- base08_r1/smali/o/de.smali
++++ base09_r2/smali/o/de.smali
+@@ -43,6 +43,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 7
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/de;->ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/de;->Ͱ:I
+--- base08_r1/smali/o/ce.smali
++++ base09_r2/smali/o/ce.smali
+@@ -43,6 +43,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 10
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ce;->ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/ce;->Ͱ:I
+--- base08_r1/smali/o/bg.smali
++++ base09_r2/smali/o/bg.smali
+@@ -43,6 +43,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 8
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/bg;->Ͳ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/bg;->Ͱ:I
+--- base08_r1/smali/o/ag.smali
++++ base09_r2/smali/o/ag.smali
+@@ -42,6 +42,15 @@
+ .method private final ˋ()V
+     .locals 12
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ag;->ͱ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget-object v0, p0, Lo/ag;->ͱ:Ljava/lang/Object;
+ 
+@@ -560,6 +569,15 @@
+ 
+ .method private final ˏ()V
+     .locals 12
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ag;->ͱ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/ag;->ͱ:Ljava/lang/Object;
+@@ -875,6 +893,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 22
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ag;->ͱ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     move-object/from16 v1, p0
+ 
+--- base08_r1/smali/o/af.smali
++++ base09_r2/smali/o/af.smali
+@@ -34,6 +34,15 @@
+ # virtual methods
+ .method public final onChange(Z)V
+     .locals 4
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/af;->ˏ:Ljava/lang/Object;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget p1, p0, Lo/af;->ˋ:I
+--- base08_r1/smali/o/ae.smali
++++ base09_r2/smali/o/ae.smali
+@@ -43,6 +43,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 9
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/ae;->ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/ae;->Ͱ:I
+--- base08_r1/smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali
++++ base09_r2/smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali
+@@ -50,6 +50,16 @@
+ # virtual methods
+ .method public final dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+     .locals 9
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lcom/byd/launcher/widget/SwipeDismissFrameLayout;->ͳ:Lo/uh;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    const/4 v0, 0x0
++    return v0
++    :stability_owner_alive
+ 
+     .line 1
+     iget-boolean v0, p0, Lcom/byd/launcher/widget/SwipeDismissFrameLayout;->ʹ:Z
+--- base08_r1/smali/o/k9.smali
++++ base09_r2/smali/o/k9.smali
+@@ -37,6 +37,15 @@
+ # virtual methods
+ .method public final onClick(Landroid/view/View;)V
+     .locals 12
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/k9;->ˏ:Lcom/byd/launcher/NavBarService;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     iget v0, p0, Lo/k9;->ˋ:I
+ 
+--- base08_r1/smali/o/zb.smali
++++ base09_r2/smali/o/zb.smali
+@@ -74,6 +74,16 @@
+ .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+     .locals 9
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/zb;->ͷ:Lcom/byd/launcher/NavBarService;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    const/4 v0, 0x0
++    return v0
++    :stability_owner_alive
++
+     iget-object p1, p0, Lo/zb;->ͷ:Lcom/byd/launcher/NavBarService;
+ 
+     .line 1
+--- base08_r1/smali/o/m9.smali
++++ base09_r2/smali/o/m9.smali
+@@ -37,6 +37,15 @@
+ # virtual methods
+ .method public final run()V
+     .locals 12
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    move-object/from16 v0, p0
++    iget-object v0, v0, Lo/m9;->ͱ:Lcom/byd/launcher/NavBarService;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget v0, p0, Lo/m9;->Ͱ:I
+--- base08_r1/smali/o/ff.smali
++++ base09_r2/smali/o/ff.smali
+@@ -12,6 +12,7 @@
+ 
+ 
+ # instance fields
++.field public volatile stabilityDisposed:Z
+ .field public ʹ:Landroid/view/View;
+ 
+ .field public final ˋ:Landroid/content/Context;
+@@ -438,6 +439,13 @@
+ # virtual methods
+ .method public final ʹ()V
+     .locals 9
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget-boolean v0, p0, Lo/ff;->ͷ:Z
+@@ -908,6 +916,13 @@
+ .method public final ˋ(Landroid/view/View;)V
+     .locals 3
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     if-nez p1, :cond_0
+ 
+@@ -970,6 +985,13 @@
+ 
+ .method public final ˏ()V
+     .locals 11
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/ff;->ͳ:Landroid/view/View;
+@@ -1851,6 +1873,13 @@
+ .method public final Ͱ(Lo/df;ZLjava/lang/String;)V
+     .locals 5
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget-object v0, p1, Lo/df;->Ͷ:Landroid/widget/FrameLayout;
+ 
+@@ -2006,6 +2035,13 @@
+ .method public final Ͳ()V
+     .locals 37
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     move-object/from16 v0, p0
+ 
+@@ -2428,6 +2464,13 @@
+ 
+ .method public final ͳ()V
+     .locals 5
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     :try_start_0
+@@ -2748,6 +2791,13 @@
+ .method public final ͻ()V
+     .locals 3
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget-boolean v0, p0, Lo/ff;->ΐ:Z
+ 
+@@ -2776,6 +2826,13 @@
+ .method public final ͽ()V
+     .locals 4
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget-object v0, p0, Lo/ff;->ͳ:Landroid/view/View;
+ 
+@@ -2835,6 +2892,13 @@
+ 
+ .method public final Ά()V
+     .locals 6
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     const/4 v0, 0x0
+@@ -3213,6 +3277,13 @@
+ .method public final Έ(Ljava/util/ArrayList;)V
+     .locals 3
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     new-instance v0, Lorg/json/JSONArray;
+ 
+@@ -3250,6 +3321,13 @@
+ .method public final Ή(ILjava/lang/String;)V
+     .locals 3
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     new-instance v0, Ljava/lang/Thread;
+ 
+@@ -3268,6 +3346,13 @@
+ 
+ .method public final Ί()V
+     .locals 13
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/ff;->ͳ:Landroid/view/View;
+@@ -4178,6 +4263,13 @@
+ .method public final Ό()V
+     .locals 13
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     invoke-virtual {p0}, Lo/ff;->Ͳ()V
+ 
+@@ -4732,6 +4824,13 @@
+ .method public final Ύ(I)V
+     .locals 12
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget-boolean v0, p0, Lo/ff;->ͷ:Z
+ 
+@@ -5523,6 +5622,13 @@
+ .method public final Ώ(Landroid/widget/SeekBar;Landroid/widget/TextView;Landroid/widget/ImageView;)V
+     .locals 8
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     if-nez p1, :cond_0
+ 
+@@ -5749,3 +5855,82 @@
+     :cond_b
+     return-void
+ .end method
++
++.method public final stabilityDispose()Z
++    .locals 6
++    const/4 v0, 0x1
++    iput-boolean v0, p0, Lo/ff;->stabilityDisposed:Z
++    const/4 v1, 0x0
++    iput-object v1, p0, Lo/ff;->Ύ:Lo/cf;
++    iput-boolean v1, p0, Lo/ff;->ͷ:Z
++    iput-boolean v1, p0, Lo/ff;->ͺ:Z
++    iput-boolean v1, p0, Lo/ff;->ͻ:Z
++    iput-boolean v1, p0, Lo/ff;->ΐ:Z
++    iget-object v2, p0, Lo/ff;->Ͱ:Landroid/os/Handler;
++    invoke-static {v2}, Lcom/byd/launcher/stability/QuickSettingsResources;->clearQueue(Landroid/os/Handler;)Z
++    move-result v5
++    and-int/2addr v0, v5
++    iget-object v2, p0, Lo/ff;->ͱ:Landroid/os/Handler;
++    invoke-static {v2}, Lcom/byd/launcher/stability/QuickSettingsResources;->clearQueue(Landroid/os/Handler;)Z
++    move-result v5
++    and-int/2addr v0, v5
++    iget-object v2, p0, Lo/ff;->Ή:Lo/af;
++    iget-object v3, p0, Lo/ff;->ˋ:Landroid/content/Context;
++    invoke-static {v3, v2}, Lcom/byd/launcher/stability/QuickSettingsResources;->unregisterObserver(Landroid/content/Context;Landroid/database/ContentObserver;)Z
++    move-result v5
++    and-int/2addr v0, v5
++    if-eqz v5, :listener_0_retained
++    iput-object v1, p0, Lo/ff;->Ή:Lo/af;
++    :listener_0_retained
++    iget-object v2, p0, Lo/ff;->Ί:Lo/qe;
++    iget-object v3, p0, Lo/ff;->ˋ:Landroid/content/Context;
++    invoke-static {v3, v2}, Lcom/byd/launcher/stability/StatusBarResources;->unregisterReceiver(Landroid/content/Context;Landroid/content/BroadcastReceiver;)Z
++    move-result v5
++    and-int/2addr v0, v5
++    if-eqz v5, :listener_1_retained
++    iput-object v1, p0, Lo/ff;->Ί:Lo/qe;
++    :listener_1_retained
++    iget-object v2, p0, Lo/ff;->Γ:Lo/f4;
++    if-eqz v2, :editor_done
++    invoke-virtual {v2}, Lo/f4;->stabilityDispose()Z
++    move-result v5
++    and-int/2addr v0, v5
++    if-eqz v5, :editor_done
++    iput-object v1, p0, Lo/ff;->Γ:Lo/f4;
++    :editor_done
++    iget-object v3, p0, Lo/ff;->ˏ:Landroid/view/WindowManager;
++    iget-object v4, p0, Lo/ff;->Ͳ:Landroid/view/ViewGroup;
++    iget-object v2, p0, Lo/ff;->ͳ:Landroid/view/View;
++    invoke-static {v3, v4, v2}, Lcom/byd/launcher/stability/QuickSettingsResources;->disposePanel(Landroid/view/WindowManager;Landroid/view/ViewGroup;Landroid/view/View;)Z
++    move-result v5
++    and-int/2addr v0, v5
++    if-eqz v5, :panel_0_retained
++    iput-object v1, p0, Lo/ff;->ͳ:Landroid/view/View;
++    :panel_0_retained
++    iget-object v2, p0, Lo/ff;->Ώ:Landroid/view/View;
++    invoke-static {v3, v4, v2}, Lcom/byd/launcher/stability/QuickSettingsResources;->disposePanel(Landroid/view/WindowManager;Landroid/view/ViewGroup;Landroid/view/View;)Z
++    move-result v5
++    and-int/2addr v0, v5
++    if-eqz v5, :panel_1_retained
++    iput-object v1, p0, Lo/ff;->Ώ:Landroid/view/View;
++    :panel_1_retained
++    iget-object v2, p0, Lo/ff;->ͳ:Landroid/view/View;
++    if-nez v2, :views_retained
++    iget-object v2, p0, Lo/ff;->Ώ:Landroid/view/View;
++    if-nez v2, :views_retained
++    iput-object v1, p0, Lo/ff;->ʹ:Landroid/view/View;
++    iput-object v1, p0, Lo/ff;->Ͷ:Landroid/view/View;
++    iput-object v1, p0, Lo/ff;->Ͳ:Landroid/view/ViewGroup;
++    iput-object v1, p0, Lo/ff;->Δ:Lo/xe;
++    :views_retained
++    iget-object v2, p0, Lo/ff;->Ό:Ljava/util/concurrent/CopyOnWriteArrayList;
++    invoke-virtual {v2}, Ljava/util/concurrent/CopyOnWriteArrayList;->clear()V
++    iget-object v2, p0, Lo/ff;->Β:Ljava/util/ArrayList;
++    invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
++    if-nez v0, :dispose_done
++    const-string v2, "QuickSettingsMgr"
++    const-string v3, "Permanent disposal incomplete; stopped owner retains failed resources"
++    invoke-static {v2, v3}, Lo/q3;->Ͳ(Ljava/lang/String;Ljava/lang/String;)V
++    :dispose_done
++    return v0
++.end method
+--- base08_r1/smali/o/f4.smali
++++ base09_r2/smali/o/f4.smali
+@@ -4,6 +4,7 @@
+ 
+ 
+ # instance fields
++.field public volatile stabilityDisposed:Z
+ .field public final ˋ:Landroid/content/Context;
+ 
+ .field public final ˏ:Landroid/view/WindowManager;
+@@ -46,6 +47,13 @@
+ .method public final ˋ()V
+     .locals 3
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     .line 1
+     iget-boolean v0, p0, Lo/f4;->Ͳ:Z
+ 
+@@ -106,6 +114,13 @@
+ 
+ .method public final ˏ()V
+     .locals 2
++
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
+ 
+     .line 1
+     :try_start_0
+@@ -151,6 +166,13 @@
+ .method public final Ͱ(Ljava/lang/String;Ljava/util/ArrayList;Lo/e4;II)V
+     .locals 9
+ 
++    # BASE-09: stop only callbacks owned by a disposed controller/editor.
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v0
++    if-eqz v0, :stability_owner_alive
++    return-void
++    :stability_owner_alive
++
+     iget-boolean v0, p0, Lo/f4;->Ͳ:Z
+ 
+     if-eqz v0, :cond_0
+@@ -569,3 +591,21 @@
+     :goto_9
+     return-void
+ .end method
++
++.method public final stabilityDispose()Z
++    .locals 4
++    const/4 v0, 0x1
++    iput-boolean v0, p0, Lo/f4;->stabilityDisposed:Z
++    const/4 v0, 0x0
++    iput-boolean v0, p0, Lo/f4;->Ͳ:Z
++    iget-object v1, p0, Lo/f4;->ˏ:Landroid/view/WindowManager;
++    iget-object v2, p0, Lo/f4;->Ͱ:Landroid/view/ViewGroup;
++    iget-object v3, p0, Lo/f4;->ͱ:Landroid/view/View;
++    invoke-static {v1, v2, v3}, Lcom/byd/launcher/stability/QuickSettingsResources;->disposePanel(Landroid/view/WindowManager;Landroid/view/ViewGroup;Landroid/view/View;)Z
++    move-result v1
++    if-eqz v1, :editor_retained
++    iput-object v0, p0, Lo/f4;->ͱ:Landroid/view/View;
++    iput-object v0, p0, Lo/f4;->Ͱ:Landroid/view/ViewGroup;
++    :editor_retained
++    return v1
++.end method
+--- base08_r1/smali/com/byd/launcher/NavBarService.smali
++++ base09_r2/smali/com/byd/launcher/NavBarService.smali
+@@ -4600,29 +4600,12 @@
+     .line 28
+     :cond_0
+     iget-object v1, p0, Lcom/byd/launcher/NavBarService;->Ή:Lo/ff;
+-
+-    .line 29
+-    .line 30
+     const/4 v3, 0x0
+-
+-    .line 31
+     if-eqz v1, :cond_1
+-
+-    .line 32
+-    .line 33
+-    iput-boolean v3, v1, Lo/ff;->ͺ:Z
+-
+-    .line 34
+-    .line 35
+-    invoke-virtual {v1}, Lo/ff;->Ά()V
+-
+-    .line 36
+-    .line 37
+-    .line 38
++    invoke-virtual {v1}, Lo/ff;->stabilityDispose()Z
++    move-result v4
++    if-eqz v4, :cond_1
+     iput-object v2, p0, Lcom/byd/launcher/NavBarService;->Ή:Lo/ff;
+-
+-    .line 39
+-    .line 40
+     :cond_1
+     iget-object v1, p0, Lcom/byd/launcher/NavBarService;->Ί:Lo/nd;
+ 
+--- base08_r1/smali/com/byd/launcher/stability/QuickSettingsLifetime.smali
++++ base09_r2/smali/com/byd/launcher/stability/QuickSettingsLifetime.smali
+@@ -0,0 +1,54 @@
++.class public final Lcom/byd/launcher/stability/QuickSettingsLifetime;
++.super Ljava/lang/Object;
++.source "QuickSettingsLifetime"
++
++.method public static isDisposed(Ljava/lang/Object;)Z
++    .locals 2
++    instance-of v0, p0, Lo/we;
++    if-eqz v0, :check_seek_adapter
++    check-cast p0, Lo/we;
++    iget-object p0, p0, Lo/we;->ˏ:Ljava/lang/Object;
++    goto :check_controller
++    :check_seek_adapter
++    instance-of v0, p0, Lo/re;
++    if-eqz v0, :check_controller
++    check-cast p0, Lo/re;
++    iget-object p0, p0, Lo/re;->Ͱ:Ljava/lang/Object;
++    :check_controller
++    instance-of v0, p0, Lo/ff;
++    if-eqz v0, :check_editor
++    check-cast p0, Lo/ff;
++    iget-boolean v0, p0, Lo/ff;->stabilityDisposed:Z
++    if-nez v0, :disposed
++    iget-object p0, p0, Lo/ff;->ˋ:Landroid/content/Context;
++    goto :check_service
++    :check_editor
++    instance-of v0, p0, Lo/f4;
++    if-eqz v0, :alive
++    check-cast p0, Lo/f4;
++    iget-boolean v0, p0, Lo/f4;->stabilityDisposed:Z
++    if-nez v0, :disposed
++    iget-object p0, p0, Lo/f4;->ˋ:Landroid/content/Context;
++    :check_service
++    instance-of v0, p0, Lcom/byd/launcher/NavBarService;
++    if-eqz v0, :alive
++    check-cast p0, Lcom/byd/launcher/NavBarService;
++    iget-boolean v0, p0, Lcom/byd/launcher/NavBarService;->ˋ:Z
++    if-nez v0, :disposed
++    :alive
++    const/4 v0, 0x0
++    return v0
++    :disposed
++    const/4 v0, 0x1
++    return v0
++.end method
++
++.method public static isServiceDestroyed(Lcom/byd/launcher/NavBarService;)Z
++    .locals 1
++    if-eqz p0, :missing_service
++    iget-boolean v0, p0, Lcom/byd/launcher/NavBarService;->ˋ:Z
++    return v0
++    :missing_service
++    const/4 v0, 0x1
++    return v0
++.end method
+--- base08_r1/smali/com/byd/launcher/stability/QuickSettingsResources.smali
++++ base09_r2/smali/com/byd/launcher/stability/QuickSettingsResources.smali
+@@ -0,0 +1,233 @@
++.class public final Lcom/byd/launcher/stability/QuickSettingsResources;
++.super Ljava/lang/Object;
++.source "QuickSettingsResources.java"
++
++
++# direct methods
++.method private constructor <init>()V
++    .locals 0
++
++    .line 13
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    return-void
++.end method
++
++.method public static clearQueue(Landroid/os/Handler;)Z
++    .locals 2
++
++    const/4 v0, 0x1
++
++    if-nez p0, :cond_0
++
++    return v0
++
++    :cond_0
++    const/4 v1, 0x0
++
++    .line 18
++    :try_start_0
++    invoke-virtual {p0, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    return v0
++
++    :catch_0
++    const/4 p0, 0x0
++
++    return p0
++.end method
++
++.method public static disposePanel(Landroid/view/WindowManager;Landroid/view/ViewGroup;Landroid/view/View;)Z
++    .locals 4
++
++    const/4 v0, 0x1
++
++    if-nez p2, :cond_0
++
++    return v0
++
++    .line 38
++    :cond_0
++    invoke-static {p2}, Lcom/byd/launcher/stability/QuickSettingsResources;->stopAnimations(Landroid/view/View;)Z
++
++    move-result v1
++
++    const/4 v2, 0x0
++
++    if-eqz p1, :cond_2
++
++    .line 41
++    :try_start_0
++    invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
++
++    move-result-object v3
++
++    if-ne v3, p1, :cond_2
++
++    .line 43
++    invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
++
++    .line 44
++    invoke-virtual {p2}, Landroid/view/View;->isAttachedToWindow()Z
++
++    move-result p0
++
++    if-nez p0, :cond_1
++
++    invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
++
++    move-result-object p0
++
++    if-nez p0, :cond_1
++
++    goto :goto_0
++
++    :cond_1
++    move v0, v2
++
++    :goto_0
++    move v2, v0
++
++    goto :goto_1
++
++    .line 46
++    :cond_2
++    invoke-static {p0, p2}, Lcom/byd/launcher/stability/StatusBarResources;->removeWindow(Landroid/view/WindowManager;Landroid/view/View;)Z
++
++    move-result p0
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    move v2, p0
++
++    :catch_0
++    :goto_1
++    and-int p0, v1, v2
++
++    return p0
++.end method
++
++.method private static stopAnimations(Landroid/view/View;)Z
++    .locals 4
++
++    const/4 v0, 0x0
++
++    .line 58
++    :try_start_0
++    invoke-virtual {p0}, Landroid/view/View;->animate()Landroid/view/ViewPropertyAnimator;
++
++    move-result-object v1
++
++    const/4 v2, 0x0
++
++    .line 59
++    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->setListener(Landroid/animation/Animator$AnimatorListener;)Landroid/view/ViewPropertyAnimator;
++
++    .line 60
++    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->withStartAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
++
++    .line 61
++    invoke-virtual {v1, v2}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
++
++    .line 62
++    invoke-virtual {v1}, Landroid/view/ViewPropertyAnimator;->cancel()V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    const/4 v1, 0x1
++
++    goto :goto_0
++
++    :catch_0
++    move v1, v0
++
++    .line 67
++    :goto_0
++    :try_start_1
++    invoke-virtual {p0}, Landroid/view/View;->clearAnimation()V
++    :try_end_1
++    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_1
++
++    goto :goto_1
++
++    :catch_1
++    move v1, v0
++
++    .line 71
++    :goto_1
++    instance-of v2, p0, Landroid/view/ViewGroup;
++
++    if-eqz v2, :cond_0
++
++    .line 72
++    check-cast p0, Landroid/view/ViewGroup;
++
++    move v2, v0
++
++    .line 74
++    :goto_2
++    :try_start_2
++    invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
++
++    move-result v3
++
++    if-ge v2, v3, :cond_0
++
++    .line 76
++    invoke-virtual {p0, v2}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
++
++    move-result-object v3
++
++    invoke-static {v3}, Lcom/byd/launcher/stability/QuickSettingsResources;->stopAnimations(Landroid/view/View;)Z
++
++    move-result v3
++    :try_end_2
++    .catch Ljava/lang/RuntimeException; {:try_start_2 .. :try_end_2} :catch_2
++
++    and-int/2addr v1, v3
++
++    add-int/lit8 v2, v2, 0x1
++
++    goto :goto_2
++
++    :cond_0
++    move v0, v1
++
++    :catch_2
++    return v0
++.end method
++
++.method public static unregisterObserver(Landroid/content/Context;Landroid/database/ContentObserver;)Z
++    .locals 2
++
++    const/4 v0, 0x1
++
++    if-nez p1, :cond_0
++
++    return v0
++
++    :cond_0
++    const/4 v1, 0x0
++
++    if-nez p0, :cond_1
++
++    return v1
++
++    .line 29
++    :cond_1
++    :try_start_0
++    invoke-virtual {p0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
++
++    move-result-object p0
++
++    invoke-virtual {p0, p1}, Landroid/content/ContentResolver;->unregisterContentObserver(Landroid/database/ContentObserver;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    return v0
++
++    :catch_0
++    return v1
++.end method

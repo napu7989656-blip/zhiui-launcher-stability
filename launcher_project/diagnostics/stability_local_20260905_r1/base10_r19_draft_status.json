@@ -1,0 +1,39 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "D4D70049B7840A0D27ED7564AAF4F7448CD3867B987296228DCDD8C0AEDCD762",
+  "delta_files": 3,
+  "cumulative_files": 131,
+  "source_final_case_groups": 326,
+  "review": [
+    "NavBarService reconnect rejects destroyed instance before super/O0 assignment; remaining reconnect flow retained.",
+    "HOME receiver registration extracted: existing receiver reused, new reference committed only after registration returns; failure logs and keeps null for reconnect retry.",
+    "wa checks non-null Intent, exact current Service identity, destroyed flag and Service receiver identity before original action/reason filtering and Handler post.",
+    "Only td.run selector6 adds the same receiver identity check before original panel-closing behavior. Other selectors and remaining Service methods restored exactly by inverse manifest.",
+    "10 HOME lifecycle groups plus316 inherited pass source/final; catch range links real register call to separately executed handler, failure does not commit and retry succeeds. Android registration and callback effects doubled.",
+    "JADX wa and new registration helper/connection guard render correctly. td default run is omitted; independent partial output case6 correctly enters through stabilityCurrent. All default exits3 report only existing NavBarService.Ε RegionMaker error. Partial process exit1, not a clean full decompile."
+  ],
+  "jadx": [
+    {
+      "cls": "o.wa",
+      "exit_code": 3,
+      "log": "base10_r19_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.td",
+      "exit_code": 3,
+      "log": "base10_r19_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.NavBarService",
+      "exit_code": 3,
+      "log": "base10_r19_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "Not ART or real broadcast/Service reconnect validation. Repeated media/overlay initialization, shared ADB/IME, old Service global teardown and full P1/P2/P3 remain open. This patch does not classify all broadcasts as replaceable state or drop original valid HOME actions."
+}

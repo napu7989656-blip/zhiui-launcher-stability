@@ -1,0 +1,29 @@
+# Signing material and local authentication
+private/
+*.keystore
+*.jks
+*.p12
+*.pfx
+*.pem
+*.key
+*.env
+*.local.properties
+智UI项目日志.md
+# Original APKs, generated deliverables and tools stay local
+*.apk
+*.idsig
+*.jar
+*.zip
+__pycache__/
+*.pyc
+.adb*/
+.android*/
+launcher_project/build/
+**/build/
+**/dist/
+**/classes/
+**/test_classes/
+**/dex/
+launcher_project/diagnostics/**/final_redecode/
+launcher_project/diagnostics/**/references/
+launcher_project/diagnostics/**/logs/

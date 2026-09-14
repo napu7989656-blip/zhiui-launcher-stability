@@ -1,0 +1,2 @@
+package android.content;
+public abstract class Context { public abstract void unregisterReceiver(BroadcastReceiver r);public abstract Object getSystemService(String name);public abstract ContentResolver getContentResolver(); }

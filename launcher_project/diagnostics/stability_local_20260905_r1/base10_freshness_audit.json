@@ -1,0 +1,80 @@
+{
+  "artifacts": [
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_bounded_tiles_r4",
+      "new_value": 9,
+      "late_old_value": 3,
+      "final_display": 3,
+      "final_cached_nav_volume": 3,
+      "ordinary_close_reopen_does_not_reject_old_message": true,
+      "status": "EXISTING_FRESHNESS_DEFECT_REPRODUCED; injected completion order with actual smali; not ART"
+    },
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\final_redecode\\base10_r4",
+      "new_value": 9,
+      "late_old_value": 3,
+      "final_display": 3,
+      "final_cached_nav_volume": 3,
+      "ordinary_close_reopen_does_not_reject_old_message": true,
+      "status": "EXISTING_FRESHNESS_DEFECT_REPRODUCED; injected completion order with actual smali; not ART"
+    }
+  ],
+  "cache_write_index": [
+    {
+      "path": "smali/o/ie.smali",
+      "method": "run()V",
+      "owner_cache_write_candidates": [
+        "iput v1, v0, Lo/ff;->\u0399:I",
+        "iput v13, v0, Lo/ff;->\u039a:I",
+        "iput v2, v0, Lo/ff;->\u039a:I",
+        "iput-boolean v14, v0, Lo/ff;->\u0398:Z",
+        "iput-boolean v1, v0, Lo/ff;->\u039c:Z",
+        "iput-boolean v13, v0, Lo/ff;->\u037a:Z",
+        "iput-boolean v1, v0, Lo/ff;->\u03a0:Z",
+        "iput-boolean v1, v0, Lo/ff;->\u039e:Z",
+        "iput-boolean v1, v0, Lo/ff;->\u039d:Z",
+        "iput-boolean v1, v0, Lo/ff;->\u039f:Z",
+        "iput-boolean v13, v0, Lo/ff;->\u0386:Z",
+        "iput-boolean v1, v0, Lo/ff;->\u037b:Z",
+        "iput-object v2, v0, Lo/ff;->\u0389:Lo/af;",
+        "iput-object v2, v0, Lo/ff;->\u038a:Lo/qe;",
+        "iput-object v2, v0, Lo/ff;->\u038f:Landroid/view/View;",
+        "iput-object v2, v0, Lo/ff;->\u0373:Landroid/view/View;",
+        "iput v2, v0, Lo/ff;->\u037c:I",
+        "iput-boolean v1, v0, Lo/ff;->\u0386:Z",
+        "iput-object v10, v0, Lo/ff;->\u0373:Landroid/view/View;",
+        "iput-boolean v14, v0, Lo/ff;->\u0390:Z",
+        "iput-object v10, v0, Lo/ff;->\u038f:Landroid/view/View;"
+      ],
+      "scope": "Mixed selectors; instrument/nav/tile read writes require separate commit review, not every listed write is a defect"
+    },
+    {
+      "path": "smali/o/je.smali",
+      "method": "run()V",
+      "owner_cache_write_candidates": [
+        "iput v3, v0, Lo/ff;->\u039b:I",
+        "iput v4, v0, Lo/ff;->\u039b:I"
+      ],
+      "scope": "Mixed selectors; instrument/nav/tile read writes require separate commit review, not every listed write is a defect"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "method": "get()Z",
+      "owner_cache_write_candidates": [
+        "iput-boolean v3, v0, Lo/ff;->\u03a0:Z",
+        "iput-boolean v3, v0, Lo/ff;->\u039e:Z",
+        "iput-boolean v3, v0, Lo/ff;->\u039d:Z",
+        "iput-boolean v3, v0, Lo/ff;->\u039f:Z",
+        "iput-boolean v3, v0, Lo/ff;->\u039c:Z"
+      ],
+      "scope": "Mixed selectors; instrument/nav/tile read writes require separate commit review, not every listed write is a defect"
+    }
+  ],
+  "next_requirements": [
+    "Guard UI publication by panel and per-read-category generation",
+    "Apply generation validation to owner cache commits too, not only Handler callbacks",
+    "Review instrument retry fields and tile getter caches; getters are status reads but may update local owner caches",
+    "Preserve immediate user-action semantics and avoid rerunning any device queries in local tests"
+  ],
+  "limits": "Completion order and framework UI calls are test doubles. No Android runtime, IPC, network or vehicle commands executed."
+}

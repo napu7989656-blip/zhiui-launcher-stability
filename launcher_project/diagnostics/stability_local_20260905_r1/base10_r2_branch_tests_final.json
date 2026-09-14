@@ -1,0 +1,92 @@
+{
+  "parent_wrong_service_publication_reproduced": true,
+  "preservation": {
+    "original_ie_restored_exactly": true,
+    "controller_allocation_sites": [
+      "smali\\com\\byd\\launcher\\NavBarService.smali"
+    ]
+  },
+  "artifacts": [
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_theme_delivery_r2",
+      "cases": [
+        "mode_hour_(0, 12)",
+        "mode_hour_(1, 12)",
+        "mode_hour_(2, 6)",
+        "mode_hour_(2, 7)",
+        "mode_hour_(2, 18)",
+        "mode_hour_(2, 19)",
+        "disposed",
+        "dead_service",
+        "replacement_service",
+        "missing_service",
+        "non_service",
+        "preference_changed",
+        "invalid_negative",
+        "invalid_high",
+        "exception_Lo/ci;->\u0370",
+        "exception_Lo/ci;->\u0376",
+        "exception_Ljava/util/Calendar;->getInstance",
+        "exception_Lcom/byd/launcher/NavBarService;->\u038e",
+        "producer_posts_owned_result_without_background_mutation"
+      ],
+      "queue_regressions": {
+        "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_theme_delivery_r2",
+        "handler_cases": [
+          "alive",
+          "controller_disposed",
+          "service_destroyed",
+          "platform_rejection_preserved",
+          "destroy_clear_before_enqueue_recheck_removes_late_message",
+          "dequeued_or_front_message_stopped"
+        ],
+        "other_controller_methods_preserved": 22,
+        "inherited_guards": 60,
+        "inherited_disposal_cases": 15,
+        "status": "PASS; actual smali with Handler/Looper doubles; not ART"
+      },
+      "status": "PASS; actual instruction flow, isolated external calls; not ART"
+    },
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\final_redecode\\base10_r2",
+      "cases": [
+        "mode_hour_(0, 12)",
+        "mode_hour_(1, 12)",
+        "mode_hour_(2, 6)",
+        "mode_hour_(2, 7)",
+        "mode_hour_(2, 18)",
+        "mode_hour_(2, 19)",
+        "disposed",
+        "dead_service",
+        "replacement_service",
+        "missing_service",
+        "non_service",
+        "preference_changed",
+        "invalid_negative",
+        "invalid_high",
+        "exception_Lo/ci;->\u0370",
+        "exception_Lo/ci;->\u0376",
+        "exception_Ljava/util/Calendar;->getInstance",
+        "exception_Lcom/byd/launcher/NavBarService;->\u038e",
+        "producer_posts_owned_result_without_background_mutation"
+      ],
+      "queue_regressions": {
+        "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\final_redecode\\base10_r2",
+        "handler_cases": [
+          "alive",
+          "controller_disposed",
+          "service_destroyed",
+          "platform_rejection_preserved",
+          "destroy_clear_before_enqueue_recheck_removes_late_message",
+          "dequeued_or_front_message_stopped"
+        ],
+        "other_controller_methods_preserved": 22,
+        "inherited_guards": 60,
+        "inherited_disposal_cases": 15,
+        "status": "PASS; actual smali with Handler/Looper doubles; not ART"
+      },
+      "status": "PASS; actual instruction flow, isolated external calls; not ART"
+    }
+  ],
+  "limitations": "No Android runtime; same-service A-B-A preference changes and concurrent query generations still require separate audit. No IPC/vehicle execution."
+}

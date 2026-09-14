@@ -1,0 +1,5 @@
+{
+  "before": "    invoke-static {v4, v3, v2}, Lcom/byd/launcher/stability/TileState;->commit(Lo/ff;Lo/df;Z)V",
+  "after": "    invoke-static {v4, v3, v2}, Lcom/byd/launcher/stability/TileState;->commit(Lo/ff;Lo/df;Z)V\n    invoke-static {v4, v3, v1}, Lcom/byd/launcher/stability/TileState;->subtitle(Lo/ff;Lo/df;Ljava/lang/String;)Ljava/lang/String;\n    move-result-object v1",
+  "extra": "\n.method public static subtitle(Lo/ff;Lo/df;Ljava/lang/String;)Ljava/lang/String;\n    .locals 3\n    iget-object v0, p1, Lo/df;->\u02b9:Lo/bf;\n    instance-of v1, v0, Lo/ke;\n    if-eqz v1, :original\n    check-cast v0, Lo/ke;\n    iget-object v1, v0, Lo/ke;->\u02cf:Lo/ff;\n    if-ne p0, v1, :original\n    iget v1, v0, Lo/ke;->\u02cb:I\n    const/4 v2, 0x4\n    if-eq v1, v2, :cached\n    const/4 v2, 0x7\n    if-ne v1, v2, :original\n    :cached\n    invoke-virtual {v0}, Lo/ke;->\u02cf()Ljava/lang/String;\n    move-result-object v0\n    return-object v0\n    :original\n    return-object p2\n.end method\n"
+}

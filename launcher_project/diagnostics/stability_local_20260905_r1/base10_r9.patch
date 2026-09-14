@@ -1,0 +1,321 @@
+--- r8b/smali/o/ff.smali
++++ r9/smali/o/ff.smali
+@@ -12,6 +12,8 @@
+ 
+ 
+ # instance fields
++.field public final stabilitySocSlot:Lcom/byd/launcher/stability/TileSlot;
++.field public volatile stabilitySocTracking:Z
+ .field public volatile stabilityTileEpoch:Ljava/lang/Object;
+ .field public final stabilityInstrumentReads:Lcom/byd/launcher/stability/InstrumentReads;
+ .field public final stabilityNavReads:Lcom/byd/launcher/stability/LatestRead;
+@@ -145,6 +147,10 @@
+ 
+     .line 1
+     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    new-instance v0, Lcom/byd/launcher/stability/TileSlot;
++    invoke-direct {v0}, Lcom/byd/launcher/stability/TileSlot;-><init>()V
++    iput-object v0, p0, Lo/ff;->stabilitySocSlot:Lcom/byd/launcher/stability/TileSlot;
++
+     new-instance v0, Ljava/lang/Object;
+     invoke-direct {v0}, Ljava/lang/Object;-><init>()V
+     iput-object v0, p0, Lo/ff;->stabilityTileEpoch:Ljava/lang/Object;
+@@ -483,6 +489,7 @@
+     iget-object v0, p0, Lo/ff;->stabilityInstrumentReads:Lcom/byd/launcher/stability/InstrumentReads;
+     invoke-virtual {v0}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
+     iget-boolean v0, p0, Lo/ff;->ͺ:Z
+ 
+     .line 11
+@@ -2919,6 +2926,7 @@
+     iget-object v0, p0, Lo/ff;->stabilityInstrumentReads:Lcom/byd/launcher/stability/InstrumentReads;
+     invoke-virtual {v0}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
+ 
+     .line 1
+     const/4 v0, 0x0
+@@ -4301,6 +4309,7 @@
+ 
+     .line 1
+     invoke-static {p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
+     invoke-virtual {p0}, Lo/ff;->Ͳ()V
+ 
+     .line 2
+@@ -5895,6 +5904,7 @@
+     iget-object v2, p0, Lo/ff;->stabilityInstrumentReads:Lcom/byd/launcher/stability/InstrumentReads;
+     invoke-virtual {v2}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
+     invoke-static {p0}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->cancelQueued(Ljava/lang/Object;)V
+     const/4 v1, 0x0
+     iput-object v1, p0, Lo/ff;->Ύ:Lo/cf;
+--- r8b/smali/o/ie.smali
++++ r9/smali/o/ie.smali
+@@ -7,6 +7,7 @@
+ 
+ 
+ # instance fields
++.field public final stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
+ .field public final stabilityTileBatch:Lcom/byd/launcher/stability/TileBatch;
+ .field public final stabilityInstrumentRequest:Lcom/byd/launcher/stability/InstrumentReads$Request;
+ .field public final synthetic Ͱ:I
+@@ -48,6 +49,14 @@
+     move-result-object v0
+     iput-object v0, p0, Lo/ie;->stabilityTileBatch:Lcom/byd/launcher/stability/TileBatch;
+     :tile_capture_done
++    const/16 v0, 0x18
++    if-ne p2, v0, :soc_capture_done
++    move-object v0, p1
++    check-cast v0, Lo/ff;
++    new-instance v1, Lcom/byd/launcher/stability/SocRead;
++    invoke-direct {v1, v0}, Lcom/byd/launcher/stability/SocRead;-><init>(Lo/ff;)V
++    iput-object v1, p0, Lo/ie;->stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
++    :soc_capture_done
+     return-void
+ .end method
+ 
+@@ -790,6 +799,12 @@
+ 
+     .line 384
+     :pswitch_4
++    iget-object v0, p0, Lo/ie;->stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/SocRead;->current()Z
++    move-result v0
++    if-nez v0, :soc_worker_current
++    return-void
++    :soc_worker_current
+     iget-object v0, p0, Lo/ie;->ͱ:Lo/ff;
+ 
+     .line 385
+@@ -827,7 +842,7 @@
+ 
+     .line 402
+     .line 403
+-    iget-object v2, v0, Lo/ff;->Ͱ:Landroid/os/Handler;
++    iget-object v2, p0, Lo/ie;->stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
+ 
+     .line 404
+     .line 405
+@@ -840,7 +855,7 @@
+     .line 408
+     .line 409
+     .line 410
+-    invoke-virtual {v2, v3}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    invoke-virtual {v2, v3}, Lcom/byd/launcher/stability/SocRead;->post(Ljava/lang/Runnable;)V
+ 
+     .line 411
+     .line 412
+--- r8b/smali/o/sj.smali
++++ r9/smali/o/sj.smali
+@@ -7,6 +7,7 @@
+ 
+ 
+ # instance fields
++.field public final stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
+ .field public final synthetic ʹ:Ljava/lang/Object;
+ 
+ .field public final synthetic Ͱ:I
+@@ -20,7 +21,7 @@
+ 
+ # direct methods
+ .method public synthetic constructor <init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V
+-    .locals 0
++    .locals 2
+ 
+     .line 1
+     iput p5, p0, Lo/sj;->Ͱ:I
+@@ -48,6 +49,14 @@
+     .line 12
+     .line 13
+     .line 14
++    const/16 v0, 0x3
++    if-ne p5, v0, :soc_capture_done
++    move-object v0, p1
++    check-cast v0, Lo/ff;
++    new-instance v1, Lcom/byd/launcher/stability/SocRead;
++    invoke-direct {v1, v0}, Lcom/byd/launcher/stability/SocRead;-><init>(Lo/ff;)V
++    iput-object v1, p0, Lo/sj;->stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
++    :soc_capture_done
+     return-void
+ .end method
+ 
+@@ -536,6 +545,12 @@
+ 
+     .line 235
+     :pswitch_3
++    iget-object v0, p0, Lo/sj;->stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/SocRead;->current()Z
++    move-result v0
++    if-nez v0, :soc_worker_current
++    return-void
++    :soc_worker_current
+     iget-object v0, p0, Lo/sj;->ͳ:Ljava/lang/Object;
+ 
+     .line 236
+@@ -621,7 +636,7 @@
+ 
+     .line 275
+     .line 276
+-    iget-object v0, v2, Lo/ff;->Ͱ:Landroid/os/Handler;
++    iget-object v0, p0, Lo/sj;->stabilitySocRead:Lcom/byd/launcher/stability/SocRead;
+ 
+     .line 277
+     .line 278
+@@ -637,7 +652,7 @@
+     .line 282
+     .line 283
+     .line 284
+-    invoke-virtual {v0, v7}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    invoke-virtual {v0, v7}, Lcom/byd/launcher/stability/SocRead;->post(Ljava/lang/Runnable;)V
+ 
+     .line 285
+     .line 286
+--- r8b/smali/o/re.smali
++++ r9/smali/o/re.smali
+@@ -81,6 +81,11 @@
+ 
+     .line 11
+     :pswitch_0
++    if-eqz p3, :soc_programmatic_progress
++    iget-object v0, p0, Lo/re;->Ͱ:Ljava/lang/Object;
++    check-cast v0, Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/SocRead;->changed(Lo/ff;)V
++    :soc_programmatic_progress
+     if-eqz p3, :cond_1
+ 
+     .line 12
+@@ -345,7 +350,7 @@
+ .end method
+ 
+ .method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
+-    .locals 1
++    .locals 2
+ 
+     # BASE-09: stop only callbacks owned by a disposed controller/editor.
+     move-object/from16 v0, p0
+@@ -370,6 +375,10 @@
+ 
+     .line 7
+     :pswitch_0
++    iget-object v0, p0, Lo/re;->Ͱ:Ljava/lang/Object;
++    check-cast v0, Lo/ff;
++    const/4 v1, 0x1
++    invoke-static {v0, v1}, Lcom/byd/launcher/stability/SocRead;->tracking(Lo/ff;Z)V
+     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
+ 
+     .line 8
+@@ -436,6 +445,10 @@
+ 
+     .line 13
+     :pswitch_0
++    iget-object v0, p0, Lo/re;->Ͱ:Ljava/lang/Object;
++    check-cast v0, Lo/ff;
++    const/4 v4, 0x0
++    invoke-static {v0, v4}, Lcom/byd/launcher/stability/SocRead;->tracking(Lo/ff;Z)V
+     invoke-virtual {p1}, Landroid/widget/ProgressBar;->getProgress()I
+ 
+     .line 14
+--- r8b/smali/com/byd/launcher/stability/SocRead.smali
++++ r9/smali/com/byd/launcher/stability/SocRead.smali
+@@ -0,0 +1,72 @@
++.class public final Lcom/byd/launcher/stability/SocRead;
++.super Ljava/lang/Object;
++.field public final batch:Lcom/byd/launcher/stability/TileBatch;
++.field public final ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++.method public constructor <init>(Lo/ff;)V
++    .locals 5
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    new-instance v0, Lcom/byd/launcher/stability/TileBatch;
++    move-object v1, p1
++    iget-object v2, p1, Lo/ff;->ͳ:Landroid/view/View;
++    iget-object v3, p1, Lo/ff;->stabilityTileEpoch:Ljava/lang/Object;
++    new-instance v4, Lcom/byd/launcher/stability/TileSnapshots;
++    invoke-direct {v4, p1}, Lcom/byd/launcher/stability/TileSnapshots;-><init>(Lo/ff;)V
++    invoke-direct {v0, v1, v2, v3, v4}, Lcom/byd/launcher/stability/TileBatch;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lcom/byd/launcher/stability/TileSlot$Queue;)V
++    iput-object v0, p0, Lcom/byd/launcher/stability/SocRead;->batch:Lcom/byd/launcher/stability/TileBatch;
++    iget-object v0, p1, Lo/ff;->stabilitySocSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->begin()Lcom/byd/launcher/stability/TileSlot$Ticket;
++    move-result-object v0
++    iput-object v0, p0, Lcom/byd/launcher/stability/SocRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    return-void
++.end method
++.method public current()Z
++    .locals 3
++    iget-object v0, p0, Lcom/byd/launcher/stability/SocRead;->batch:Lcom/byd/launcher/stability/TileBatch;
++    invoke-static {v0}, Lcom/byd/launcher/stability/TileSnapshots;->usable(Lcom/byd/launcher/stability/TileBatch;)Z
++    move-result v1
++    if-eqz v1, :no
++    iget-object v0, v0, Lcom/byd/launcher/stability/TileBatch;->owner:Ljava/lang/Object;
++    check-cast v0, Lo/ff;
++    iget-boolean v1, v0, Lo/ff;->stabilitySocTracking:Z
++    if-nez v1, :no
++    iget-object v0, p0, Lcom/byd/launcher/stability/SocRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot$Ticket;->isCurrent()Z
++    move-result v0
++    return v0
++    :no
++    const/4 v0, 0x0
++    return v0
++.end method
++.method public post(Ljava/lang/Runnable;)V
++    .locals 4
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/SocRead;->current()Z
++    move-result v0
++    if-eqz v0, :done
++    iget-object v0, p0, Lcom/byd/launcher/stability/SocRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    iget-object v1, p0, Lcom/byd/launcher/stability/SocRead;->batch:Lcom/byd/launcher/stability/TileBatch;
++    iget-object v1, v1, Lcom/byd/launcher/stability/TileBatch;->queue:Lcom/byd/launcher/stability/TileSlot$Queue;
++    new-instance v2, Lcom/byd/launcher/stability/SocApply;
++    invoke-direct {v2, p0, p1}, Lcom/byd/launcher/stability/SocApply;-><init>(Lcom/byd/launcher/stability/SocRead;Ljava/lang/Runnable;)V
++    invoke-virtual {v0, v1, v2}, Lcom/byd/launcher/stability/TileSlot$Ticket;->post(Lcom/byd/launcher/stability/TileSlot$Queue;Ljava/lang/Runnable;)Z
++    :done
++    return-void
++.end method
++.method public static tracking(Lo/ff;Z)V
++    .locals 1
++    iput-boolean p1, p0, Lo/ff;->stabilitySocTracking:Z
++    iget-object v0, p0, Lo/ff;->stabilitySocSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->invalidate()V
++    return-void
++.end method
++.method public static changed(Lo/ff;)V
++    .locals 1
++    iget-object v0, p0, Lo/ff;->stabilitySocSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->invalidate()V
++    return-void
++.end method
++.method public static close(Lo/ff;)V
++    .locals 1
++    const/4 v0, 0x0
++    invoke-static {p0, v0}, Lcom/byd/launcher/stability/SocRead;->tracking(Lo/ff;Z)V
++    return-void
++.end method
+--- r8b/smali/com/byd/launcher/stability/SocApply.smali
++++ r9/smali/com/byd/launcher/stability/SocApply.smali
+@@ -0,0 +1,23 @@
++.class public final Lcom/byd/launcher/stability/SocApply;
++.super Ljava/lang/Object;
++.implements Ljava/lang/Runnable;
++.field private final read:Lcom/byd/launcher/stability/SocRead;
++.field private final delegate:Ljava/lang/Runnable;
++.method public constructor <init>(Lcom/byd/launcher/stability/SocRead;Ljava/lang/Runnable;)V
++    .locals 0
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    iput-object p1, p0, Lcom/byd/launcher/stability/SocApply;->read:Lcom/byd/launcher/stability/SocRead;
++    iput-object p2, p0, Lcom/byd/launcher/stability/SocApply;->delegate:Ljava/lang/Runnable;
++    return-void
++.end method
++.method public run()V
++    .locals 1
++    iget-object v0, p0, Lcom/byd/launcher/stability/SocApply;->read:Lcom/byd/launcher/stability/SocRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/SocRead;->current()Z
++    move-result v0
++    if-eqz v0, :done
++    iget-object v0, p0, Lcom/byd/launcher/stability/SocApply;->delegate:Ljava/lang/Runnable;
++    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
++    :done
++    return-void
++.end method

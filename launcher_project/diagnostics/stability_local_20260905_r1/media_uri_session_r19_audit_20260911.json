@@ -1,0 +1,12 @@
+{
+  "source": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_home_receiver_r19\\smali\\o\\a9.smali",
+  "sha256": "cfc66a90f4c146ec762a39ab0a890223416c447a3eac2fd480bfd073a1a2c9b9",
+  "methods": [
+    "ʹ(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+    "ͱ()V",
+    "Ͷ(Ljava/util/List;)V",
+    "ͷ()V",
+    "ˏ()V"
+  ],
+  "status": "STATIC_AUDIT_NOT_ARTWORK_FIX"
+}

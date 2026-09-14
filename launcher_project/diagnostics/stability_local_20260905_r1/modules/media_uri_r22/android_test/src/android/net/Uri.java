@@ -1,0 +1,1 @@
+package android.net; public class Uri {String value; public static Uri parse(String value){Uri u=new Uri();u.value=value;return u;}public String getScheme(){int i=value.indexOf(':');return i<0?null:value.substring(0,i);} }

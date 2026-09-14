@@ -1,0 +1,13 @@
+[
+  "smali/o/ff.smali",
+  "smali/o/ie.smali",
+  "smali/o/je.smali",
+  "smali/o/se.smali",
+  "smali/com/byd/launcher/stability/InstrumentReads$1.smali",
+  "smali/com/byd/launcher/stability/InstrumentReads$2.smali",
+  "smali/com/byd/launcher/stability/InstrumentReads$3.smali",
+  "smali/com/byd/launcher/stability/InstrumentReads$Host.smali",
+  "smali/com/byd/launcher/stability/InstrumentReads$Request.smali",
+  "smali/com/byd/launcher/stability/InstrumentReads.smali",
+  "smali/com/byd/launcher/stability/InstrumentReadHost.smali"
+]

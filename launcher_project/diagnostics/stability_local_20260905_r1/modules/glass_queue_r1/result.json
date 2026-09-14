@@ -1,0 +1,5 @@
+{
+  "key": 9,
+  "output": "PASS 5010 assertions; real production pool workers, key9 coexistence, independent prepare/result slots; no Android/vehicle work.",
+  "production_smali_unchanged": true
+}

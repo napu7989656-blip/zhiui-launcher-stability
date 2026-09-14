@@ -1,0 +1,22 @@
+[
+  "smali/com/byd/launcher/MainActivity.smali",
+  "smali/com/byd/launcher/stability/BlurPipeline$1.smali",
+  "smali/com/byd/launcher/stability/BlurPipeline$2.smali",
+  "smali/com/byd/launcher/stability/BlurPipeline$3.smali",
+  "smali/com/byd/launcher/stability/BlurPipeline$4.smali",
+  "smali/com/byd/launcher/stability/BlurPipeline$Child.smali",
+  "smali/com/byd/launcher/stability/BlurPipeline$Frame.smali",
+  "smali/com/byd/launcher/stability/BlurPipeline$Host.smali",
+  "smali/com/byd/launcher/stability/BlurPipeline.smali",
+  "smali/com/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0.smali",
+  "smali/com/byd/launcher/stability/LatestVisualWork$1.smali",
+  "smali/com/byd/launcher/stability/LatestVisualWork$Delivery.smali",
+  "smali/com/byd/launcher/stability/LatestVisualWork$Host.smali",
+  "smali/com/byd/launcher/stability/LatestVisualWork$Job.smali",
+  "smali/com/byd/launcher/stability/LatestVisualWork$Request.smali",
+  "smali/com/byd/launcher/stability/LatestVisualWork$Result.smali",
+  "smali/com/byd/launcher/stability/LatestVisualWork.smali",
+  "smali/com/byd/launcher/stability/MainBlurHost.smali",
+  "smali/o/a8.smali",
+  "smali/o/h2.smali"
+]

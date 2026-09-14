@@ -1,0 +1,306 @@
+{
+  "parent": "base09_r3",
+  "methods": [
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public static constructor <clinit>()V",
+      "start": 93,
+      "body_sha256": "df0482a7ecd76cda98dddb5f5573616c88509b0de84e0dfc4311525f2ba21e70",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public constructor <init>(Landroid/content/Context;Landroid/view/WindowManager;)V",
+      "start": 140,
+      "body_sha256": "f1a7214e951a1504dbb90b5657389477d9109065840e1566003a6ffcc7eb71ce",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02b9()V",
+      "start": 441,
+      "body_sha256": "da560153bcb3346940278b91bd975dda73c8838521ae7b92b468e5f2b2d25860",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02cb(Landroid/view/View;)V",
+      "start": 917,
+      "body_sha256": "47575f03e80ecd34b24679d253143c8a459161d029bb11d7b6bfdab5c6de9f68",
+      "thread_starts": 1,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u02cf()V",
+      "start": 987,
+      "body_sha256": "1f137a7de232a5efc6e7c8d0f0ad4cf437d329e0d5affac6cdc8487914711643",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0370(Lo/df;ZLjava/lang/String;)V",
+      "start": 1874,
+      "body_sha256": "79f5a7906b5f8c0901918f652f273a726a8d861b560292245761520a4ad5ab5a",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0372()V",
+      "start": 2036,
+      "body_sha256": "38288caf6ba23bf31f8b837f7ff4e553e2886d4397223e03a2aea0d2c772d850",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0373()V",
+      "start": 2466,
+      "body_sha256": "3ad24a5e0b71d5aef093e27deb1cebf6022a4884dce0b70c29672804c12d5c00",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0376()I",
+      "start": 2536,
+      "body_sha256": "cbde2b5299c4e2ba314739f124616a24f572ce6ca19dd005ecd7b14e78f9b782",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0377()Ljava/util/ArrayList;",
+      "start": 2671,
+      "body_sha256": "6e5e5db194252f9ff4b305cd0223cb1940134a65f2ace6475c972afe6ffb1b8c",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u037b()V",
+      "start": 2792,
+      "body_sha256": "27fa74c596391f761516c2a51cb4cdeb917a95944e28c232a35649bb17b33a63",
+      "thread_starts": 0,
+      "posts": 1,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u037d()V",
+      "start": 2827,
+      "body_sha256": "0c05f088090388dfe4887b5e9db718b84e2c2e623f54ff5d2dd51829c2cd4da5",
+      "thread_starts": 1,
+      "posts": 1,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0386()V",
+      "start": 2894,
+      "body_sha256": "003a74b289cc7e96861a661169d0cfe48930ec22a177f44f9d730fb4c1e76137",
+      "thread_starts": 0,
+      "posts": 4,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0388(Ljava/util/ArrayList;)V",
+      "start": 3278,
+      "body_sha256": "03eed491b3055973f34dae2653af49654d7ffef590db33aad078783aa53f58e1",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u0389(ILjava/lang/String;)V",
+      "start": 3322,
+      "body_sha256": "20f751d5384a5203e47105673dbd6da6a5ebd83f185a90c54a1e02f93b77b678",
+      "thread_starts": 1,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038a()V",
+      "start": 3348,
+      "body_sha256": "422007584846bb63b3579885f255e3a340e3dfd90ce7556a4b11b6bebb8bd58e",
+      "thread_starts": 3,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038c()V",
+      "start": 4273,
+      "body_sha256": "660e980c0897cf4ff59ce133593e94e9d02ea8638134c7de1ad569208c9cc8c3",
+      "thread_starts": 1,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038e(I)V",
+      "start": 4834,
+      "body_sha256": "5bd648a3806e5cf0bbc4bede5dbfdc5611a38cfaf00edc439a25206916df5bc6",
+      "thread_starts": 1,
+      "posts": 1,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final \u038f(Landroid/widget/SeekBar;Landroid/widget/TextView;Landroid/widget/ImageView;)V",
+      "start": 5632,
+      "body_sha256": "d12f76872781a2ea2514af296bc0424347029559209ea630b86219d92accb652",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "method": "public final stabilityDispose()Z",
+      "start": 5869,
+      "body_sha256": "5e5ca029bac1f2052a9ae89764b0ae34e788ff30ca9f22184283dbb76c4f907f",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ie.smali",
+      "method": "public final run()V",
+      "start": 38,
+      "body_sha256": "d9fcbc16d9621c57488ab6c7582e7ab09454866909f21b134b19963a6f94f9d1",
+      "thread_starts": 12,
+      "posts": 14,
+      "awaits": [
+        "invoke-virtual {v6, v7, v8, v5}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z",
+        "invoke-static {v3, v4}, Ljava/lang/Thread;->sleep(J)V"
+      ],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/je.smali",
+      "method": "public final run()V",
+      "start": 50,
+      "body_sha256": "73e888dde8f7cd4526ca483f5a128c8cf36af2ed9d8353c847d208fc646bccff",
+      "thread_starts": 0,
+      "posts": 3,
+      "awaits": [
+        "invoke-virtual {v7, v10, v11, v6}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z"
+      ],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/x9.smali",
+      "method": "public final run()V",
+      "start": 58,
+      "body_sha256": "924797d2cc1369bb35f44c2f651459e073121a2f8e6a7692558d7f615a69caa8",
+      "thread_starts": 0,
+      "posts": 3,
+      "awaits": [
+        "invoke-static {v8, v9}, Ljava/lang/Thread;->sleep(J)V"
+      ],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/sj.smali",
+      "method": "public final run()V",
+      "start": 56,
+      "body_sha256": "ebba9626a358f1dc7a93688750f2ce52f36ba550e4173c72e87856a202ca7bcc",
+      "thread_starts": 0,
+      "posts": 2,
+      "awaits": [
+        "invoke-static {v5, v6}, Ljava/lang/Thread;->sleep(J)V"
+      ],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "start": 894,
+      "body_sha256": "26aea7844b3a2cb05c4fe0eb37608aa7b707f73f48c9412acd6600e16a356da5",
+      "thread_starts": 2,
+      "posts": 9,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/be.smali",
+      "method": "public final run()V",
+      "start": 50,
+      "body_sha256": "c961f0f11c24ac507cbec40af1f7ab7c2f44951af3f556b4e915419742229dcb",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    },
+    {
+      "path": "smali/o/pe.smali",
+      "method": "public final run()V",
+      "start": 44,
+      "body_sha256": "713567bbd30d0ad28326cfca957279c544911c358083ce736dbe778fb4eece07",
+      "thread_starts": 0,
+      "posts": 0,
+      "awaits": [],
+      "scope": "Candidate method index, mixed selectors require exact branch review; not all findings are defects"
+    }
+  ],
+  "confirmed": [
+    "je reads state then posts be carrying SeekBar/TextView but no ff owner",
+    "x9 derives drawable then posts pe carrying View but no ff owner",
+    "BASE09 early owner guard cannot reject work that already passed it before disposal",
+    "ie selector5 checks showing/root, starts read workers, then posts same poll after 8000ms; exact field/register flow indexed",
+    "x9 selector1 and ie default have 300ms sleeps whose catch continues; not an 8-second sleeping worker"
+  ],
+  "next": [
+    "Bound read-only concurrency with cancellation and per-panel generation; classify query vs user action branches before queueing",
+    "Do not coalesce or drop user actions as if they were status reads",
+    "Audit result callbacks using separately constructed Handler or View.post",
+    "Do not claim cancellation of sent IPC or native work"
+  ],
+  "sdk_handler": {
+    "path": "C:/Users/L/AppData/Local/Android/Sdk/sources/android-29/android/os/Handler.java",
+    "sha256": "1D1BC636B2F70BA5D2919845961442620A3D9C553BB61786A782776A1A194F02",
+    "dispatch_line": 98,
+    "delayed_delegates_to_virtual_send": 669,
+    "virtual_send": 695,
+    "front_final_bypasses_send": 718
+  },
+  "limits": "Static actual-smali index and local Android29 primary source; no runtime queries, IPC, shell commands or vehicle access"
+}

@@ -1,0 +1,432 @@
+--- base03_r1/smali/o/ak.smali
++++ base04_r1/smali/o/ak.smali
+@@ -26,7 +26,7 @@
+ 
+ .field public final ͱ:Landroid/os/Handler;
+ 
+-.field public Ͳ:Z
++.field public volatile Ͳ:Z
+ 
+ .field public final ͳ:Lo/uj;
+ 
+@@ -685,6 +685,11 @@
+ .method public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
+     .locals 8
+ 
++    iget-boolean v0, p0, Lo/ak;->Ͳ:Z
++    if-eqz v0, :stability_active
++    return-void
++    :stability_active
++
+     .line 1
+     iget-object v0, p0, Lo/ak;->ˋ:Ljava/util/List;
+ 
+@@ -705,7 +710,7 @@
+ 
+     .line 9
+     .line 10
+-    move p2, v1
++    return-void
+ 
+     .line 11
+     goto :goto_0
+@@ -776,6 +781,10 @@
+ 
+     .line 42
+     check-cast v6, Landroid/widget/ImageView;
++    if-eqz v6, :stability_no_poster
++    const v2, 0x7f08032e
++    invoke-virtual {v6, v2, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
++    :stability_no_poster
+ 
+     .line 43
+     .line 44
+@@ -1252,6 +1261,8 @@
+     .line 258
+     .line 259
+     invoke-virtual {v7, p2}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
++    const v0, 0x7f08032e
++    invoke-virtual {v7, v0, p2}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+ 
+     .line 260
+     .line 261
+@@ -1624,6 +1635,12 @@
+ .method public final ˋ(I)Landroid/graphics/Bitmap;
+     .locals 3
+ 
++    iget-boolean v0, p0, Lo/ak;->Ͳ:Z
++    if-eqz v0, :stability_active
++    const/4 v0, 0x0
++    return-object v0
++    :stability_active
++
+     .line 1
+     iget-object v0, p0, Lo/ak;->ˋ:Ljava/util/List;
+ 
+@@ -1755,6 +1772,11 @@
+ 
+ .method public final Ͳ(I)V
+     .locals 6
++
++    iget-boolean v0, p0, Lo/ak;->Ͳ:Z
++    if-eqz v0, :stability_active
++    return-void
++    :stability_active
+ 
+     .line 1
+     iput p1, p0, Lo/ak;->Ͷ:I
+--- base03_r1/smali/o/sj.smali
++++ base04_r1/smali/o/sj.smali
+@@ -829,6 +829,8 @@
+     .line 376
+     .line 377
+     check-cast v0, Lo/ak;
++    iget-boolean v1, v0, Lo/ak;->Ͳ:Z
++    if-nez v1, :cond_c
+ 
+     .line 378
+     .line 379
+@@ -865,102 +867,7 @@
+     # BASE-03: owned helper releases on both normal and exceptional paths.
+     invoke-static {v1}, Lcom/byd/launcher/stability/VideoThumbnail;->read(Ljava/lang/String;)Landroid/graphics/Bitmap;
+     move-result-object v1
+-
+-    .line 409
+-    .line 410
+-    .line 411
+-    if-eqz v1, :cond_c
+-
+-    .line 412
+-    .line 413
+-    iget-object v4, v0, Lo/ak;->ͳ:Lo/uj;
+-
+-    .line 414
+-    .line 415
+-    invoke-virtual {v4, v2, v1}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    .line 416
+-    .line 417
+-    .line 418
+-    iget-object v4, v0, Lo/ak;->ˋ:Ljava/util/List;
+-
+-    .line 419
+-    .line 420
+-    invoke-interface {v4, v2}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+-
+-    .line 421
+-    .line 422
+-    .line 423
+-    move-result v4
+-
+-    .line 424
+-    if-ltz v4, :cond_b
+-
+-    .line 425
+-    .line 426
+-    iget-object v5, v0, Lo/ak;->ʹ:[Landroid/graphics/Bitmap;
+-
+-    .line 427
+-    .line 428
+-    if-eqz v5, :cond_b
+-
+-    .line 429
+-    .line 430
+-    iget-object v5, v0, Lo/ak;->ʹ:[Landroid/graphics/Bitmap;
+-
+-    .line 431
+-    .line 432
+-    array-length v5, v5
+-
+-    .line 433
+-    if-ge v4, v5, :cond_b
+-
+-    .line 434
+-    .line 435
+-    iget-object v5, v0, Lo/ak;->ʹ:[Landroid/graphics/Bitmap;
+-
+-    .line 436
+-    .line 437
+-    aput-object v1, v5, v4
+-
+-    .line 438
+-    .line 439
+-    :cond_b
+-    iget-object v0, v0, Lo/ak;->ͱ:Landroid/os/Handler;
+-
+-    .line 440
+-    .line 441
+-    new-instance v4, Lo/ag;
+-
+-    .line 442
+-    .line 443
+-    const/16 v5, 0xb
+-
+-    .line 444
+-    .line 445
+-    invoke-direct {v4, v5, v2, v1}, Lo/ag;-><init>(ILjava/lang/Object;Ljava/lang/Object;)V
+-
+-    .line 446
+-    .line 447
+-    .line 448
+-    invoke-virtual {v0, v4}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+-
+-    .line 449
+-    .line 450
+-    .line 451
+-    new-instance v0, Lo/j9;
+-
+-    .line 452
+-    .line 453
+-    const/4 v2, 0x1
+-
+-    .line 454
+-    invoke-direct {v0, v3, v1, v2}, Lo/j9;-><init>(Landroid/widget/ImageView;Landroid/graphics/Bitmap;I)V
+-
+-    .line 455
+-    .line 456
+-    .line 457
+-    invoke-virtual {v3, v0}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
++    invoke-static {v0, v2, v1, v3}, Lcom/byd/launcher/stability/WallpaperFrameApply;->submit(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V
+     :try_end_2
+     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_1
+ 
+--- base03_r1/smali/o/tj.smali
++++ base04_r1/smali/o/tj.smali
+@@ -254,106 +254,7 @@
+     .line 93
+     .line 94
+     :cond_5
+-    if-eqz v3, :cond_9
+-
+-    .line 95
+-    .line 96
+-    iget-boolean v2, v0, Lo/ak;->Ͳ:Z
+-
+-    .line 97
+-    .line 98
+-    if-nez v2, :cond_9
+-
+-    .line 99
+-    .line 100
+-    iget-object v2, v0, Lo/ak;->ͳ:Lo/uj;
+-
+-    .line 101
+-    .line 102
+-    invoke-virtual {v2, v1, v3}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
+-
+-    .line 103
+-    .line 104
+-    .line 105
+-    iget-object v2, v0, Lo/ak;->ˋ:Ljava/util/List;
+-
+-    .line 106
+-    .line 107
+-    invoke-interface {v2, v1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
+-
+-    .line 108
+-    .line 109
+-    .line 110
+-    move-result v2
+-
+-    .line 111
+-    if-ltz v2, :cond_6
+-
+-    .line 112
+-    .line 113
+-    iget-object v5, v0, Lo/ak;->ʹ:[Landroid/graphics/Bitmap;
+-
+-    .line 114
+-    .line 115
+-    if-eqz v5, :cond_6
+-
+-    .line 116
+-    .line 117
+-    iget-object v5, v0, Lo/ak;->ʹ:[Landroid/graphics/Bitmap;
+-
+-    .line 118
+-    .line 119
+-    array-length v5, v5
+-
+-    .line 120
+-    if-ge v2, v5, :cond_6
+-
+-    .line 121
+-    .line 122
+-    iget-object v5, v0, Lo/ak;->ʹ:[Landroid/graphics/Bitmap;
+-
+-    .line 123
+-    .line 124
+-    aput-object v3, v5, v2
+-
+-    .line 125
+-    .line 126
+-    :cond_6
+-    iget-object v2, v0, Lo/ak;->ͱ:Landroid/os/Handler;
+-
+-    .line 127
+-    .line 128
+-    new-instance v5, Lo/Ϋ;
+-
+-    .line 129
+-    .line 130
+-    const/4 v6, 0x4
+-
+-    .line 131
+-    invoke-direct {v5, v0, v1, v6, v3}, Lo/Ϋ;-><init>(Ljava/lang/Object;Ljava/lang/Object;ILjava/lang/Object;)V
+-
+-    .line 132
+-    .line 133
+-    .line 134
+-    invoke-virtual {v2, v5}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+-
+-    .line 135
+-    .line 136
+-    .line 137
+-    iget-object v0, v0, Lo/ak;->ͱ:Landroid/os/Handler;
+-
+-    .line 138
+-    .line 139
+-    new-instance v2, Lo/Ϋ;
+-
+-    .line 140
+-    .line 141
+-    invoke-direct {v2, v1, v4, v3}, Lo/Ϋ;-><init>(Ljava/lang/String;Landroid/widget/ImageView;Landroid/graphics/Bitmap;)V
+-
+-    .line 142
+-    .line 143
+-    .line 144
+-    invoke-virtual {v0, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    invoke-static {v0, v1, v3, v4}, Lcom/byd/launcher/stability/WallpaperFrameApply;->submit(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V
+     :try_end_4
+     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_0
+ 
+--- base03_r1/smali/o/y7.smali
++++ base04_r1/smali/o/y7.smali
+@@ -1184,6 +1184,11 @@
+ # virtual methods
+ .method public final run()V
+     .locals 15
++    iget-object v0, p0, Lo/y7;->ͱ:Lcom/byd/launcher/MainActivity;
++    iget-boolean v0, v0, Lcom/byd/launcher/MainActivity;->ͺ:Z
++    if-eqz v0, :stability_activity_alive
++    return-void
++    :stability_activity_alive
+ 
+     .line 1
+     iget v0, p0, Lo/y7;->Ͱ:I
+--- base03_r1/res/values/ids.xml
++++ base04_r1/res/values/ids.xml
+@@ -814,4 +814,5 @@
+     <id name="withinBounds" />
+     <id name="wrap" />
+     <id name="wrap_content" />
++    <id name="stability_wallpaper_binding" />
+ </resources>
+--- base03_r1/res/values/public.xml
++++ base04_r1/res/values/public.xml
+@@ -5575,4 +5575,5 @@
+     <public type="style" name="Widget.Support.CoordinatorLayout" id="0x7f110460" />
+     <public type="xml" name="accessibility_config" id="0x7f130000" />
+     <public type="xml" name="network_security_config" id="0x7f130001" />
++    <public type="id" name="stability_wallpaper_binding" id="0x7f08032e" />
+ </resources>
+--- base03_r1/smali/com/byd/launcher/stability/WallpaperFrameApply.smali
++++ base04_r1/smali/com/byd/launcher/stability/WallpaperFrameApply.smali
+@@ -0,0 +1,97 @@
++.class public final Lcom/byd/launcher/stability/WallpaperFrameApply;
++.super Ljava/lang/Object;
++.implements Ljava/lang/Runnable;
++
++# Immutable result; Android Handler publishes it to the UI thread. Weak UI owners
++# prevent a queued result from keeping a destroyed Activity alive.
++.field private final owner:Ljava/lang/ref/WeakReference;
++.field private final view:Ljava/lang/ref/WeakReference;
++.field private final key:Ljava/lang/String;
++.field private final bitmap:Landroid/graphics/Bitmap;
++
++.method public constructor <init>(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V
++    .locals 1
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    new-instance v0, Ljava/lang/ref/WeakReference;
++    invoke-direct {v0, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
++    iput-object v0, p0, Lcom/byd/launcher/stability/WallpaperFrameApply;->owner:Ljava/lang/ref/WeakReference;
++    new-instance v0, Ljava/lang/ref/WeakReference;
++    invoke-direct {v0, p4}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
++    iput-object v0, p0, Lcom/byd/launcher/stability/WallpaperFrameApply;->view:Ljava/lang/ref/WeakReference;
++    iput-object p2, p0, Lcom/byd/launcher/stability/WallpaperFrameApply;->key:Ljava/lang/String;
++    iput-object p3, p0, Lcom/byd/launcher/stability/WallpaperFrameApply;->bitmap:Landroid/graphics/Bitmap;
++    return-void
++.end method
++
++.method public static submit(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V
++    .locals 2
++    if-eqz p2, :done
++    iget-boolean v0, p0, Lo/ak;->Ͳ:Z
++    if-nez v0, :done
++    new-instance v0, Lcom/byd/launcher/stability/WallpaperFrameApply;
++    invoke-direct {v0, p0, p1, p2, p3}, Lcom/byd/launcher/stability/WallpaperFrameApply;-><init>(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V
++    iget-object v1, p0, Lo/ak;->ͱ:Landroid/os/Handler;
++    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    # Teardown can race with submit. run() must recheck ownership, even after
++    # onDetachedFromRecyclerView already removed queued callbacks.
++    :done
++    return-void
++.end method
++
++.method public final run()V
++    .locals 7
++    iget-object v0, p0, Lcom/byd/launcher/stability/WallpaperFrameApply;->owner:Ljava/lang/ref/WeakReference;
++    invoke-virtual {v0}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
++    move-result-object v0
++    check-cast v0, Lo/ak;
++    if-eqz v0, :done
++    iget-boolean v1, v0, Lo/ak;->Ͳ:Z
++    if-nez v1, :done
++    sget-object v1, Lo/ak;->ͼ:Ljava/lang/ref/WeakReference;
++    if-eqz v1, :done
++    invoke-virtual {v1}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
++    move-result-object v1
++    if-ne v0, v1, :done
++    iget-object v1, p0, Lcom/byd/launcher/stability/WallpaperFrameApply;->key:Ljava/lang/String;
++    if-eqz v1, :done
++    iget-object v2, p0, Lcom/byd/launcher/stability/WallpaperFrameApply;->bitmap:Landroid/graphics/Bitmap;
++    if-eqz v2, :done
++    invoke-virtual {v2}, Landroid/graphics/Bitmap;->isRecycled()Z
++    move-result v3
++    if-nez v3, :done
++    # Publish cache and indexed thumbnails on the same UI thread as detach and
++    # selection, instead of mutating their array from decoder workers.
++    iget-object v3, v0, Lo/ak;->ˋ:Ljava/util/List;
++    invoke-interface {v3, v1}, Ljava/util/List;->indexOf(Ljava/lang/Object;)I
++    move-result v3
++    if-ltz v3, :done
++    iget-object v4, v0, Lo/ak;->ͳ:Lo/uj;
++    invoke-virtual {v4, v1, v2}, Landroid/util/LruCache;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
++    iget-object v4, v0, Lo/ak;->ʹ:[Landroid/graphics/Bitmap;
++    if-eqz v4, :check_selected
++    array-length v5, v4
++    if-ge v3, v5, :check_selected
++    aput-object v2, v4, v3
++    :check_selected
++    invoke-static {v1}, Lo/ak;->ˏ(Ljava/lang/String;)Z
++    move-result v3
++    if-eqz v3, :check_view
++    invoke-static {v2}, Lo/ak;->ͳ(Landroid/graphics/Bitmap;)V
++    :check_view
++    iget-object v3, p0, Lcom/byd/launcher/stability/WallpaperFrameApply;->view:Ljava/lang/ref/WeakReference;
++    invoke-virtual {v3}, Ljava/lang/ref/Reference;->get()Ljava/lang/Object;
++    move-result-object v3
++    check-cast v3, Landroid/widget/ImageView;
++    if-eqz v3, :done
++    # R.id.stability_wallpaper_binding. Preserve the ordinary "video_poster"
++    # lookup tag and image path tag used by the existing ViewHolder code.
++    const v4, 0x7f08032e
++    invoke-virtual {v3, v4}, Landroid/view/View;->getTag(I)Ljava/lang/Object;
++    move-result-object v4
++    invoke-virtual {v1, v4}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
++    move-result v4
++    if-eqz v4, :done
++    invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
++    :done
++    return-void
++.end method

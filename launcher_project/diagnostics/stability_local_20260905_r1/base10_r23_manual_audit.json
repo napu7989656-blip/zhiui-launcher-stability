@@ -1,0 +1,55 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "2447514FA38B89CDBF6C409C1FA78473EDFB5B40E3C7FF6D46A0C81147FDC5B4",
+  "delta_files": 6,
+  "cumulative_files": 159,
+  "source_final_case_groups": 390,
+  "review": [
+    "a9.stabilityDispose is idempotent on main thread, marks destroyed and drops ia Service reference before cleanup. Future/close/remove Handler/unregister controller/remove active listener are isolated by RuntimeException catch ranges. Controller/callback/token and session manager references clear before framework unregister; shared bitmaps are dropped without recycle.",
+    "Service.onDestroy and llI reconnect call same disposal before clearing/replacing manager. llI rejects stale/destroyed Service before allocation and posts MediaManagerStart to the specific manager Handler so disposal can remove delayed start.",
+    "stabilityStart captures owner, uses stabilityCurrent and started flag; no destroyed=false reset. Existing manager and registered listener reused. Missing service, failed initialization or rejected poll enqueue reset started to permit explicit later retry. Original initial3s and periodic5s retained.",
+    "ea legacy selector15 delegates guarded startup; c8 media selector3 requires full current-owner guard. Unrelated shared selectors, vehicle actions and original session selection unchanged by exact inverse.",
+    "Source/final390 groups:21 new lifecycle groups and369 retained, replacing exactly two obsolete R21 lifecycle probes. RuntimeException injection covers each disposal operation; matching source/final catch table dispatch used. Test failure for unmodelled StringBuilder logging corrected without APK change.",
+    "Verifier first rejected same-address aliases separated by a catch directive. Catch declarations now canonicalized without changing range/type/handler/order,7 catch assertions and retained goto5/switch6 pass; original verifier and failures archived. Final test label-name assumption corrected to resolved branch label, not a relaxed content whitelist.",
+    "JADX a9 exit3 is existing NavBarService.Ε error; startup and disposal accurately reconstructed and checked against final smali. ea/llI exit0 but run methods remain placeholders; final selector bodies, register use and guards independently inspected/executed. c8 and MediaManagerStart output agrees for touched media paths.",
+    "6 delta/159 cumulative files,22 protected APKs unchanged,API127 no new signatures. Build/align/sign/parse/final decode passed. Late z8/u8 requeue after escaped removal was reproduced separately and is not closed by R23."
+  ],
+  "jadx": [
+    {
+      "cls": "o.a9",
+      "exit_code": 3,
+      "log": "base10_r23_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.ea",
+      "exit_code": 0,
+      "log": "base10_r23_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.llI",
+      "exit_code": 0,
+      "log": "base10_r23_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.c8",
+      "exit_code": 0,
+      "log": "base10_r23_jadx_3_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.MediaManagerStart",
+      "exit_code": 0,
+      "log": "base10_r23_jadx_4_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "Not ART/OEM/vehicle. Framework unregister failure may retain inert listener; references to Service cleared but external release not guaranteed. RuntimeException cleanup isolation does not promise recovery from VM fatal errors. z8/u8 late retry guards, downstream UI and full P1/P2/P3 remain open."
+}

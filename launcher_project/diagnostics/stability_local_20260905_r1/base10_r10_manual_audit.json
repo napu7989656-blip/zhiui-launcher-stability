@@ -1,0 +1,19 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "BEA43A08CD26B7587D41853543505894EDB8C79559B5B54EBA571623D77995E0",
+  "review_date": "2026-09-09",
+  "source_final_cases": 144,
+  "delta_files": 5,
+  "cumulative_files": 95,
+  "reviewed": [
+    "ThemeRead all methods: final fields, volatile epoch, register bounds, current/post/close branches",
+    "ThemeDeliver constructor/run: final DEX guard precedes delegate invocation",
+    "ie constructor selector6 preserves p2; theme worker query and cursor cleanup retained",
+    "ci theme setter invalidates epoch before apply; exact-key search finds theme_mode only in ci getter/setter",
+    "Known setter callers: ie user theme cycle and QuickSettingsThemeApply publication",
+    "ff initializes slot before tasks; ordinary close and dispose invalidate; grid preparation preserves pending legitimate read",
+    "TileSlot synchronizes current/pending; TileSnapshots uses owned Handler; publication repeats current guard"
+  ],
+  "jadx": "ThemeRead exit3: sole reported error is pre-existing NavBarService.Ε(ImageButton,String) RegionMakerVisitor; ThemeRead and ThemeDeliver Java cross-checked with final smali. ThemeDeliver exit0.",
+  "limits": "Scoped review only. Same-process audited setters; external/dynamic preference writes and concurrent unreviewed callers are not covered. No ART/OEM/vehicle validation. BASE-10 and V2/V3 reintegration remain incomplete."
+}

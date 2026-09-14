@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="#e6222222" android:padding="16.0dp" android:layout_width="480.0dp" android:layout_height="400.0dp"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="18.0sp" android:textColor="#ffffff" android:gravity="center" android:id="@id/pip_picker_title" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:text="选择应用" />
+    <GridView android:gravity="center" android:id="@id/pip_app_grid" android:layout_width="match_parent" android:layout_height="0.0dp" android:horizontalSpacing="12.0dp" android:verticalSpacing="12.0dp" android:stretchMode="columnWidth" android:numColumns="4" android:layout_weight="1.0" />
+</LinearLayout>

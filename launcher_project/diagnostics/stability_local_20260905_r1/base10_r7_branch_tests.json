@@ -1,0 +1,177 @@
+{
+  "artifacts": [
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_instrument_reads_r7",
+      "cases": [
+        "host_active",
+        "host_cached_only",
+        "host_old_cached_with_new_active",
+        "host_different",
+        "host_null",
+        "host_disposed",
+        "host_dead",
+        "host_replacement_service",
+        "host_cache_retry_delay_queue_rejection_remove_refresh_log",
+        "only_initial_instrument_and_refresh_capture_shared_state",
+        "ie_worker_only_submits_original_delegate",
+        "je_worker_only_submits_original_delegate",
+        "invalid_result_posts_without_background_cache_retry_writes",
+        "prefill_uses_owned_cached_publication",
+        "instrument_only_drag_begin_and_end_invalidate"
+      ],
+      "original_action_helpers_preserved": true,
+      "inherited": {
+        "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_instrument_reads_r7",
+        "cases": [
+          "selector0_new_old",
+          "selector0_old_new",
+          "selector0_queued_before_new",
+          "selector2_new_old",
+          "selector2_old_new",
+          "selector2_queued_before_new",
+          "disposed",
+          "dead_service",
+          "replacement_service",
+          "no_service",
+          "null_ticket",
+          "null_root",
+          "detached_root",
+          "cached_root",
+          "closed_reopened",
+          "negative",
+          "handler_rejected",
+          "null_delegate",
+          "ui_exception",
+          "instrument_constructor_does_not_invalidate_nav",
+          "close_hook_\u02b9()V",
+          "close_hook_\u0386()V",
+          "close_hook_stabilityDispose()Z"
+        ],
+        "instrument_query_delegate_preserved": true,
+        "inherited": {
+          "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_instrument_reads_r7",
+          "tile_cases": [
+            {
+              "path": "smali/o/ff.smali",
+              "key": 6,
+              "arguments_and_selector_preserved": true
+            },
+            {
+              "path": "smali/o/ie.smali",
+              "key": 6,
+              "arguments_and_selector_preserved": true
+            }
+          ],
+          "inherited": {
+            "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_instrument_reads_r7",
+            "read_submissions": [
+              {
+                "path": "smali/o/ff.smali",
+                "method": "\u037d()V",
+                "key": 0,
+                "task_constructor": "Lo/ie;-><init>(Lo/ff;I)V",
+                "arguments_preserved": true,
+                "original_thread_start_replaced": true
+              },
+              {
+                "path": "smali/o/ff.smali",
+                "method": "\u038a()V",
+                "key": 1,
+                "task_constructor": "Lo/je;-><init>(Lo/ff;Landroid/widget/SeekBar;Landroid/widget/TextView;I)V",
+                "arguments_preserved": true,
+                "original_thread_start_replaced": true
+              },
+              {
+                "path": "smali/o/ff.smali",
+                "method": "\u038a()V",
+                "key": 2,
+                "task_constructor": "Lo/je;-><init>(Lo/ff;Landroid/widget/SeekBar;Landroid/widget/TextView;I)V",
+                "arguments_preserved": true,
+                "original_thread_start_replaced": true
+              },
+              {
+                "path": "smali/o/ff.smali",
+                "method": "\u038a()V",
+                "key": 3,
+                "task_constructor": "Lo/sj;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;I)V",
+                "arguments_preserved": true,
+                "original_thread_start_replaced": true
+              },
+              {
+                "path": "smali/o/ff.smali",
+                "method": "\u038e(I)V",
+                "key": 4,
+                "task_constructor": "Lo/ie;-><init>(Lo/ff;I)V",
+                "arguments_preserved": true,
+                "original_thread_start_replaced": true
+              },
+              {
+                "path": "smali/o/ie.smali",
+                "method": "run()V",
+                "key": 2,
+                "task_constructor": "Lo/je;-><init>(Lo/ff;Landroid/widget/SeekBar;Landroid/widget/TextView;I)V",
+                "arguments_preserved": true,
+                "original_thread_start_replaced": true
+              },
+              {
+                "path": "smali/o/ie.smali",
+                "method": "run()V",
+                "key": 5,
+                "task_constructor": "Lo/ie;-><init>(Lo/ff;I)V",
+                "arguments_preserved": true,
+                "original_thread_start_replaced": true
+              }
+            ],
+            "owned_cancel_after_stop": true,
+            "repeated_dispose": true,
+            "inherited": {
+              "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_instrument_reads_r7",
+              "cases": [
+                "mode_hour_(0, 12)",
+                "mode_hour_(1, 12)",
+                "mode_hour_(2, 6)",
+                "mode_hour_(2, 7)",
+                "mode_hour_(2, 18)",
+                "mode_hour_(2, 19)",
+                "disposed",
+                "dead_service",
+                "replacement_service",
+                "missing_service",
+                "non_service",
+                "preference_changed",
+                "invalid_negative",
+                "invalid_high",
+                "exception_Lo/ci;->\u0370",
+                "exception_Lo/ci;->\u0376",
+                "exception_Ljava/util/Calendar;->getInstance",
+                "exception_Lcom/byd/launcher/NavBarService;->\u038e",
+                "producer_posts_owned_result_without_background_mutation"
+              ],
+              "queue_regressions": {
+                "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_instrument_reads_r7",
+                "handler_cases": [
+                  "alive",
+                  "controller_disposed",
+                  "service_destroyed",
+                  "platform_rejection_preserved",
+                  "destroy_clear_before_enqueue_recheck_removes_late_message",
+                  "dequeued_or_front_message_stopped"
+                ],
+                "other_controller_methods_preserved": 15,
+                "inherited_guards": 60,
+                "inherited_disposal_cases": 15,
+                "status": "PASS; actual smali with Handler/Looper doubles; not ART"
+              },
+              "status": "PASS; actual instruction flow, isolated external calls; not ART"
+            },
+            "status": "PASS; original Runnable arguments recorded, pool/queries not executed by smali test; actual pool tested on JVM"
+          },
+          "status": "PASS; actual submission instructions recorded; no worker/getter/vehicle execution"
+        },
+        "limits": "Actual ticket, helper, nav-worker instructions; sequential monitor model, injected query values, Handler/UI doubles. UI exception contains failure but does not roll back already committed cache. No ART or vehicle execution."
+      },
+      "limits": "Actual host/constructor/submission/drag instructions with production-module calls recorded; full InstrumentReads state machine executed separately as real JVM Java. No ART, IPC, vehicle or full-window execution."
+    }
+  ],
+  "exact_parent_restoration": true
+}

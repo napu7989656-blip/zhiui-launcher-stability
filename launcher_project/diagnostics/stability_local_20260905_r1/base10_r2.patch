@@ -1,0 +1,93 @@
+--- base10_r1/smali/o/ie.smali
++++ base10_r2/smali/o/ie.smali
+@@ -2551,6 +2551,9 @@
+     .line 1200
+     move-result v5
+ 
++    # Preserve the preference observed by this read until main-thread publication.
++    move v6, v5
++
+     .line 1201
+     if-ltz v3, :cond_27
+ 
+@@ -2601,76 +2604,10 @@
+     .line 1226
+     .line 1227
+     .line 1228
+-    iget-object v0, v0, Lo/ff;->ˋ:Landroid/content/Context;
+-
+-    .line 1229
+-    .line 1230
+-    invoke-static {v0, v3}, Lo/ci;->Ͷ(Landroid/content/Context;I)V
+-
+-    .line 1231
+-    .line 1232
+-    .line 1233
+-    if-ne v3, v11, :cond_25
+-
+-    .line 1234
+-    .line 1235
+-    invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
+-
+-    .line 1236
+-    .line 1237
+-    .line 1238
+-    move-result-object v0
+-
+-    .line 1239
+-    const/16 v1, 0xb
+-
+-    .line 1240
+-    .line 1241
+-    invoke-virtual {v0, v1}, Ljava/util/Calendar;->get(I)I
+-
+-    .line 1242
+-    .line 1243
+-    .line 1244
+-    move-result v0
+-
+-    .line 1245
+-    const/4 v1, 0x7
+-
+-    .line 1246
+-    if-lt v0, v1, :cond_26
+-
+-    .line 1247
+-    .line 1248
+-    const/16 v1, 0x13
+-
+-    .line 1249
+-    .line 1250
+-    if-ge v0, v1, :cond_26
+-
+-    .line 1251
+-    .line 1252
+-    goto :goto_16
+-
+-    .line 1253
+-    :cond_25
+-    if-ne v3, v14, :cond_26
+-
+-    .line 1254
+-    .line 1255
+-    :goto_16
+-    move v13, v14
+-
+-    .line 1256
+-    :cond_26
+-    sget-object v0, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;
+-
+-    .line 1257
+-    .line 1258
+-    if-eqz v0, :cond_27
+-
+-    .line 1259
+-    .line 1260
+-    invoke-virtual {v0, v13}, Lcom/byd/launcher/NavBarService;->Ύ(Z)V
++    new-instance v1, Lcom/byd/launcher/stability/QuickSettingsThemeApply;
++    invoke-direct {v1, v0, v3, v6}, Lcom/byd/launcher/stability/QuickSettingsThemeApply;-><init>(Lo/ff;II)V
++    iget-object v0, v0, Lo/ff;->Ͱ:Landroid/os/Handler;
++    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
+     :try_end_d
+     .catchall {:try_start_d .. :try_end_d} :catchall_2
+ 

@@ -1,0 +1,53 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "C1F4E91A419BFB35E380DE111E4EE55FDBC6FB8CF235BFC2C2BC4EA9C82DC034",
+  "delta_files": 18,
+  "cumulative_files": 148,
+  "source_final_case_groups": 367,
+  "review": [
+    "Accepted metadata art tail uses one immutable metadata snapshot and unified pipeline; original filtering/rating/title prefix preserved by explicit proof.",
+    "Legacy per-manager executor no longer created; independent media worker1/queue1 and one pending UI result per owner; detach invalidates, destroy/replacement closes artwork owner.",
+    "Host validity derives Service through actual ia callback owner (R20b fix), additionally checks session token; valid Handler delivery pairs cache and original ia UI call.",
+    "Production Work/Pipeline class bytes match tested classes; 12050 work assertions and38 pipeline assertions; source/final367 scoped groups including22 bridge groups.",
+    "JADX Host/Metadata/Pipeline/Work exits0, a9 exits3 with existing NavBarService.Ε failure; partial a9 exit1 shows metadata tail calls stabilityUpdateArtwork. Work begin pseudo-source omits owner argument, whereas final smali passes p0,p1 and synthetic null to Request constructor. Do not compile or trust pseudo-source literally.",
+    "ia display chain reviewed: vl updates inline on main; hd posts to nd main Handler. Full downstream UI/lifecycle combination remains outside this scoped validation."
+  ],
+  "jadx": [
+    {
+      "cls": "o.a9",
+      "exit_code": 3,
+      "log": "base10_r21_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.MediaArtworkHost",
+      "exit_code": 0,
+      "log": "base10_r21_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.MediaArtworkMetadata",
+      "exit_code": 0,
+      "log": "base10_r21_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.MediaArtworkPipeline",
+      "exit_code": 0,
+      "log": "base10_r21_jadx_3_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.MediaArtworkWork",
+      "exit_code": 0,
+      "log": "base10_r21_jadx_4_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "URI HTTP cache writes, stream/connection cleanup and size/deadline bounds remain unchanged/open. Repeated manager/listener lifecycle and full P1/P2/P3 remain incomplete. No ART/OEM/vehicle validation."
+}

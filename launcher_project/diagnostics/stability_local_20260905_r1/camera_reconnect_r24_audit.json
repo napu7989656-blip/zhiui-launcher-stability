@@ -1,0 +1,30 @@
+{
+  "parent": "R24 candidate",
+  "file_hashes": {
+    "smali/o/qi.smali": "3808362988c9ef8782c34398991441daac713c8153013ace7bcff818eae24bd7",
+    "smali/o/ki.smali": "57047ba3aa9e727c0ccb299daf24ea3e18a6e5e9a475665b592efb7b704598fd",
+    "smali/com/byd/launcher/NavBarService.smali": "c0f10365db52e6c78bfc1aa9b28100fb618d53a46cbe45a0fa0a2f2fd3d25b9b"
+  },
+  "reconnect_qi_references": [
+    "new-instance v3, Lo/qi;",
+    "invoke-direct {v3, p0, v4}, Lo/qi;-><init>(Landroid/content/Context;Landroid/view/WindowManager;)V",
+    "iput-object v3, p0, Lcom/byd/launcher/NavBarService;->Ό:Lo/qi;"
+  ],
+  "replaced_owner_view_reference_retained": true,
+  "two_close_calls_create_two_threads": true,
+  "scope": "Only actual reconnect assignment and close scheduling smali executed with allocation/Thread substitutes; no camera/native/vehicle/framework operation executed",
+  "constructor_preferences": [
+    "turn_signal_camera_enabled",
+    "turn_signal_overlay_w",
+    "turn_signal_overlay_h",
+    "turn_signal_overlay_x",
+    "turn_signal_overlay_y"
+  ],
+  "next": [
+    "review all qi/ki/lb/ag callbacks and EGL/frame ownership",
+    "choose bounded cleanup/refresh strategy before modifying",
+    "typed preferences and geometry bounds",
+    "avoid executing or extending vendor postEvent/setPanoOutputState"
+  ],
+  "status": "SCOPED_REPRODUCTION_AND_STATIC_AUDIT; NOT_FIXED"
+}

@@ -1,0 +1,142 @@
+[
+  {
+    "artifact": "source",
+    "case": "normal",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "closed_before_submit",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "null_bitmap",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "closed_after_submit",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "replaced_adapter",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "collected_owner",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "missing_active",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "recycled_bitmap",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "removed_path",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "rebound_view",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "selection_changed",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "collected_view",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "missing_array",
+    "passed": true
+  },
+  {
+    "artifact": "source",
+    "case": "short_array",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "normal",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "closed_before_submit",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "null_bitmap",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "closed_after_submit",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "replaced_adapter",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "collected_owner",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "missing_active",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "recycled_bitmap",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "removed_path",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "rebound_view",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "selection_changed",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "collected_view",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "missing_array",
+    "passed": true
+  },
+  {
+    "artifact": "final_apk",
+    "case": "short_array",
+    "passed": true
+  }
+]

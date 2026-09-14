@@ -1,0 +1,21 @@
+--- r26b/smali/com/byd/launcher/NavBarService.smali
++++ r27/smali/com/byd/launcher/NavBarService.smali
+@@ -5009,18 +5009,6 @@
+ 
+     .line 310
+     .line 311
+-    iget-object v1, v0, Lo/qi;->Ͳ:Lo/ˏ;
+-
+-    .line 312
+-    .line 313
+-    if-eqz v1, :cond_15
+-
+-    .line 314
+-    .line 315
+-    iput-object v2, v0, Lo/qi;->Ͳ:Lo/ˏ;
+-
+-    .line 316
+-    .line 317
+     :cond_15
+     iput-object v2, p0, Lcom/byd/launcher/NavBarService;->Ό:Lo/qi;
+ 

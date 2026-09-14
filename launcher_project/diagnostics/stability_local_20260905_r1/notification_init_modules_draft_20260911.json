@@ -1,0 +1,25 @@
+{
+  "status": "INTEGRATED_R18_SCOPED_LOCAL_PASS",
+  "current_apk": "zhiui-stability-local-base10-r18.apk",
+  "sources": {
+    "D:\\apk\\launcher_project\\stability_modules\\src\\com\\byd\\launcher\\stability\\InitProcess.java": "7f807796690f7c0fcc0a32661ea90bc17697b1c6375d7dac8de5af81a934e75b",
+    "D:\\apk\\launcher_project\\stability_modules\\src\\com\\byd\\launcher\\stability\\ListenerList.java": "8677760e4aa12744c476d7f0a53800ae3c7d036c703ed974d7ac79e55ec6d967"
+  },
+  "tests": {
+    "init_process_r1": {
+      "output": "PASS 66 assertions, including real JVM child process",
+      "apk_integration": false,
+      "limits": "Fake process faults and virtual clock plus harmless real JVM echo process. No Android commands, ART or vehicle."
+    },
+    "listener_list_r1": {
+      "output": "PASS 47 listener snapshot assertions",
+      "apk_integration": false,
+      "limits": "Actual Java snapshot parser; trusted read status supplied by test, Android read bridge not yet integrated."
+    }
+  },
+  "remaining": [
+    "full same-owner initialization/caller audit",
+    "shared ADB and IME followup",
+    "full P1/P2/P3 and parked vehicle validation"
+  ]
+}

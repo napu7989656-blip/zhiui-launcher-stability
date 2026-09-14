@@ -1,0 +1,43 @@
+{
+  "parent_reproduction": {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base08_statusbar_rollback_r1",
+    "stopped_flags": {
+      "\u037a": false,
+      "\u0377": false
+    },
+    "late_selector": 4,
+    "posted_selector": 0,
+    "trace": [
+      "Lo/ff;->\u037b()V",
+      "Lo/ie;-><init>(Lo/ff;I)V",
+      "Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z",
+      "WOULD_CONSTRUCT_AND_INFLATE_USING_STOPPED_CONTROLLER_CONTEXT"
+    ],
+    "status": "REPRODUCED_AT_INFLATION_BOUNDARY; no Android code or vehicle commands executed"
+  },
+  "artifacts": [
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base09_quick_dispose_r2",
+      "guard_count": 60,
+      "disposal_cases": [
+        "dispose_retry_None",
+        "dispose_retry_Lo/ff;->\u0370:Landroid/os/Handler;",
+        "dispose_retry_Lo/ff;->\u0371:Landroid/os/Handler;",
+        "dispose_retry_Lo/ff;->\u0389:Lo/af;",
+        "dispose_retry_Lo/ff;->\u038a:Lo/qe;",
+        "dispose_retry_Lo/ff;->\u0373:Landroid/view/View;",
+        "dispose_retry_Lo/ff;->\u038f:Landroid/view/View;",
+        "dispose_retry_editor-root",
+        "service_continues_after_disposal_False",
+        "service_continues_after_disposal_True"
+      ],
+      "status": "PASS"
+    }
+  ],
+  "preservation": {
+    "guarded_bodies_preserved": 60,
+    "other_methods_preserved": 52,
+    "scope": "All shared callback selectors retain original instructions after the scoped lifetime prefix; constructors unchanged."
+  },
+  "limits": "Actual smali entry/dispose control flow; framework resource operations doubled and production Java tested separately. No ART, real UI timing, IPC or vehicle operations."
+}

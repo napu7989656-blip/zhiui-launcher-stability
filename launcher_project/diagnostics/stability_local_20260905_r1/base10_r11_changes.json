@@ -1,0 +1,10 @@
+[
+  "smali/com/byd/launcher/stability/NavAction.smali",
+  "smali/com/byd/launcher/stability/NavDeliver.smali",
+  "smali/com/byd/launcher/stability/NavRead.smali",
+  "smali/com/byd/launcher/stability/NavVolumeApply.smali",
+  "smali/o/de.smali",
+  "smali/o/ff.smali",
+  "smali/o/je.smali",
+  "smali/o/se.smali"
+]

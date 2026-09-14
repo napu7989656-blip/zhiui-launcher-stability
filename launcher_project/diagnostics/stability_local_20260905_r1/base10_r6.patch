@@ -1,0 +1,11 @@
+--- base10_r5/smali/o/ie.smali
++++ base10_r6/smali/o/ie.smali
+@@ -2830,7 +2830,7 @@
+ 
+     .line 1365
+     .line 1366
+-    const/4 v6, 0x1
++    const/4 v6, 0x2
+ 
+     .line 1367
+     .line 1368

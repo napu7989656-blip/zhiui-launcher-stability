@@ -1,0 +1,23 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "86AD91C705651039CFEAE42FE2C5C53F361C55855092D71C3655197D039EA4FA",
+  "delta_files": 1,
+  "cumulative_files": 133,
+  "source_final_case_groups": 345,
+  "review": [
+    "Actual Application Context constructor assignment reproduced R20 rejection; ia actual constructor provides valid Service owner.",
+    "Only stabilityCurrent changed; Application Context and all R20 callback isolation behaviors preserved.",
+    "JADX new helper matches smali; existing NavBarService.Ε error remains.",
+    "R20 historical pass superseded explicitly; pipeline module still not integrated."
+  ],
+  "jadx": [
+    {
+      "cls": "o.a9",
+      "exit_code": 3,
+      "log": "base10_r20b_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "Framework getApplicationContext doubled; exact constructor fragment and ia constructor executed, not full ART lifecycle. Full P1/P2/P3 and metadata pipeline integration remain incomplete."
+}

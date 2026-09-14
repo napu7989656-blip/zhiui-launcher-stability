@@ -1,0 +1,33 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "4243EF157CF5D05E80945AD92BA8658D1CCC1371DD7AB80A13F892D74D9A47F0",
+  "delta_files": 2,
+  "cumulative_files": 120,
+  "source_final_cases": 293,
+  "new_jvm_assertions": 7,
+  "review": [
+    "h2 successful blur output staged immediately after move-result, before any fallible scaled-image recycle; original source-exclusion guard, algorithm and UI publication unchanged",
+    "MainBlurHost.release delegates to BitmapCleanup so cleanup Throwable is isolated and cannot stop the remaining image release loop; source exclusion remains in production Frame.release",
+    "9 caller scenarios execute actual ordering and bridge with bitmap faults; parent missing-stage regression reproduced",
+    "unchanged production BlurPipeline classes run on real JVM worker: RuntimeException and Error both dispose staged scaled/final images while preserving borrowed source; 7 assertions",
+    "R15/R16 inherited production modules, catch dispatch and 284 scenarios retained; exact inverse returns R16"
+  ],
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.stability.MainBlurHost",
+      "exit_code": 3,
+      "log": "base10_r16b_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.h2",
+      "exit_code": 3,
+      "log": "base10_r16b_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "jadx_caveats": "Both exits3 report only the existing NavBarService.Ε RegionMaker error. New staging-before-recycle order and guarded Host release render correctly and match final smali. Prior h2 decompile fall-through/empty-guard caveats remain; final jump tests pass.",
+  "limits": "Scoped image ownership/catch evidence, not native Bitmap, ART, OEM or vehicle validation. Remaining thread/wait and full caller inventory, V2/V3 reintegration and P3 gates still open."
+}

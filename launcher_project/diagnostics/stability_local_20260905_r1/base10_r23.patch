@@ -1,0 +1,589 @@
+--- r22/smali/com/byd/launcher/NavBarService.smali
++++ r23/smali/com/byd/launcher/NavBarService.smali
+@@ -4872,74 +4872,8 @@
+ 
+     .line 195
+     .line 196
+-    iput-boolean v0, v1, Lo/a9;->ͺ:Z
+-    invoke-virtual {v1}, Lo/a9;->stabilityCloseArtwork()V
+-
+-    .line 197
+-    .line 198
+-    iget-object v4, v1, Lo/a9;->ͱ:Ljava/util/concurrent/Future;
+-
+-    .line 199
+-    .line 200
+-    if-eqz v4, :cond_e
+-
+-    .line 201
+-    .line 202
+-    invoke-interface {v4, v0}, Ljava/util/concurrent/Future;->cancel(Z)Z
+-
+-    .line 203
+-    .line 204
+-    .line 205
+-    :cond_e
+-    iput-object v2, v1, Lo/a9;->ͱ:Ljava/util/concurrent/Future;
+-
+-    .line 206
+-    .line 207
+-    iget-object v0, v1, Lo/a9;->ˏ:Landroid/os/Handler;
+-
+-    .line 208
+-    .line 209
+-    invoke-virtual {v0, v2}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+-
+-    .line 210
+-    .line 211
+-    .line 212
+-    invoke-virtual {v1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+-
+-    .line 213
+-    .line 214
+-    .line 215
+-    invoke-virtual {v1}, Lo/a9;->ˏ()V
+-
+-    .line 216
+-    .line 217
+-    .line 218
+-    iget-object v0, v1, Lo/a9;->Ͳ:Landroid/media/session/MediaSessionManager;
+-
+-    .line 219
+-    .line 220
+-    if-eqz v0, :cond_f
+-
+-    .line 221
+-    .line 222
+-    :try_start_7
+-    iget-object v4, v1, Lo/a9;->ͷ:Lo/x8;
+-
+-    .line 223
+-    .line 224
+-    invoke-virtual {v0, v4}, Landroid/media/session/MediaSessionManager;->removeOnActiveSessionsChangedListener(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;)V
+-    :try_end_7
+-    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_7
+-
+-    .line 225
+-    .line 226
+-    .line 227
+-    :catch_7
+-    :cond_f
+-    iput-object v2, v1, Lo/a9;->ʹ:Lo/ia;
+-
+-    .line 228
+-    .line 229
++    invoke-virtual {v1}, Lo/a9;->stabilityDispose()V
++
+     iput-object v2, p0, Lcom/byd/launcher/NavBarService;->ͼ:Lo/a9;
+ 
+     .line 230
+--- r22/smali/com/byd/launcher/stability/MediaManagerStart.smali
++++ r23/smali/com/byd/launcher/stability/MediaManagerStart.smali
+@@ -0,0 +1,16 @@
++.class public final Lcom/byd/launcher/stability/MediaManagerStart;
++.super Ljava/lang/Object;
++.implements Ljava/lang/Runnable;
++.field private final owner:Lo/a9;
++.method public constructor <init>(Lo/a9;)V
++    .locals 0
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    iput-object p1, p0, Lcom/byd/launcher/stability/MediaManagerStart;->owner:Lo/a9;
++    return-void
++.end method
++.method public run()V
++    .locals 1
++    iget-object v0, p0, Lcom/byd/launcher/stability/MediaManagerStart;->owner:Lo/a9;
++    invoke-virtual {v0}, Lo/a9;->stabilityStart()V
++    return-void
++.end method
+--- r22/smali/o/a9.smali
++++ r23/smali/o/a9.smali
+@@ -29,6 +29,10 @@
+ .field public final ͷ:Lo/x8;
+ 
+ .field public volatile ͺ:Z
++
++.field private stabilityDisposed:Z
++
++.field private stabilityStarted:Z
+ 
+ .field public volatile ͻ:Z
+ 
+@@ -2030,6 +2034,11 @@
+ 
+ .method public final ͺ()V
+     .locals 4
++    invoke-virtual {p0}, Lo/a9;->stabilityCurrent()Z
++    move-result v0
++    if-nez v0, :refresh_alive
++    return-void
++    :refresh_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/a9;->Ͳ:Landroid/media/session/MediaSessionManager;
+@@ -2233,3 +2242,238 @@
+     :done
+     return-void
+ .end method
++
++.method public stabilityDispose()V
++    .locals 4
++    iget-boolean v0, p0, Lo/a9;->stabilityDisposed:Z
++    if-nez v0, :done
++    const/4 v0, 0x1
++    iput-boolean v0, p0, Lo/a9;->stabilityDisposed:Z
++    iput-boolean v0, p0, Lo/a9;->ͺ:Z
++    const/4 v1, 0x0
++    iput-object v1, p0, Lo/a9;->ʹ:Lo/ia;
++    iput-object v1, p0, Lo/a9;->ͽ:Landroid/graphics/Bitmap;
++    iput-object v1, p0, Lo/a9;->ΐ:Landroid/graphics/Bitmap;
++    iput-object v1, p0, Lo/a9;->Ώ:Ljava/lang/String;
++    iput-object v1, p0, Lo/a9;->Γ:Ljava/lang/Runnable;
++    iget-object v2, p0, Lo/a9;->ͱ:Ljava/util/concurrent/Future;
++    iput-object v1, p0, Lo/a9;->ͱ:Ljava/util/concurrent/Future;
++    if-eqz v2, :after_future
++    :try_future
++    invoke-interface {v2, v0}, Ljava/util/concurrent/Future;->cancel(Z)Z
++    :end_future
++    .catch Ljava/lang/RuntimeException; {:try_future .. :end_future} :fail_future
++    goto :after_future
++    :fail_future
++    move-exception v3
++    :after_future
++    :try_art
++    invoke-virtual {p0}, Lo/a9;->stabilityCloseArtwork()V
++    :end_art
++    .catch Ljava/lang/RuntimeException; {:try_art .. :end_art} :fail_art
++    goto :after_art
++    :fail_art
++    move-exception v3
++    :after_art
++    :try_handler
++    iget-object v2, p0, Lo/a9;->ˏ:Landroid/os/Handler;
++    invoke-virtual {v2, v1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
++    :end_handler
++    .catch Ljava/lang/RuntimeException; {:try_handler .. :end_handler} :fail_handler
++    goto :after_handler
++    :fail_handler
++    move-exception v3
++    :after_handler
++    iget-object v2, p0, Lo/a9;->ͳ:Landroid/media/session/MediaController;
++    iget-object v3, p0, Lo/a9;->ͼ:Lo/y8;
++    iput-object v1, p0, Lo/a9;->ͳ:Landroid/media/session/MediaController;
++    iput-object v1, p0, Lo/a9;->ͼ:Lo/y8;
++    iput-object v1, p0, Lo/a9;->stabilitySessionToken:Ljava/lang/Object;
++    if-eqz v2, :after_detach
++    if-eqz v3, :after_detach
++    :try_detach
++    invoke-virtual {v2, v3}, Landroid/media/session/MediaController;->unregisterCallback(Landroid/media/session/MediaController$Callback;)V
++    :end_detach
++    .catch Ljava/lang/RuntimeException; {:try_detach .. :end_detach} :fail_detach
++    goto :after_detach
++    :fail_detach
++    move-exception v3
++    :after_detach
++    iput-object v1, p0, Lo/a9;->ͳ:Landroid/media/session/MediaController;
++    iput-object v1, p0, Lo/a9;->ͼ:Lo/y8;
++    iput-object v1, p0, Lo/a9;->stabilitySessionToken:Ljava/lang/Object;
++    iget-object v2, p0, Lo/a9;->Ͳ:Landroid/media/session/MediaSessionManager;
++    iput-object v1, p0, Lo/a9;->Ͳ:Landroid/media/session/MediaSessionManager;
++    iput-boolean v1, p0, Lo/a9;->ͻ:Z
++    if-eqz v2, :done
++    :try_listener
++    iget-object v3, p0, Lo/a9;->ͷ:Lo/x8;
++    invoke-virtual {v2, v3}, Landroid/media/session/MediaSessionManager;->removeOnActiveSessionsChangedListener(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;)V
++    :end_listener
++    .catch Ljava/lang/RuntimeException; {:try_listener .. :end_listener} :fail_listener
++    goto :done
++    :fail_listener
++    move-exception v3
++    :done
++    return-void
++.end method
++
++.method public stabilityStart()V
++    .locals 10
++    invoke-virtual {p0}, Lo/a9;->stabilityCurrent()Z
++    move-result v0
++    if-eqz v0, :start_done
++    iget-boolean v0, p0, Lo/a9;->stabilityStarted:Z
++    if-nez v0, :start_done
++    const/4 v9, 0x1
++    iput-boolean v9, p0, Lo/a9;->stabilityStarted:Z
++    move-object v0, p0
++    const-wide/16 v1, 0xbb8
++    const/4 v3, 0x3
++    const-string v4, "MusicCtrlMgr"
++    :try_start_2
++    iget-object v5, p0, Lo/a9;->Ͳ:Landroid/media/session/MediaSessionManager;
++    if-nez v5, :cond_9
++    iget-object v5, v0, Lo/a9;->ˋ:Landroid/content/Context;
++
++    .line 365
++    .line 366
++    const-string v6, "media_session"
++
++    .line 367
++    .line 368
++    invoke-virtual {v5, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
++
++    .line 369
++    .line 370
++    .line 371
++    move-result-object v5
++
++    .line 372
++    check-cast v5, Landroid/media/session/MediaSessionManager;
++
++    .line 373
++    .line 374
++    iput-object v5, v0, Lo/a9;->Ͳ:Landroid/media/session/MediaSessionManager;
++
++    .line 375
++    .line 376
++    if-nez v5, :cond_9
++
++    .line 377
++    .line 378
++    const/4 v6, 0x0
++    iput-boolean v6, p0, Lo/a9;->stabilityStarted:Z
++    const-string v0, "MediaSessionManager not available"
++
++    .line 379
++    .line 380
++    invoke-static {v4, v0}, Lo/q3;->ͷ(Ljava/lang/String;Ljava/lang/String;)V
++    :try_end_2
++    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
++
++    .line 381
++    .line 382
++    .line 383
++    goto :goto_2
++
++    .line 384
++    :cond_9
++    :try_start_3
++    iget-boolean v6, p0, Lo/a9;->ͻ:Z
++    if-nez v6, :catch_1
++    iget-object v6, v0, Lo/a9;->ͷ:Lo/x8;
++
++    .line 385
++    .line 386
++    iget-object v7, v0, Lo/a9;->Ͷ:Landroid/content/ComponentName;
++
++    .line 387
++    .line 388
++    iget-object v8, v0, Lo/a9;->ˏ:Landroid/os/Handler;
++
++    .line 389
++    .line 390
++    invoke-virtual {v5, v6, v7, v8}, Landroid/media/session/MediaSessionManager;->addOnActiveSessionsChangedListener(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;Landroid/content/ComponentName;Landroid/os/Handler;)V
++
++    .line 391
++    .line 392
++    .line 393
++    iput-boolean v9, v0, Lo/a9;->ͻ:Z
++    :try_end_3
++    .catch Ljava/lang/SecurityException; {:try_start_3 .. :try_end_3} :catch_1
++    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
++
++    .line 394
++    .line 395
++    :catch_1
++    :try_start_4
++    invoke-virtual {v0}, Lo/a9;->ͺ()V
++
++    .line 396
++    .line 397
++    .line 398
++    new-instance v5, Lo/c8;
++
++    .line 399
++    .line 400
++    invoke-direct {v5, v3, v0}, Lo/c8;-><init>(ILjava/lang/Object;)V
++
++    .line 401
++    .line 402
++    .line 403
++    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
++
++    .line 404
++    .line 405
++    .line 406
++    iget-object v0, v0, Lo/a9;->ˏ:Landroid/os/Handler;
++
++    .line 407
++    .line 408
++    invoke-virtual {v0, v5, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
++    move-result v6
++    if-nez v6, :media_poll_posted
++    const/4 v6, 0x0
++    iput-boolean v6, p0, Lo/a9;->stabilityStarted:Z
++    :media_poll_posted
++    :try_end_4
++    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
++
++    .line 409
++    .line 410
++    .line 411
++    goto :goto_2
++
++    .line 412
++    :catch_2
++    move-exception v0
++    const/4 v6, 0x0
++    iput-boolean v6, p0, Lo/a9;->stabilityStarted:Z
++
++    .line 413
++    new-instance v1, Ljava/lang/StringBuilder;
++
++    .line 414
++    .line 415
++    const-string v2, "start failed: "
++
++    .line 416
++    .line 417
++    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
++
++    .line 418
++    .line 419
++    .line 420
++    invoke-static {v0, v1, v4}, Lo/v1;->Ύ(Ljava/lang/Exception;Ljava/lang/StringBuilder;Ljava/lang/String;)V
++
++    .line 421
++    .line 422
++    .line 423
++    :cond_a
++    :goto_2
++    return-void
++
++    :start_done
++    return-void
++.end method
+--- r22/smali/o/c8.smali
++++ r23/smali/o/c8.smali
+@@ -68,11 +68,12 @@
+ 
+     .line 14
+     .line 15
+-    iget-boolean v0, v0, Lo/a9;->ͺ:Z
++    invoke-virtual {v0}, Lo/a9;->stabilityCurrent()Z
++    move-result v0
+ 
+     .line 16
+     .line 17
+-    if-eqz v0, :cond_0
++    if-nez v0, :cond_0
+ 
+     .line 18
+     .line 19
+--- r22/smali/o/ea.smali
++++ r23/smali/o/ea.smali
+@@ -758,153 +758,10 @@
+     .line 354
+     :pswitch_d
+     iget-object v0, p0, Lo/ea;->ͱ:Lcom/byd/launcher/NavBarService;
+-
+-    .line 355
+-    .line 356
+     iget-object v0, v0, Lcom/byd/launcher/NavBarService;->ͼ:Lo/a9;
+-
+-    .line 357
+-    .line 358
+-    if-eqz v0, :cond_a
+-
+-    .line 359
+-    .line 360
+-    const-string v4, "MusicCtrlMgr"
+-
+-    .line 361
+-    .line 362
+-    iput-boolean v14, v0, Lo/a9;->ͺ:Z
+-
+-    .line 363
+-    .line 364
+-    :try_start_2
+-    iget-object v5, v0, Lo/a9;->ˋ:Landroid/content/Context;
+-
+-    .line 365
+-    .line 366
+-    const-string v6, "media_session"
+-
+-    .line 367
+-    .line 368
+-    invoke-virtual {v5, v6}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+-
+-    .line 369
+-    .line 370
+-    .line 371
+-    move-result-object v5
+-
+-    .line 372
+-    check-cast v5, Landroid/media/session/MediaSessionManager;
+-
+-    .line 373
+-    .line 374
+-    iput-object v5, v0, Lo/a9;->Ͳ:Landroid/media/session/MediaSessionManager;
+-
+-    .line 375
+-    .line 376
+-    if-nez v5, :cond_9
+-
+-    .line 377
+-    .line 378
+-    const-string v0, "MediaSessionManager not available"
+-
+-    .line 379
+-    .line 380
+-    invoke-static {v4, v0}, Lo/q3;->ͷ(Ljava/lang/String;Ljava/lang/String;)V
+-    :try_end_2
+-    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
+-
+-    .line 381
+-    .line 382
+-    .line 383
+-    goto :goto_2
+-
+-    .line 384
+-    :cond_9
+-    :try_start_3
+-    iget-object v6, v0, Lo/a9;->ͷ:Lo/x8;
+-
+-    .line 385
+-    .line 386
+-    iget-object v7, v0, Lo/a9;->Ͷ:Landroid/content/ComponentName;
+-
+-    .line 387
+-    .line 388
+-    iget-object v8, v0, Lo/a9;->ˏ:Landroid/os/Handler;
+-
+-    .line 389
+-    .line 390
+-    invoke-virtual {v5, v6, v7, v8}, Landroid/media/session/MediaSessionManager;->addOnActiveSessionsChangedListener(Landroid/media/session/MediaSessionManager$OnActiveSessionsChangedListener;Landroid/content/ComponentName;Landroid/os/Handler;)V
+-
+-    .line 391
+-    .line 392
+-    .line 393
+-    iput-boolean v13, v0, Lo/a9;->ͻ:Z
+-    :try_end_3
+-    .catch Ljava/lang/SecurityException; {:try_start_3 .. :try_end_3} :catch_1
+-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
+-
+-    .line 394
+-    .line 395
+-    :catch_1
+-    :try_start_4
+-    invoke-virtual {v0}, Lo/a9;->ͺ()V
+-
+-    .line 396
+-    .line 397
+-    .line 398
+-    new-instance v5, Lo/c8;
+-
+-    .line 399
+-    .line 400
+-    invoke-direct {v5, v3, v0}, Lo/c8;-><init>(ILjava/lang/Object;)V
+-
+-    .line 401
+-    .line 402
+-    .line 403
+-    invoke-virtual {v0}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
+-
+-    .line 404
+-    .line 405
+-    .line 406
+-    iget-object v0, v0, Lo/a9;->ˏ:Landroid/os/Handler;
+-
+-    .line 407
+-    .line 408
+-    invoke-virtual {v0, v5, v1, v2}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
+-    :try_end_4
+-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_2
+-
+-    .line 409
+-    .line 410
+-    .line 411
+-    goto :goto_2
+-
+-    .line 412
+-    :catch_2
+-    move-exception v0
+-
+-    .line 413
+-    new-instance v1, Ljava/lang/StringBuilder;
+-
+-    .line 414
+-    .line 415
+-    const-string v2, "start failed: "
+-
+-    .line 416
+-    .line 417
+-    invoke-direct {v1, v2}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+-
+-    .line 418
+-    .line 419
+-    .line 420
+-    invoke-static {v0, v1, v4}, Lo/v1;->Ύ(Ljava/lang/Exception;Ljava/lang/StringBuilder;Ljava/lang/String;)V
+-
+-    .line 421
+-    .line 422
+-    .line 423
+-    :cond_a
+-    :goto_2
++    if-eqz v0, :media_start_done
++    invoke-virtual {v0}, Lo/a9;->stabilityStart()V
++    :media_start_done
+     return-void
+ 
+     .line 424
+--- r22/smali/o/llI.smali
++++ r23/smali/o/llI.smali
+@@ -1432,6 +1432,14 @@
+     .line 675
+     :pswitch_d
+     iget-object v0, v1, Lo/llI;->ͱ:Lcom/byd/launcher/NavBarService;
++    iget-boolean v2, v0, Lcom/byd/launcher/NavBarService;->ˋ:Z
++    if-nez v2, :media_replace_done
++    sget-object v2, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;
++    if-eq v0, v2, :media_replace_alive
++    :media_replace_done
++    return-void
++    :media_replace_alive
++    iget-object v0, v1, Lo/llI;->ͱ:Lcom/byd/launcher/NavBarService;
+ 
+     .line 676
+     .line 677
+@@ -1446,7 +1454,7 @@
+     .line 682
+     iget-object v2, v0, Lcom/byd/launcher/NavBarService;->ͼ:Lo/a9;
+     if-eqz v2, :art_new_manager
+-    invoke-virtual {v2}, Lo/a9;->stabilityCloseArtwork()V
++    invoke-virtual {v2}, Lo/a9;->stabilityDispose()V
+     :art_new_manager
+     new-instance v2, Lo/a9;
+ 
+@@ -1478,19 +1486,14 @@
+ 
+     .line 697
+     .line 698
+-    iget-object v2, v0, Lcom/byd/launcher/NavBarService;->Ͷ:Landroid/os/Handler;
++    iget-object v2, v0, Lcom/byd/launcher/NavBarService;->ͼ:Lo/a9;
++    iget-object v2, v2, Lo/a9;->ˏ:Landroid/os/Handler;
+ 
+     .line 699
+     .line 700
+-    new-instance v3, Lo/ea;
+-
+-    .line 701
+-    .line 702
+-    const/16 v4, 0xf
+-
+-    .line 703
+-    .line 704
+-    invoke-direct {v3, v0, v4}, Lo/ea;-><init>(Lcom/byd/launcher/NavBarService;I)V
++    new-instance v3, Lcom/byd/launcher/stability/MediaManagerStart;
++    iget-object v4, v0, Lcom/byd/launcher/NavBarService;->ͼ:Lo/a9;
++    invoke-direct {v3, v4}, Lcom/byd/launcher/stability/MediaManagerStart;-><init>(Lo/a9;)V
+ 
+     .line 705
+     .line 706

@@ -1,0 +1,8 @@
+[
+  "smali/com/byd/launcher/stability/SocApply.smali",
+  "smali/com/byd/launcher/stability/SocRead.smali",
+  "smali/o/ff.smali",
+  "smali/o/ie.smali",
+  "smali/o/re.smali",
+  "smali/o/sj.smali"
+]

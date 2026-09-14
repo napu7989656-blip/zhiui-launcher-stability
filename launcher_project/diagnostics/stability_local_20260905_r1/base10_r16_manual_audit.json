@@ -1,0 +1,32 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "22F1F48CBABE8FC68F21833B1CB4797FE8F92D6EB2B615C93BB00DFDE9D6F8DF",
+  "delta_files": 2,
+  "cumulative_files": 120,
+  "source_final_cases": 284,
+  "review": [
+    "crop locals10: v6 borrowed input preserved; v7/v8/v9 initialized before try then capture successful allocation results; all parameter register encodings remain valid",
+    "crop Exception catch retains original null return after cleanup; catchall releases then rethrows original throwable",
+    "stack-blur locals38: unused v37 holds copied bitmap before protected region; borrowed p0 unchanged, null-copy fallback unchanged; successful loops/return unchanged",
+    "cleanup excludes null/borrowed/recycled images and suppresses cleanup failure only; outer error identity survives, all remaining intermediates attempted",
+    "24 typed catch/cleanup cases with injected allocation state plus260 inherited per source/final; exact inverse restores all original math and unrelated a2 methods"
+  ],
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.stability.BitmapCleanup",
+      "exit_code": 0,
+      "log": "base10_r16_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.a2",
+      "exit_code": 3,
+      "log": "base10_r16_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "jadx_caveats": "BitmapCleanup exit0; a2 exit3 reports unchanged CoreService.ʹ BlockProcessor error. Both modified bitmap methods render cleanup/rethrow and were crosschecked against final smali. Unrelated a2.Ζ remains incompletely decompiled.",
+  "remaining": "Caller h2 receives the final blur before recycling scaled input but currently tracks it only afterwards: if recycle throws, final blur is not yet owned. MainBlurHost.release catches no Error itself; frame release loop only catches RuntimeException. Follow with R16b before claiming complete blur allocation cleanup. Other P1, P2/P3 and vehicle remain incomplete."
+}

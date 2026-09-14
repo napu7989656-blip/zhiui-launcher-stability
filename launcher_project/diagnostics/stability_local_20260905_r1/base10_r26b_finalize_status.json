@@ -1,0 +1,13 @@
+{
+  "checks_passed": true,
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.NavBarService",
+      "exit_code": 3,
+      "log": "base10_r26b_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "JADX errors require explicit review; scoped local checks, not full-plan/ART/vehicle validation"
+}

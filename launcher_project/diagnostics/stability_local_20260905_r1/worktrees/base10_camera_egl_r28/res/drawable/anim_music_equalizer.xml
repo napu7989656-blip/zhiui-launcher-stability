@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<animation-list android:oneshot="false"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:duration="200" android:drawable="@drawable/island_y1" />
+    <item android:duration="200" android:drawable="@drawable/island_y11" />
+    <item android:duration="200" android:drawable="@drawable/island_y12" />
+    <item android:duration="200" android:drawable="@drawable/island_y13" />
+    <item android:duration="200" android:drawable="@drawable/island_y14" />
+    <item android:duration="200" android:drawable="@drawable/island_y15" />
+</animation-list>

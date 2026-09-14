@@ -1,0 +1,119 @@
+--- r24/smali/com/byd/launcher/stability/CameraPreferences.smali
++++ r25/smali/com/byd/launcher/stability/CameraPreferences.smali
+@@ -0,0 +1,58 @@
++.class public final Lcom/byd/launcher/stability/CameraPreferences;
++.super Ljava/lang/Object;
++.source "CameraPreferences.java"
++
++
++# direct methods
++.method private constructor <init>()V
++    .locals 0
++
++    .line 20
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    return-void
++.end method
++
++.method public static flag(Landroid/content/SharedPreferences;Ljava/lang/String;Z)Z
++    .locals 0
++
++    if-nez p0, :cond_0
++
++    return p2
++
++    .line 17
++    :cond_0
++    :try_start_0
++    invoke-interface {p0, p1, p2}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
++
++    move-result p0
++    :try_end_0
++    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
++
++    return p0
++
++    :catch_0
++    return p2
++.end method
++
++.method public static integer(Landroid/content/SharedPreferences;Ljava/lang/String;I)I
++    .locals 0
++
++    if-nez p0, :cond_0
++
++    return p2
++
++    .line 12
++    :cond_0
++    :try_start_0
++    invoke-interface {p0, p1, p2}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
++
++    move-result p0
++    :try_end_0
++    .catch Ljava/lang/ClassCastException; {:try_start_0 .. :try_end_0} :catch_0
++
++    return p0
++
++    :catch_0
++    return p2
++.end method
+--- r24/smali/o/qi.smali
++++ r25/smali/o/qi.smali
+@@ -186,7 +186,7 @@
+ 
+     const-string p2, "turn_signal_camera_enabled"
+ 
+-    invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {p1, p2, v0}, Lcom/byd/launcher/stability/CameraPreferences;->flag(Landroid/content/SharedPreferences;Ljava/lang/String;Z)Z
+ 
+     move-result p2
+ 
+@@ -196,7 +196,7 @@
+ 
+     const/16 v0, 0x1a4
+ 
+-    invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
++    invoke-static {p1, p2, v0}, Lcom/byd/launcher/stability/CameraPreferences;->integer(Landroid/content/SharedPreferences;Ljava/lang/String;I)I
+ 
+     move-result p2
+ 
+@@ -206,7 +206,7 @@
+ 
+     const/16 v0, 0x230
+ 
+-    invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
++    invoke-static {p1, p2, v0}, Lcom/byd/launcher/stability/CameraPreferences;->integer(Landroid/content/SharedPreferences;Ljava/lang/String;I)I
+ 
+     move-result p2
+ 
+@@ -216,7 +216,7 @@
+ 
+     const/16 v0, 0x8
+ 
+-    invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
++    invoke-static {p1, p2, v0}, Lcom/byd/launcher/stability/CameraPreferences;->integer(Landroid/content/SharedPreferences;Ljava/lang/String;I)I
+ 
+     move-result p2
+ 
+@@ -226,7 +226,7 @@
+ 
+     const/16 v0, 0x28
+ 
+-    invoke-interface {p1, p2, v0}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
++    invoke-static {p1, p2, v0}, Lcom/byd/launcher/stability/CameraPreferences;->integer(Landroid/content/SharedPreferences;Ljava/lang/String;I)I
+ 
+     move-result p1
+ 
+--- r24/smali/o/tk.smali
++++ r25/smali/o/tk.smali
+@@ -2445,7 +2445,7 @@
+ 
+     .line 1176
+     .line 1177
+-    invoke-interface {v4, v6, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
++    invoke-static {v4, v6, v5}, Lcom/byd/launcher/stability/CameraPreferences;->flag(Landroid/content/SharedPreferences;Ljava/lang/String;Z)Z
+ 
+     .line 1178
+     .line 1179

@@ -1,0 +1,30 @@
+{
+  "status": "MODULE_LOCAL_PASS_INTEGRATED_IN_BASE10_R6",
+  "module": "quick_read_executor_r1",
+  "java_sha256": "FE6DFAC57D356FE5D4F17E38DF894176F547CFEB8224023CA3C0AB9F4EB9410E",
+  "test_sha256": "4254FF63E7CE77ADE9DD2FD8D5A49F5EB5843F63EECC7799019CCF0A385CAC67",
+  "dex_sha256": "79AB988D5F10F0A5843391426670D5E1775B47717D743C4D8FDBCA0CF6EEA712",
+  "classes": [
+    "QuickSettingsReadExecutor$1.smali",
+    "QuickSettingsReadExecutor$Read.smali",
+    "QuickSettingsReadExecutor.smali"
+  ],
+  "tests": "PASS: 31032 assertions; 10000 submissions, global 2-worker/8-waiting bound, newest queued replacement, owner cancellation/isolation, repeated owners, dead owner/service, stale dequeue, task exception and rejected submission. Real JVM threads; lifetime/Log doubles; not ART.",
+  "limits": [
+    "Integrated only at nine audited producers; other workers/generations remain pending",
+    "Fixed process-wide 2 workers and 8 queued reads only after audited call sites adopt it",
+    "Replaces queued same-owner/key reads; running reads can overlap up to worker limit",
+    "cancelQueued removes this owner queued work only; no interruption of active/native work",
+    "No query epoch, panel generation or A-B-A fix in this module",
+    "Never apply replaceable-read semantics to user action branches"
+  ],
+  "next": "Add per-panel/query freshness guarantees and audit remaining background work",
+  "vehicle_access": false,
+  "integration": {
+    "checkpoint": "base10_r6",
+    "read_producer_sites": 9,
+    "categories": 7,
+    "cancel_after_permanent_stop": true,
+    "semantic_category_correction": "r3-r5 instrument initialization key1 collided with nav polling key1; r6 nav polling key2 matches nav initialization; JVM regression passed"
+  }
+}

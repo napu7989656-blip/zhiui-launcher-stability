@@ -1,0 +1,10 @@
+{
+  "output": "PASS 38 pipeline assertions; actual asynchronous production classes with borrowed-image/IO/UI doubles; no Android bridge",
+  "source_sha256": {
+    "D:\\apk\\launcher_project\\stability_modules\\src\\com\\byd\\launcher\\stability\\MediaArtworkWork.java": "58c60e3245998ac3537f7b5e83a17a2ccb7cb12de43e3f4bdbd6e68b47721ab8",
+    "D:\\apk\\launcher_project\\stability_modules\\src\\com\\byd\\launcher\\stability\\MediaArtworkPipeline.java": "263c9319cd874e34a08267d2fa5b915b2259b3f343f377dea7557e0a43c6433f",
+    "D:\\apk\\launcher_project\\stability_modules\\test\\MediaArtworkPipelineTest.java": "ad0163b0eb4cc943dd182234d66a0a9713b2765e96954e26aa4cc58caf19fdaa"
+  },
+  "apk_integration": false,
+  "limits": "Actual Java scheduling/pipeline with IO/UI/bitmap doubles. Android adapter, metadata extraction, URI ownership and APK integration still required. Interruption test proves retry stops, not flag restoration after executor clears it."
+}

@@ -1,0 +1,26 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "A0371FB1BA3D0F2D0DE56F44C2018E4E277B37942D126E59D03D02D96E65CF48",
+  "delta_files": 1,
+  "cumulative_files": 120,
+  "source_final_case_groups": 302,
+  "review": [
+    "ea.run selector0 only: 13 checks for interruption, non-null captured owner, volatile destroyed flag and exact volatile O0 identity. Other selectors restored byte-for-byte by inverse patch.",
+    "LlI selector17 from NavBarService.onServiceConnected posts ea selector0 through owner ThreadPoolExecutor safeExecuteBg. onDestroy sets destroyed before shutdownNow; old InterruptedException catch retried. New typed handler restores interrupt and returns.",
+    "All 13 actual guard fragments exercised for current/dead/replaced/no-current/null-owner/interrupted; actual sleep catch range and handler verified; final content strictly matches source.",
+    "Existing 10 attempts and min(attempt*1000,5000) sleep remain. No command payload, vehicle action, permission or policy wrapper changed.",
+    "v3 scratch at each added site reviewed; no insertion separates invoke/move-result. goto retry expands to goto/16 in DEX; identical target.",
+    "Verifier previously conflated packed-switch references with adjacent labels. Fixed and 6 negative/equivalence tests passed; 5 goto-width tests passed. Full R17 content/cumulative checks rerun under corrected normalizer."
+  ],
+  "jadx": [
+    {
+      "cls": "o.ea",
+      "exit_code": 0,
+      "log": "base10_r17_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "jadx_caveats": "Default exit0 still emits UnsupportedOperationException stub for ea.run. Independent --show-bad-code output also exit0 but incorrectly reverses publish guard and reconstructs retry fallthrough. Actual final smali and executable guard tests establish the intended branch; partial Java is not treated as source or proof.",
+  "limits": "Cooperative checkpoints do not cancel an already entered ADB or nested initialization method, do not guarantee total timeout, and do not atomically pair check with side effect. Nested IME/listener setup, queued m9 ownership, repeated onServiceConnected initialization, pool teardown and all P1/P2/P3 remain open. No ART/OEM/vehicle validation."
+}

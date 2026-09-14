@@ -1,0 +1,22 @@
+[
+  {
+    "path": "smali/o/ff.smali",
+    "signature": "\u038c()V",
+    "before": "    new-instance v0, Ljava/lang/Thread;\n\n    .line 261\n    .line 262\n    new-instance v2, Lo/ag;\n\n    .line 263\n    .line 264\n    const/16 v3, 0x10\n\n    .line 265\n    .line 266\n    invoke-direct {v2, v3, p0, v1}, Lo/ag;-><init>(ILjava/lang/Object;Ljava/lang/Object;)V\n\n    .line 267\n    .line 268\n    .line 269\n    invoke-direct {v0, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V\n\n    .line 270\n    .line 271\n    .line 272\n    invoke-virtual {v0}, Ljava/lang/Thread;->start()V",
+    "after": "    const/4 v0, 0x6\n\n    .line 261\n    .line 262\n    new-instance v2, Lo/ag;\n\n    .line 263\n    .line 264\n    const/16 v3, 0x10\n\n    .line 265\n    .line 266\n    invoke-direct {v2, v3, p0, v1}, Lo/ag;-><init>(ILjava/lang/Object;Ljava/lang/Object;)V\n\n    .line 267\n    .line 268\n    .line 269\n    invoke-static {p0, v0, v2}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->execute(Ljava/lang/Object;ILjava/lang/Runnable;)Z\n\n    .line 270\n    .line 271\n    .line 272\n",
+    "owner_register": "p0",
+    "key_register": "v0",
+    "task_register": "v2",
+    "key": 6
+  },
+  {
+    "path": "smali/o/ie.smali",
+    "signature": "run()V",
+    "before": "    new-instance v2, Ljava/lang/Thread;\n\n    .line 1451\n    .line 1452\n    new-instance v3, Lo/ie;\n\n    .line 1453\n    .line 1454\n    invoke-direct {v3, v0, v1}, Lo/ie;-><init>(Lo/ff;I)V\n\n    .line 1455\n    .line 1456\n    .line 1457\n    invoke-direct {v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V\n\n    .line 1458\n    .line 1459\n    .line 1460\n    invoke-virtual {v2}, Ljava/lang/Thread;->start()V",
+    "after": "    const/4 v2, 0x6\n\n    .line 1451\n    .line 1452\n    new-instance v3, Lo/ie;\n\n    .line 1453\n    .line 1454\n    invoke-direct {v3, v0, v1}, Lo/ie;-><init>(Lo/ff;I)V\n\n    .line 1455\n    .line 1456\n    .line 1457\n    invoke-static {v0, v2, v3}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->execute(Ljava/lang/Object;ILjava/lang/Runnable;)Z\n\n    .line 1458\n    .line 1459\n    .line 1460\n",
+    "owner_register": "v0",
+    "key_register": "v2",
+    "task_register": "v3",
+    "key": 6
+  }
+]

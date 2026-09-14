@@ -1,0 +1,40 @@
+{
+  "status": "SUPERSEDED_KNOWN_APPLICATION_CONTEXT_OWNER_BUG",
+  "sha256": "C4B11547526B3E00107A4B9488E97B0D2A71A7955DB2B118913FA46F9C7AA13C",
+  "delta_files": 3,
+  "cumulative_files": 133,
+  "source_final_case_groups": 343,
+  "review": [
+    "Each controller attachment creates a distinct y8 callback; attachment success resets title/artist/time dedupe to admit same-title metadata from another session.",
+    "Detach first clears current callback/controller and replaces an identity token, then unregisters the captured callback. Registration exception detaches the new instance; framework unregister failure remains an external-release limitation.",
+    "All three controller callback entries verify manager, current Service, manager field, callback identity and non-null controller. Active session list admission rejects stale manager.",
+    "Session destruction captures the post-detach identity token for the original 500ms recovery. Only td selector16 adds recovery validity; any later detach, active controller or manager/Service replacement rejects it.",
+    "17 scoped source/final groups plus326 inherited, exact inverse restoration and all-file final normalization pass. Actual smali executed with framework effects doubled; typed catch handlers executed separately with range checks.",
+    "JADX y8 exits0 and accurately shows entry/recovery guards. a9 and td exits3 report existing NavBarService.Ε RegionMaker failure. a9 registration try is rendered too broad; final-smali proof shows precisely one registerCallback invoke. td partial exit1 correctly shows guarded case16."
+  ],
+  "jadx": [
+    {
+      "cls": "o.a9",
+      "exit_code": 3,
+      "log": "base10_r20_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.y8",
+      "exit_code": 0,
+      "log": "base10_r20_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.td",
+      "exit_code": 3,
+      "log": "base10_r20_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "No ART/OEM/vehicle validation. Existing art workers/cache, URI cleanup/bounds, thread pool shutdown, repeated managers and external failed-unregister retention remain open. Full P1/P2/P3 incomplete.",
+  "erratum_20260912": "Actual a9 constructor stores Application Context. R20 stabilityCurrent incorrectly requires that field to be NavBarService, rejecting real media admission. Previous fixture used Service as context. R20b derives Service from ia callback owner; actual constructor-context and callback-constructor regression added. Original local test results are preserved but do not establish R20 runtime correctness."
+}

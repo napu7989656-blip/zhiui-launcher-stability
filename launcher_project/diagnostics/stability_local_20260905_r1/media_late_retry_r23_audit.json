@@ -1,0 +1,19 @@
+{
+  "parent": "R23 candidate",
+  "findings": [
+    {
+      "cls": "Lo/z8;",
+      "disposed_owner": true,
+      "posted_after_dispose": 1,
+      "media_control_calls": 0
+    },
+    {
+      "cls": "Lo/u8;",
+      "disposed_owner": true,
+      "posted_after_dispose": 1,
+      "media_control_calls": 0
+    }
+  ],
+  "status": "REPRODUCED_IN_LOCAL_SMALI_WITH_HANDLER_DOUBLES; needs next scoped guard patch",
+  "no_device_or_playback_calls": true
+}

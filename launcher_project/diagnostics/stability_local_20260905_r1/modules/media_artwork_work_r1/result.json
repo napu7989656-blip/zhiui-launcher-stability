@@ -1,0 +1,10 @@
+{
+  "output": "PASS 12050 assertions; real dedicated media executor, deterministic latches, fake UI/session/results; no Android integration",
+  "source_sha256": {
+    "D:\\apk\\launcher_project\\stability_modules\\src\\com\\byd\\launcher\\stability\\MediaArtworkWork.java": "58c60e3245998ac3537f7b5e83a17a2ccb7cb12de43e3f4bdbd6e68b47721ab8",
+    "D:\\apk\\launcher_project\\stability_modules\\src\\com\\byd\\launcher\\stability\\LatestVisualWork.java": "cd352f77aadc8a9548a426f8faa82cd4788aa0f28d5dda53e704f72d3922ffbe",
+    "D:\\apk\\launcher_project\\stability_modules\\test\\MediaArtworkWorkTest.java": "a12c325544ed2050c2be57e97ae79b82ad093977b6289474de833c7238dfc857"
+  },
+  "apk_integration": false,
+  "limits": "Real Java bounded executors; fake host/session/images. Android bridge, metadata captures, three source paths, small direct path and URI cleanup remain unimplemented."
+}

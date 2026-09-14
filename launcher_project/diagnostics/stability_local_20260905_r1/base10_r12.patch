@@ -1,0 +1,146 @@
+--- r11/smali/com/byd/launcher/stability/TileSnapshots.smali
++++ r12/smali/com/byd/launcher/stability/TileSnapshots.smali
+@@ -175,6 +175,15 @@
+ .end method
+ .method public static post(Lcom/byd/launcher/stability/TileBatch;Ljava/lang/Runnable;)Z
+     .locals 11
++    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
++    move-result-object v0
++    invoke-virtual {v0}, Ljava/lang/Thread;->isInterrupted()Z
++    move-result v0
++    if-eqz v0, :wait_post_allowed
++    const/4 v0, 0x0
++    return v0
++    :wait_post_allowed
++
+     invoke-static {p0}, Lcom/byd/launcher/stability/TileSnapshots;->usable(Lcom/byd/launcher/stability/TileBatch;)Z
+     move-result v0
+     if-eqz v0, :done
+--- r11/smali/o/ff.smali
++++ r12/smali/o/ff.smali
+@@ -338,6 +338,14 @@
+ 
+     .line 1
+     const/4 v0, -0x1
++    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
++    move-result-object v1
++    invoke-virtual {v1}, Ljava/lang/Thread;->isInterrupted()Z
++    move-result v1
++    if-eqz v1, :wait_enter
++    return v0
++    :wait_enter
++
+ 
+     .line 2
+     :try_start_0
+@@ -411,6 +419,10 @@
+     .line 36
+     .line 37
+     invoke-virtual {v2, v4, v5, p1}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
++    move-result p1
++    if-nez p1, :wait_completed
++    return v0
++    :wait_completed
+ 
+     .line 38
+     .line 39
+@@ -420,6 +432,7 @@
+     .line 41
+     aget p0, v3, p1
+     :try_end_0
++    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :wait_interrupted
+     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+ 
+     .line 42
+@@ -468,6 +481,13 @@
+     .line 64
+     .line 65
+     :cond_0
++    return v0
++    :wait_interrupted
++    move-exception v1
++    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
++    move-result-object v0
++    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
++    const/4 v0, -0x1
+     return v0
+ .end method
+ 
+--- r11/smali/o/ie.smali
++++ r12/smali/o/ie.smali
+@@ -228,11 +228,17 @@
+     .line 71
+     .line 72
+     invoke-virtual {v6, v7, v8, v5}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
++    move-result v5
++    if-nez v5, :wait_completed
++    const/4 v3, -0x1
++    goto :wait_value_ready
++    :wait_completed
+ 
+     .line 73
+     .line 74
+     .line 75
+     aget v3, v3, v13
++    :wait_value_ready
+ 
+     .line 76
+     .line 77
+@@ -407,6 +413,7 @@
+     iget-object v1, p0, Lo/ie;->stabilityInstrumentRequest:Lcom/byd/launcher/stability/InstrumentReads$Request;
+     invoke-virtual {v1}, Lcom/byd/launcher/stability/InstrumentReads$Request;->invalid()V
+     :try_end_0
++    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :wait_interrupted
+     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+ 
+     .line 199
+@@ -3506,4 +3513,10 @@
+         :pswitch_1
+         :pswitch_0
+     .end packed-switch
++    :wait_interrupted
++    move-exception v0
++    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
++    move-result-object v0
++    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
++    return-void
+ .end method
+--- r11/smali/o/je.smali
++++ r12/smali/o/je.smali
+@@ -206,11 +206,17 @@
+     .line 59
+     .line 60
+     invoke-virtual {v7, v10, v11, v6}, Ljava/util/concurrent/CountDownLatch;->await(JLjava/util/concurrent/TimeUnit;)Z
++    move-result v6
++    if-nez v6, :wait_completed
++    const/4 v1, -0x1
++    goto :wait_value_ready
++    :wait_completed
+ 
+     .line 61
+     .line 62
+     .line 63
+     aget v1, v9, v1
++    :wait_value_ready
+ 
+     .line 64
+     .line 65
+@@ -238,6 +244,7 @@
+     .line 77
+     invoke-static {v4, v5}, Lo/q3;->Ͳ(Ljava/lang/String;Ljava/lang/String;)V
+     :try_end_0
++    .catch Ljava/lang/InterruptedException; {:try_start_0 .. :try_end_0} :wait_interrupted
+     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+ 
+     .line 78
+@@ -546,4 +553,10 @@
+         :pswitch_1
+         :pswitch_0
+     .end packed-switch
++    :wait_interrupted
++    move-exception v0
++    invoke-static {}, Ljava/lang/Thread;->currentThread()Ljava/lang/Thread;
++    move-result-object v0
++    invoke-virtual {v0}, Ljava/lang/Thread;->interrupt()V
++    return-void
+ .end method

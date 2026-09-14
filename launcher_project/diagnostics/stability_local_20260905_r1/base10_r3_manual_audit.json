@@ -1,0 +1,26 @@
+{
+  "status": "LOCAL_CHECKPOINT_PASS; OTHER_WORKERS_AND_GENERATIONS_PENDING",
+  "scope": "Seven replaceable read producers only; not all quick-settings threads",
+  "keys": {
+    "0": "instrument brightness refresh, ie28 getBacklightBrightness",
+    "1": "navigation volume setup/poll, je0/je2 -> ff.\u0376 fixed media --get command",
+    "2": "instrument brightness setup, je1 getBacklightBrightness",
+    "3": "SOC slider setup, sj3 -> ff.\u037c getSOCTarget",
+    "4": "system theme read, ie6 ContentResolver query; r2 owned main-thread publication retained",
+    "5": "SOC refresh, ie24 -> ff.\u037c getSOCTarget"
+  },
+  "pool": "Process-wide 2 workers, 8 queued. Same owner/key queued replacement, oldest queued read discarded on saturation. Active reads can overlap and are not interrupted by cancelQueued.",
+  "source_hashes": {
+    "smali/o/ff.smali": "68C6752A89104B80E50C02D5158D7F9C7C96E94477C504EFD8C90189DE1EF126",
+    "smali/o/ie.smali": "4FCEC912F7DA5F34A09854AB0C721C7CE7CE731AB6C8F437BCE0FC1C985E7827",
+    "smali/o/je.smali": "A67C689F5302F1E387ABC0AE722AE5E3150600D1FACBDB49020EFACFC96A48C0",
+    "smali/o/sj.smali": "05572964F2DF76BCF673E60D72E74F33BA0028187C95C8F3D2BADB6B3A404C7A"
+  },
+  "next": [
+    "Audit tile get()/subtitle getters before replacing ie22 and ag16 thread producers",
+    "Wallpaper glass background remains on separate raw worker pending result/generation audit",
+    "User-action thread producers are not queued or coalesced by this change",
+    "Add panel/query generation protection, interrupt handling and remaining UI result paths"
+  ],
+  "limits": "Read classification from exact static selectors and existing literal commands; neither APIs nor command strings were executed. No vehicle/native/ART validation."
+}

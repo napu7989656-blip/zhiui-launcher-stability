@@ -1,0 +1,6 @@
+{
+  "exit_code": 3,
+  "output_exists": true,
+  "log": "base10_r15_a8_noinline.txt",
+  "reason": "Default jadx marked a8 DONT_GENERATE after anonymous inlining; explicit no-inline review preserves the original failed log."
+}

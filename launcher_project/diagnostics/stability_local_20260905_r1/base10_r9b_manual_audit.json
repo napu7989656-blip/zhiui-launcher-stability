@@ -1,0 +1,11 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "B2FA96DEE07F796F2C77CBE8E9164DCAD8B339C6BD82D564BBA68B20AA5FD646",
+  "source_final_cases": 122,
+  "read_after_action_jvm_assertions": 50012,
+  "delta_files": 8,
+  "cumulative_files": 92,
+  "protected_apks": 22,
+  "jadx": "SocAction and ReadAfterAction exit0; token ownership/monitor/15000ms expiry checked against source and final smali; JADX synthetic constructor shorthand is not compilable source.",
+  "limits": "No command execution/cancellation/retry/order change. UI-read suppression ends on matching latest callback, ordinary close/reset or 15000ms expiry. No guarantee of native action completion after timeout; no vehicle/ART test."
+}

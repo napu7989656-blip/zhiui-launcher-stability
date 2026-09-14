@@ -1,0 +1,8 @@
+{
+  "status": "DRAFT_NOT_BUILT",
+  "remaining": [
+    "Android bridge production tests",
+    "final APK validation",
+    "full P1/P2/P3"
+  ]
+}

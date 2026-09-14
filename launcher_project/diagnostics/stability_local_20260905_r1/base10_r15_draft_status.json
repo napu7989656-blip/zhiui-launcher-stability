@@ -1,0 +1,55 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "5D04F1328658C2E120D65F0B04D112EA1C0D31D4037DB97FE6045247065A8992",
+  "delta_files": 20,
+  "cumulative_files": 119,
+  "source_final_cases": 260,
+  "jvm_assertions": 12073,
+  "review": [
+    "MainActivity constructor initializes host after main Handler; force refresh coalesces trigger, execute uses one-worker/one-queued pool, destroy closes before Handler cleanup",
+    "h2 selector1 only: source and blurred cache writes staged; original crop/scale/blur parameters retained; successful intermediates tracked; original ignored crop0 released excluding borrowed source",
+    "a8 constructor ignores crop0 by original field assignments; other retained outputs transfer before original UI installation to avoid recycling partially installed images on delegate failure",
+    "validity uses request identity, current Activity, destroyed flag, current Service identity and service death flag; pending result one per owner; running bitmap work not forcibly interrupted",
+    "a8 original adapter/navbar/statusbar delegates preserved; three separate owned child slots; retry moves to valid main delivery, retains original 500ms/five-attempt limit",
+    "twelve h2 constructors reviewed: only MainActivity selector1 uses blur, others selectors0/2/3/4/5/6/7/8/9; unrelated and vehicle-action branches restored exactly by inverse patch",
+    "production classes passed to D8 byte-identical to JVM-tested classes; min24, only owned classes in module DEX; all module smali exact copied/verified"
+  ],
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.stability.BlurPipeline",
+      "exit_code": 0,
+      "log": "base10_r15_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.MainBlurHost",
+      "exit_code": 3,
+      "log": "base10_r15_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.h2",
+      "exit_code": 3,
+      "log": "base10_r15_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.a8",
+      "exit_code": 1,
+      "log": "base10_r15_jadx_3_debug.txt",
+      "output_exists": false,
+      "requires_manual_inspection": true
+    }
+  ],
+  "a8_noinline": {
+    "exit_code": 3,
+    "output_exists": true,
+    "log": "base10_r15_a8_noinline.txt",
+    "reason": "Default jadx marked a8 DONT_GENERATE after anonymous inlining; explicit no-inline review preserves the original failed log."
+  },
+  "jadx_caveats": "BlurPipeline exit0. MainBlurHost/h2 and explicit a8 no-inline report only the existing NavBarService.Ε RegionMaker error. Default a8 request exit1 DONT_GENERATE because anonymous class was inlined; separate no-inline output reviewed. h2 Java incorrectly shows empty disposed guard and retry after successful publish; final smali has early return and goto past retry, covered by an added execution test. Original fallback source selection is confirmed in final smali, not inferred from Java.",
+  "limits": "JVM executes production queue/ownership with object doubles; smali executes host/guards and verifies original allocation/wiring sites, not Android image computation or ART. Crop/stack-blur internal allocation exceptions still need R16. 91-site broad ownership inventory is not completed by twelve constructor checks. Full P1/P2/P3 remain incomplete."
+}

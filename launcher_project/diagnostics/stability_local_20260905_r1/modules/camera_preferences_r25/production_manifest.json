@@ -1,0 +1,7 @@
+{
+  "classes": {
+    "com/byd/launcher/stability/CameraPreferences.class": "aa55596c17b1379da94cd74d231f14161cc5ea7e6d29a3b54639b93ce2f74ec7"
+  },
+  "test_and_d8_classes_same": true,
+  "no_test_classes_in_dex": true
+}

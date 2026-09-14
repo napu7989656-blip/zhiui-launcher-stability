@@ -1,0 +1,13 @@
+[
+  "smali/com/byd/launcher/NavBarService.smali",
+  "smali/com/byd/launcher/stability/InitProcess$1.smali",
+  "smali/com/byd/launcher/stability/InitProcess$Clock.smali",
+  "smali/com/byd/launcher/stability/InitProcess$Gate.smali",
+  "smali/com/byd/launcher/stability/InitProcess$Result.smali",
+  "smali/com/byd/launcher/stability/InitProcess.smali",
+  "smali/com/byd/launcher/stability/ListenerList.smali",
+  "smali/com/byd/launcher/stability/NotificationInit$Host.smali",
+  "smali/com/byd/launcher/stability/NotificationInit.smali",
+  "smali/com/byd/launcher/stability/NotificationInitCallback.smali",
+  "smali/com/byd/launcher/stability/NotificationInitHost.smali"
+]

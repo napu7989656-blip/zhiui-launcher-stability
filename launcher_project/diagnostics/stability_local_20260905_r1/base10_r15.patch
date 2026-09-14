@@ -1,0 +1,3357 @@
+--- r14/smali/com/byd/launcher/MainActivity.smali
++++ r15/smali/com/byd/launcher/MainActivity.smali
+@@ -8,6 +8,7 @@
+ 
+ 
+ # instance fields
++.field public final stabilityBlur:Lcom/byd/launcher/stability/BlurPipeline;
+ .field public ʹ:Ljava/lang/Runnable;
+ 
+ .field public final ˋ:Landroid/os/Handler;
+@@ -137,6 +138,11 @@
+ 
+     iput-object v0, p0, Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;
+ 
++    new-instance v0, Lcom/byd/launcher/stability/MainBlurHost;
++    invoke-direct {v0, p0}, Lcom/byd/launcher/stability/MainBlurHost;-><init>(Lcom/byd/launcher/MainActivity;)V
++    new-instance v1, Lcom/byd/launcher/stability/BlurPipeline;
++    invoke-direct {v1, v0}, Lcom/byd/launcher/stability/BlurPipeline;-><init>(Lcom/byd/launcher/stability/BlurPipeline$Host;)V
++    iput-object v1, p0, Lcom/byd/launcher/MainActivity;->stabilityBlur:Lcom/byd/launcher/stability/BlurPipeline;
+     return-void
+ .end method
+ 
+@@ -2414,6 +2420,8 @@
+ 
+ .method public final onDestroy()V
+     .locals 3
++    iget-object v0, p0, Lcom/byd/launcher/MainActivity;->stabilityBlur:Lcom/byd/launcher/stability/BlurPipeline;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline;->close()V
+ 
+     const/4 v0, 0x1
+ 
+@@ -3179,6 +3187,13 @@
+ 
+ .method public final ͷ()V
+     .locals 3
++    iget-object v0, p0, Lcom/byd/launcher/MainActivity;->stabilityBlur:Lcom/byd/launcher/stability/BlurPipeline;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline;->current()Z
++    move-result v0
++    if-nez v0, :blur_owner_alive
++    return-void
++    :blur_owner_alive
++
+ 
+     .line 1
+     iget-object v0, p0, Lcom/byd/launcher/MainActivity;->ˋ:Landroid/os/Handler;
+@@ -3199,7 +3214,8 @@
+ 
+     invoke-direct {v1, p0, v2}, Lo/y7;-><init>(Lcom/byd/launcher/MainActivity;I)V
+ 
+-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    iget-object v0, p0, Lcom/byd/launcher/MainActivity;->stabilityBlur:Lcom/byd/launcher/stability/BlurPipeline;
++    invoke-virtual {v0, v1}, Lcom/byd/launcher/stability/BlurPipeline;->schedule(Ljava/lang/Runnable;)V
+ 
+     return-void
+ .end method
+@@ -3470,6 +3486,13 @@
+ 
+ .method public final Ί()V
+     .locals 5
++    iget-object v0, p0, Lcom/byd/launcher/MainActivity;->stabilityBlur:Lcom/byd/launcher/stability/BlurPipeline;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline;->current()Z
++    move-result v0
++    if-nez v0, :blur_owner_alive
++    return-void
++    :blur_owner_alive
++
+ 
+     .line 1
+     iget v0, p0, Lcom/byd/launcher/MainActivity;->Θ:I
+@@ -3582,7 +3605,7 @@
+     .line 56
+     .line 57
+     .line 58
+-    new-instance v2, Ljava/lang/Thread;
++    iget-object v2, p0, Lcom/byd/launcher/MainActivity;->stabilityBlur:Lcom/byd/launcher/stability/BlurPipeline;
+ 
+     .line 59
+     .line 60
+@@ -3598,20 +3621,8 @@
+     .line 64
+     .line 65
+     .line 66
+-    const-string v0, "BarBlur"
+-
+-    .line 67
+-    .line 68
+-    invoke-direct {v2, v3, v0}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
+-
+-    .line 69
+-    .line 70
+-    .line 71
+-    invoke-virtual {v2}, Ljava/lang/Thread;->start()V
+-
+-    .line 72
+-    .line 73
+-    .line 74
++    invoke-virtual {v2, v3}, Lcom/byd/launcher/stability/BlurPipeline;->execute(Ljava/lang/Runnable;)Z
++
+     return-void
+ .end method
+ 
+--- r14/smali/com/byd/launcher/stability/BlurPipeline$1.smali
++++ r15/smali/com/byd/launcher/stability/BlurPipeline$1.smali
+@@ -0,0 +1,93 @@
++.class Lcom/byd/launcher/stability/BlurPipeline$1;
++.super Ljava/lang/Object;
++.source "BlurPipeline.java"
++
++# interfaces
++.implements Lcom/byd/launcher/stability/LatestVisualWork$Host;
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingMethod;
++    value = Lcom/byd/launcher/stability/BlurPipeline;-><init>(Lcom/byd/launcher/stability/BlurPipeline$Host;)V
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x0
++    name = null
++.end annotation
++
++
++# instance fields
++.field final synthetic this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++.field final synthetic val$host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++
++# direct methods
++.method constructor <init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Host;)V
++    .locals 0
++    .annotation system Ldalvik/annotation/MethodParameters;
++        accessFlags = {
++            0x8010,
++            0x1010
++        }
++        names = {
++            null,
++            null
++        }
++    .end annotation
++
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "()V"
++        }
++    .end annotation
++
++    .line 30
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline$1;->this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++    iput-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$1;->val$host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    return-void
++.end method
++
++
++# virtual methods
++.method public failed(Ljava/lang/RuntimeException;)V
++    .locals 1
++
++    .line 33
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$1;->val$host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    invoke-interface {v0, p1}, Lcom/byd/launcher/stability/BlurPipeline$Host;->failed(Ljava/lang/RuntimeException;)V
++
++    return-void
++.end method
++
++.method public post(Ljava/lang/Runnable;)Z
++    .locals 3
++
++    .line 31
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$1;->val$host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    const-wide/16 v1, 0x0
++
++    invoke-interface {v0, p1, v1, v2}, Lcom/byd/launcher/stability/BlurPipeline$Host;->post(Ljava/lang/Runnable;J)Z
++
++    move-result p1
++
++    return p1
++.end method
++
++.method public remove(Ljava/lang/Runnable;)V
++    .locals 1
++
++    .line 32
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$1;->val$host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    invoke-interface {v0, p1}, Lcom/byd/launcher/stability/BlurPipeline$Host;->remove(Ljava/lang/Runnable;)V
++
++    return-void
++.end method
+--- r14/smali/com/byd/launcher/stability/BlurPipeline$2.smali
++++ r15/smali/com/byd/launcher/stability/BlurPipeline$2.smali
+@@ -0,0 +1,112 @@
++.class Lcom/byd/launcher/stability/BlurPipeline$2;
++.super Ljava/lang/Object;
++.source "BlurPipeline.java"
++
++# interfaces
++.implements Ljava/lang/Runnable;
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingMethod;
++    value = Lcom/byd/launcher/stability/BlurPipeline;->enqueueTrigger(Ljava/lang/Runnable;Lcom/byd/launcher/stability/BlurPipeline$Frame;J)V
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x0
++    name = null
++.end annotation
++
++
++# instance fields
++.field final synthetic this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++.field final synthetic val$expected:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++.field final synthetic val$next:Ljava/lang/Runnable;
++
++
++# direct methods
++.method constructor <init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;)V
++    .locals 0
++    .annotation system Ldalvik/annotation/MethodParameters;
++        accessFlags = {
++            0x8010,
++            0x1010,
++            0x1010
++        }
++        names = {
++            null,
++            null,
++            null
++        }
++    .end annotation
++
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "()V"
++        }
++    .end annotation
++
++    .line 55
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline$2;->this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++    iput-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$2;->val$expected:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iput-object p3, p0, Lcom/byd/launcher/stability/BlurPipeline$2;->val$next:Ljava/lang/Runnable;
++
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    return-void
++.end method
++
++
++# virtual methods
++.method public run()V
++    .locals 2
++
++    .line 57
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$2;->this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v0}, Lcom/byd/launcher/stability/BlurPipeline;->access$000(Lcom/byd/launcher/stability/BlurPipeline;)Ljava/lang/Runnable;
++
++    move-result-object v0
++
++    if-eq v0, p0, :cond_0
++
++    return-void
++
++    .line 58
++    :cond_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$2;->this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++    const/4 v1, 0x0
++
++    invoke-static {v0, v1}, Lcom/byd/launcher/stability/BlurPipeline;->access$002(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/Runnable;)Ljava/lang/Runnable;
++
++    .line 59
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$2;->this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_2
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$2;->val$expected:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_1
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_2
++
++    :cond_1
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$2;->val$next:Ljava/lang/Runnable;
++
++    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
++
++    :cond_2
++    return-void
++.end method
+--- r14/smali/com/byd/launcher/stability/BlurPipeline$3.smali
++++ r15/smali/com/byd/launcher/stability/BlurPipeline$3.smali
+@@ -0,0 +1,137 @@
++.class Lcom/byd/launcher/stability/BlurPipeline$3;
++.super Ljava/lang/Object;
++.source "BlurPipeline.java"
++
++# interfaces
++.implements Ljava/lang/Runnable;
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingMethod;
++    value = Lcom/byd/launcher/stability/BlurPipeline;->execute(Ljava/lang/Runnable;)Z
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x0
++    name = null
++.end annotation
++
++
++# instance fields
++.field final synthetic this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++.field final synthetic val$algorithm:Ljava/lang/Runnable;
++
++.field final synthetic val$next:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++
++# direct methods
++.method constructor <init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;)V
++    .locals 0
++    .annotation system Ldalvik/annotation/MethodParameters;
++        accessFlags = {
++            0x8010,
++            0x1010,
++            0x1010
++        }
++        names = {
++            null,
++            null,
++            null
++        }
++    .end annotation
++
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "()V"
++        }
++    .end annotation
++
++    .line 72
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->this$0:Lcom/byd/launcher/stability/BlurPipeline;
++
++    iput-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$next:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iput-object p3, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$algorithm:Ljava/lang/Runnable;
++
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    return-void
++.end method
++
++
++# virtual methods
++.method public run()V
++    .locals 2
++
++    .line 74
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$next:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->current()Z
++
++    move-result v0
++
++    if-nez v0, :cond_0
++
++    return-void
++
++    .line 75
++    :cond_0
++    invoke-static {}, Lcom/byd/launcher/stability/BlurPipeline;->access$100()Ljava/lang/ThreadLocal;
++
++    move-result-object v0
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$next:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    invoke-virtual {v0, v1}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
++
++    .line 76
++    :try_start_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$algorithm:Ljava/lang/Runnable;
++
++    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    .line 77
++    invoke-static {}, Lcom/byd/launcher/stability/BlurPipeline;->access$100()Ljava/lang/ThreadLocal;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->remove()V
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$next:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-boolean v0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->posted:Z
++
++    if-nez v0, :cond_1
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$next:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->discard()V
++
++    :cond_1
++    return-void
++
++    :catchall_0
++    move-exception v0
++
++    invoke-static {}, Lcom/byd/launcher/stability/BlurPipeline;->access$100()Ljava/lang/ThreadLocal;
++
++    move-result-object v1
++
++    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->remove()V
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$next:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-boolean v1, v1, Lcom/byd/launcher/stability/BlurPipeline$Frame;->posted:Z
++
++    if-nez v1, :cond_2
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$3;->val$next:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    invoke-virtual {v1}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->discard()V
++
++    :cond_2
++    throw v0
++.end method
+--- r14/smali/com/byd/launcher/stability/BlurPipeline$4.smali
++++ r15/smali/com/byd/launcher/stability/BlurPipeline$4.smali
+@@ -0,0 +1,107 @@
++.class Lcom/byd/launcher/stability/BlurPipeline$4;
++.super Ljava/lang/Object;
++.source "BlurPipeline.java"
++
++# interfaces
++.implements Lcom/byd/launcher/stability/LatestVisualWork$Result;
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingMethod;
++    value = Lcom/byd/launcher/stability/BlurPipeline;->retry(Ljava/lang/Runnable;J)V
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x0
++    name = null
++.end annotation
++
++
++# instance fields
++.field final synthetic val$delay:J
++
++.field final synthetic val$f:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++.field final synthetic val$next:Ljava/lang/Runnable;
++
++
++# direct methods
++.method constructor <init>(Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;J)V
++    .locals 0
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "()V"
++        }
++    .end annotation
++
++    .line 95
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$f:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iput-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$next:Ljava/lang/Runnable;
++
++    iput-wide p3, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$delay:J
++
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    return-void
++.end method
++
++
++# virtual methods
++.method public deliver()V
++    .locals 5
++
++    .line 98
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$f:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->discard()V
++
++    .line 99
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$f:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$f:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-object v0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v0}, Lcom/byd/launcher/stability/BlurPipeline;->access$200(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    move-result-object v0
++
++    invoke-interface {v0}, Lcom/byd/launcher/stability/BlurPipeline$Host;->retry()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$f:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-object v0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$next:Ljava/lang/Runnable;
++
++    iget-object v2, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$f:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-wide v3, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$delay:J
++
++    invoke-static {v0, v1, v2, v3, v4}, Lcom/byd/launcher/stability/BlurPipeline;->access$300(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/Runnable;Lcom/byd/launcher/stability/BlurPipeline$Frame;J)V
++
++    :cond_0
++    return-void
++.end method
++
++.method public discard()V
++    .locals 1
++
++    .line 96
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$4;->val$f:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->discard()V
++
++    return-void
++.end method
+--- r14/smali/com/byd/launcher/stability/BlurPipeline$Child.smali
++++ r15/smali/com/byd/launcher/stability/BlurPipeline$Child.smali
+@@ -0,0 +1,135 @@
++.class final Lcom/byd/launcher/stability/BlurPipeline$Child;
++.super Ljava/lang/Object;
++.source "BlurPipeline.java"
++
++# interfaces
++.implements Ljava/lang/Runnable;
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/BlurPipeline;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x1a
++    name = "Child"
++.end annotation
++
++
++# instance fields
++.field action:Ljava/lang/Runnable;
++
++.field final frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++.field final queue:Ljava/lang/Object;
++
++.field final slot:I
++
++
++# direct methods
++.method constructor <init>(Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Object;Ljava/lang/Runnable;I)V
++    .locals 0
++
++    .line 148
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iput-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->queue:Ljava/lang/Object;
++
++    iput-object p3, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->action:Ljava/lang/Runnable;
++
++    iput p4, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->slot:I
++
++    return-void
++.end method
++
++
++# virtual methods
++.method cancel()V
++    .locals 2
++
++    const/4 v0, 0x0
++
++    .line 149
++    iput-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->action:Ljava/lang/Runnable;
++
++    :try_start_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-object v0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v0}, Lcom/byd/launcher/stability/BlurPipeline;->access$200(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    move-result-object v0
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->queue:Ljava/lang/Object;
++
++    invoke-interface {v0, v1, p0}, Lcom/byd/launcher/stability/BlurPipeline$Host;->removeChild(Ljava/lang/Object;Ljava/lang/Runnable;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    goto :goto_0
++
++    :catch_0
++    move-exception v0
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-object v1, v1, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v1, v0}, Lcom/byd/launcher/stability/BlurPipeline;->access$500(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/RuntimeException;)V
++
++    :goto_0
++    return-void
++.end method
++
++.method public run()V
++    .locals 3
++
++    .line 151
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-object v0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    iget v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->slot:I
++
++    aget-object v0, v0, v1
++
++    if-eq v0, p0, :cond_0
++
++    return-void
++
++    .line 152
++    :cond_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-object v0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    iget v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->slot:I
++
++    const/4 v2, 0x0
++
++    aput-object v2, v0, v1
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->action:Ljava/lang/Runnable;
++
++    iput-object v2, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->action:Ljava/lang/Runnable;
++
++    if-eqz v0, :cond_1
++
++    .line 153
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Child;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    invoke-virtual {v1}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->current()Z
++
++    move-result v1
++
++    if-eqz v1, :cond_1
++
++    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
++
++    :cond_1
++    return-void
++.end method
+--- r14/smali/com/byd/launcher/stability/BlurPipeline$Frame.smali
++++ r15/smali/com/byd/launcher/stability/BlurPipeline$Frame.smali
+@@ -0,0 +1,493 @@
++.class final Lcom/byd/launcher/stability/BlurPipeline$Frame;
++.super Ljava/lang/Object;
++.source "BlurPipeline.java"
++
++# interfaces
++.implements Lcom/byd/launcher/stability/LatestVisualWork$Result;
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/BlurPipeline;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x1a
++    name = "Frame"
++.end annotation
++
++
++# instance fields
++.field apply:Ljava/lang/Runnable;
++
++.field blurred:Ljava/lang/Object;
++
++.field final children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++.field count:I
++
++.field final owned:[Ljava/lang/Object;
++
++.field final owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++.field posted:Z
++
++.field final request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++.field final service:Ljava/lang/Object;
++
++.field source:Ljava/lang/Object;
++
++.field transferred:Z
++
++
++# direct methods
++.method constructor <init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/LatestVisualWork$Request;Ljava/lang/Object;)V
++    .locals 1
++
++    .line 112
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    const/4 v0, 0x5
++
++    .line 109
++    new-array v0, v0, [Ljava/lang/Object;
++
++    iput-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owned:[Ljava/lang/Object;
++
++    const/4 v0, 0x3
++
++    .line 110
++    new-array v0, v0, [Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    iput-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    .line 112
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    iput-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    iput-object p3, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->service:Ljava/lang/Object;
++
++    return-void
++.end method
++
++
++# virtual methods
++.method cancelChildren()V
++    .locals 4
++
++    const/4 v0, 0x0
++
++    .line 144
++    :goto_0
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    array-length v2, v1
++
++    if-ge v0, v2, :cond_1
++
++    aget-object v2, v1, v0
++
++    const/4 v3, 0x0
++
++    aput-object v3, v1, v0
++
++    if-eqz v2, :cond_0
++
++    invoke-virtual {v2}, Lcom/byd/launcher/stability/BlurPipeline$Child;->cancel()V
++
++    :cond_0
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_0
++
++    :cond_1
++    return-void
++.end method
++
++.method current()Z
++    .locals 2
++
++    .line 113
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v0}, Lcom/byd/launcher/stability/BlurPipeline;->access$400(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    move-result-object v0
++
++    if-ne v0, p0, :cond_0
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v0}, Lcom/byd/launcher/stability/BlurPipeline;->access$200(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    move-result-object v0
++
++    invoke-interface {v0}, Lcom/byd/launcher/stability/BlurPipeline$Host;->service()Ljava/lang/Object;
++
++    move-result-object v0
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->service:Ljava/lang/Object;
++
++    if-ne v0, v1, :cond_0
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
++
++    const/4 v0, 0x1
++
++    goto :goto_0
++
++    :cond_0
++    const/4 v0, 0x0
++
++    :goto_0
++    return v0
++.end method
++
++.method public deliver()V
++    .locals 4
++
++    .line 127
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->current()Z
++
++    move-result v0
++
++    if-nez v0, :cond_0
++
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->discard()V
++
++    return-void
++
++    .line 130
++    :cond_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->source:Ljava/lang/Object;
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->blurred:Ljava/lang/Object;
++
++    iget-object v2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->apply:Ljava/lang/Runnable;
++
++    const/4 v3, 0x1
++
++    .line 131
++    iput-boolean v3, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->transferred:Z
++
++    .line 132
++    invoke-static {}, Lcom/byd/launcher/stability/BlurPipeline;->access$600()Ljava/lang/ThreadLocal;
++
++    move-result-object v3
++
++    invoke-virtual {v3, p0}, Ljava/lang/ThreadLocal;->set(Ljava/lang/Object;)V
++
++    .line 133
++    :try_start_0
++    iget-object v3, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v3}, Lcom/byd/launcher/stability/BlurPipeline;->access$200(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    move-result-object v3
++
++    invoke-interface {v3, v0, v1, v2}, Lcom/byd/launcher/stability/BlurPipeline$Host;->commit(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;)V
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    .line 134
++    invoke-static {}, Lcom/byd/launcher/stability/BlurPipeline;->access$600()Ljava/lang/ThreadLocal;
++
++    move-result-object v0
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->remove()V
++
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->discard()V
++
++    return-void
++
++    :catchall_0
++    move-exception v0
++
++    invoke-static {}, Lcom/byd/launcher/stability/BlurPipeline;->access$600()Ljava/lang/ThreadLocal;
++
++    move-result-object v1
++
++    invoke-virtual {v1}, Ljava/lang/ThreadLocal;->remove()V
++
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->discard()V
++
++    throw v0
++.end method
++
++.method public discard()V
++    .locals 4
++
++    .line 122
++    iget-boolean v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->transferred:Z
++
++    const/4 v1, 0x0
++
++    if-nez v0, :cond_0
++
++    move v0, v1
++
++    :goto_0
++    iget v2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->count:I
++
++    if-ge v0, v2, :cond_0
++
++    iget-object v2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owned:[Ljava/lang/Object;
++
++    aget-object v2, v2, v0
++
++    invoke-virtual {p0, v2}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->release(Ljava/lang/Object;)V
++
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_0
++
++    :cond_0
++    move v0, v1
++
++    .line 123
++    :goto_1
++    iget v2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->count:I
++
++    const/4 v3, 0x0
++
++    if-ge v0, v2, :cond_1
++
++    iget-object v2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owned:[Ljava/lang/Object;
++
++    aput-object v3, v2, v0
++
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_1
++
++    .line 124
++    :cond_1
++    iput v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->count:I
++
++    iput-object v3, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->source:Ljava/lang/Object;
++
++    iput-object v3, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->blurred:Ljava/lang/Object;
++
++    iput-object v3, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->apply:Ljava/lang/Runnable;
++
++    return-void
++.end method
++
++.method postChild(Ljava/lang/Object;Ljava/lang/Runnable;I)Z
++    .locals 3
++
++    if-ltz p3, :cond_5
++
++    .line 137
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    array-length v0, v0
++
++    if-ge p3, v0, :cond_5
++
++    .line 138
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->current()Z
++
++    move-result v0
++
++    const/4 v1, 0x0
++
++    if-eqz v0, :cond_4
++
++    if-nez p2, :cond_0
++
++    goto :goto_0
++
++    .line 139
++    :cond_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    aget-object v0, v0, p3
++
++    if-eqz v0, :cond_1
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Child;->cancel()V
++
++    .line 140
++    :cond_1
++    new-instance v0, Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    invoke-direct {v0, p0, p1, p2, p3}, Lcom/byd/launcher/stability/BlurPipeline$Child;-><init>(Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Object;Ljava/lang/Runnable;I)V
++
++    iget-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    aput-object v0, p2, p3
++
++    .line 141
++    :try_start_0
++    iget-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {p2}, Lcom/byd/launcher/stability/BlurPipeline;->access$200(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    move-result-object p2
++
++    invoke-interface {p2, p1, v0}, Lcom/byd/launcher/stability/BlurPipeline$Host;->postChild(Ljava/lang/Object;Ljava/lang/Runnable;)Z
++
++    move-result p1
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    if-eqz p1, :cond_2
++
++    const/4 p1, 0x1
++
++    return p1
++
++    :catch_0
++    move-exception p1
++
++    iget-object p2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {p2, p1}, Lcom/byd/launcher/stability/BlurPipeline;->access$500(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/RuntimeException;)V
++
++    .line 142
++    :cond_2
++    iget-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->children:[Lcom/byd/launcher/stability/BlurPipeline$Child;
++
++    aget-object p2, p1, p3
++
++    const/4 v2, 0x0
++
++    if-ne p2, v0, :cond_3
++
++    aput-object v2, p1, p3
++
++    :cond_3
++    iput-object v2, v0, Lcom/byd/launcher/stability/BlurPipeline$Child;->action:Ljava/lang/Runnable;
++
++    :cond_4
++    :goto_0
++    return v1
++
++    .line 137
++    :cond_5
++    new-instance p1, Ljava/lang/IllegalArgumentException;
++
++    const-string p2, "slot"
++
++    invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
++
++    throw p1
++.end method
++
++.method release(Ljava/lang/Object;)V
++    .locals 1
++
++    if-eqz p1, :cond_0
++
++    .line 120
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->source:Ljava/lang/Object;
++
++    if-eq p1, v0, :cond_0
++
++    :try_start_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v0}, Lcom/byd/launcher/stability/BlurPipeline;->access$200(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    move-result-object v0
++
++    invoke-interface {v0, p1}, Lcom/byd/launcher/stability/BlurPipeline$Host;->release(Ljava/lang/Object;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    goto :goto_0
++
++    :catch_0
++    move-exception p1
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owner:Lcom/byd/launcher/stability/BlurPipeline;
++
++    invoke-static {v0, p1}, Lcom/byd/launcher/stability/BlurPipeline;->access$500(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/RuntimeException;)V
++
++    :cond_0
++    :goto_0
++    return-void
++.end method
++
++.method retain(Ljava/lang/Object;)V
++    .locals 3
++
++    if-eqz p1, :cond_4
++
++    .line 115
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->source:Ljava/lang/Object;
++
++    if-ne p1, v0, :cond_0
++
++    goto :goto_1
++
++    :cond_0
++    const/4 v0, 0x0
++
++    .line 116
++    :goto_0
++    iget v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->count:I
++
++    if-ge v0, v1, :cond_2
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owned:[Ljava/lang/Object;
++
++    aget-object v1, v1, v0
++
++    if-ne v1, p1, :cond_1
++
++    return-void
++
++    :cond_1
++    add-int/lit8 v0, v0, 0x1
++
++    goto :goto_0
++
++    .line 117
++    :cond_2
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->owned:[Ljava/lang/Object;
++
++    array-length v2, v0
++
++    if-eq v1, v2, :cond_3
++
++    add-int/lit8 v2, v1, 0x1
++
++    .line 118
++    iput v2, p0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->count:I
++
++    aput-object p1, v0, v1
++
++    return-void
++
++    .line 117
++    :cond_3
++    new-instance p1, Ljava/lang/IllegalStateException;
++
++    const-string v0, "Unexpected blur allocation count"
++
++    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
++
++    throw p1
++
++    :cond_4
++    :goto_1
++    return-void
++.end method
+--- r14/smali/com/byd/launcher/stability/BlurPipeline$Host.smali
++++ r15/smali/com/byd/launcher/stability/BlurPipeline$Host.smali
+@@ -0,0 +1,46 @@
++.class public interface abstract Lcom/byd/launcher/stability/BlurPipeline$Host;
++.super Ljava/lang/Object;
++.source "BlurPipeline.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/BlurPipeline;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x609
++    name = "Host"
++.end annotation
++
++
++# virtual methods
++.method public abstract commit(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;)V
++.end method
++
++.method public abstract current()Z
++.end method
++
++.method public abstract failed(Ljava/lang/RuntimeException;)V
++.end method
++
++.method public abstract post(Ljava/lang/Runnable;J)Z
++.end method
++
++.method public abstract postChild(Ljava/lang/Object;Ljava/lang/Runnable;)Z
++.end method
++
++.method public abstract release(Ljava/lang/Object;)V
++.end method
++
++.method public abstract remove(Ljava/lang/Runnable;)V
++.end method
++
++.method public abstract removeChild(Ljava/lang/Object;Ljava/lang/Runnable;)V
++.end method
++
++.method public abstract retry()Z
++.end method
++
++.method public abstract service()Ljava/lang/Object;
++.end method
+--- r14/smali/com/byd/launcher/stability/BlurPipeline.smali
++++ r15/smali/com/byd/launcher/stability/BlurPipeline.smali
+@@ -0,0 +1,677 @@
++.class public final Lcom/byd/launcher/stability/BlurPipeline;
++.super Ljava/lang/Object;
++.source "BlurPipeline.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/MemberClasses;
++    value = {
++        Lcom/byd/launcher/stability/BlurPipeline$Frame;,
++        Lcom/byd/launcher/stability/BlurPipeline$Host;,
++        Lcom/byd/launcher/stability/BlurPipeline$Child;
++    }
++.end annotation
++
++
++# static fields
++.field private static final UI:Ljava/lang/ThreadLocal;
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "Ljava/lang/ThreadLocal<",
++            "Lcom/byd/launcher/stability/BlurPipeline$Frame;",
++            ">;"
++        }
++    .end annotation
++.end field
++
++.field private static final WORK:Ljava/lang/ThreadLocal;
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "Ljava/lang/ThreadLocal<",
++            "Lcom/byd/launcher/stability/BlurPipeline$Frame;",
++            ">;"
++        }
++    .end annotation
++.end field
++
++
++# instance fields
++.field private volatile closed:Z
++
++.field private volatile frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++.field private final host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++.field private trigger:Ljava/lang/Runnable;
++
++.field private final work:Lcom/byd/launcher/stability/LatestVisualWork;
++
++
++# direct methods
++.method static constructor <clinit>()V
++    .locals 1
++
++    .line 20
++    new-instance v0, Ljava/lang/ThreadLocal;
++
++    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
++
++    sput-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    .line 21
++    new-instance v0, Ljava/lang/ThreadLocal;
++
++    invoke-direct {v0}, Ljava/lang/ThreadLocal;-><init>()V
++
++    sput-object v0, Lcom/byd/launcher/stability/BlurPipeline;->UI:Ljava/lang/ThreadLocal;
++
++    return-void
++.end method
++
++.method public constructor <init>(Lcom/byd/launcher/stability/BlurPipeline$Host;)V
++    .locals 2
++
++    .line 27
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    if-eqz p1, :cond_0
++
++    .line 29
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline;->host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    .line 30
++    new-instance v0, Lcom/byd/launcher/stability/LatestVisualWork;
++
++    new-instance v1, Lcom/byd/launcher/stability/BlurPipeline$1;
++
++    invoke-direct {v1, p0, p1}, Lcom/byd/launcher/stability/BlurPipeline$1;-><init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Host;)V
++
++    invoke-direct {v0, v1}, Lcom/byd/launcher/stability/LatestVisualWork;-><init>(Lcom/byd/launcher/stability/LatestVisualWork$Host;)V
++
++    iput-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->work:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    return-void
++
++    .line 28
++    :cond_0
++    new-instance p1, Ljava/lang/NullPointerException;
++
++    const-string v0, "host"
++
++    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
++
++    throw p1
++.end method
++
++.method static synthetic access$000(Lcom/byd/launcher/stability/BlurPipeline;)Ljava/lang/Runnable;
++    .locals 0
++
++    .line 7
++    iget-object p0, p0, Lcom/byd/launcher/stability/BlurPipeline;->trigger:Ljava/lang/Runnable;
++
++    return-object p0
++.end method
++
++.method static synthetic access$002(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/Runnable;)Ljava/lang/Runnable;
++    .locals 0
++
++    .line 7
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline;->trigger:Ljava/lang/Runnable;
++
++    return-object p1
++.end method
++
++.method static synthetic access$100()Ljava/lang/ThreadLocal;
++    .locals 1
++
++    .line 7
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    return-object v0
++.end method
++
++.method static synthetic access$200(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Host;
++    .locals 0
++
++    .line 7
++    iget-object p0, p0, Lcom/byd/launcher/stability/BlurPipeline;->host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    return-object p0
++.end method
++
++.method static synthetic access$300(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/Runnable;Lcom/byd/launcher/stability/BlurPipeline$Frame;J)V
++    .locals 0
++
++    .line 7
++    invoke-direct {p0, p1, p2, p3, p4}, Lcom/byd/launcher/stability/BlurPipeline;->enqueueTrigger(Ljava/lang/Runnable;Lcom/byd/launcher/stability/BlurPipeline$Frame;J)V
++
++    return-void
++.end method
++
++.method static synthetic access$400(Lcom/byd/launcher/stability/BlurPipeline;)Lcom/byd/launcher/stability/BlurPipeline$Frame;
++    .locals 0
++
++    .line 7
++    iget-object p0, p0, Lcom/byd/launcher/stability/BlurPipeline;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    return-object p0
++.end method
++
++.method static synthetic access$500(Lcom/byd/launcher/stability/BlurPipeline;Ljava/lang/RuntimeException;)V
++    .locals 0
++
++    .line 7
++    invoke-direct {p0, p1}, Lcom/byd/launcher/stability/BlurPipeline;->report(Ljava/lang/RuntimeException;)V
++
++    return-void
++.end method
++
++.method static synthetic access$600()Ljava/lang/ThreadLocal;
++    .locals 1
++
++    .line 7
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->UI:Ljava/lang/ThreadLocal;
++
++    return-object v0
++.end method
++
++.method public static blurred(Ljava/lang/Object;)V
++    .locals 1
++
++    .line 87
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_0
++
++    iput-object p0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->blurred:Ljava/lang/Object;
++
++    invoke-virtual {v0, p0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->retain(Ljava/lang/Object;)V
++
++    :cond_0
++    return-void
++.end method
++
++.method private cancelFrame()V
++    .locals 2
++
++    .line 43
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    const/4 v1, 0x0
++
++    iput-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_0
++
++    .line 44
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->cancelChildren()V
++
++    .line 45
++    :cond_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->work:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestVisualWork;->invalidate()V
++
++    return-void
++.end method
++
++.method private cancelTrigger()V
++    .locals 2
++
++    .line 39
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->trigger:Ljava/lang/Runnable;
++
++    const/4 v1, 0x0
++
++    iput-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline;->trigger:Ljava/lang/Runnable;
++
++    if-eqz v0, :cond_0
++
++    .line 40
++    :try_start_0
++    iget-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline;->host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    invoke-interface {v1, v0}, Lcom/byd/launcher/stability/BlurPipeline$Host;->remove(Ljava/lang/Runnable;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    goto :goto_0
++
++    :catch_0
++    move-exception v0
++
++    invoke-direct {p0, v0}, Lcom/byd/launcher/stability/BlurPipeline;->report(Ljava/lang/RuntimeException;)V
++
++    :cond_0
++    :goto_0
++    return-void
++.end method
++
++.method public static deliveryCurrent()Z
++    .locals 1
++
++    .line 83
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->UI:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_0
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
++
++    const/4 v0, 0x1
++
++    goto :goto_0
++
++    :cond_0
++    const/4 v0, 0x0
++
++    :goto_0
++    return v0
++.end method
++
++.method private enqueueTrigger(Ljava/lang/Runnable;Lcom/byd/launcher/stability/BlurPipeline$Frame;J)V
++    .locals 1
++
++    .line 54
++    invoke-direct {p0}, Lcom/byd/launcher/stability/BlurPipeline;->cancelTrigger()V
++
++    .line 55
++    new-instance v0, Lcom/byd/launcher/stability/BlurPipeline$2;
++
++    invoke-direct {v0, p0, p2, p1}, Lcom/byd/launcher/stability/BlurPipeline$2;-><init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;)V
++
++    .line 62
++    iput-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->trigger:Ljava/lang/Runnable;
++
++    .line 63
++    :try_start_0
++    iget-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline;->host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    invoke-interface {p1, v0, p3, p4}, Lcom/byd/launcher/stability/BlurPipeline$Host;->post(Ljava/lang/Runnable;J)Z
++
++    move-result p1
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    if-eqz p1, :cond_0
++
++    return-void
++
++    :catch_0
++    move-exception p1
++
++    invoke-direct {p0, p1}, Lcom/byd/launcher/stability/BlurPipeline;->report(Ljava/lang/RuntimeException;)V
++
++    .line 64
++    :cond_0
++    iget-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline;->trigger:Ljava/lang/Runnable;
++
++    if-ne p1, v0, :cond_1
++
++    const/4 p1, 0x0
++
++    iput-object p1, p0, Lcom/byd/launcher/stability/BlurPipeline;->trigger:Ljava/lang/Runnable;
++
++    :cond_1
++    return-void
++.end method
++
++.method public static postChild(Ljava/lang/Object;Ljava/lang/Runnable;I)Z
++    .locals 1
++
++    .line 104
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->UI:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_0
++
++    invoke-virtual {v0, p0, p1, p2}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->postChild(Ljava/lang/Object;Ljava/lang/Runnable;I)Z
++
++    move-result p0
++
++    if-eqz p0, :cond_0
++
++    const/4 p0, 0x1
++
++    goto :goto_0
++
++    :cond_0
++    const/4 p0, 0x0
++
++    :goto_0
++    return p0
++.end method
++
++.method public static publish(Ljava/lang/Runnable;)V
++    .locals 1
++
++    .line 89
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-nez v0, :cond_0
++
++    return-void
++
++    .line 90
++    :cond_0
++    iput-object p0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->apply:Ljava/lang/Runnable;
++
++    const/4 p0, 0x1
++
++    iput-boolean p0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->posted:Z
++
++    iget-object p0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-virtual {p0, v0}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->post(Lcom/byd/launcher/stability/LatestVisualWork$Result;)Z
++
++    return-void
++.end method
++
++.method private report(Ljava/lang/RuntimeException;)V
++    .locals 1
++
++    .line 81
++    :try_start_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    invoke-interface {v0, p1}, Lcom/byd/launcher/stability/BlurPipeline$Host;->failed(Ljava/lang/RuntimeException;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    :catch_0
++    return-void
++.end method
++
++.method public static retain(Ljava/lang/Object;)V
++    .locals 1
++
++    .line 85
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_0
++
++    invoke-virtual {v0, p0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->retain(Ljava/lang/Object;)V
++
++    :cond_0
++    return-void
++.end method
++
++.method public static retry(Ljava/lang/Runnable;J)V
++    .locals 3
++
++    .line 93
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-nez v0, :cond_0
++
++    return-void
++
++    :cond_0
++    const/4 v1, 0x1
++
++    .line 94
++    iput-boolean v1, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->posted:Z
++
++    .line 95
++    iget-object v1, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    new-instance v2, Lcom/byd/launcher/stability/BlurPipeline$4;
++
++    invoke-direct {v2, v0, p0, p1, p2}, Lcom/byd/launcher/stability/BlurPipeline$4;-><init>(Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;J)V
++
++    invoke-virtual {v1, v2}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->post(Lcom/byd/launcher/stability/LatestVisualWork$Result;)Z
++
++    return-void
++.end method
++
++.method public static source(Ljava/lang/Object;)V
++    .locals 1
++
++    .line 84
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_0
++
++    iput-object p0, v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;->source:Ljava/lang/Object;
++
++    :cond_0
++    return-void
++.end method
++
++.method public static unused(Ljava/lang/Object;)V
++    .locals 1
++
++    .line 86
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_0
++
++    invoke-virtual {v0, p0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->release(Ljava/lang/Object;)V
++
++    :cond_0
++    return-void
++.end method
++
++.method public static workerCurrent()Z
++    .locals 1
++
++    .line 82
++    sget-object v0, Lcom/byd/launcher/stability/BlurPipeline;->WORK:Ljava/lang/ThreadLocal;
++
++    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    if-eqz v0, :cond_0
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/BlurPipeline$Frame;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
++
++    const/4 v0, 0x1
++
++    goto :goto_0
++
++    :cond_0
++    const/4 v0, 0x0
++
++    :goto_0
++    return v0
++.end method
++
++
++# virtual methods
++.method public close()V
++    .locals 1
++
++    const/4 v0, 0x1
++
++    .line 47
++    iput-boolean v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->closed:Z
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/BlurPipeline;->cancelTrigger()V
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/BlurPipeline;->cancelFrame()V
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->work:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestVisualWork;->close()V
++
++    return-void
++.end method
++
++.method public current()Z
++    .locals 1
++
++    .line 37
++    iget-boolean v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->closed:Z
++
++    if-nez v0, :cond_0
++
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    invoke-interface {v0}, Lcom/byd/launcher/stability/BlurPipeline$Host;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_0
++
++    const/4 v0, 0x1
++
++    goto :goto_0
++
++    :cond_0
++    const/4 v0, 0x0
++
++    :goto_0
++    return v0
++.end method
++
++.method public execute(Ljava/lang/Runnable;)Z
++    .locals 3
++
++    .line 67
++    invoke-direct {p0}, Lcom/byd/launcher/stability/BlurPipeline;->cancelTrigger()V
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/BlurPipeline;->cancelFrame()V
++
++    .line 68
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/BlurPipeline;->current()Z
++
++    move-result v0
++
++    const/4 v1, 0x0
++
++    if-eqz v0, :cond_2
++
++    if-nez p1, :cond_0
++
++    goto :goto_0
++
++    .line 69
++    :cond_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/BlurPipeline;->work:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestVisualWork;->begin()Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    move-result-object v0
++
++    if-nez v0, :cond_1
++
++    return v1
++
++    .line 71
++    :cond_1
++    new-instance v1, Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    iget-object v2, p0, Lcom/byd/launcher/stability/BlurPipeline;->host:Lcom/byd/launcher/stability/BlurPipeline$Host;
++
++    invoke-interface {v2}, Lcom/byd/launcher/stability/BlurPipeline$Host;->service()Ljava/lang/Object;
++
++    move-result-object v2
++
++    invoke-direct {v1, p0, v0, v2}, Lcom/byd/launcher/stability/BlurPipeline$Frame;-><init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/LatestVisualWork$Request;Ljava/lang/Object;)V
++
++    iput-object v1, p0, Lcom/byd/launcher/stability/BlurPipeline;->frame:Lcom/byd/launcher/stability/BlurPipeline$Frame;
++
++    .line 72
++    new-instance v2, Lcom/byd/launcher/stability/BlurPipeline$3;
++
++    invoke-direct {v2, p0, v1, p1}, Lcom/byd/launcher/stability/BlurPipeline$3;-><init>(Lcom/byd/launcher/stability/BlurPipeline;Lcom/byd/launcher/stability/BlurPipeline$Frame;Ljava/lang/Runnable;)V
++
++    invoke-virtual {v0, v2}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->execute(Ljava/lang/Runnable;)Z
++
++    move-result p1
++
++    return p1
++
++    :cond_2
++    :goto_0
++    return v1
++.end method
++
++.method public schedule(Ljava/lang/Runnable;)V
++    .locals 3
++
++    .line 49
++    invoke-direct {p0}, Lcom/byd/launcher/stability/BlurPipeline;->cancelTrigger()V
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/BlurPipeline;->cancelFrame()V
++
++    .line 50
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/BlurPipeline;->current()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_1
++
++    if-nez p1, :cond_0
++
++    goto :goto_0
++
++    :cond_0
++    const/4 v0, 0x0
++
++    const-wide/16 v1, 0x0
++
++    .line 51
++    invoke-direct {p0, p1, v0, v1, v2}, Lcom/byd/launcher/stability/BlurPipeline;->enqueueTrigger(Ljava/lang/Runnable;Lcom/byd/launcher/stability/BlurPipeline$Frame;J)V
++
++    :cond_1
++    :goto_0
++    return-void
++.end method
+--- r14/smali/com/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0.smali
++++ r15/smali/com/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0.smali
+@@ -0,0 +1,30 @@
++.class public final synthetic Lcom/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0;
++.super Ljava/lang/Object;
++.source "D8$$SyntheticClass"
++
++# interfaces
++.implements Ljava/util/concurrent/ThreadFactory;
++
++
++# direct methods
++.method public synthetic constructor <init>()V
++    .locals 0
++
++    .line 0
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    return-void
++.end method
++
++
++# virtual methods
++.method public final newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
++    .locals 0
++
++    .line 0
++    invoke-static {p1}, Lcom/byd/launcher/stability/LatestVisualWork;->lambda$static$0(Ljava/lang/Runnable;)Ljava/lang/Thread;
++
++    move-result-object p1
++
++    return-object p1
++.end method
+--- r14/smali/com/byd/launcher/stability/LatestVisualWork$1.smali
++++ r15/smali/com/byd/launcher/stability/LatestVisualWork$1.smali
+@@ -0,0 +1,14 @@
++.class synthetic Lcom/byd/launcher/stability/LatestVisualWork$1;
++.super Ljava/lang/Object;
++.source "LatestVisualWork.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/LatestVisualWork;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x1008
++    name = null
++.end annotation
+--- r14/smali/com/byd/launcher/stability/LatestVisualWork$Delivery.smali
++++ r15/smali/com/byd/launcher/stability/LatestVisualWork$Delivery.smali
+@@ -0,0 +1,167 @@
++.class final Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++.super Ljava/lang/Object;
++.source "LatestVisualWork.java"
++
++# interfaces
++.implements Ljava/lang/Runnable;
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/LatestVisualWork;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x1a
++    name = "Delivery"
++.end annotation
++
++
++# instance fields
++.field final request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++.field result:Lcom/byd/launcher/stability/LatestVisualWork$Result;
++
++
++# direct methods
++.method constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork$Request;Lcom/byd/launcher/stability/LatestVisualWork$Result;)V
++    .locals 0
++
++    .line 112
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    iput-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    iput-object p2, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->result:Lcom/byd/launcher/stability/LatestVisualWork$Result;
++
++    return-void
++.end method
++
++
++# virtual methods
++.method discard()V
++    .locals 2
++
++    .line 114
++    iget-object v0, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->result:Lcom/byd/launcher/stability/LatestVisualWork$Result;
++
++    const/4 v1, 0x0
++
++    iput-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->result:Lcom/byd/launcher/stability/LatestVisualWork$Result;
++
++    if-eqz v0, :cond_0
++
++    .line 115
++    :try_start_0
++    invoke-interface {v0}, Lcom/byd/launcher/stability/LatestVisualWork$Result;->discard()V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    goto :goto_0
++
++    :catch_0
++    move-exception v0
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-static {v1}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->access$100(Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork;
++
++    move-result-object v1
++
++    invoke-static {v1, v0}, Lcom/byd/launcher/stability/LatestVisualWork;->access$900(Lcom/byd/launcher/stability/LatestVisualWork;Ljava/lang/RuntimeException;)V
++
++    :cond_0
++    :goto_0
++    return-void
++.end method
++
++.method public run()V
++    .locals 4
++
++    .line 118
++    invoke-static {}, Lcom/byd/launcher/stability/LatestVisualWork;->access$200()Ljava/lang/Object;
++
++    move-result-object v0
++
++    monitor-enter v0
++
++    .line 119
++    :try_start_0
++    iget-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-static {v1}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->access$100(Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork;
++
++    move-result-object v1
++
++    .line 120
++    invoke-static {v1}, Lcom/byd/launcher/stability/LatestVisualWork;->access$700(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    move-result-object v2
++
++    if-ne v2, p0, :cond_2
++
++    iget-object v2, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-virtual {v2}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->current()Z
++
++    move-result v2
++
++    if-nez v2, :cond_0
++
++    goto :goto_1
++
++    :cond_0
++    const/4 v2, 0x0
++
++    .line 121
++    invoke-static {v1, v2}, Lcom/byd/launcher/stability/LatestVisualWork;->access$702(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Delivery;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    iget-object v3, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->result:Lcom/byd/launcher/stability/LatestVisualWork$Result;
++
++    iput-object v2, p0, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->result:Lcom/byd/launcher/stability/LatestVisualWork$Result;
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    if-eqz v3, :cond_1
++
++    .line 124
++    :try_start_1
++    invoke-interface {v3}, Lcom/byd/launcher/stability/LatestVisualWork$Result;->deliver()V
++    :try_end_1
++    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
++    .catchall {:try_start_1 .. :try_end_1} :catchall_0
++
++    goto :goto_0
++
++    :catch_0
++    move-exception v2
++
++    :try_start_2
++    invoke-static {v1, v2}, Lcom/byd/launcher/stability/LatestVisualWork;->access$900(Lcom/byd/launcher/stability/LatestVisualWork;Ljava/lang/RuntimeException;)V
++
++    .line 125
++    :cond_1
++    :goto_0
++    monitor-exit v0
++
++    return-void
++
++    .line 120
++    :cond_2
++    :goto_1
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->discard()V
++
++    monitor-exit v0
++
++    return-void
++
++    :catchall_0
++    move-exception v1
++
++    .line 125
++    monitor-exit v0
++    :try_end_2
++    .catchall {:try_start_2 .. :try_end_2} :catchall_0
++
++    throw v1
++.end method
+--- r14/smali/com/byd/launcher/stability/LatestVisualWork$Host.smali
++++ r15/smali/com/byd/launcher/stability/LatestVisualWork$Host.smali
+@@ -0,0 +1,25 @@
++.class public interface abstract Lcom/byd/launcher/stability/LatestVisualWork$Host;
++.super Ljava/lang/Object;
++.source "LatestVisualWork.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/LatestVisualWork;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x609
++    name = "Host"
++.end annotation
++
++
++# virtual methods
++.method public abstract failed(Ljava/lang/RuntimeException;)V
++.end method
++
++.method public abstract post(Ljava/lang/Runnable;)Z
++.end method
++
++.method public abstract remove(Ljava/lang/Runnable;)V
++.end method
+--- r14/smali/com/byd/launcher/stability/LatestVisualWork$Job.smali
++++ r15/smali/com/byd/launcher/stability/LatestVisualWork$Job.smali
+@@ -0,0 +1,80 @@
++.class final Lcom/byd/launcher/stability/LatestVisualWork$Job;
++.super Ljava/lang/Object;
++.source "LatestVisualWork.java"
++
++# interfaces
++.implements Ljava/lang/Runnable;
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/LatestVisualWork;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x1a
++    name = "Job"
++.end annotation
++
++
++# instance fields
++.field final request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++.field final work:Ljava/lang/Runnable;
++
++
++# direct methods
++.method constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork$Request;Ljava/lang/Runnable;)V
++    .locals 0
++
++    .line 104
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    iput-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Job;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    iput-object p2, p0, Lcom/byd/launcher/stability/LatestVisualWork$Job;->work:Ljava/lang/Runnable;
++
++    return-void
++.end method
++
++
++# virtual methods
++.method public run()V
++    .locals 2
++
++    .line 106
++    iget-object v0, p0, Lcom/byd/launcher/stability/LatestVisualWork$Job;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->current()Z
++
++    move-result v0
++
++    if-nez v0, :cond_0
++
++    return-void
++
++    .line 107
++    :cond_0
++    :try_start_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/LatestVisualWork$Job;->work:Ljava/lang/Runnable;
++
++    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    goto :goto_0
++
++    :catch_0
++    move-exception v0
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Job;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-static {v1}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->access$100(Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork;
++
++    move-result-object v1
++
++    invoke-static {v1, v0}, Lcom/byd/launcher/stability/LatestVisualWork;->access$900(Lcom/byd/launcher/stability/LatestVisualWork;Ljava/lang/RuntimeException;)V
++
++    :goto_0
++    return-void
++.end method
+--- r14/smali/com/byd/launcher/stability/LatestVisualWork$Request.smali
++++ r15/smali/com/byd/launcher/stability/LatestVisualWork$Request.smali
+@@ -0,0 +1,349 @@
++.class public final Lcom/byd/launcher/stability/LatestVisualWork$Request;
++.super Ljava/lang/Object;
++.source "LatestVisualWork.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/LatestVisualWork;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x19
++    name = "Request"
++.end annotation
++
++
++# instance fields
++.field private final owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++.field private started:Z
++
++
++# direct methods
++.method private constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork;)V
++    .locals 0
++
++    .line 69
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    iput-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    return-void
++.end method
++
++.method synthetic constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$1;)V
++    .locals 0
++
++    .line 66
++    invoke-direct {p0, p1}, Lcom/byd/launcher/stability/LatestVisualWork$Request;-><init>(Lcom/byd/launcher/stability/LatestVisualWork;)V
++
++    return-void
++.end method
++
++.method static synthetic access$100(Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork;
++    .locals 0
++
++    .line 66
++    iget-object p0, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    return-object p0
++.end method
++
++
++# virtual methods
++.method public current()Z
++    .locals 2
++
++    .line 71
++    invoke-static {}, Lcom/byd/launcher/stability/LatestVisualWork;->access$200()Ljava/lang/Object;
++
++    move-result-object v0
++
++    monitor-enter v0
++
++    :try_start_0
++    iget-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {v1}, Lcom/byd/launcher/stability/LatestVisualWork;->access$300(Lcom/byd/launcher/stability/LatestVisualWork;)Z
++
++    move-result v1
++
++    if-nez v1, :cond_0
++
++    iget-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {v1}, Lcom/byd/launcher/stability/LatestVisualWork;->access$400(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    move-result-object v1
++
++    if-ne v1, p0, :cond_0
++
++    const/4 v1, 0x1
++
++    goto :goto_0
++
++    :cond_0
++    const/4 v1, 0x0
++
++    :goto_0
++    monitor-exit v0
++
++    return v1
++
++    :catchall_0
++    move-exception v1
++
++    monitor-exit v0
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    throw v1
++.end method
++
++.method public execute(Ljava/lang/Runnable;)Z
++    .locals 6
++
++    .line 74
++    invoke-static {}, Lcom/byd/launcher/stability/LatestVisualWork;->access$200()Ljava/lang/Object;
++
++    move-result-object v0
++
++    monitor-enter v0
++
++    const/4 v1, 0x0
++
++    if-eqz p1, :cond_3
++
++    .line 75
++    :try_start_0
++    iget-boolean v2, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->started:Z
++
++    if-nez v2, :cond_3
++
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->current()Z
++
++    move-result v2
++
++    if-nez v2, :cond_0
++
++    goto :goto_0
++
++    :cond_0
++    const/4 v2, 0x1
++
++    .line 76
++    iput-boolean v2, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->started:Z
++
++    .line 77
++    invoke-static {}, Lcom/byd/launcher/stability/LatestVisualWork;->access$500()Ljava/util/concurrent/ThreadPoolExecutor;
++
++    move-result-object v3
++
++    invoke-virtual {v3}, Ljava/util/concurrent/ThreadPoolExecutor;->getQueue()Ljava/util/concurrent/BlockingQueue;
++
++    move-result-object v3
++
++    invoke-interface {v3}, Ljava/util/concurrent/BlockingQueue;->poll()Ljava/lang/Object;
++
++    move-result-object v3
++
++    check-cast v3, Ljava/lang/Runnable;
++
++    const/4 v4, 0x0
++
++    if-eqz v3, :cond_1
++
++    .line 79
++    check-cast v3, Lcom/byd/launcher/stability/LatestVisualWork$Job;
++
++    iget-object v3, v3, Lcom/byd/launcher/stability/LatestVisualWork$Job;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    .line 80
++    iget-object v5, v3, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {v5}, Lcom/byd/launcher/stability/LatestVisualWork;->access$400(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    move-result-object v5
++
++    if-ne v5, v3, :cond_1
++
++    iget-object v3, v3, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {v3, v4}, Lcom/byd/launcher/stability/LatestVisualWork;->access$402(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork$Request;
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    .line 82
++    :cond_1
++    :try_start_1
++    invoke-static {}, Lcom/byd/launcher/stability/LatestVisualWork;->access$500()Ljava/util/concurrent/ThreadPoolExecutor;
++
++    move-result-object v3
++
++    new-instance v5, Lcom/byd/launcher/stability/LatestVisualWork$Job;
++
++    invoke-direct {v5, p0, p1}, Lcom/byd/launcher/stability/LatestVisualWork$Job;-><init>(Lcom/byd/launcher/stability/LatestVisualWork$Request;Ljava/lang/Runnable;)V
++
++    invoke-virtual {v3, v5}, Ljava/util/concurrent/ThreadPoolExecutor;->execute(Ljava/lang/Runnable;)V
++    :try_end_1
++    .catch Ljava/util/concurrent/RejectedExecutionException; {:try_start_1 .. :try_end_1} :catch_0
++    .catchall {:try_start_1 .. :try_end_1} :catchall_0
++
++    :try_start_2
++    monitor-exit v0
++
++    return v2
++
++    .line 84
++    :catch_0
++    iget-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {p1}, Lcom/byd/launcher/stability/LatestVisualWork;->access$400(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    move-result-object p1
++
++    if-ne p1, p0, :cond_2
++
++    iget-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {p1, v4}, Lcom/byd/launcher/stability/LatestVisualWork;->access$402(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    .line 85
++    :cond_2
++    monitor-exit v0
++
++    return v1
++
++    .line 75
++    :cond_3
++    :goto_0
++    monitor-exit v0
++
++    return v1
++
++    :catchall_0
++    move-exception p1
++
++    .line 87
++    monitor-exit v0
++    :try_end_2
++    .catchall {:try_start_2 .. :try_end_2} :catchall_0
++
++    throw p1
++.end method
++
++.method public post(Lcom/byd/launcher/stability/LatestVisualWork$Result;)Z
++    .locals 4
++
++    const/4 v0, 0x0
++
++    if-nez p1, :cond_0
++
++    return v0
++
++    .line 91
++    :cond_0
++    invoke-static {}, Lcom/byd/launcher/stability/LatestVisualWork;->access$200()Ljava/lang/Object;
++
++    move-result-object v1
++
++    monitor-enter v1
++
++    .line 92
++    :try_start_0
++    new-instance v2, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    invoke-direct {v2, p0, p1}, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;-><init>(Lcom/byd/launcher/stability/LatestVisualWork$Request;Lcom/byd/launcher/stability/LatestVisualWork$Result;)V
++
++    .line 93
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->current()Z
++
++    move-result p1
++
++    if-nez p1, :cond_1
++
++    invoke-virtual {v2}, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->discard()V
++
++    monitor-exit v1
++
++    return v0
++
++    .line 94
++    :cond_1
++    iget-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {p1}, Lcom/byd/launcher/stability/LatestVisualWork;->access$600(Lcom/byd/launcher/stability/LatestVisualWork;)V
++
++    iget-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {p1, v2}, Lcom/byd/launcher/stability/LatestVisualWork;->access$702(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Delivery;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    .line 95
++    :try_start_1
++    iget-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {p1}, Lcom/byd/launcher/stability/LatestVisualWork;->access$800(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Host;
++
++    move-result-object p1
++
++    invoke-interface {p1, v2}, Lcom/byd/launcher/stability/LatestVisualWork$Host;->post(Ljava/lang/Runnable;)Z
++
++    move-result p1
++    :try_end_1
++    .catch Ljava/lang/RuntimeException; {:try_start_1 .. :try_end_1} :catch_0
++    .catchall {:try_start_1 .. :try_end_1} :catchall_0
++
++    if-eqz p1, :cond_2
++
++    :try_start_2
++    monitor-exit v1
++
++    const/4 p1, 0x1
++
++    return p1
++
++    :catch_0
++    move-exception p1
++
++    .line 96
++    iget-object v3, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {v3, p1}, Lcom/byd/launcher/stability/LatestVisualWork;->access$900(Lcom/byd/launcher/stability/LatestVisualWork;Ljava/lang/RuntimeException;)V
++
++    .line 97
++    :cond_2
++    iget-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    invoke-static {p1}, Lcom/byd/launcher/stability/LatestVisualWork;->access$700(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    move-result-object p1
++
++    if-ne p1, v2, :cond_3
++
++    iget-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork$Request;->owner:Lcom/byd/launcher/stability/LatestVisualWork;
++
++    const/4 v3, 0x0
++
++    invoke-static {p1, v3}, Lcom/byd/launcher/stability/LatestVisualWork;->access$702(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Delivery;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    .line 98
++    :cond_3
++    invoke-virtual {v2}, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->discard()V
++
++    monitor-exit v1
++
++    return v0
++
++    :catchall_0
++    move-exception p1
++
++    .line 99
++    monitor-exit v1
++    :try_end_2
++    .catchall {:try_start_2 .. :try_end_2} :catchall_0
++
++    throw p1
++.end method
+--- r14/smali/com/byd/launcher/stability/LatestVisualWork$Result.smali
++++ r15/smali/com/byd/launcher/stability/LatestVisualWork$Result.smali
+@@ -0,0 +1,22 @@
++.class public interface abstract Lcom/byd/launcher/stability/LatestVisualWork$Result;
++.super Ljava/lang/Object;
++.source "LatestVisualWork.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/EnclosingClass;
++    value = Lcom/byd/launcher/stability/LatestVisualWork;
++.end annotation
++
++.annotation system Ldalvik/annotation/InnerClass;
++    accessFlags = 0x609
++    name = "Result"
++.end annotation
++
++
++# virtual methods
++.method public abstract deliver()V
++.end method
++
++.method public abstract discard()V
++.end method
+--- r14/smali/com/byd/launcher/stability/LatestVisualWork.smali
++++ r15/smali/com/byd/launcher/stability/LatestVisualWork.smali
+@@ -0,0 +1,428 @@
++.class public final Lcom/byd/launcher/stability/LatestVisualWork;
++.super Ljava/lang/Object;
++.source "LatestVisualWork.java"
++
++
++# annotations
++.annotation system Ldalvik/annotation/MemberClasses;
++    value = {
++        Lcom/byd/launcher/stability/LatestVisualWork$Host;,
++        Lcom/byd/launcher/stability/LatestVisualWork$Delivery;,
++        Lcom/byd/launcher/stability/LatestVisualWork$Request;,
++        Lcom/byd/launcher/stability/LatestVisualWork$Job;,
++        Lcom/byd/launcher/stability/LatestVisualWork$Result;
++    }
++.end annotation
++
++
++# static fields
++.field private static final LOCK:Ljava/lang/Object;
++
++.field private static final POOL:Ljava/util/concurrent/ThreadPoolExecutor;
++
++
++# instance fields
++.field private closed:Z
++
++.field private current:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++.field private final host:Lcom/byd/launcher/stability/LatestVisualWork$Host;
++
++.field private pending:Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++
++# direct methods
++.method static constructor <clinit>()V
++    .locals 11
++
++    .line 22
++    new-instance v0, Ljava/lang/Object;
++
++    invoke-direct {v0}, Ljava/lang/Object;-><init>()V
++
++    sput-object v0, Lcom/byd/launcher/stability/LatestVisualWork;->LOCK:Ljava/lang/Object;
++
++    .line 23
++    new-instance v0, Ljava/util/concurrent/ThreadPoolExecutor;
++
++    sget-object v6, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
++
++    new-instance v7, Ljava/util/concurrent/ArrayBlockingQueue;
++
++    const/4 v10, 0x1
++
++    invoke-direct {v7, v10}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
++
++    new-instance v8, Lcom/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0;
++
++    invoke-direct {v8}, Lcom/byd/launcher/stability/LatestVisualWork$$ExternalSyntheticLambda0;-><init>()V
++
++    new-instance v9, Ljava/util/concurrent/ThreadPoolExecutor$AbortPolicy;
++
++    invoke-direct {v9}, Ljava/util/concurrent/ThreadPoolExecutor$AbortPolicy;-><init>()V
++
++    const/4 v2, 0x1
++
++    const/4 v3, 0x1
++
++    const-wide/16 v4, 0x1e
++
++    move-object v1, v0
++
++    invoke-direct/range {v1 .. v9}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V
++
++    sput-object v0, Lcom/byd/launcher/stability/LatestVisualWork;->POOL:Ljava/util/concurrent/ThreadPoolExecutor;
++
++    .line 27
++    invoke-virtual {v0, v10}, Ljava/util/concurrent/ThreadPoolExecutor;->allowCoreThreadTimeOut(Z)V
++
++    return-void
++.end method
++
++.method public constructor <init>(Lcom/byd/launcher/stability/LatestVisualWork$Host;)V
++    .locals 1
++
++    .line 32
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++
++    if-eqz p1, :cond_0
++
++    .line 34
++    iput-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->host:Lcom/byd/launcher/stability/LatestVisualWork$Host;
++
++    return-void
++
++    .line 33
++    :cond_0
++    new-instance p1, Ljava/lang/NullPointerException;
++
++    const-string v0, "host"
++
++    invoke-direct {p1, v0}, Ljava/lang/NullPointerException;-><init>(Ljava/lang/String;)V
++
++    throw p1
++.end method
++
++.method static synthetic access$200()Ljava/lang/Object;
++    .locals 1
++
++    .line 12
++    sget-object v0, Lcom/byd/launcher/stability/LatestVisualWork;->LOCK:Ljava/lang/Object;
++
++    return-object v0
++.end method
++
++.method static synthetic access$300(Lcom/byd/launcher/stability/LatestVisualWork;)Z
++    .locals 0
++
++    .line 12
++    iget-boolean p0, p0, Lcom/byd/launcher/stability/LatestVisualWork;->closed:Z
++
++    return p0
++.end method
++
++.method static synthetic access$400(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Request;
++    .locals 0
++
++    .line 12
++    iget-object p0, p0, Lcom/byd/launcher/stability/LatestVisualWork;->current:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    return-object p0
++.end method
++
++.method static synthetic access$402(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork$Request;
++    .locals 0
++
++    .line 12
++    iput-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->current:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    return-object p1
++.end method
++
++.method static synthetic access$500()Ljava/util/concurrent/ThreadPoolExecutor;
++    .locals 1
++
++    .line 12
++    sget-object v0, Lcom/byd/launcher/stability/LatestVisualWork;->POOL:Ljava/util/concurrent/ThreadPoolExecutor;
++
++    return-object v0
++.end method
++
++.method static synthetic access$600(Lcom/byd/launcher/stability/LatestVisualWork;)V
++    .locals 0
++
++    .line 12
++    invoke-direct {p0}, Lcom/byd/launcher/stability/LatestVisualWork;->clearPending()V
++
++    return-void
++.end method
++
++.method static synthetic access$700(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++    .locals 0
++
++    .line 12
++    iget-object p0, p0, Lcom/byd/launcher/stability/LatestVisualWork;->pending:Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    return-object p0
++.end method
++
++.method static synthetic access$702(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$Delivery;)Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++    .locals 0
++
++    .line 12
++    iput-object p1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->pending:Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    return-object p1
++.end method
++
++.method static synthetic access$800(Lcom/byd/launcher/stability/LatestVisualWork;)Lcom/byd/launcher/stability/LatestVisualWork$Host;
++    .locals 0
++
++    .line 12
++    iget-object p0, p0, Lcom/byd/launcher/stability/LatestVisualWork;->host:Lcom/byd/launcher/stability/LatestVisualWork$Host;
++
++    return-object p0
++.end method
++
++.method static synthetic access$900(Lcom/byd/launcher/stability/LatestVisualWork;Ljava/lang/RuntimeException;)V
++    .locals 0
++
++    .line 12
++    invoke-direct {p0, p1}, Lcom/byd/launcher/stability/LatestVisualWork;->report(Ljava/lang/RuntimeException;)V
++
++    return-void
++.end method
++
++.method private cancelQueued()V
++    .locals 3
++
++    .line 50
++    sget-object v0, Lcom/byd/launcher/stability/LatestVisualWork;->POOL:Ljava/util/concurrent/ThreadPoolExecutor;
++
++    invoke-virtual {v0}, Ljava/util/concurrent/ThreadPoolExecutor;->getQueue()Ljava/util/concurrent/BlockingQueue;
++
++    move-result-object v0
++
++    invoke-interface {v0}, Ljava/util/concurrent/BlockingQueue;->iterator()Ljava/util/Iterator;
++
++    move-result-object v0
++
++    :cond_0
++    :goto_0
++    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
++
++    move-result v1
++
++    if-eqz v1, :cond_1
++
++    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
++
++    move-result-object v1
++
++    check-cast v1, Ljava/lang/Runnable;
++
++    .line 51
++    check-cast v1, Lcom/byd/launcher/stability/LatestVisualWork$Job;
++
++    .line 52
++    iget-object v2, v1, Lcom/byd/launcher/stability/LatestVisualWork$Job;->request:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-static {v2}, Lcom/byd/launcher/stability/LatestVisualWork$Request;->access$100(Lcom/byd/launcher/stability/LatestVisualWork$Request;)Lcom/byd/launcher/stability/LatestVisualWork;
++
++    move-result-object v2
++
++    if-ne v2, p0, :cond_0
++
++    sget-object v2, Lcom/byd/launcher/stability/LatestVisualWork;->POOL:Ljava/util/concurrent/ThreadPoolExecutor;
++
++    invoke-virtual {v2, v1}, Ljava/util/concurrent/ThreadPoolExecutor;->remove(Ljava/lang/Runnable;)Z
++
++    goto :goto_0
++
++    :cond_1
++    return-void
++.end method
++
++.method private clearPending()V
++    .locals 2
++
++    .line 56
++    iget-object v0, p0, Lcom/byd/launcher/stability/LatestVisualWork;->pending:Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    const/4 v1, 0x0
++
++    iput-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->pending:Lcom/byd/launcher/stability/LatestVisualWork$Delivery;
++
++    if-eqz v0, :cond_0
++
++    .line 58
++    :try_start_0
++    iget-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->host:Lcom/byd/launcher/stability/LatestVisualWork$Host;
++
++    invoke-interface {v1, v0}, Lcom/byd/launcher/stability/LatestVisualWork$Host;->remove(Ljava/lang/Runnable;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    goto :goto_0
++
++    :catch_0
++    move-exception v1
++
++    invoke-direct {p0, v1}, Lcom/byd/launcher/stability/LatestVisualWork;->report(Ljava/lang/RuntimeException;)V
++
++    .line 59
++    :goto_0
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/LatestVisualWork$Delivery;->discard()V
++
++    :cond_0
++    return-void
++.end method
++
++.method static synthetic lambda$static$0(Ljava/lang/Runnable;)Ljava/lang/Thread;
++    .locals 2
++
++    .line 25
++    new-instance v0, Ljava/lang/Thread;
++
++    const-string v1, "LauncherVisual"
++
++    invoke-direct {v0, p0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
++
++    const/4 p0, 0x1
++
++    invoke-virtual {v0, p0}, Ljava/lang/Thread;->setDaemon(Z)V
++
++    return-object v0
++.end method
++
++.method private report(Ljava/lang/RuntimeException;)V
++    .locals 1
++
++    .line 64
++    :try_start_0
++    iget-object v0, p0, Lcom/byd/launcher/stability/LatestVisualWork;->host:Lcom/byd/launcher/stability/LatestVisualWork$Host;
++
++    invoke-interface {v0, p1}, Lcom/byd/launcher/stability/LatestVisualWork$Host;->failed(Ljava/lang/RuntimeException;)V
++    :try_end_0
++    .catch Ljava/lang/RuntimeException; {:try_start_0 .. :try_end_0} :catch_0
++
++    :catch_0
++    return-void
++.end method
++
++
++# virtual methods
++.method public begin()Lcom/byd/launcher/stability/LatestVisualWork$Request;
++    .locals 3
++
++    .line 37
++    sget-object v0, Lcom/byd/launcher/stability/LatestVisualWork;->LOCK:Ljava/lang/Object;
++
++    monitor-enter v0
++
++    .line 38
++    :try_start_0
++    invoke-direct {p0}, Lcom/byd/launcher/stability/LatestVisualWork;->cancelQueued()V
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/LatestVisualWork;->clearPending()V
++
++    .line 39
++    iget-boolean v1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->closed:Z
++
++    const/4 v2, 0x0
++
++    if-eqz v1, :cond_0
++
++    goto :goto_0
++
++    :cond_0
++    new-instance v1, Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-direct {v1, p0, v2}, Lcom/byd/launcher/stability/LatestVisualWork$Request;-><init>(Lcom/byd/launcher/stability/LatestVisualWork;Lcom/byd/launcher/stability/LatestVisualWork$1;)V
++
++    move-object v2, v1
++
++    :goto_0
++    iput-object v2, p0, Lcom/byd/launcher/stability/LatestVisualWork;->current:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    .line 40
++    monitor-exit v0
++
++    return-object v2
++
++    :catchall_0
++    move-exception v1
++
++    .line 41
++    monitor-exit v0
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    throw v1
++.end method
++
++.method public close()V
++    .locals 2
++
++    .line 47
++    sget-object v0, Lcom/byd/launcher/stability/LatestVisualWork;->LOCK:Ljava/lang/Object;
++
++    monitor-enter v0
++
++    const/4 v1, 0x1
++
++    :try_start_0
++    iput-boolean v1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->closed:Z
++
++    const/4 v1, 0x0
++
++    iput-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->current:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/LatestVisualWork;->cancelQueued()V
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/LatestVisualWork;->clearPending()V
++
++    monitor-exit v0
++
++    return-void
++
++    :catchall_0
++    move-exception v1
++
++    monitor-exit v0
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    throw v1
++.end method
++
++.method public invalidate()V
++    .locals 2
++
++    .line 44
++    sget-object v0, Lcom/byd/launcher/stability/LatestVisualWork;->LOCK:Ljava/lang/Object;
++
++    monitor-enter v0
++
++    const/4 v1, 0x0
++
++    :try_start_0
++    iput-object v1, p0, Lcom/byd/launcher/stability/LatestVisualWork;->current:Lcom/byd/launcher/stability/LatestVisualWork$Request;
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/LatestVisualWork;->cancelQueued()V
++
++    invoke-direct {p0}, Lcom/byd/launcher/stability/LatestVisualWork;->clearPending()V
++
++    monitor-exit v0
++
++    return-void
++
++    :catchall_0
++    move-exception v1
++
++    monitor-exit v0
++    :try_end_0
++    .catchall {:try_start_0 .. :try_end_0} :catchall_0
++
++    throw v1
++.end method
+--- r14/smali/com/byd/launcher/stability/MainBlurHost.smali
++++ r15/smali/com/byd/launcher/stability/MainBlurHost.smali
+@@ -0,0 +1,126 @@
++.class public final Lcom/byd/launcher/stability/MainBlurHost;
++.super Ljava/lang/Object;
++.implements Lcom/byd/launcher/stability/BlurPipeline$Host;
++.field private final owner:Lcom/byd/launcher/MainActivity;
++
++.method public constructor <init>(Lcom/byd/launcher/MainActivity;)V
++    .locals 0
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    iput-object p1, p0, Lcom/byd/launcher/stability/MainBlurHost;->owner:Lcom/byd/launcher/MainActivity;
++    return-void
++.end method
++.method public current()Z
++    .locals 2
++    iget-object v0, p0, Lcom/byd/launcher/stability/MainBlurHost;->owner:Lcom/byd/launcher/MainActivity;
++    iget-boolean v1, v0, Lcom/byd/launcher/MainActivity;->ͺ:Z
++    if-nez v1, :no
++    invoke-static {}, Lcom/byd/launcher/MainActivity;->ͺ()Lcom/byd/launcher/MainActivity;
++    move-result-object v1
++    if-ne v0, v1, :no
++    sget-object v0, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;
++    if-eqz v0, :yes
++    iget-boolean v0, v0, Lcom/byd/launcher/NavBarService;->ˋ:Z
++    if-nez v0, :no
++    :yes
++    const/4 v0, 0x1
++    return v0
++    :no
++    const/4 v0, 0x0
++    return v0
++.end method
++.method public service()Ljava/lang/Object;
++    .locals 1
++    sget-object v0, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;
++    return-object v0
++.end method
++.method public post(Ljava/lang/Runnable;J)Z
++    .locals 1
++    iget-object v0, p0, Lcom/byd/launcher/stability/MainBlurHost;->owner:Lcom/byd/launcher/MainActivity;
++    iget-object v0, v0, Lcom/byd/launcher/MainActivity;->ˋ:Landroid/os/Handler;
++    invoke-virtual {v0, p1, p2, p3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
++    move-result v0
++    return v0
++.end method
++.method public remove(Ljava/lang/Runnable;)V
++    .locals 1
++    iget-object v0, p0, Lcom/byd/launcher/stability/MainBlurHost;->owner:Lcom/byd/launcher/MainActivity;
++    iget-object v0, v0, Lcom/byd/launcher/MainActivity;->ˋ:Landroid/os/Handler;
++    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
++    return-void
++.end method
++.method public postChild(Ljava/lang/Object;Ljava/lang/Runnable;)Z
++    .locals 1
++    instance-of v0, p1, Landroid/os/Handler;
++    if-eqz v0, :view
++    check-cast p1, Landroid/os/Handler;
++    invoke-virtual {p1, p2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    move-result v0
++    return v0
++    :view
++    instance-of v0, p1, Landroid/view/View;
++    if-eqz v0, :no
++    check-cast p1, Landroid/view/View;
++    invoke-virtual {p1, p2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
++    move-result v0
++    return v0
++    :no
++    const/4 v0, 0x0
++    return v0
++.end method
++.method public removeChild(Ljava/lang/Object;Ljava/lang/Runnable;)V
++    .locals 1
++    instance-of v0, p1, Landroid/os/Handler;
++    if-eqz v0, :view
++    check-cast p1, Landroid/os/Handler;
++    invoke-virtual {p1, p2}, Landroid/os/Handler;->removeCallbacks(Ljava/lang/Runnable;)V
++    return-void
++    :view
++    instance-of v0, p1, Landroid/view/View;
++    if-eqz v0, :done
++    check-cast p1, Landroid/view/View;
++    invoke-virtual {p1, p2}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
++    :done
++    return-void
++.end method
++.method public commit(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Runnable;)V
++    .locals 1
++    iget-object v0, p0, Lcom/byd/launcher/stability/MainBlurHost;->owner:Lcom/byd/launcher/MainActivity;
++    check-cast p1, Landroid/graphics/Bitmap;
++    check-cast p2, Landroid/graphics/Bitmap;
++    iput-object p1, v0, Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;
++    sput-object p2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;
++    invoke-interface {p3}, Ljava/lang/Runnable;->run()V
++    return-void
++.end method
++.method public retry()Z
++    .locals 3
++    iget-object v0, p0, Lcom/byd/launcher/stability/MainBlurHost;->owner:Lcom/byd/launcher/MainActivity;
++    iget v1, v0, Lcom/byd/launcher/MainActivity;->Ι:I
++    const/4 v2, 0x5
++    if-ge v1, v2, :no
++    add-int/lit8 v1, v1, 0x1
++    iput v1, v0, Lcom/byd/launcher/MainActivity;->Ι:I
++    const/4 v0, 0x1
++    return v0
++    :no
++    const/4 v0, 0x0
++    return v0
++.end method
++.method public release(Ljava/lang/Object;)V
++    .locals 1
++    check-cast p1, Landroid/graphics/Bitmap;
++    if-eqz p1, :done
++    invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
++    move-result v0
++    if-nez v0, :done
++    invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
++    :done
++    return-void
++.end method
++.method public failed(Ljava/lang/RuntimeException;)V
++    .locals 2
++    const-string v0, "MainBlur"
++    const-string v1, "Blur task or delivery failed"
++    invoke-static {v0, v1, p1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
++    return-void
++.end method
+--- r14/smali/o/a8.smali
++++ r15/smali/o/a8.smali
+@@ -42,6 +42,12 @@
+ # virtual methods
+ .method public final run()V
+     .locals 8
++    invoke-static {}, Lcom/byd/launcher/stability/BlurPipeline;->deliveryCurrent()Z
++    move-result v0
++    if-nez v0, :blur_delivery_alive
++    return-void
++    :blur_delivery_alive
++
+ 
+     .line 1
+     iget-object v0, p0, Lo/a8;->Ͱ:Lcom/byd/launcher/MainActivity;
+@@ -166,7 +172,8 @@
+     .line 58
+     .line 59
+     .line 60
+-    invoke-virtual {v5, v6}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
++    const/4 v7, 0x0
++    invoke-static {v5, v6, v7}, Lcom/byd/launcher/stability/BlurPipeline;->postChild(Ljava/lang/Object;Ljava/lang/Runnable;I)Z
+ 
+     .line 61
+     .line 62
+@@ -362,7 +369,8 @@
+     .line 158
+     .line 159
+     .line 160
+-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    const/4 v5, 0x1
++    invoke-static {v0, v1, v5}, Lcom/byd/launcher/stability/BlurPipeline;->postChild(Ljava/lang/Object;Ljava/lang/Runnable;I)Z
+ 
+     .line 161
+     .line 162
+@@ -407,7 +415,8 @@
+     .line 180
+     .line 181
+     .line 182
+-    invoke-virtual {v0, v1}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    const/4 v3, 0x2
++    invoke-static {v0, v1, v3}, Lcom/byd/launcher/stability/BlurPipeline;->postChild(Ljava/lang/Object;Ljava/lang/Runnable;I)Z
+ 
+     .line 183
+     .line 184
+--- r14/smali/o/h2.smali
++++ r15/smali/o/h2.smali
+@@ -1239,6 +1239,11 @@
+ 
+     .line 570
+     :pswitch_7
++    invoke-static {}, Lcom/byd/launcher/stability/BlurPipeline;->workerCurrent()Z
++    move-result v0
++    if-nez v0, :blur_worker_alive
++    return-void
++    :blur_worker_alive
+     iget-object v0, p0, Lo/h2;->Ͳ:Ljava/lang/Object;
+ 
+     .line 571
+@@ -1367,7 +1372,7 @@
+     .line 628
+     .line 629
+     :cond_15
+-    iput-object v11, v8, Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;
++    invoke-static {v11}, Lcom/byd/launcher/stability/BlurPipeline;->source(Ljava/lang/Object;)V
+ 
+     .line 630
+     .line 631
+@@ -1525,6 +1530,7 @@
+     .line 704
+     .line 705
+     move-result-object v0
++    invoke-static {v0}, Lcom/byd/launcher/stability/BlurPipeline;->unused(Ljava/lang/Object;)V
+ 
+     .line 706
+     invoke-static {v11, v2, v3, v13, v4}, Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;
+@@ -1533,6 +1539,7 @@
+     .line 708
+     .line 709
+     move-result-object v4
++    invoke-static {v4}, Lcom/byd/launcher/stability/BlurPipeline;->retain(Ljava/lang/Object;)V
+ 
+     .line 710
+     invoke-virtual {v8}, Landroidx/appcompat/app/AppCompatActivity;->getResources()Landroid/content/res/Resources;
+@@ -1593,6 +1600,7 @@
+     .line 736
+     .line 737
+     move-result-object v1
++    invoke-static {v1}, Lcom/byd/launcher/stability/BlurPipeline;->retain(Ljava/lang/Object;)V
+ 
+     .line 738
+     goto :goto_e
+@@ -1658,6 +1666,7 @@
+     .line 765
+     .line 766
+     move-result-object v1
++    invoke-static {v1}, Lcom/byd/launcher/stability/BlurPipeline;->retain(Ljava/lang/Object;)V
+ 
+     .line 767
+     invoke-static {v1, v3}, Lo/a2;->Β(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;
+@@ -1679,7 +1688,7 @@
+     .line 775
+     .line 776
+     :cond_1a
+-    sput-object v2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;
++    invoke-static {v2}, Lcom/byd/launcher/stability/BlurPipeline;->blurred(Ljava/lang/Object;)V
+ 
+     .line 777
+     .line 778
+@@ -1776,7 +1785,7 @@
+     .line 820
+     .line 821
+     .line 822
+-    invoke-virtual {v1, v2}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    invoke-static {v2}, Lcom/byd/launcher/stability/BlurPipeline;->publish(Ljava/lang/Runnable;)V
+ 
+     .line 823
+     .line 824
+@@ -1786,44 +1795,10 @@
+     .line 826
+     :cond_1d
+     :goto_10
+-    iget v0, v8, Lcom/byd/launcher/MainActivity;->Ι:I
+-
+-    .line 827
+-    .line 828
+-    if-ge v0, v4, :cond_1e
+-
+-    .line 829
+-    .line 830
+-    iget v0, v8, Lcom/byd/launcher/MainActivity;->Ι:I
+-
+-    .line 831
+-    .line 832
+-    add-int/lit8 v0, v0, 0x1
+-
+-    .line 833
+-    .line 834
+-    iput v0, v8, Lcom/byd/launcher/MainActivity;->Ι:I
+-
+-    .line 835
+-    .line 836
+-    iget-object v0, v8, Lcom/byd/launcher/MainActivity;->ˋ:Landroid/os/Handler;
+-
+-    .line 837
+-    .line 838
+     new-instance v1, Lo/y7;
+-
+-    .line 839
+-    .line 840
+     const/16 v4, 0xe
+-
+-    .line 841
+-    .line 842
+     invoke-direct {v1, v8, v4}, Lo/y7;-><init>(Lcom/byd/launcher/MainActivity;I)V
+-
+-    .line 843
+-    .line 844
+-    .line 845
+-    invoke-virtual {v0, v1, v2, v3}, Landroid/os/Handler;->postDelayed(Ljava/lang/Runnable;J)Z
++    invoke-static {v1, v2, v3}, Lcom/byd/launcher/stability/BlurPipeline;->retry(Ljava/lang/Runnable;J)V
+     :try_end_4
+     .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_4
+ 

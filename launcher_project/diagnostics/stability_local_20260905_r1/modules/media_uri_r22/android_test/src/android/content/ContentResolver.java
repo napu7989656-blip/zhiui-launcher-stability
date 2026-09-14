@@ -1,0 +1,1 @@
+package android.content; import java.io.*; public class ContentResolver { public InputStream stream; public RuntimeException failure; public int opens; public InputStream openInputStream(android.net.Uri uri) throws FileNotFoundException {opens++;if(failure!=null)throw failure;return stream;} }

@@ -1,0 +1,27 @@
+{
+  "classes": {
+    "com/byd/launcher/stability/ArtworkInput$Budget.class": "41cc025c7f80f56395170bc17ff1653220d26fe119ff30443a0008741e8afa80",
+    "com/byd/launcher/stability/ArtworkInput$Clock.class": "e467a8bd7af5f473f4df1203c54964e5dd05ecd1534f092c0b2c2ead2a5f7d29",
+    "com/byd/launcher/stability/ArtworkInput$Connections.class": "14deeee328e181e4a886817d7ec4f350d3c243de615e155c4316fe85fc60c058",
+    "com/byd/launcher/stability/ArtworkInput$Gate.class": "a211864deef27c33f86973841090b471083868be55fc30dfd1432034c412d974",
+    "com/byd/launcher/stability/ArtworkInput.class": "399d56d7696c4e4a7f631ec042033999e716d7f9c795b430bd4883531c57d4df",
+    "com/byd/launcher/stability/MediaArtworkPipeline$1.class": "3351173c40265d919902bae32d5ca5145288acd2ca26794d2311595a58745545",
+    "com/byd/launcher/stability/MediaArtworkPipeline$2.class": "eef470940aa9045f290c44fead9067a895dd2fdf47e1b5a7c5224667e4b5ff8a",
+    "com/byd/launcher/stability/MediaArtworkPipeline$Host.class": "be2a2a29b90fe1730d0bc0b30faba65f53826f5e59a473af018e09b50a6d6dad",
+    "com/byd/launcher/stability/MediaArtworkPipeline$Input.class": "707a7c342a6981b0ed5903ec0f28cbcc4c30174cbcad4e4fcd0dcac5740df240",
+    "com/byd/launcher/stability/MediaArtworkPipeline.class": "70f27c033a6e182e338f7407ffd797ebfdefd0557100652c8a5f96ee8902fac5",
+    "com/byd/launcher/stability/MediaArtworkWork$1.class": "0a8519061bf0eed6c2cf01b1ae61a1983d9d0656a5b6c447fa9e8e9a982513ed",
+    "com/byd/launcher/stability/MediaArtworkWork$Delivery.class": "0dc4f5fd7a6e78679145e15b1a75652a727a144d05d1103442a582815cdbbb55",
+    "com/byd/launcher/stability/MediaArtworkWork$Host.class": "6b548a2d35d43ac496f36d3d83756973750c23dc96485719c8b6f28c73f445b6",
+    "com/byd/launcher/stability/MediaArtworkWork$Job.class": "823d35cf76daaca785165756043aabf9bc7f1fbc1b7dc795cc0bdc22cec868c5",
+    "com/byd/launcher/stability/MediaArtworkWork$Request.class": "fcb9ae970e289b62f6ce3844804b121579f12f5d7d1ef587dd777eeaf8037397",
+    "com/byd/launcher/stability/MediaArtworkWork$Result.class": "a45c76c8dbf1226cab833c32e0f9735c6b1176244ae23c5b7caa0ab09bcfe433",
+    "com/byd/launcher/stability/MediaArtworkWork.class": "36a70469d36875abbf7fd04ba8e042584c493c520c653dc485fb6005bbcdb22a",
+    "com/byd/launcher/stability/MediaUriReader$1.class": "fe11d2ec9a6ff503cb2838d17b147974aaa105669b7362f618a29658215d6bce",
+    "com/byd/launcher/stability/MediaUriReader$2.class": "12b0c089c8371d6bcc446aec62a9738af34acd650624181e74a9815b2a822253",
+    "com/byd/launcher/stability/MediaUriReader$3.class": "a9825a5cae1cfa181de66d3b0027a6818286ccff296f1ede58231ac54b436fb0",
+    "com/byd/launcher/stability/MediaUriReader.class": "52f6bebba58865e5492a00ab7fcc3b5e0cf087c69a293f27b09b0d059613625a"
+  },
+  "test_and_d8_class_directory_same": true,
+  "test_stubs_excluded_from_dex": true
+}

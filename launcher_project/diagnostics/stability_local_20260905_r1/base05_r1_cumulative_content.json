@@ -1,0 +1,223 @@
+{
+  "changed_files": [
+    "res/values/ids.xml",
+    "res/values/public.xml",
+    "smali/com/byd/launcher/MainActivity.smali",
+    "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+    "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+    "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+    "smali/o/ak.smali",
+    "smali/o/sj.smali",
+    "smali/o/tj.smali",
+    "smali/o/y7.smali"
+  ],
+  "methods_accounted": [
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final onDestroy()V",
+      "line": 2415,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final \u0371()V",
+      "line": 2955,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+      "method": "public static read(Ljava/lang/String;)Landroid/graphics/Bitmap;",
+      "line": 5,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+      "method": "private static releaseQuietly(Landroid/media/MediaMetadataRetriever;)V",
+      "line": 35,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "private constructor <init>()V",
+      "line": 16,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "public static create()Ljava/util/concurrent/ExecutorService;",
+      "line": 39,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperExecutor.smali",
+      "method": "public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public constructor <init>(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V",
+      "line": 12,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public static submit(Lo/ak;Ljava/lang/String;Landroid/graphics/Bitmap;Landroid/widget/ImageView;)V",
+      "line": 26,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "method": "public final run()V",
+      "line": 41,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public constructor <init>(Lcom/byd/launcher/MainActivity;Ljava/util/List;)V",
+      "line": 76,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public static \u0373(Landroid/graphics/Bitmap;)V",
+      "line": 526,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 685,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final onDetachedFromRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V",
+      "line": 1599,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final \u02cb(I)Landroid/graphics/Bitmap;",
+      "line": 1635,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "method": "public final \u0372(I)V",
+      "line": 1773,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/sj.smali",
+      "method": "public final run()V",
+      "line": 56,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/tj.smali",
+      "method": "public final run()V",
+      "line": 43,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    },
+    {
+      "path": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 1185,
+      "status": "PATCH_ACCOUNTED; scoped tests/manual review, not full-method ART validation"
+    }
+  ],
+  "protected_apks": [
+    {
+      "apk": "ORIGINAL_BASELINE.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "original.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "\u667aUI_V0.4.2.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "Launcher_Rebuild_Test.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v2.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.1-wallpaper-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.10-lyrics-expanded-no-clock-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.11-lyrics-click-music-app-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.2-wallpaper-statusbar-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.3-wallpaper-statusbar-stability-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.4-netease-lyrics-auth-prep.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.1-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.2-netease-car-mediasession-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.5.3-statusbar-flicker-fix.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.6-lrclib-lyrics.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.7-dd-aircon-popup-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.7-dd-aircon-popup.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.8-global-system-bars-toggle-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-final-v3.9-home-return-fix-r1.apk",
+      "unchanged": true
+    },
+    {
+      "apk": "zhiui-stability-s1-systembars-r1.apk",
+      "unchanged": true
+    }
+  ],
+  "original_resource_declarations_preserved": true,
+  "shared_vehicle_selectors_unchanged": true,
+  "status": "CUMULATIVE_BASE01_TO_BASE05_CONTENT_PASS; FULL_V2_V3_AUDIT_AND_FEATURE_REINTEGRATION_INCOMPLETE; NO_VEHICLE_TEST"
+}

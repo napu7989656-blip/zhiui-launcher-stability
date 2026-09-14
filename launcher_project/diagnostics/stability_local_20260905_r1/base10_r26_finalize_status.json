@@ -1,0 +1,27 @@
+{
+  "checks_passed": true,
+  "jadx": [
+    {
+      "cls": "o.qi",
+      "exit_code": 0,
+      "log": "base10_r26_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.ki",
+      "exit_code": 0,
+      "log": "base10_r26_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.\u02cb",
+      "exit_code": 1,
+      "log": "base10_r26_jadx_2_debug.txt",
+      "output_exists": false,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "JADX errors require explicit review; scoped local checks, not full-plan/ART/vehicle validation"
+}

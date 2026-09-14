@@ -1,0 +1,336 @@
+--- r10/smali/o/ff.smali
++++ r11/smali/o/ff.smali
+@@ -12,6 +12,9 @@
+ 
+ 
+ # instance fields
++.field public final stabilityNavSlot:Lcom/byd/launcher/stability/TileSlot;
++.field public final stabilityNavActionGate:Lcom/byd/launcher/stability/ReadAfterAction;
++.field public volatile stabilityNavTracking:Z
+ .field public final stabilityThemeSlot:Lcom/byd/launcher/stability/TileSlot;
+ .field public final stabilitySocActionGate:Lcom/byd/launcher/stability/ReadAfterAction;
+ .field public final stabilitySocSlot:Lcom/byd/launcher/stability/TileSlot;
+@@ -151,6 +154,13 @@
+     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+     new-instance v0, Lcom/byd/launcher/stability/TileSlot;
+     invoke-direct {v0}, Lcom/byd/launcher/stability/TileSlot;-><init>()V
++    iput-object v0, p0, Lo/ff;->stabilityNavSlot:Lcom/byd/launcher/stability/TileSlot;
++    new-instance v0, Lcom/byd/launcher/stability/ReadAfterAction;
++    invoke-direct {v0}, Lcom/byd/launcher/stability/ReadAfterAction;-><init>()V
++    iput-object v0, p0, Lo/ff;->stabilityNavActionGate:Lcom/byd/launcher/stability/ReadAfterAction;
++
++    new-instance v0, Lcom/byd/launcher/stability/TileSlot;
++    invoke-direct {v0}, Lcom/byd/launcher/stability/TileSlot;-><init>()V
+     iput-object v0, p0, Lo/ff;->stabilityThemeSlot:Lcom/byd/launcher/stability/TileSlot;
+ 
+     new-instance v0, Lcom/byd/launcher/stability/ReadAfterAction;
+@@ -500,6 +510,7 @@
+     invoke-virtual {v0}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/NavRead;->close(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/ThemeRead;->close(Lo/ff;)V
+     iget-boolean v0, p0, Lo/ff;->ͺ:Z
+ 
+@@ -2938,6 +2949,7 @@
+     invoke-virtual {v0}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/NavRead;->close(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/ThemeRead;->close(Lo/ff;)V
+ 
+     .line 1
+@@ -4322,6 +4334,7 @@
+     .line 1
+     invoke-static {p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/NavRead;->close(Lo/ff;)V
+     invoke-virtual {p0}, Lo/ff;->Ͳ()V
+ 
+     .line 2
+@@ -5917,6 +5930,7 @@
+     invoke-virtual {v2}, Lcom/byd/launcher/stability/InstrumentReads;->invalidate()V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/TileSnapshots;->invalidate(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/SocRead;->close(Lo/ff;)V
++    invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/NavRead;->close(Lo/ff;)V
+     invoke-static/range {p0 .. p0}, Lcom/byd/launcher/stability/ThemeRead;->close(Lo/ff;)V
+     invoke-static {p0}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->cancelQueued(Ljava/lang/Object;)V
+     const/4 v1, 0x0
+--- r10/smali/o/je.smali
++++ r11/smali/o/je.smali
+@@ -7,6 +7,7 @@
+ 
+ 
+ # instance fields
++.field public final stabilityNavRead:Lcom/byd/launcher/stability/NavRead;
+ .field public final stabilityInstrumentRequest:Lcom/byd/launcher/stability/InstrumentReads$Request;
+ .field public final stabilityNavTicket:Lcom/byd/launcher/stability/LatestRead$Ticket;
+ .field public final stabilityNavRoot:Landroid/view/View;
+@@ -50,6 +51,9 @@
+     iput-object v0, p0, Lo/je;->stabilityNavTicket:Lcom/byd/launcher/stability/LatestRead$Ticket;
+     iget-object v0, p1, Lo/ff;->ͳ:Landroid/view/View;
+     iput-object v0, p0, Lo/je;->stabilityNavRoot:Landroid/view/View;
++    new-instance v0, Lcom/byd/launcher/stability/NavRead;
++    invoke-direct {v0, p1}, Lcom/byd/launcher/stability/NavRead;-><init>(Lo/ff;)V
++    iput-object v0, p0, Lo/je;->stabilityNavRead:Lcom/byd/launcher/stability/NavRead;
+     :nav_capture_done
+ 
+     const/4 v0, 0x1
+@@ -418,6 +422,12 @@
+ 
+     .line 171
+     :pswitch_1
++    iget-object v0, p0, Lo/je;->stabilityNavRead:Lcom/byd/launcher/stability/NavRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/NavRead;->current()Z
++    move-result v0
++    if-nez v0, :nav_worker_current_pswitch_1
++    return-void
++    :nav_worker_current_pswitch_1
+     iget-object v0, p0, Lo/je;->ͱ:Lo/ff;
+ 
+     .line 172
+@@ -472,6 +482,12 @@
+ 
+     .line 197
+     :goto_1
++    iget-object v0, p0, Lo/je;->stabilityNavRead:Lcom/byd/launcher/stability/NavRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/NavRead;->current()Z
++    move-result v0
++    if-nez v0, :nav_worker_current_goto_1
++    return-void
++    :nav_worker_current_goto_1
+     iget-object v0, p0, Lo/je;->ͱ:Lo/ff;
+ 
+     .line 198
+--- r10/smali/o/se.smali
++++ r11/smali/o/se.smali
+@@ -231,6 +231,10 @@
+ 
+     .line 78
+     :goto_2
++    if-eqz p3, :nav_programmatic_progress
++    iget-object v1, p0, Lo/se;->Ͱ:Lo/ff;
++    invoke-static {v1}, Lcom/byd/launcher/stability/NavRead;->changed(Lo/ff;)V
++    :nav_programmatic_progress
+     iget-object p1, p0, Lo/se;->ˏ:Landroid/widget/TextView;
+ 
+     .line 79
+@@ -268,6 +272,16 @@
+ 
+ .method public final onStartTrackingTouch(Landroid/widget/SeekBar;)V
+     .locals 2
++    iget v0, p0, Lo/se;->ˋ:I
++    const/4 v1, 0x2
++    if-ne v0, v1, :nav_start_done
++    iget-object v0, p0, Lo/se;->Ͱ:Lo/ff;
++    invoke-static {v0}, Lcom/byd/launcher/stability/QuickSettingsLifetime;->isDisposed(Ljava/lang/Object;)Z
++    move-result v1
++    if-nez v1, :nav_start_done
++    const/4 v1, 0x1
++    invoke-static {v0, v1}, Lcom/byd/launcher/stability/NavRead;->tracking(Lo/ff;Z)V
++    :nav_start_done
+     iget v0, p0, Lo/se;->ˋ:I
+     const/4 v1, 0x1
+     if-ne v0, v1, :done
+@@ -561,6 +575,9 @@
+ 
+     .line 123
+     :goto_4
++    iget-object v3, p0, Lo/se;->Ͱ:Lo/ff;
++    const/4 v4, 0x0
++    invoke-static {v3, v4}, Lcom/byd/launcher/stability/NavRead;->tracking(Lo/ff;Z)V
+     invoke-virtual {p1}, Landroid/widget/ProgressBar;->getProgress()I
+ 
+     .line 124
+--- r10/smali/o/de.smali
++++ r11/smali/o/de.smali
+@@ -7,6 +7,7 @@
+ 
+ 
+ # instance fields
++.field public final stabilityNavActionToken:Lcom/byd/launcher/stability/ReadAfterAction$Token;
+ .field public final synthetic Ͱ:I
+ 
+ .field public final synthetic ͱ:Lo/ff;
+@@ -16,7 +17,7 @@
+ 
+ # direct methods
+ .method public synthetic constructor <init>(Lo/ff;II)V
+-    .locals 0
++    .locals 1
+ 
+     .line 1
+     iput p3, p0, Lo/de;->Ͱ:I
+@@ -36,6 +37,12 @@
+     .line 8
+     .line 9
+     .line 10
++    const/4 v0, 0x1
++    if-ne p3, v0, :nav_action_capture_done
++    invoke-static {p1}, Lcom/byd/launcher/stability/NavAction;->begin(Lo/ff;)Lcom/byd/launcher/stability/ReadAfterAction$Token;
++    move-result-object v0
++    iput-object v0, p0, Lo/de;->stabilityNavActionToken:Lcom/byd/launcher/stability/ReadAfterAction$Token;
++    :nav_action_capture_done
+     return-void
+ .end method
+ 
+@@ -256,6 +263,7 @@
+     .line 99
+     :cond_3
+     :goto_1
++    invoke-static {p0}, Lcom/byd/launcher/stability/NavAction;->finishJob(Lo/de;)V
+     return-void
+ 
+     .line 100
+--- r10/smali/com/byd/launcher/stability/NavVolumeApply.smali
++++ r11/smali/com/byd/launcher/stability/NavVolumeApply.smali
+@@ -18,9 +18,8 @@
+     .locals 2
+     new-instance v0, Lcom/byd/launcher/stability/NavVolumeApply;
+     invoke-direct {v0, p0, p1, p2}, Lcom/byd/launcher/stability/NavVolumeApply;-><init>(Lo/je;ILjava/lang/Runnable;)V
+-    iget-object v1, p0, Lo/je;->ͱ:Lo/ff;
+-    iget-object v1, v1, Lo/ff;->Ͱ:Landroid/os/Handler;
+-    invoke-virtual {v1, v0}, Landroid/os/Handler;->post(Ljava/lang/Runnable;)Z
++    iget-object v1, p0, Lo/je;->stabilityNavRead:Lcom/byd/launcher/stability/NavRead;
++    invoke-virtual {v1, v0}, Lcom/byd/launcher/stability/NavRead;->post(Ljava/lang/Runnable;)V
+     return-void
+ .end method
+ 
+--- r10/smali/com/byd/launcher/stability/NavRead.smali
++++ r11/smali/com/byd/launcher/stability/NavRead.smali
+@@ -0,0 +1,80 @@
++.class public final Lcom/byd/launcher/stability/NavRead;
++.super Ljava/lang/Object;
++.field public final batch:Lcom/byd/launcher/stability/TileBatch;
++.field public final ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++.method public constructor <init>(Lo/ff;)V
++    .locals 5
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    new-instance v0, Lcom/byd/launcher/stability/TileBatch;
++    move-object v1, p1
++    iget-object v2, p1, Lo/ff;->ͳ:Landroid/view/View;
++    iget-object v3, p1, Lo/ff;->stabilityTileEpoch:Ljava/lang/Object;
++    new-instance v4, Lcom/byd/launcher/stability/TileSnapshots;
++    invoke-direct {v4, p1}, Lcom/byd/launcher/stability/TileSnapshots;-><init>(Lo/ff;)V
++    invoke-direct {v0, v1, v2, v3, v4}, Lcom/byd/launcher/stability/TileBatch;-><init>(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;Lcom/byd/launcher/stability/TileSlot$Queue;)V
++    iput-object v0, p0, Lcom/byd/launcher/stability/NavRead;->batch:Lcom/byd/launcher/stability/TileBatch;
++    iget-object v0, p1, Lo/ff;->stabilityNavSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->begin()Lcom/byd/launcher/stability/TileSlot$Ticket;
++    move-result-object v0
++    iput-object v0, p0, Lcom/byd/launcher/stability/NavRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    return-void
++.end method
++.method public current()Z
++    .locals 3
++    iget-object v0, p0, Lcom/byd/launcher/stability/NavRead;->batch:Lcom/byd/launcher/stability/TileBatch;
++    invoke-static {v0}, Lcom/byd/launcher/stability/TileSnapshots;->usable(Lcom/byd/launcher/stability/TileBatch;)Z
++    move-result v1
++    if-eqz v1, :no
++    iget-object v0, v0, Lcom/byd/launcher/stability/TileBatch;->owner:Ljava/lang/Object;
++    check-cast v0, Lo/ff;
++    iget-boolean v1, v0, Lo/ff;->stabilityNavTracking:Z
++    if-nez v1, :no
++    iget-object v0, v0, Lo/ff;->stabilityNavActionGate:Lcom/byd/launcher/stability/ReadAfterAction;
++    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
++    move-result-wide v1
++    invoke-virtual {v0, v1, v2}, Lcom/byd/launcher/stability/ReadAfterAction;->blocked(J)Z
++    move-result v0
++    if-nez v0, :no
++    iget-object v0, p0, Lcom/byd/launcher/stability/NavRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot$Ticket;->isCurrent()Z
++    move-result v0
++    return v0
++    :no
++    const/4 v0, 0x0
++    return v0
++.end method
++.method public post(Ljava/lang/Runnable;)V
++    .locals 4
++    invoke-virtual {p0}, Lcom/byd/launcher/stability/NavRead;->current()Z
++    move-result v0
++    if-eqz v0, :done
++    iget-object v0, p0, Lcom/byd/launcher/stability/NavRead;->ticket:Lcom/byd/launcher/stability/TileSlot$Ticket;
++    iget-object v1, p0, Lcom/byd/launcher/stability/NavRead;->batch:Lcom/byd/launcher/stability/TileBatch;
++    iget-object v1, v1, Lcom/byd/launcher/stability/TileBatch;->queue:Lcom/byd/launcher/stability/TileSlot$Queue;
++    new-instance v2, Lcom/byd/launcher/stability/NavDeliver;
++    invoke-direct {v2, p0, p1}, Lcom/byd/launcher/stability/NavDeliver;-><init>(Lcom/byd/launcher/stability/NavRead;Ljava/lang/Runnable;)V
++    invoke-virtual {v0, v1, v2}, Lcom/byd/launcher/stability/TileSlot$Ticket;->post(Lcom/byd/launcher/stability/TileSlot$Queue;Ljava/lang/Runnable;)Z
++    :done
++    return-void
++.end method
++.method public static tracking(Lo/ff;Z)V
++    .locals 1
++    iput-boolean p1, p0, Lo/ff;->stabilityNavTracking:Z
++    iget-object v0, p0, Lo/ff;->stabilityNavSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->invalidate()V
++    return-void
++.end method
++.method public static changed(Lo/ff;)V
++    .locals 1
++    iget-object v0, p0, Lo/ff;->stabilityNavSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->invalidate()V
++    return-void
++.end method
++.method public static close(Lo/ff;)V
++    .locals 1
++    const/4 v0, 0x0
++    invoke-static {p0, v0}, Lcom/byd/launcher/stability/NavRead;->tracking(Lo/ff;Z)V
++    iget-object v0, p0, Lo/ff;->stabilityNavActionGate:Lcom/byd/launcher/stability/ReadAfterAction;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/ReadAfterAction;->reset()V
++    return-void
++.end method
+--- r10/smali/com/byd/launcher/stability/NavDeliver.smali
++++ r11/smali/com/byd/launcher/stability/NavDeliver.smali
+@@ -0,0 +1,23 @@
++.class public final Lcom/byd/launcher/stability/NavDeliver;
++.super Ljava/lang/Object;
++.implements Ljava/lang/Runnable;
++.field private final read:Lcom/byd/launcher/stability/NavRead;
++.field private final delegate:Ljava/lang/Runnable;
++.method public constructor <init>(Lcom/byd/launcher/stability/NavRead;Ljava/lang/Runnable;)V
++    .locals 0
++    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
++    iput-object p1, p0, Lcom/byd/launcher/stability/NavDeliver;->read:Lcom/byd/launcher/stability/NavRead;
++    iput-object p2, p0, Lcom/byd/launcher/stability/NavDeliver;->delegate:Ljava/lang/Runnable;
++    return-void
++.end method
++.method public run()V
++    .locals 1
++    iget-object v0, p0, Lcom/byd/launcher/stability/NavDeliver;->read:Lcom/byd/launcher/stability/NavRead;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/NavRead;->current()Z
++    move-result v0
++    if-eqz v0, :done
++    iget-object v0, p0, Lcom/byd/launcher/stability/NavDeliver;->delegate:Ljava/lang/Runnable;
++    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
++    :done
++    return-void
++.end method
+--- r10/smali/com/byd/launcher/stability/NavAction.smali
++++ r11/smali/com/byd/launcher/stability/NavAction.smali
+@@ -0,0 +1,26 @@
++.class public final Lcom/byd/launcher/stability/NavAction;
++.super Ljava/lang/Object;
++.method public static begin(Lo/ff;)Lcom/byd/launcher/stability/ReadAfterAction$Token;
++    .locals 4
++    iget-object v0, p0, Lo/ff;->stabilityNavSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->invalidate()V
++    iget-object v0, p0, Lo/ff;->stabilityNavActionGate:Lcom/byd/launcher/stability/ReadAfterAction;
++    invoke-static {}, Landroid/os/SystemClock;->uptimeMillis()J
++    move-result-wide v1
++    invoke-virtual {v0, v1, v2}, Lcom/byd/launcher/stability/ReadAfterAction;->begin(J)Lcom/byd/launcher/stability/ReadAfterAction$Token;
++    move-result-object v0
++    return-object v0
++.end method
++.method public static finishJob(Lo/de;)V
++    .locals 2
++    iget-object v0, p0, Lo/de;->stabilityNavActionToken:Lcom/byd/launcher/stability/ReadAfterAction$Token;
++    if-eqz v0, :done
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/ReadAfterAction$Token;->finish()Z
++    move-result v0
++    if-eqz v0, :done
++    iget-object v0, p0, Lo/de;->ͱ:Lo/ff;
++    iget-object v0, v0, Lo/ff;->stabilityNavSlot:Lcom/byd/launcher/stability/TileSlot;
++    invoke-virtual {v0}, Lcom/byd/launcher/stability/TileSlot;->invalidate()V
++    :done
++    return-void
++.end method

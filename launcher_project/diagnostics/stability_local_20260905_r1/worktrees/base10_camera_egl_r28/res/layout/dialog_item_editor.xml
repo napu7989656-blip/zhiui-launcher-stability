@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/editor_panel" android:background="#ff000000" android:paddingTop="24.0dp" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="32.0dp" android:paddingEnd="32.0dp">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp">
+            <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ffffff" android:layout_gravity="center_horizontal" android:id="@id/editor_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="自定义" />
+            <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="#ff29b6f6" android:layout_gravity="end|center" android:id="@id/btn_editor_done" android:background="@drawable/btn_nav_ripple" android:paddingLeft="16.0dp" android:paddingTop="6.0dp" android:paddingRight="16.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="完成" android:paddingHorizontal="16.0dp" android:paddingVertical="6.0dp" />
+        </FrameLayout>
+        <View android:background="#22ffffff" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginBottom="16.0dp" />
+        <TextView android:textSize="12.0sp" android:textColor="#66ffffff" android:gravity="center" android:id="@id/tv_editor_hint" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp" android:text="点击图标进行增删编辑" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_editor_items" android:paddingBottom="16.0dp" android:clipToPadding="false" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0" />
+    </LinearLayout>
+</FrameLayout>

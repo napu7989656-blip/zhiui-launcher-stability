@@ -1,0 +1,108 @@
+.class public final Lcom/byd/launcher/stability/WallpaperExecutor;
+.super Ljava/lang/Object;
+.source "WallpaperExecutor.java"
+
+# interfaces
+.implements Ljava/util/concurrent/ThreadFactory;
+
+
+# instance fields
+.field private final delegate:Ljava/util/concurrent/ThreadFactory;
+
+.field private final sequence:Ljava/util/concurrent/atomic/AtomicInteger;
+
+
+# direct methods
+.method private constructor <init>()V
+    .locals 1
+
+    .line 16
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 13
+    invoke-static {}, Ljava/util/concurrent/Executors;->defaultThreadFactory()Ljava/util/concurrent/ThreadFactory;
+
+    move-result-object v0
+
+    iput-object v0, p0, Lcom/byd/launcher/stability/WallpaperExecutor;->delegate:Ljava/util/concurrent/ThreadFactory;
+
+    .line 14
+    new-instance v0, Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicInteger;-><init>()V
+
+    iput-object v0, p0, Lcom/byd/launcher/stability/WallpaperExecutor;->sequence:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    return-void
+.end method
+
+.method public static create()Ljava/util/concurrent/ExecutorService;
+    .locals 10
+
+    .line 24
+    new-instance v9, Ljava/util/concurrent/ThreadPoolExecutor;
+
+    sget-object v5, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
+
+    new-instance v6, Ljava/util/concurrent/ArrayBlockingQueue;
+
+    const/4 v0, 0x4
+
+    invoke-direct {v6, v0}, Ljava/util/concurrent/ArrayBlockingQueue;-><init>(I)V
+
+    new-instance v7, Lcom/byd/launcher/stability/WallpaperExecutor;
+
+    invoke-direct {v7}, Lcom/byd/launcher/stability/WallpaperExecutor;-><init>()V
+
+    new-instance v8, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;
+
+    invoke-direct {v8}, Ljava/util/concurrent/ThreadPoolExecutor$DiscardOldestPolicy;-><init>()V
+
+    const/4 v1, 0x2
+
+    const/4 v2, 0x2
+
+    const-wide/16 v3, 0x0
+
+    move-object v0, v9
+
+    invoke-direct/range {v0 .. v8}, Ljava/util/concurrent/ThreadPoolExecutor;-><init>(IIJLjava/util/concurrent/TimeUnit;Ljava/util/concurrent/BlockingQueue;Ljava/util/concurrent/ThreadFactory;Ljava/util/concurrent/RejectedExecutionHandler;)V
+
+    return-object v9
+.end method
+
+
+# virtual methods
+.method public newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+    .locals 2
+
+    .line 30
+    iget-object v0, p0, Lcom/byd/launcher/stability/WallpaperExecutor;->delegate:Ljava/util/concurrent/ThreadFactory;
+
+    invoke-interface {v0, p1}, Ljava/util/concurrent/ThreadFactory;->newThread(Ljava/lang/Runnable;)Ljava/lang/Thread;
+
+    move-result-object p1
+
+    .line 31
+    new-instance v0, Ljava/lang/StringBuilder;
+
+    const-string v1, "ZhiUI-Wallpaper-"
+
+    invoke-direct {v0, v1}, Ljava/lang/StringBuilder;-><init>(Ljava/lang/String;)V
+
+    iget-object v1, p0, Lcom/byd/launcher/stability/WallpaperExecutor;->sequence:Ljava/util/concurrent/atomic/AtomicInteger;
+
+    invoke-virtual {v1}, Ljava/util/concurrent/atomic/AtomicInteger;->incrementAndGet()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Ljava/lang/Thread;->setName(Ljava/lang/String;)V
+
+    return-object p1
+.end method

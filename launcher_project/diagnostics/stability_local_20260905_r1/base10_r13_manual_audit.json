@@ -1,0 +1,41 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "D1654AAF19AB7E32740993ABD3A7A0BBE156223623EF045EBA4409C58754F7CE",
+  "delta_files": 4,
+  "cumulative_files": 100,
+  "source_final_cases": 223,
+  "jvm_assertions": 5010,
+  "review": [
+    "ff constructor initializes two slots; close/dispose/root replacement invalidate both; start invalidates before disabled/null exits and uses pool category9",
+    "GlassRead checks controller/service/root/epoch via TileSnapshots, exact target view and ticket; prepares and results use independent bounded slots",
+    "x9 only selector1 gains guard and routing; final sleep catch restores interruption and returns, normal path rechecks ownership; original drawable colors and pe callbacks preserved",
+    "constructor ff,bool,View assigns read after selector set; unrelated constructor/selectors preserved by exact inverse patch",
+    "lII16 delegates into MainActivity blur generation: that downstream chain is explicitly still unfinished"
+  ],
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.stability.GlassRead",
+      "exit_code": 0,
+      "log": "base10_r13_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.GlassDeliver",
+      "exit_code": 0,
+      "log": "base10_r13_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.x9",
+      "exit_code": 3,
+      "log": "base10_r13_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "jadx_caveats": "GlassRead/GlassDeliver decompile. x9.run is not fully decompiled, with removed-region warning. The sole reported ERROR is the existing NavBarService.Ε RegionMaker error. Final x9 smali confirms post-sleep guard, InterruptedException handler and guarded prepare/result routing.",
+  "test_limits": "29 glass plus194 inherited scenarios per source/final; Android/Bitmap/await doubles in smali interpreter. JVM5010 executes existing pool and slots. No ART/OEM/vehicle proof.",
+  "next_module": "LatestVisualWork JVM8024 assertions passed, not integrated into R13 APK; MainActivity blur ownership/bitmap cleanup still pending."
+}

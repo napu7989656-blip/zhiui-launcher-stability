@@ -1,0 +1,4 @@
+{
+  "output": "PASS 12073 assertions; real bounded worker, source ownership, invalidation, children and retries; Android bridge still requires integration checks.",
+  "apk_integration": false
+}

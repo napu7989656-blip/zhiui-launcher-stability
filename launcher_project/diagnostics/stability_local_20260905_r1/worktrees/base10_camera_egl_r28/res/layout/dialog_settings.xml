@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="#99000000" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:id="@id/settings_main_container" android:layout_width="720.0dp" android:layout_height="520.0dp" android:elevation="8.0dp">
+        <LinearLayout android:orientation="vertical" android:id="@id/nav_menu_container" android:paddingTop="16.0dp" android:paddingBottom="16.0dp" android:layout_width="160.0dp" android:layout_height="match_parent">
+            <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_settings_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="设置" android:layout_marginStart="20.0dp" />
+            <ScrollView android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent">
+                <LinearLayout android:orientation="vertical" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <FrameLayout android:id="@id/nav_basic" android:background="?android:selectableItemBackground" android:layout_width="match_parent" android:layout_height="48.0dp">
+                        <View android:layout_gravity="start|center" android:id="@id/nav_indicator_basic" android:visibility="visible" android:layout_width="3.0dp" android:layout_height="24.0dp" android:layout_marginStart="12.0dp" />
+                        <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/tv_nav_basic" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="基本设置" android:layout_marginStart="22.0dp" />
+                    </FrameLayout>
+                    <FrameLayout android:id="@id/nav_widget" android:background="?android:selectableItemBackground" android:layout_width="match_parent" android:layout_height="48.0dp">
+                        <View android:layout_gravity="start|center" android:id="@id/nav_indicator_widget" android:visibility="invisible" android:layout_width="3.0dp" android:layout_height="24.0dp" android:layout_marginStart="12.0dp" />
+                        <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/tv_nav_widget" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="控件设置" android:layout_marginStart="22.0dp" />
+                    </FrameLayout>
+                    <FrameLayout android:id="@id/nav_theme" android:background="?android:selectableItemBackground" android:layout_width="match_parent" android:layout_height="48.0dp">
+                        <View android:layout_gravity="start|center" android:id="@id/nav_indicator_theme" android:visibility="invisible" android:layout_width="3.0dp" android:layout_height="24.0dp" android:layout_marginStart="12.0dp" />
+                        <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/tv_nav_theme" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="主题壁纸" android:layout_marginStart="22.0dp" />
+                    </FrameLayout>
+                    <FrameLayout android:id="@id/nav_system" android:background="?android:selectableItemBackground" android:layout_width="match_parent" android:layout_height="48.0dp">
+                        <View android:layout_gravity="start|center" android:id="@id/nav_indicator_system" android:visibility="invisible" android:layout_width="3.0dp" android:layout_height="24.0dp" android:layout_marginStart="12.0dp" />
+                        <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/tv_nav_system" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="系统设置" android:layout_marginStart="22.0dp" />
+                    </FrameLayout>
+                    <FrameLayout android:id="@id/nav_swc" android:background="?android:selectableItemBackground" android:layout_width="match_parent" android:layout_height="48.0dp">
+                        <View android:layout_gravity="start|center" android:id="@id/nav_indicator_swc" android:visibility="invisible" android:layout_width="3.0dp" android:layout_height="24.0dp" android:layout_marginStart="12.0dp" />
+                        <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/tv_nav_swc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="方控设置" android:layout_marginStart="22.0dp" />
+                    </FrameLayout>
+                    <FrameLayout android:id="@id/nav_tts" android:background="?android:selectableItemBackground" android:visibility="gone" android:layout_width="match_parent" android:layout_height="48.0dp">
+                        <View android:layout_gravity="start|center" android:id="@id/nav_indicator_tts" android:visibility="invisible" android:layout_width="3.0dp" android:layout_height="24.0dp" android:layout_marginStart="12.0dp" />
+                        <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/tv_nav_tts" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="语音播报" android:layout_marginStart="22.0dp" />
+                    </FrameLayout>
+                    <FrameLayout android:id="@id/nav_turn_signal" android:background="?android:selectableItemBackground" android:layout_width="match_parent" android:layout_height="48.0dp">
+                        <View android:layout_gravity="start|center" android:id="@id/nav_indicator_turn_signal" android:visibility="invisible" android:layout_width="3.0dp" android:layout_height="24.0dp" android:layout_marginStart="12.0dp" />
+                        <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/tv_nav_turn_signal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="其他设置" android:layout_marginStart="22.0dp" />
+                    </FrameLayout>
+                    <FrameLayout android:id="@id/nav_about" android:background="?android:selectableItemBackground" android:layout_width="match_parent" android:layout_height="48.0dp">
+                        <View android:layout_gravity="start|center" android:id="@id/nav_indicator_about" android:visibility="invisible" android:layout_width="3.0dp" android:layout_height="24.0dp" android:layout_marginStart="12.0dp" />
+                        <TextView android:textSize="14.0sp" android:layout_gravity="center_vertical" android:id="@id/tv_nav_about" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="关于我们" android:layout_marginStart="22.0dp" />
+                    </FrameLayout>
+                </LinearLayout>
+            </ScrollView>
+        </LinearLayout>
+        <FrameLayout android:id="@id/settings_content_container" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+            <ScrollView android:id="@id/page_basic" android:visibility="visible" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:orientation="vertical" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_page_basic_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="基本设置" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_clock_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="桌面时钟显示" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_clock" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_landscape_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="强制横屏" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_force_landscape" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_instrument_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="仪表导航自启动" />
+                        <ImageView android:id="@id/btn_instrument_nav_info" android:background="?android:selectableItemBackgroundBorderless" android:padding="2.0dp" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_wallpaper_info" android:scaleType="fitCenter" android:contentDescription="提示" android:layout_marginStart="6.0dp" />
+                        <View android:layout_width="0.0dp" android:layout_height="0.0dp" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_instrument_nav" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_anim_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="关闭动画效果" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_disable_anim" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_instrument_music_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="仪表显示歌曲名称" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_instrument_music" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+            <ScrollView android:id="@id/page_theme" android:visibility="gone" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:orientation="vertical" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_page_theme_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="主题壁纸" />
+                    <TextView android:textSize="16.0sp" android:textStyle="bold" android:id="@id/tv_wallpaper_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" android:text="壁纸设置" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="24.0dp" android:paddingHorizontal="12.0dp">
+                        <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_refresh_wallpaper" android:layout_width="0.0dp" android:layout_height="match_parent" android:layout_weight="1.0">
+                            <TextView android:textSize="14.0sp" android:id="@id/tv_wallpaper_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="刷新壁纸" />
+                            <ImageView android:id="@id/btn_wallpaper_info" android:background="?android:selectableItemBackgroundBorderless" android:padding="2.0dp" android:layout_width="24.0dp" android:layout_height="24.0dp" android:src="@drawable/ic_wallpaper_info" android:scaleType="fitCenter" android:contentDescription="提示" android:layout_marginStart="6.0dp" />
+                            <View android:layout_width="0.0dp" android:layout_height="0.0dp" android:layout_weight="1.0" />
+                            <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/widget_arrow_icon" android:scaleType="fitCenter" android:alpha="0.6" />
+                        </LinearLayout>
+                    </LinearLayout>
+                    <TextView android:textSize="16.0sp" android:textStyle="bold" android:id="@id/tv_car_model_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" android:text="车辆图片" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_car_model_image" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="24.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_car_model_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="自定义车控图片" android:layout_weight="1.0" />
+                        <ImageView android:id="@id/iv_car_model_preview" android:layout_width="48.0dp" android:layout_height="32.0dp" android:src="@drawable/widget_byd_song" android:scaleType="fitCenter" />
+                        <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/widget_arrow_icon" android:scaleType="fitCenter" android:alpha="0.6" android:layout_marginStart="8.0dp" />
+                    </LinearLayout>
+                    <TextView android:textSize="16.0sp" android:textStyle="bold" android:id="@id/tv_pip_title" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" android:text="画中画" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_glass_blur_option" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_glass_blur_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="模糊透明效果（面板毛玻璃背景）" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_glass_blur" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_pip_option" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_pip_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="开启画中画(双指下滑触发）" android:layout_weight="1.0" />
+                        <Switch android:enabled="true" android:id="@id/switch_pip_enabled" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+            <ScrollView android:id="@id/page_system" android:visibility="gone" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:orientation="vertical" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_page_system_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="系统设置" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_oem_statusbar_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="显示原车状态栏" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_oem_statusbar" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_oem_navbar_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="显示原车导航栏" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_oem_navbar" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_oem_control_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="显示原车控制列表" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_oem_real_statusbar" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                        <View android:layout_width="12.0dp" android:layout_height="0.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_fullscreen_apps" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_fullscreen_apps_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="应用隐藏状态栏和导航栏" android:layout_weight="1.0" />
+                        <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/widget_arrow_icon" android:scaleType="fitCenter" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_statusbar_hidden_apps" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_statusbar_hidden_apps_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="应用仅隐藏状态栏" android:layout_weight="1.0" />
+                        <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/widget_arrow_icon" android:scaleType="fitCenter" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_request_launcher" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="24.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_launcher_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="申请桌面权限" android:layout_weight="1.0" />
+                        <ImageView android:id="@id/iv_launcher_status" android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/widget_arrow_icon" android:scaleType="fitCenter" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+            <ScrollView android:id="@id/page_turn_signal" android:visibility="gone" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:orientation="vertical" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_page_turn_signal_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp" android:text="其他设置" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_turn_signal_camera_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="影像随转向灯联动" android:layout_weight="1.0" />
+                        <Switch android:enabled="false" android:id="@id/sw_turn_signal_camera" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_turn_signal_window_adjust" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_turn_signal_window_adjust_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="影像窗口调整" android:layout_weight="1.0" />
+                        <ImageView android:enabled="false" android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/widget_arrow_icon" android:scaleType="fitCenter" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_autostart_app" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_autostart_app_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="开机自启动应用" android:layout_weight="1.0" />
+                        <TextView android:textSize="12.0sp" android:id="@id/tv_autostart_app_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="未设置" android:alpha="0.7" android:layout_marginEnd="8.0dp" />
+                        <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/widget_arrow_icon" android:scaleType="fitCenter" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_autostart_return_home" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_autostart_return_home_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="启动后回到桌面" android:layout_weight="1.0" />
+                        <Switch android:id="@id/sw_autostart_return_home" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/btn_autostart_delay" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_autostart_delay_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="自启动延迟时间" android:layout_weight="1.0" />
+                        <TextView android:textSize="12.0sp" android:id="@id/tv_autostart_delay_value" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="6秒" android:alpha="0.7" android:layout_marginEnd="8.0dp" />
+                        <ImageView android:layout_width="16.0dp" android:layout_height="16.0dp" android:src="@drawable/widget_arrow_icon" android:scaleType="fitCenter" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_click_sound_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="点击音效" android:layout_weight="1.0" />
+                        <Switch android:id="@id/sw_click_sound" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:id="@id/layout_click_sound_volume" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_click_sound_volume_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="音效音量" />
+                        <SeekBar android:id="@id/seekbar_click_sound_volume" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginLeft="12.0dp" android:layout_marginRight="12.0dp" android:max="100" android:progress="50" android:layout_weight="1.0" android:layout_marginHorizontal="12.0dp" />
+                        <TextView android:textSize="12.0sp" android:gravity="end" android:id="@id/tv_click_sound_volume_value" android:layout_width="40.0dp" android:layout_height="wrap_content" android:text="50%" />
+                    </LinearLayout>
+                </LinearLayout>
+            </ScrollView>
+            <ScrollView android:id="@id/page_about" android:visibility="gone" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:gravity="center_horizontal" android:orientation="vertical" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_page_about_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="关于我们" />
+                    <TextView android:textSize="14.0sp" android:textStyle="bold" android:id="@id/tv_about_version" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="6.0dp" android:text="V0.4.2" />
+                    <TextView android:textSize="13.0sp" android:gravity="center" android:id="@id/tv_about_desc" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="本软件为业余通过AI实现，已在宋Pro DMI冠军版18控制器(23年车机版本)上测试验证" android:lineSpacingExtra="4.0dp" />
+                    <TextView android:textSize="12.0sp" android:id="@id/tv_reward_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dp" android:text="觉得好用？请作者喝杯咖啡 ☕" />
+                    <FrameLayout android:background="#ffffffff" android:padding="4.0dp" android:layout_width="160.0dp" android:layout_height="160.0dp">
+                        <ImageView android:id="@id/iv_reward_qrcode" android:layout_width="match_parent" android:layout_height="match_parent" android:src="@drawable/ic_reward_qrcode" android:scaleType="fitCenter" />
+                    </FrameLayout>
+                </LinearLayout>
+            </ScrollView>
+            <ScrollView android:id="@id/page_widget" android:visibility="gone" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:orientation="vertical" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_page_widget_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="20.0dp" android:text="控件设置" />
+                    <TextView android:textSize="14.0sp" android:id="@id/tv_map_select_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dp" android:text="地图控件 · 选择地图软件" />
+                    <Spinner android:id="@id/spinner_map_app" android:background="?android:selectableItemBackground" android:padding="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="60.0dp" />
+                    <View android:background="#22888888" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginTop="16.0dp" android:layout_marginBottom="16.0dp" android:layout_marginVertical="16.0dp" />
+                    <TextView android:textSize="14.0sp" android:id="@id/tv_music_select_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="10.0dp" android:text="音乐控件 · 选择音乐软件" />
+                    <Spinner android:id="@id/spinner_music_app" android:background="?android:selectableItemBackground" android:padding="8.0dp" android:layout_width="match_parent" android:layout_height="wrap_content" android:minHeight="60.0dp" />
+                </LinearLayout>
+            </ScrollView>
+            <ScrollView android:id="@id/page_swc" android:visibility="gone" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:orientation="vertical" android:id="@id/swc_settings_container" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_page_swc_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp" android:text="方控按键设置" />
+                    <TextView android:textSize="12.0sp" android:id="@id/tv_swc_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" android:text="自定义方向盘按键功能映射" android:alpha="0.6" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="48.0dp" android:layout_marginBottom="12.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_swc_360_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="360方控（在车辆影像中生效）" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_swc_360" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:background="?android:selectableItemBackground" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="48.0dp" android:layout_marginBottom="12.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_swc_enable_label" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="启用方控自定义映射" android:layout_weight="1.0" />
+                        <Switch android:id="@id/switch_swc_enable" android:layout_width="50.0dp" android:layout_height="28.0dp" android:thumb="@drawable/switch_thumb" android:track="@drawable/switch_track" />
+                    </LinearLayout>
+                    <LinearLayout android:orientation="vertical" android:id="@id/swc_keys_container" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </ScrollView>
+            <ScrollView android:id="@id/page_tts" android:visibility="gone" android:scrollbars="none" android:layout_width="match_parent" android:layout_height="match_parent" android:fillViewport="true">
+                <LinearLayout android:orientation="vertical" android:padding="24.0dp" android:layout_width="match_parent" android:layout_height="wrap_content">
+                    <TextView android:textSize="18.0sp" android:textStyle="bold" android:id="@id/tv_page_tts_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp" android:text="语音播报设置" />
+                    <TextView android:textSize="12.0sp" android:id="@id/tv_tts_desc" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp" android:text="添加自定义播报文字（最多10条），可通过方控按键触发播报" android:alpha="0.6" />
+                    <Button android:textSize="14.0sp" android:id="@id/btn_tts_load_model" android:layout_width="match_parent" android:layout_height="44.0dp" android:layout_marginBottom="16.0dp" android:text="加载语音模型" />
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="16.0dp">
+                        <EditText android:textSize="14.0sp" android:id="@id/et_tts_input" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="0.0dp" android:layout_height="44.0dp" android:hint="输入播报文字" android:singleLine="true" android:maxLength="100" android:layout_weight="1.0" android:inputType="text" android:paddingHorizontal="12.0dp" />
+                        <Button android:textSize="14.0sp" android:id="@id/btn_tts_add" android:layout_width="wrap_content" android:layout_height="44.0dp" android:text="添加" android:layout_marginStart="8.0dp" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_tts_volume_label2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="语音音量" />
+                        <SeekBar android:id="@id/seekbar_tts_volume2" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginLeft="12.0dp" android:layout_marginRight="12.0dp" android:max="100" android:progress="100" android:layout_weight="1.0" android:layout_marginHorizontal="12.0dp" />
+                        <TextView android:textSize="12.0sp" android:gravity="end" android:id="@id/tv_tts_volume_value2" android:layout_width="36.0dp" android:layout_height="wrap_content" android:text="100%" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="4.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_tts_gain_label2" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="音频增益" />
+                        <SeekBar android:id="@id/seekbar_tts_gain2" android:layout_width="0.0dp" android:layout_height="wrap_content" android:layout_marginLeft="12.0dp" android:layout_marginRight="12.0dp" android:max="50" android:progress="20" android:layout_weight="1.0" android:layout_marginHorizontal="12.0dp" />
+                        <TextView android:textSize="12.0sp" android:gravity="end" android:id="@id/tv_tts_gain_value2" android:layout_width="36.0dp" android:layout_height="wrap_content" android:text="2.0x" />
+                    </LinearLayout>
+                    <LinearLayout android:gravity="center_vertical" android:orientation="horizontal" android:paddingLeft="12.0dp" android:paddingRight="12.0dp" android:layout_width="match_parent" android:layout_height="52.0dp" android:layout_marginBottom="16.0dp" android:paddingHorizontal="12.0dp">
+                        <TextView android:textSize="14.0sp" android:id="@id/tv_tts_channel_label2" android:layout_width="0.0dp" android:layout_height="wrap_content" android:text="音频通道" android:layout_weight="1.0" />
+                        <Spinner android:id="@id/spinner_tts_channel2" android:layout_width="160.0dp" android:layout_height="36.0dp" />
+                    </LinearLayout>
+                    <View android:background="#33888888" android:layout_width="match_parent" android:layout_height="1.0dp" android:layout_marginBottom="16.0dp" />
+                    <LinearLayout android:orientation="vertical" android:id="@id/tts_list_container" android:layout_width="match_parent" android:layout_height="wrap_content" />
+                </LinearLayout>
+            </ScrollView>
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

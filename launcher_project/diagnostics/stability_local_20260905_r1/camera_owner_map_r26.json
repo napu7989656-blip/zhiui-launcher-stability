@@ -1,0 +1,1573 @@
+{
+  "scope": "Static method/line/reference index for actual R26 smali; shared selector bodies retained. No native calls or semantic reachability guarantee.",
+  "files": [
+    {
+      "path": "smali/o/qi.smali",
+      "sha256": "5414e4e0bc386c00cb8319c8eee8b309054dff934114f5f1b65e776fdf1e3166",
+      "methods": [
+        {
+          "method": "public static constructor <clinit>()V",
+          "line": 71,
+          "references": [
+            [
+              100,
+              "sput-boolean v1, Lo/qi;->Ι:Z"
+            ],
+            [
+              113,
+              "sput-boolean v1, Lo/qi;->Ι:Z"
+            ]
+          ]
+        },
+        {
+          "method": "public constructor <init>(Landroid/content/Context;Landroid/view/WindowManager;)V",
+          "line": 123,
+          "references": [
+            [
+              137,
+              "iput-object v0, p0, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ],
+            [
+              141,
+              "iput-boolean v0, p0, Lo/qi;->ͳ:Z"
+            ],
+            [
+              143,
+              "iput-boolean v0, p0, Lo/qi;->ʹ:Z"
+            ],
+            [
+              145,
+              "iput-boolean v0, p0, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              149,
+              "iput v1, p0, Lo/qi;->ͷ:I"
+            ],
+            [
+              161,
+              "iput-object v1, p0, Lo/qi;->Έ:Ljava/lang/Object;"
+            ],
+            [
+              163,
+              "iput-boolean v0, p0, Lo/qi;->Ύ:Z"
+            ],
+            [
+              167,
+              "iput-wide v1, p0, Lo/qi;->Β:J"
+            ],
+            [
+              171,
+              "iput-wide v1, p0, Lo/qi;->Γ:J"
+            ],
+            [
+              173,
+              "iput-boolean v0, p0, Lo/qi;->Θ:Z"
+            ],
+            [
+              175,
+              "iput-object p1, p0, Lo/qi;->ˋ:Landroid/content/Context;"
+            ],
+            [
+              177,
+              "iput-object p2, p0, Lo/qi;->ˏ:Landroid/view/WindowManager;"
+            ],
+            [
+              185,
+              "iput-object p1, p0, Lo/qi;->ͱ:Landroid/content/SharedPreferences;"
+            ],
+            [
+              193,
+              "iput-boolean p2, p0, Lo/qi;->ʹ:Z"
+            ],
+            [
+              203,
+              "iput p2, p0, Lo/qi;->ͻ:I"
+            ],
+            [
+              213,
+              "iput p2, p0, Lo/qi;->ͼ:I"
+            ],
+            [
+              223,
+              "iput p2, p0, Lo/qi;->ͽ:I"
+            ],
+            [
+              233,
+              "iput p1, p0, Lo/qi;->Ά:I"
+            ]
+          ]
+        },
+        {
+          "method": "public final ʹ(IZ)V",
+          "line": 269,
+          "references": [
+            [
+              273,
+              "iget-boolean v0, p0, Lo/qi;->ʹ:Z"
+            ],
+            [
+              280,
+              "iget-object v0, p0, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ]
+          ]
+        },
+        {
+          "method": "public final ˋ()V",
+          "line": 293,
+          "references": [
+            [
+              299,
+              "iput-boolean v0, p0, Lo/qi;->ͳ:Z"
+            ],
+            [
+              301,
+              "new-instance v0, Ljava/lang/Thread;"
+            ],
+            [
+              307,
+              "invoke-direct {v1, p0, v2}, Lo/ki;-><init>(Lo/qi;I)V"
+            ],
+            [
+              311,
+              "invoke-direct {v0, v1, v2}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V"
+            ],
+            [
+              313,
+              "invoke-virtual {v0}, Ljava/lang/Thread;->start()V"
+            ]
+          ]
+        },
+        {
+          "method": "public final ˏ(Ljava/lang/String;)Landroid/widget/TextView;",
+          "line": 318,
+          "references": [
+            [
+              324,
+              "iget-object v1, p0, Lo/qi;->ˋ:Landroid/content/Context;"
+            ],
+            [
+              344,
+              "invoke-virtual {p0, p1}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              350,
+              "invoke-virtual {p0, v2}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              354,
+              "invoke-virtual {p0, p1}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              358,
+              "invoke-virtual {p0, v2}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              380,
+              "invoke-virtual {p0, v2}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              384,
+              "invoke-virtual {p0, v2}, Lo/qi;->ͱ(I)I"
+            ]
+          ]
+        },
+        {
+          "method": "public final Ͱ()V",
+          "line": 395,
+          "references": [
+            [
+              399,
+              "iget-boolean v0, p0, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              403,
+              "iget-object v0, p0, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              412,
+              "iput-boolean v0, p0, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              416,
+              "iput-boolean v0, p0, Lo/qi;->Ύ:Z"
+            ],
+            [
+              418,
+              "iget-object v0, p0, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              422,
+              "iput-object v1, p0, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              424,
+              "invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V"
+            ]
+          ]
+        },
+        {
+          "method": "public final ͱ(I)I",
+          "line": 483,
+          "references": [
+            [
+              489,
+              "iget-object v0, p0, Lo/qi;->ˋ:Landroid/content/Context;"
+            ]
+          ]
+        },
+        {
+          "method": "public final Ͳ()V",
+          "line": 508,
+          "references": [
+            [
+              518,
+              "iput-object v1, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              542,
+              "iget-object v6, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              562,
+              "iget-object v3, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              572,
+              "iput-object v2, p0, Lo/qi;->ΐ:Landroid/opengl/EGLContext;"
+            ],
+            [
+              582,
+              "iget-object v3, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              590,
+              "iput-object v0, p0, Lo/qi;->Α:Landroid/opengl/EGLSurface;"
+            ],
+            [
+              592,
+              "iget-object v1, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              594,
+              "iget-object v2, p0, Lo/qi;->ΐ:Landroid/opengl/EGLContext;"
+            ]
+          ]
+        },
+        {
+          "method": "public final ͳ()V",
+          "line": 601,
+          "references": [
+            [
+              648,
+              "iget-object v5, p0, Lo/qi;->ˋ:Landroid/content/Context;"
+            ],
+            [
+              671,
+              "const-string v4, \"postEvent\""
+            ],
+            [
+              778,
+              "const-string v4, \"setPanoOutputState\""
+            ]
+          ]
+        },
+        {
+          "method": "public final Ͷ([BIIII)V",
+          "line": 863,
+          "references": [
+            [
+              879,
+              "iget-object v5, v1, Lo/qi;->Δ:[I"
+            ],
+            [
+              892,
+              "iput-object v5, v1, Lo/qi;->Δ:[I"
+            ],
+            [
+              895,
+              "iget-object v5, v1, Lo/qi;->Δ:[I"
+            ],
+            [
+              1375,
+              "iget-object v2, v1, Lo/qi;->Έ:Ljava/lang/Object;"
+            ],
+            [
+              1380,
+              "iget-boolean v0, v1, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              1384,
+              "iget-boolean v0, v1, Lo/qi;->Ύ:Z"
+            ],
+            [
+              1391,
+              "iget-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              1395,
+              "invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z"
+            ],
+            [
+              1401,
+              "iget-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              1403,
+              "invoke-virtual {v0}, Landroid/graphics/Bitmap;->getWidth()I"
+            ],
+            [
+              1411,
+              "iget-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              1413,
+              "invoke-virtual {v0}, Landroid/graphics/Bitmap;->getHeight()I"
+            ],
+            [
+              1429,
+              "invoke-static {v3, v4, v0}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;"
+            ],
+            [
+              1433,
+              "iput-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              1436,
+              "iget-object v3, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              1438,
+              "iget-object v4, v1, Lo/qi;->Δ:[I"
+            ],
+            [
+              1452,
+              "invoke-virtual/range {v3 .. v10}, Landroid/graphics/Bitmap;->setPixels([IIIIIII)V"
+            ],
+            [
+              1454,
+              "iget-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              1456,
+              "iput-object v0, v1, Lo/qi;->Η:Landroid/graphics/Bitmap;"
+            ]
+          ]
+        },
+        {
+          "method": "public final ͷ(I)I",
+          "line": 1478,
+          "references": [
+            [
+              1484,
+              "iget-object v0, p0, Lo/qi;->ˋ:Landroid/content/Context;"
+            ]
+          ]
+        },
+        {
+          "method": "public final ͺ()V",
+          "line": 1507,
+          "references": [
+            [
+              1511,
+              "iget-object v0, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              1521,
+              "iget-object v0, p0, Lo/qi;->Α:Landroid/opengl/EGLSurface;"
+            ],
+            [
+              1525,
+              "iget-object v1, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              1530,
+              "iget-object v0, p0, Lo/qi;->ΐ:Landroid/opengl/EGLContext;"
+            ],
+            [
+              1534,
+              "iget-object v1, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              1539,
+              "iget-object v0, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              1545,
+              "iput-object v0, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;"
+            ],
+            [
+              1547,
+              "iput-object v0, p0, Lo/qi;->ΐ:Landroid/opengl/EGLContext;"
+            ],
+            [
+              1549,
+              "iput-object v0, p0, Lo/qi;->Α:Landroid/opengl/EGLSurface;"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "smali/o/ki.smali",
+      "sha256": "bfc0edbe191b97d1d00317e262eeed313d546aa9fd3552ccea1fa1959403bac9",
+      "methods": [
+        {
+          "method": "public synthetic constructor <init>(Lo/qi;I)V",
+          "line": 16,
+          "references": [
+            [
+              16,
+              ".method public synthetic constructor <init>(Lo/qi;I)V"
+            ],
+            [
+              24,
+              "iput-object p1, p0, Lo/ki;->ͱ:Lo/qi;"
+            ]
+          ]
+        },
+        {
+          "method": "public final run()V",
+          "line": 38,
+          "references": [
+            [
+              72,
+              "iget-object v3, v1, Lo/ki;->ͱ:Lo/qi;"
+            ],
+            [
+              90,
+              "iget-object v6, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              102,
+              "iget-object v7, v3, Lo/qi;->ˋ:Landroid/content/Context;"
+            ],
+            [
+              111,
+              "iput-object v6, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              131,
+              "iget-boolean v6, v3, Lo/qi;->ͳ:Z"
+            ],
+            [
+              139,
+              "invoke-virtual {v3}, Lo/qi;->ͳ()V"
+            ],
+            [
+              144,
+              "iget-object v6, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              221,
+              "iget-object v0, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              230,
+              "iget-object v0, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              323,
+              "invoke-virtual {v3}, Lo/qi;->Ͳ()V"
+            ],
+            [
+              337,
+              "iput-object v0, v3, Lo/qi;->Ή:Landroid/graphics/SurfaceTexture;"
+            ],
+            [
+              359,
+              "iget-object v6, v3, Lo/qi;->Ή:Landroid/graphics/SurfaceTexture;"
+            ],
+            [
+              368,
+              "iput-object v0, v3, Lo/qi;->Ί:Landroid/view/Surface;"
+            ],
+            [
+              372,
+              "iget-object v6, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              381,
+              "iget-object v0, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              399,
+              "iget-object v0, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              421,
+              "iput-wide v6, v3, Lo/qi;->Β:J"
+            ],
+            [
+              429,
+              "iput-wide v6, v3, Lo/qi;->Γ:J"
+            ],
+            [
+              433,
+              "iget-object v0, v3, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              521,
+              "iput-boolean v2, v3, Lo/qi;->ͳ:Z"
+            ],
+            [
+              567,
+              "iget-object v0, v1, Lo/ki;->ͱ:Lo/qi;"
+            ],
+            [
+              571,
+              "iput-object v3, v0, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              575,
+              "invoke-virtual {v0}, Lo/qi;->Ͱ()V"
+            ],
+            [
+              580,
+              "invoke-virtual {v0}, Lo/qi;->ˋ()V"
+            ],
+            [
+              585,
+              "iput v4, v0, Lo/qi;->ͷ:I"
+            ],
+            [
+              593,
+              "iget-object v2, v1, Lo/ki;->ͱ:Lo/qi;"
+            ],
+            [
+              603,
+              "iget-object v0, v2, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              623,
+              "iget-object v0, v2, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              711,
+              "iget-object v0, v2, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              777,
+              "iget-object v0, v2, Lo/qi;->Ί:Landroid/view/Surface;"
+            ],
+            [
+              790,
+              "iput-object v3, v2, Lo/qi;->Ί:Landroid/view/Surface;"
+            ],
+            [
+              795,
+              "iget-object v0, v2, Lo/qi;->Ή:Landroid/graphics/SurfaceTexture;"
+            ],
+            [
+              808,
+              "iget-object v0, v2, Lo/qi;->Ή:Landroid/graphics/SurfaceTexture;"
+            ],
+            [
+              817,
+              "iput-object v3, v2, Lo/qi;->Ή:Landroid/graphics/SurfaceTexture;"
+            ],
+            [
+              822,
+              "invoke-virtual {v2}, Lo/qi;->ͺ()V"
+            ],
+            [
+              827,
+              "iget-object v4, v2, Lo/qi;->Έ:Ljava/lang/Object;"
+            ],
+            [
+              837,
+              "iput-object v3, v2, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              840,
+              "iput-object v3, v2, Lo/qi;->Η:Landroid/graphics/Bitmap;"
+            ],
+            [
+              850,
+              "iput-object v3, v2, Lo/qi;->Δ:[I"
+            ],
+            [
+              919,
+              "iget-object v0, v1, Lo/ki;->ͱ:Lo/qi;"
+            ],
+            [
+              941,
+              "iget-object v2, v0, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              949,
+              "iget-object v5, v0, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ],
+            [
+              958,
+              "iput-object v3, v0, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              963,
+              "invoke-virtual {v0}, Lo/qi;->Ͱ()V"
+            ],
+            [
+              968,
+              "invoke-virtual {v0}, Lo/qi;->ˋ()V"
+            ],
+            [
+              973,
+              "iput v4, v0, Lo/qi;->ͷ:I"
+            ],
+            [
+              981,
+              "iget-object v0, v1, Lo/ki;->ͱ:Lo/qi;"
+            ],
+            [
+              985,
+              "iput-boolean v5, v0, Lo/qi;->Θ:Z"
+            ],
+            [
+              989,
+              "iget-object v2, v0, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              997,
+              "iget-boolean v2, v0, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              1005,
+              "iget-boolean v2, v0, Lo/qi;->Ύ:Z"
+            ],
+            [
+              1013,
+              "iget-object v2, v0, Lo/qi;->Η:Landroid/graphics/Bitmap;"
+            ],
+            [
+              1021,
+              "invoke-virtual {v2}, Landroid/graphics/Bitmap;->isRecycled()Z"
+            ],
+            [
+              1033,
+              "iget-object v0, v0, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              1037,
+              "invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V"
+            ],
+            [
+              1047,
+              "iget-object v0, v1, Lo/ki;->ͱ:Lo/qi;"
+            ],
+            [
+              1051,
+              "iget-object v3, v0, Lo/qi;->ˋ:Landroid/content/Context;"
+            ],
+            [
+              1097,
+              "iget v10, v0, Lo/qi;->ͻ:I"
+            ],
+            [
+              1101,
+              "invoke-virtual {v0, v10}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1109,
+              "iget v11, v0, Lo/qi;->ͼ:I"
+            ],
+            [
+              1113,
+              "invoke-virtual {v0, v11}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1126,
+              "iget v10, v0, Lo/qi;->ͽ:I"
+            ],
+            [
+              1130,
+              "invoke-virtual {v0, v10}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1142,
+              "iget v10, v0, Lo/qi;->Ά:I"
+            ],
+            [
+              1146,
+              "invoke-virtual {v0, v10}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1195,
+              "invoke-virtual {v0, v7}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1206,
+              "invoke-virtual {v0, v11}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1214,
+              "invoke-virtual {v0, v7}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1222,
+              "invoke-virtual {v0, v11}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1235,
+              "iget v10, v0, Lo/qi;->ͻ:I"
+            ],
+            [
+              1239,
+              "iget v11, v0, Lo/qi;->ͼ:I"
+            ],
+            [
+              1243,
+              "invoke-static {v9, v10, v11}, Lo/qi;->ͻ(Landroid/widget/TextView;II)V"
+            ],
+            [
+              1268,
+              "invoke-virtual {v0, v7}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1316,
+              "invoke-virtual {v0, v10}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              1356,
+              "invoke-virtual {v0, v3}, Lo/qi;->ˏ(Ljava/lang/String;)Landroid/widget/TextView;"
+            ],
+            [
+              1368,
+              "invoke-virtual {v0, v4}, Lo/qi;->ˏ(Ljava/lang/String;)Landroid/widget/TextView;"
+            ],
+            [
+              1380,
+              "invoke-virtual {v0, v10}, Lo/qi;->ˏ(Ljava/lang/String;)Landroid/widget/TextView;"
+            ],
+            [
+              1392,
+              "invoke-virtual {v0, v11}, Lo/qi;->ˏ(Ljava/lang/String;)Landroid/widget/TextView;"
+            ],
+            [
+              1474,
+              "iget-object v12, v0, Lo/qi;->ˏ:Landroid/view/WindowManager;"
+            ],
+            [
+              1512,
+              "invoke-direct {v7, v0, v8, v9, v5}, Lo/oi;-><init>(Lo/qi;Landroid/view/View;Landroid/widget/TextView;I)V"
+            ],
+            [
+              1526,
+              "invoke-direct {v3, v0, v8, v9, v2}, Lo/oi;-><init>(Lo/qi;Landroid/view/View;Landroid/widget/TextView;I)V"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "smali/o/lb.smali",
+      "sha256": "a83763500af0156f7f681994526bea04af953f29161b27420be4933f3a42b14a",
+      "methods": [
+        {
+          "method": "public final run()V",
+          "line": 58,
+          "references": [
+            [
+              105,
+              "check-cast v5, Lo/qi;"
+            ],
+            [
+              124,
+              "sget-boolean v0, Lo/qi;->Ι:Z"
+            ],
+            [
+              187,
+              "iget-object v0, v5, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              198,
+              "iget-object v10, v5, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ],
+            [
+              207,
+              "iput-object v9, v5, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              212,
+              "iget v0, v5, Lo/qi;->ͷ:I"
+            ],
+            [
+              220,
+              "iget-boolean v0, v5, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              233,
+              "iput v6, v5, Lo/qi;->ͷ:I"
+            ],
+            [
+              241,
+              "iget-boolean v10, v5, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              254,
+              "iget-object v10, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              279,
+              "iget v2, v5, Lo/qi;->ͽ:I"
+            ],
+            [
+              283,
+              "invoke-virtual {v5, v2}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              295,
+              "iget v2, v5, Lo/qi;->Ά:I"
+            ],
+            [
+              299,
+              "invoke-virtual {v5, v2}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              311,
+              "iget-object v2, v5, Lo/qi;->ˏ:Landroid/view/WindowManager;"
+            ],
+            [
+              315,
+              "iget-object v3, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              361,
+              "iget-object v12, v5, Lo/qi;->ˋ:Landroid/content/Context;"
+            ],
+            [
+              370,
+              "iput-object v10, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              383,
+              "iget-object v10, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              396,
+              "iget-object v10, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              414,
+              "iget-object v7, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              423,
+              "iget v2, v5, Lo/qi;->ͻ:I"
+            ],
+            [
+              427,
+              "invoke-virtual {v5, v2}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              435,
+              "iget v2, v5, Lo/qi;->ͼ:I"
+            ],
+            [
+              439,
+              "invoke-virtual {v5, v2}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              475,
+              "iget v7, v5, Lo/qi;->ͽ:I"
+            ],
+            [
+              479,
+              "invoke-virtual {v5, v7}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              491,
+              "iget v7, v5, Lo/qi;->Ά:I"
+            ],
+            [
+              495,
+              "invoke-virtual {v5, v7}, Lo/qi;->ͱ(I)I"
+            ],
+            [
+              508,
+              "iget-object v7, v5, Lo/qi;->ˏ:Landroid/view/WindowManager;"
+            ],
+            [
+              512,
+              "iget-object v10, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              521,
+              "iput-boolean v4, v5, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              525,
+              "iget-object v2, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              537,
+              "iget-object v2, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              551,
+              "iget-object v2, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              560,
+              "iget-object v2, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              691,
+              "iput-object v9, v5, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              695,
+              "iput-boolean v3, v5, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              700,
+              "new-instance v0, Ljava/lang/Thread;"
+            ],
+            [
+              711,
+              "invoke-direct {v2, v5, v3}, Lo/ki;-><init>(Lo/qi;I)V"
+            ],
+            [
+              720,
+              "invoke-direct {v0, v2, v3}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V"
+            ],
+            [
+              725,
+              "invoke-virtual {v0}, Ljava/lang/Thread;->start()V"
+            ],
+            [
+              734,
+              "iget-object v0, v5, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              742,
+              "iget-object v2, v5, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ],
+            [
+              756,
+              "invoke-direct {v0, v5, v7}, Lo/ki;-><init>(Lo/qi;I)V"
+            ],
+            [
+              761,
+              "iput-object v0, v5, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              765,
+              "iget-object v2, v5, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "sha256": "c0e480a5b786714d0da89e9430bd6e7067840836a1df188fb2dff4638c8c63c8",
+      "methods": [
+        {
+          "method": "public final run()V",
+          "line": 905,
+          "references": [
+            [
+              972,
+              "new-instance v5, Ljava/lang/Thread;"
+            ],
+            [
+              978,
+              "invoke-direct {v5, v6}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V"
+            ],
+            [
+              980,
+              "invoke-virtual {v5}, Ljava/lang/Thread;->start()V"
+            ],
+            [
+              998,
+              "new-instance v5, Ljava/lang/Thread;"
+            ],
+            [
+              1004,
+              "invoke-direct {v5, v6}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V"
+            ],
+            [
+              1006,
+              "invoke-virtual {v5}, Ljava/lang/Thread;->start()V"
+            ],
+            [
+              2044,
+              "invoke-static {v6}, Landroid/graphics/BitmapFactory;->decodeFile(Ljava/lang/String;)Landroid/graphics/Bitmap;"
+            ],
+            [
+              2054,
+              "invoke-direct {v3, v2, v6, v4}, Lo/j9;-><init>(Landroid/widget/ImageView;Landroid/graphics/Bitmap;I)V"
+            ],
+            [
+              2606,
+              "check-cast v0, Lo/qi;"
+            ],
+            [
+              2613,
+              "iput-boolean v13, v0, Lo/qi;->Ύ:Z"
+            ],
+            [
+              2616,
+              "iget-object v0, v0, Lo/qi;->ˏ:Landroid/view/WindowManager;"
+            ],
+            [
+              2618,
+              "invoke-interface {v0, v2}, Landroid/view/ViewManager;->removeView(Landroid/view/View;)V"
+            ],
+            [
+              2633,
+              "check-cast v2, Landroid/graphics/Bitmap;"
+            ],
+            [
+              2642,
+              "invoke-static {v2}, Lo/ak;->ͳ(Landroid/graphics/Bitmap;)V"
+            ],
+            [
+              2999,
+              "invoke-interface {v5, v3}, Landroid/view/ViewManager;->removeView(Landroid/view/View;)V"
+            ],
+            [
+              3145,
+              "sget-object v3, Lo/ak;->ͺ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              3150,
+              "invoke-virtual {v3}, Landroid/graphics/Bitmap;->isRecycled()Z"
+            ],
+            [
+              3172,
+              "invoke-static {v3, v12}, Lo/a2;->ͷ(Landroid/graphics/Bitmap;I)Landroid/graphics/drawable/LayerDrawable;"
+            ],
+            [
+              3192,
+              "check-cast v2, Landroid/graphics/Bitmap;"
+            ],
+            [
+              3218,
+              "invoke-virtual {v2}, Landroid/graphics/Bitmap;->isRecycled()Z"
+            ],
+            [
+              3225,
+              "iget-object v5, v0, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              3229,
+              "invoke-virtual {v5}, Landroid/graphics/Bitmap;->isRecycled()Z"
+            ],
+            [
+              3235,
+              "iget-object v2, v0, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              3242,
+              "invoke-virtual {v3, v2}, Landroid/widget/ImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V"
+            ],
+            [
+              3514,
+              "sget-object v3, Lo/ak;->ͺ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              3519,
+              "invoke-virtual {v3}, Landroid/graphics/Bitmap;->isRecycled()Z"
+            ],
+            [
+              3539,
+              "invoke-static {v3, v12}, Lo/a2;->ͷ(Landroid/graphics/Bitmap;I)Landroid/graphics/drawable/LayerDrawable;"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "smali/o/mi.smali",
+      "sha256": "0526490cd6cd0a600414b65e8dafda4ab609c565d69cefe37c7e5e23cc5109e7",
+      "methods": [
+        {
+          "method": "public final onFrameAvailable(Landroid/graphics/SurfaceTexture;)V",
+          "line": 10,
+          "references": []
+        }
+      ]
+    },
+    {
+      "path": "smali/o/ˋ.smali",
+      "sha256": "9cd6c93776ada427a17a59299cea0a1b266d2fb2157001a910cf4e791e6c8e6f",
+      "methods": [
+        {
+          "method": "public final invoke(Ljava/lang/Object;Ljava/lang/reflect/Method;[Ljava/lang/Object;)Ljava/lang/Object;",
+          "line": 27,
+          "references": [
+            [
+              345,
+              "check-cast v0, Lo/qi;"
+            ],
+            [
+              349,
+              "iget-boolean v8, v0, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              357,
+              "iget-boolean v8, v0, Lo/qi;->Ύ:Z"
+            ],
+            [
+              365,
+              "iget-object v8, v0, Lo/qi;->ͺ:Landroid/widget/ImageView;"
+            ],
+            [
+              378,
+              "iget v8, v0, Lo/qi;->ͷ:I"
+            ],
+            [
+              390,
+              "iget-wide v13, v0, Lo/qi;->Β:J"
+            ],
+            [
+              398,
+              "iget-wide v2, v0, Lo/qi;->Γ:J"
+            ],
+            [
+              415,
+              "iput-wide v9, v0, Lo/qi;->Β:J"
+            ],
+            [
+              419,
+              "iget-boolean v2, v0, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              427,
+              "iget-boolean v2, v0, Lo/qi;->Ύ:Z"
+            ],
+            [
+              480,
+              "sget-boolean v2, Lo/qi;->Ι:Z"
+            ],
+            [
+              488,
+              "iget-object v2, v0, Lo/qi;->Ε:[S"
+            ],
+            [
+              513,
+              "iput-object v2, v0, Lo/qi;->Ε:[S"
+            ],
+            [
+              548,
+              "iget-object v2, v0, Lo/qi;->Ε:[S"
+            ],
+            [
+              580,
+              "iget-object v2, v0, Lo/qi;->Έ:Ljava/lang/Object;"
+            ],
+            [
+              590,
+              "iget-boolean v3, v0, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              598,
+              "iget-boolean v3, v0, Lo/qi;->Ύ:Z"
+            ],
+            [
+              610,
+              "iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              626,
+              "invoke-virtual {v3}, Landroid/graphics/Bitmap;->isRecycled()Z"
+            ],
+            [
+              638,
+              "iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              642,
+              "invoke-virtual {v3}, Landroid/graphics/Bitmap;->getWidth()I"
+            ],
+            [
+              654,
+              "iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              658,
+              "invoke-virtual {v3}, Landroid/graphics/Bitmap;->getHeight()I"
+            ],
+            [
+              670,
+              "iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              674,
+              "invoke-virtual {v3}, Landroid/graphics/Bitmap;->getConfig()Landroid/graphics/Bitmap$Config;"
+            ],
+            [
+              696,
+              "invoke-static {v5, v4, v3}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;"
+            ],
+            [
+              704,
+              "iput-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              709,
+              "iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              713,
+              "iget-object v4, v0, Lo/qi;->Ε:[S"
+            ],
+            [
+              725,
+              "invoke-virtual {v3, v4}, Landroid/graphics/Bitmap;->copyPixelsFromBuffer(Ljava/nio/Buffer;)V"
+            ],
+            [
+              730,
+              "iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              734,
+              "iput-object v3, v0, Lo/qi;->Η:Landroid/graphics/Bitmap;"
+            ],
+            [
+              769,
+              "invoke-virtual/range {v4 .. v9}, Lo/qi;->Ͷ([BIIII)V"
+            ],
+            [
+              775,
+              "iget-boolean v2, v0, Lo/qi;->Θ:Z"
+            ],
+            [
+              790,
+              "iput-boolean v2, v0, Lo/qi;->Θ:Z"
+            ],
+            [
+              794,
+              "iget-object v2, v0, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ],
+            [
+              802,
+              "invoke-direct {v3, v0, v12}, Lo/ki;-><init>(Lo/qi;I)V"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "smali/o/ˏ.smali",
+      "sha256": "9b5984c7f79e28fe9beeb3ff7a17fa7a41bdfefab2ef4e06677264b123a7d329",
+      "methods": [
+        {
+          "method": "public constructor <init>(Landroid/content/Context;)V",
+          "line": 31,
+          "references": []
+        },
+        {
+          "method": "public final ˋ()V",
+          "line": 862,
+          "references": []
+        },
+        {
+          "method": "public final ˏ()Ljava/lang/ClassLoader;",
+          "line": 926,
+          "references": []
+        },
+        {
+          "method": "public final Ͱ(I)Z",
+          "line": 1104,
+          "references": []
+        },
+        {
+          "method": "public final ͱ(Lo/v5;)V",
+          "line": 1213,
+          "references": []
+        },
+        {
+          "method": "public final Ͳ()V",
+          "line": 1313,
+          "references": []
+        },
+        {
+          "method": "public final ͳ(Landroid/view/Surface;)V",
+          "line": 1391,
+          "references": []
+        }
+      ]
+    },
+    {
+      "path": "smali/o/ik.smali",
+      "sha256": "ba8abfb86a7432b59f5b6318a1fa96a7e72f4e81be406cba79521c9fd3fce8c6",
+      "methods": [
+        {
+          "method": "public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V",
+          "line": 38,
+          "references": [
+            [
+              59,
+              "check-cast p1, Lo/qi;"
+            ],
+            [
+              67,
+              "iput-boolean p2, p1, Lo/qi;->ʹ:Z"
+            ],
+            [
+              71,
+              "iget-object v0, p1, Lo/qi;->ͱ:Landroid/content/SharedPreferences;"
+            ],
+            [
+              104,
+              "iget-boolean p2, p1, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              112,
+              "invoke-virtual {p1}, Lo/qi;->Ͱ()V"
+            ],
+            [
+              117,
+              "invoke-virtual {p1}, Lo/qi;->ˋ()V"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "smali/o/pi.smali",
+      "sha256": "2c84e1ca3a489737136df42bfda40bf2b0d2c1e3498924354f6ec0a37dad429b",
+      "methods": [
+        {
+          "method": "public final onClick(Landroid/view/View;)V",
+          "line": 50,
+          "references": [
+            [
+              229,
+              "check-cast v2, Lo/qi;"
+            ],
+            [
+              262,
+              "invoke-virtual {v2, v1}, Lo/qi;->ͷ(I)I"
+            ],
+            [
+              270,
+              "iput v1, v2, Lo/qi;->ͻ:I"
+            ],
+            [
+              278,
+              "invoke-virtual {v2, v1}, Lo/qi;->ͷ(I)I"
+            ],
+            [
+              286,
+              "iput v1, v2, Lo/qi;->ͼ:I"
+            ],
+            [
+              294,
+              "invoke-virtual {v2, v1}, Lo/qi;->ͷ(I)I"
+            ],
+            [
+              302,
+              "iput v1, v2, Lo/qi;->ͽ:I"
+            ],
+            [
+              310,
+              "invoke-virtual {v2, p1}, Lo/qi;->ͷ(I)I"
+            ],
+            [
+              318,
+              "iput p1, v2, Lo/qi;->Ά:I"
+            ],
+            [
+              322,
+              "iget-object p1, v2, Lo/qi;->ͱ:Landroid/content/SharedPreferences;"
+            ],
+            [
+              338,
+              "iget v3, v2, Lo/qi;->ͻ:I"
+            ],
+            [
+              354,
+              "iget v3, v2, Lo/qi;->ͼ:I"
+            ],
+            [
+              370,
+              "iget v3, v2, Lo/qi;->ͽ:I"
+            ],
+            [
+              386,
+              "iget v3, v2, Lo/qi;->Ά:I"
+            ],
+            [
+              416,
+              "iget v1, v2, Lo/qi;->ͻ:I"
+            ],
+            [
+              434,
+              "iget v1, v2, Lo/qi;->ͼ:I"
+            ],
+            [
+              452,
+              "iget v1, v2, Lo/qi;->ͽ:I"
+            ],
+            [
+              470,
+              "iget v1, v2, Lo/qi;->Ά:I"
+            ],
+            [
+              497,
+              "iget-object p1, v2, Lo/qi;->ˏ:Landroid/view/WindowManager;"
+            ],
+            [
+              501,
+              "invoke-interface {p1, v0}, Landroid/view/ViewManager;->removeView(Landroid/view/View;)V"
+            ],
+            [
+              530,
+              "invoke-interface {v2, v1}, Landroid/view/ViewManager;->removeView(Landroid/view/View;)V"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "smali/o/tk.smali",
+      "sha256": "7926f4d2a423fb929aa7bd329190d9212edb2eac753e7dd575b25b64c197d97d",
+      "methods": [
+        {
+          "method": "public final run()V",
+          "line": 44,
+          "references": [
+            [
+              201,
+              "invoke-interface {v2, v1}, Landroid/view/ViewManager;->removeView(Landroid/view/View;)V"
+            ],
+            [
+              2417,
+              "iget-object v3, v3, Lcom/byd/launcher/NavBarService;->Ό:Lo/qi;"
+            ]
+          ]
+        }
+      ]
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "sha256": "c0f10365db52e6c78bfc1aa9b28100fb618d53a46cbe45a0fa0a2f2fd3d25b9b",
+      "methods": [
+        {
+          "method": "public onAccessibilityEvent(Landroid/view/accessibility/AccessibilityEvent;)V",
+          "line": 3848,
+          "references": [
+            [
+              4225,
+              "iget-object v2, p0, Lcom/byd/launcher/NavBarService;->Ό:Lo/qi;"
+            ],
+            [
+              4238,
+              "iget-boolean v5, v2, Lo/qi;->Ͷ:Z"
+            ],
+            [
+              4242,
+              "iget-object v5, v2, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ],
+            [
+              4246,
+              "invoke-direct {v6, v2, v1}, Lo/ki;-><init>(Lo/qi;I)V"
+            ]
+          ]
+        },
+        {
+          "method": "public final onDestroy()V",
+          "line": 4540,
+          "references": [
+            [
+              4714,
+              "invoke-interface {v4, v1}, Landroid/view/ViewManager;->removeView(Landroid/view/View;)V"
+            ],
+            [
+              4948,
+              "iget-object v0, p0, Lcom/byd/launcher/NavBarService;->Ό:Lo/qi;"
+            ],
+            [
+              4956,
+              "iget-object v1, v0, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              4964,
+              "iget-object v3, v0, Lo/qi;->Ͱ:Landroid/os/Handler;"
+            ],
+            [
+              4973,
+              "iput-object v2, v0, Lo/qi;->Ό:Lo/ki;"
+            ],
+            [
+              4978,
+              "invoke-virtual {v0}, Lo/qi;->Ͱ()V"
+            ],
+            [
+              4983,
+              "invoke-virtual {v0}, Lo/qi;->ˋ()V"
+            ],
+            [
+              4988,
+              "iget-object v1, v0, Lo/qi;->Έ:Ljava/lang/Object;"
+            ],
+            [
+              4996,
+              "iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              5004,
+              "invoke-virtual {v3}, Landroid/graphics/Bitmap;->isRecycled()Z"
+            ],
+            [
+              5016,
+              "iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              5020,
+              "invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V"
+            ],
+            [
+              5025,
+              "iput-object v2, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;"
+            ],
+            [
+              5030,
+              "iput-object v2, v0, Lo/qi;->Η:Landroid/graphics/Bitmap;"
+            ],
+            [
+              5039,
+              "iput-object v2, v0, Lo/qi;->Δ:[I"
+            ],
+            [
+              5043,
+              "iget-object v1, v0, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              5051,
+              "iput-object v2, v0, Lo/qi;->Ͳ:Lo/ˏ;"
+            ],
+            [
+              5056,
+              "iput-object v2, p0, Lcom/byd/launcher/NavBarService;->Ό:Lo/qi;"
+            ]
+          ]
+        },
+        {
+          "method": "public onServiceConnected()V",
+          "line": 6469,
+          "references": [
+            [
+              6586,
+              "invoke-virtual {v4}, Ljava/lang/Thread;->start()V"
+            ],
+            [
+              6817,
+              "new-instance v3, Lo/qi;"
+            ],
+            [
+              6825,
+              "invoke-direct {v3, p0, v4}, Lo/qi;-><init>(Landroid/content/Context;Landroid/view/WindowManager;)V"
+            ],
+            [
+              6830,
+              "iput-object v3, p0, Lcom/byd/launcher/NavBarService;->Ό:Lo/qi;"
+            ]
+          ]
+        }
+      ]
+    }
+  ]
+}

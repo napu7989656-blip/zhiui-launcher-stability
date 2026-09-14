@@ -1,0 +1,48 @@
+--- baseline/smali/com/byd/launcher/MainActivity.smali
++++ base01/smali/com/byd/launcher/MainActivity.smali
+@@ -2419,6 +2419,17 @@
+ 
+     iput-boolean v0, p0, Lcom/byd/launcher/MainActivity;->ͺ:Z
+ 
++    # BASE-01: clear only this Activity's static wallpaper callback.
++    sget-object v0, Lo/ak;->ͻ:Ljava/lang/Runnable;
++    instance-of v1, v0, Lo/y7;
++    if-eqz v1, :base01_callback_done
++    check-cast v0, Lo/y7;
++    iget-object v1, v0, Lo/y7;->ͱ:Lcom/byd/launcher/MainActivity;
++    if-ne v1, p0, :base01_callback_done
++    const/4 v1, 0x0
++    sput-object v1, Lo/ak;->ͻ:Ljava/lang/Runnable;
++    :base01_callback_done
++
+     sget-object v0, Lcom/byd/launcher/MainActivity;->Λ:Ljava/lang/ref/WeakReference;
+ 
+     const/4 v1, 0x0
+@@ -2937,6 +2948,12 @@
+ .method public final ͱ()V
+     .locals 3
+ 
++    # A callback already read by another thread must not update a destroyed window.
++    iget-boolean v0, p0, Lcom/byd/launcher/MainActivity;->ͺ:Z
++    if-eqz v0, :base01_window_alive
++    return-void
++    :base01_window_alive
++
+     .line 1
+     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+ 
+--- baseline/smali/o/ak.smali
++++ base01/smali/o/ak.smali
+@@ -538,11 +538,10 @@
+ 
+     if-eqz p0, :cond_1
+ 
++    # Read the volatile callback once; onDestroy may clear it between reads.
+     sget-object p0, Lo/ak;->ͻ:Ljava/lang/Runnable;
+ 
+     if-eqz p0, :cond_1
+-
+-    sget-object p0, Lo/ak;->ͻ:Ljava/lang/Runnable;
+ 
+     invoke-interface {p0}, Ljava/lang/Runnable;->run()V
+ 

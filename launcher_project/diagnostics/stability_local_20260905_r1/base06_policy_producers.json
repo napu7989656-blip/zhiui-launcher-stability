@@ -1,0 +1,121 @@
+[
+  {
+    "path": "smali/o/c0.smali",
+    "method": "public static ͳ(Ljava/lang/String;)V",
+    "line": 3362,
+    "literal": "policy_control",
+    "command": false
+  },
+  {
+    "path": "smali/o/ea.smali",
+    "method": "public final run()V",
+    "line": 53,
+    "literal": "settings put global policy_control immersive.status=com.byd.launcher",
+    "command": true
+  },
+  {
+    "path": "smali/o/ea.smali",
+    "method": "public final run()V",
+    "line": 57,
+    "literal": "settings put global policy_control null",
+    "command": true
+  },
+  {
+    "path": "smali/o/ea.smali",
+    "method": "public final run()V",
+    "line": 626,
+    "literal": "exitScreenOffMode: restore policy_control failed: ",
+    "command": false
+  },
+  {
+    "path": "smali/o/ea.smali",
+    "method": "public final run()V",
+    "line": 2833,
+    "literal": "initCmdTools: ADB OK, policy_control set, IME enabled",
+    "command": false
+  },
+  {
+    "path": "smali/o/lII.smali",
+    "method": "public final run()V",
+    "line": 711,
+    "literal": "settings put global policy_control immersive.status=com.byd.launcher",
+    "command": true
+  },
+  {
+    "path": "smali/o/lII.smali",
+    "method": "public final run()V",
+    "line": 720,
+    "literal": "Set policy_control to hide status bar for launcher",
+    "command": false
+  },
+  {
+    "path": "smali/o/lII.smali",
+    "method": "public final run()V",
+    "line": 742,
+    "literal": "Failed to set policy_control: ",
+    "command": false
+  },
+  {
+    "path": "smali/o/lII.smali",
+    "method": "public final run()V",
+    "line": 770,
+    "literal": "settings put global policy_control null",
+    "command": true
+  },
+  {
+    "path": "smali/o/lII.smali",
+    "method": "public final run()V",
+    "line": 779,
+    "literal": "Cleared policy_control to show system status bar",
+    "command": false
+  },
+  {
+    "path": "smali/o/lII.smali",
+    "method": "public final run()V",
+    "line": 801,
+    "literal": "Failed to clear policy_control: ",
+    "command": false
+  },
+  {
+    "path": "smali/o/llI.smali",
+    "method": "public final run()V",
+    "line": 2118,
+    "literal": "settings put global policy_control immersive.status=com.byd.launcher",
+    "command": true
+  },
+  {
+    "path": "smali/o/llI.smali",
+    "method": "public final run()V",
+    "line": 2127,
+    "literal": "Startup ADB settings applied, policy_control set",
+    "command": false
+  },
+  {
+    "path": "smali/o/llI.smali",
+    "method": "public final run()V",
+    "line": 2135,
+    "literal": "settings put global policy_control null",
+    "command": true
+  },
+  {
+    "path": "smali/o/llI.smali",
+    "method": "public final run()V",
+    "line": 2144,
+    "literal": "Startup ADB: OEM status bar enabled, policy_control cleared",
+    "command": false
+  },
+  {
+    "path": "smali/o/y9.smali",
+    "method": "public final run()V",
+    "line": 1158,
+    "literal": "settings put global policy_control immersive.status=com.byd.launcher",
+    "command": true
+  },
+  {
+    "path": "smali/o/zk.smali",
+    "method": "public final onCheckedChanged(Landroid/widget/CompoundButton;Z)V",
+    "line": 486,
+    "literal": "settings put global policy_control immersive.status=com.byd.launcher",
+    "command": true
+  }
+]

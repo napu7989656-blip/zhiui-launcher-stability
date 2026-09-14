@@ -1,0 +1,11 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "32DB51C548CD74FFA3821B29A214D70453BA117B483B352638EC4CB21810B3AB",
+  "parent": "base10_r8",
+  "delta_files": 2,
+  "cumulative_files": 85,
+  "protected_apks": 22,
+  "source_final_cases": 95,
+  "jadx": "TileState and fe exit0; own subtitle routing cross-checked with final smali. JADX fe renders disposed conditional empty, while actual final if-eqz/return-void guard remains and existing source/final rejection tests pass.",
+  "limits": "No vehicle, ART, OEM or native verification. SOC/user-adjustment/theme/background and full V2/V3 checks remain."
+}

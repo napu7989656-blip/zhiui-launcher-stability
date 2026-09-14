@@ -1,0 +1,24 @@
+[
+  {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base08_statusbar_rollback_r1",
+    "wallpaper_result_cases": 14,
+    "lifecycle_empty_data_guards": true,
+    "earlier_regressions": 8,
+    "policy": {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base08_statusbar_rollback_r1",
+      "status": "PASS",
+      "evidence": "Actual smali prefix gates and preserved dispatch; compiled Java tested separately; no external calls executed"
+    }
+  },
+  {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\final_redecode\\base08_r1",
+    "wallpaper_result_cases": 14,
+    "lifecycle_empty_data_guards": true,
+    "earlier_regressions": 8,
+    "policy": {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\final_redecode\\base08_r1",
+      "status": "PASS",
+      "evidence": "Actual smali prefix gates and preserved dispatch; compiled Java tested separately; no external calls executed"
+    }
+  }
+]

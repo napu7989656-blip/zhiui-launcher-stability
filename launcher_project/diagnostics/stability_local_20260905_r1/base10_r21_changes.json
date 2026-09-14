@@ -1,0 +1,20 @@
+[
+  "smali/com/byd/launcher/NavBarService.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkHost.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkMetadata.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkPipeline$1.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkPipeline$2.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkPipeline$Host.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkPipeline$Input.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkPipeline.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkWork$$ExternalSyntheticLambda0.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkWork$1.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkWork$Delivery.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkWork$Host.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkWork$Job.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkWork$Request.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkWork$Result.smali",
+  "smali/com/byd/launcher/stability/MediaArtworkWork.smali",
+  "smali/o/a9.smali",
+  "smali/o/llI.smali"
+]

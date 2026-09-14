@@ -1,0 +1,17 @@
+[
+  {
+    "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_owned_handler_r1",
+    "handler_cases": [
+      "alive",
+      "controller_disposed",
+      "service_destroyed",
+      "platform_rejection_preserved",
+      "destroy_clear_before_enqueue_recheck_removes_late_message",
+      "dequeued_or_front_message_stopped"
+    ],
+    "other_controller_methods_preserved": 22,
+    "inherited_guards": 60,
+    "inherited_disposal_cases": 15,
+    "status": "PASS; actual smali with Handler/Looper doubles; not ART"
+  }
+]

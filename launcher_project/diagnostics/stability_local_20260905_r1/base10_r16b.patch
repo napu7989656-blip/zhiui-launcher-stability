@@ -1,0 +1,35 @@
+--- r16/smali/o/h2.smali
++++ r16b/smali/o/h2.smali
+@@ -1675,6 +1675,7 @@
+     .line 769
+     .line 770
+     move-result-object v2
++    invoke-static {v2}, Lcom/byd/launcher/stability/BlurPipeline;->blurred(Ljava/lang/Object;)V
+ 
+     .line 771
+     if-eq v2, v1, :cond_1a
+@@ -1688,7 +1689,6 @@
+     .line 775
+     .line 776
+     :cond_1a
+-    invoke-static {v2}, Lcom/byd/launcher/stability/BlurPipeline;->blurred(Ljava/lang/Object;)V
+ 
+     .line 777
+     .line 778
+--- r16/smali/com/byd/launcher/stability/MainBlurHost.smali
++++ r16b/smali/com/byd/launcher/stability/MainBlurHost.smali
+@@ -109,12 +109,8 @@
+ .method public release(Ljava/lang/Object;)V
+     .locals 1
+     check-cast p1, Landroid/graphics/Bitmap;
+-    if-eqz p1, :done
+-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->isRecycled()Z
+-    move-result v0
+-    if-nez v0, :done
+-    invoke-virtual {p1}, Landroid/graphics/Bitmap;->recycle()V
+-    :done
++    const/4 v0, 0x0
++    invoke-static {p1, v0}, Lcom/byd/launcher/stability/BitmapCleanup;->release(Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V
+     return-void
+ .end method
+ .method public failed(Ljava/lang/RuntimeException;)V

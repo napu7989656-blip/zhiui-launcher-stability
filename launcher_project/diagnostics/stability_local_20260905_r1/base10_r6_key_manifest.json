@@ -1,0 +1,10 @@
+[
+  {
+    "path": "smali/o/ie.smali",
+    "signature": "run()V",
+    "key_before": 1,
+    "key_after": 2,
+    "before": "    const/4 v6, 0x1\n\n    .line 1367\n    .line 1368\n    new-instance v7, Lo/je;\n\n    .line 1369\n    .line 1370\n    invoke-direct {v7, v0, v3, v4, v11}, Lo/je;-><init>(Lo/ff;Landroid/widget/SeekBar;Landroid/widget/TextView;I)V\n\n    .line 1371\n    .line 1372\n    .line 1373\n    invoke-static {v0, v6, v7}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->execute(Ljava/lang/Object;ILjava/lang/Runnable;)Z\n\n    .line 1374\n    .line 1375\n    .line 1376\n",
+    "after": "    const/4 v6, 0x2\n\n    .line 1367\n    .line 1368\n    new-instance v7, Lo/je;\n\n    .line 1369\n    .line 1370\n    invoke-direct {v7, v0, v3, v4, v11}, Lo/je;-><init>(Lo/ff;Landroid/widget/SeekBar;Landroid/widget/TextView;I)V\n\n    .line 1371\n    .line 1372\n    .line 1373\n    invoke-static {v0, v6, v7}, Lcom/byd/launcher/stability/QuickSettingsReadExecutor;->execute(Ljava/lang/Object;ILjava/lang/Runnable;)Z\n\n    .line 1374\n    .line 1375\n    .line 1376\n"
+  }
+]

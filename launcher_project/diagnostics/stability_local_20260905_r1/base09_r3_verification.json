@@ -1,0 +1,268 @@
+{
+  "candidate": "D:\\apk\\zhiui-stability-local-base09-r3.apk",
+  "sha256": "013C7166EBDD649EC60C9465A60710F6DB11459745781C0D3C200FF5355B4327",
+  "bytes": 30063935,
+  "parent": "base08_statusbar_rollback_r1",
+  "source_files": 6711,
+  "changed_files": [
+    "smali/com/byd/launcher/NavBarService.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsLifetime.smali",
+    "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+    "smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali",
+    "smali/o/ae.smali",
+    "smali/o/af.smali",
+    "smali/o/ag.smali",
+    "smali/o/bg.smali",
+    "smali/o/ce.smali",
+    "smali/o/de.smali",
+    "smali/o/ee.smali",
+    "smali/o/f4.smali",
+    "smali/o/fe.smali",
+    "smali/o/ff.smali",
+    "smali/o/ge.smali",
+    "smali/o/h2.smali",
+    "smali/o/ie.smali",
+    "smali/o/je.smali",
+    "smali/o/k9.smali",
+    "smali/o/ke.smali",
+    "smali/o/lb.smali",
+    "smali/o/m9.smali",
+    "smali/o/ne.smali",
+    "smali/o/qe.smali",
+    "smali/o/re.smali",
+    "smali/o/se.smali",
+    "smali/o/sj.smali",
+    "smali/o/td.smali",
+    "smali/o/ua.smali",
+    "smali/o/we.smali",
+    "smali/o/x9.smali",
+    "smali/o/ye.smali",
+    "smali/o/zb.smali",
+    "smali/o/ze.smali",
+    "smali/o/\u03ab.smali",
+    "smali/o/\u03b0.smali",
+    "smali/o/\u03d3.smali",
+    "smali/o/\u03d8.smali"
+  ],
+  "unexpected_source_changes": [],
+  "unexpected_final_business_changes": [],
+  "normalized_final_differences": [
+    {
+      "path": "smali/o/llI.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsLifetime.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/StatusBarResources.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ea.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ze.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ne.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/se.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/m9.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ke.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/MainActivity.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/fe.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/QuickSettingsResources.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ak.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "res/values/public.xml",
+      "kind": "identical XML declarations; order/whitespace only"
+    },
+    {
+      "path": "smali/o/ee.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ag.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/zb.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/vl.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/lb.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/\u03b0.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/f4.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/lII.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/bg.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/\u03d8.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/af.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/\u03ab.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/NavBarService.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/widget/SwipeDismissFrameLayout.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "res/values/ids.xml",
+      "kind": "identical XML declarations; order/whitespace only"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/PolicyControlReadOnly.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/c0.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/com/byd/launcher/stability/WallpaperFrameApply.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/we.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/y7.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/je.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/sj.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/h2.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/x9.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/tj.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/k9.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ye.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/td.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ua.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ce.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/\u03d3.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/de.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/zk.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ge.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ae.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ie.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/ff.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/re.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    },
+    {
+      "path": "smali/o/qe.smali",
+      "kind": "smali debug/labels/member order/payload alignment"
+    }
+  ],
+  "status": "SINGLE_PATCH_LOCAL_PASS; NOT_FULL_PLAN_PASS; NOT_VEHICLE_TESTED"
+}

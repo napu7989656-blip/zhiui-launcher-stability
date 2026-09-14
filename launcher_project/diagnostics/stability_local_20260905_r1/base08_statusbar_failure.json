@@ -1,0 +1,16 @@
+{
+  "issue": "BASE-08",
+  "path": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base06_policy_readonly_r1\\smali\\com\\byd\\launcher\\NavBarService.smali",
+  "sha256": "387AE6FEB19B1F20D17AFB1074B40F9537CE944AEE0AA7A3D490097D549FAB89",
+  "method": "public final Ϡ(I)V",
+  "line": 27101,
+  "finding": "WindowManager.addView succeeds inside try_start_5; subsequent init/pref read can throw; catch_4 clears statusView without removeView. The next create no longer sees the attached old root.",
+  "catch_instructions": [
+    ":catch_4",
+    "move-exception v0",
+    "const-string v2, \"showStatusBar failed\"",
+    "invoke-static {v9, v2, v0}, Lo/q3;->ͺ(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Exception;)V",
+    "iput-object v10, v1, Lcom/byd/launcher/NavBarService;->ͱ:Landroid/view/View;"
+  ],
+  "additional_review": "Controller/touch-zone ownership and all cleanup entry exceptions must be inspected before patch; this is not runtime leak measurement."
+}

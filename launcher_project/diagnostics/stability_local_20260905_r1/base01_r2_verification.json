@@ -1,0 +1,13 @@
+{
+  "candidate": "D:/apk/zhiui-stability-local-base01-r2.apk",
+  "sha256": "D1967F9C3C7BC3380DFBDA8F37B56E768621D96B85E61D2DACABA1E5328E37E1",
+  "source_file_count": 6702,
+  "source_changed_files": [
+    "smali/com/byd/launcher/MainActivity.smali",
+    "smali/o/ak.smali"
+  ],
+  "unexpected_source_changes": [],
+  "unexpected_final_business_changes": [],
+  "manifest_and_resource_hashes_unchanged": true,
+  "status": "LOCAL_SINGLE_PATCH_PASS; NOT_FULL_PLAN_PASS; NOT_VEHICLE_TESTED"
+}

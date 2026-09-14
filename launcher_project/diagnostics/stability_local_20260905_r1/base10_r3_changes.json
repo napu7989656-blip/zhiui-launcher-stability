@@ -1,0 +1,27 @@
+[
+  {
+    "path": "smali/o/ff.smali",
+    "before_sha": "68C6752A89104B80E50C02D5158D7F9C7C96E94477C504EFD8C90189DE1EF126",
+    "after_sha": "C62F1043514AD43D4A96EFAFF9A7A73F2CE220349497CDBC098BCEE9B4634092"
+  },
+  {
+    "path": "smali/o/ie.smali",
+    "before_sha": "4FCEC912F7DA5F34A09854AB0C721C7CE7CE731AB6C8F437BCE0FC1C985E7827",
+    "after_sha": "8FB31C8F506695A863B948595CF5118CEDDF7EE5008BA9067D0E9CFEADB05583"
+  },
+  {
+    "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$1.smali",
+    "before_sha": "",
+    "after_sha": "C0A8C281134CFCDC3A49E58ABFF29FF44FD8F7D2C1AF832E5508E365C2FD7DA8"
+  },
+  {
+    "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor$Read.smali",
+    "before_sha": "",
+    "after_sha": "43031B03088DB599A77F6A6F2DBB1D24A511E2B9B2A409D229D395628327457F"
+  },
+  {
+    "path": "smali/com/byd/launcher/stability/QuickSettingsReadExecutor.smali",
+    "before_sha": "",
+    "after_sha": "0BC65FD772B3587D13A90B7B2764E1CCCDB3EB42CA7C92AE661A1E8093744510"
+  }
+]

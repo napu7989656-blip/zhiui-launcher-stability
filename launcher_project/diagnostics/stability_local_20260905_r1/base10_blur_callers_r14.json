@@ -1,0 +1,734 @@
+{
+  "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base10_bitmap_alias_r14",
+  "call_sites": [
+    {
+      "file": "smali/com/byd/launcher/AppLauncherActivity.smali",
+      "method": "public final onCreate(Landroid/os/Bundle;)V",
+      "line": 820,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/AppLauncherActivity.smali",
+      "method": "public final onCreate(Landroid/os/Bundle;)V",
+      "line": 891,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v2}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public constructor <init>()V",
+      "line": 138,
+      "target": "Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;",
+      "instruction": "iput-object v0, p0, Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final onCreate(Landroid/os/Bundle;)V",
+      "line": 1966,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object p1, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final onResume()V",
+      "line": 2494,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final ͷ()V",
+      "line": 3192,
+      "target": "Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;",
+      "instruction": "iput-object v0, p0, Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final Ί()V",
+      "line": 3533,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v4, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/MainActivity.smali",
+      "method": "public final Ί()V",
+      "line": 3596,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v3, p0, v4, v0, v1}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final Έ(Z)V",
+      "line": 8936,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final Έ(Z)V",
+      "line": 9361,
+      "target": "Lcom/byd/launcher/NavBarService;->Ϛ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v0, p0, Lcom/byd/launcher/NavBarService;->Ϛ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final Ί()V",
+      "line": 9848,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final Δ()Z",
+      "line": 11113,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final φ()V",
+      "line": 19593,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v5, p0, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final φ()V",
+      "line": 19613,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v3, p0, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final φ()V",
+      "line": 19660,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v1}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final ύ()V",
+      "line": 20778,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v3, p0, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final ύ()V",
+      "line": 20798,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v3, p0, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final ύ()V",
+      "line": 20829,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final Ϟ()V",
+      "line": 25415,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v3, v1, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final Ϟ()V",
+      "line": 25459,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v6, v1, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final ϟ(I)V",
+      "line": 26438,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v5, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "public final ϟ(I)V",
+      "line": 26493,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v5}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "private final stabilityCreateStatusBar(I)V",
+      "line": 27488,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/com/byd/launcher/NavBarService.smali",
+      "method": "private final stabilityCreateStatusBar(I)V",
+      "line": 27499,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/a2.smali",
+      "method": "public static ˏ(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;",
+      "line": 623,
+      "target": "Lo/a2;->Β(Landroid/graphics/Bitmap;I)",
+      "instruction": "invoke-static {p1, p3}, Lo/a2;->Β(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/a8.smali",
+      "method": "public final run()V",
+      "line": 344,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iput-object v3, v2, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/a8.smali",
+      "method": "public final run()V",
+      "line": 379,
+      "target": "Lcom/byd/launcher/NavBarService;->Ϛ:Landroid/graphics/Bitmap;",
+      "instruction": "iput-object v4, v2, Lcom/byd/launcher/NavBarService;->Ϛ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/aa.smali",
+      "method": "public final run()V",
+      "line": 382,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v8, v1, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/aa.smali",
+      "method": "public final run()V",
+      "line": 402,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v8, v1, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/aa.smali",
+      "method": "public final run()V",
+      "line": 433,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v8, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/aa.smali",
+      "method": "public final run()V",
+      "line": 1569,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v12, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/aa.smali",
+      "method": "public final run()V",
+      "line": 2174,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v3, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/aa.smali",
+      "method": "public final run()V",
+      "line": 2215,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v3}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "line": 976,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v6, v0, v3, v4, v2}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "line": 1002,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v6, v0, v3, v4, v2}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "line": 3145,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v3, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "line": 3225,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v5, v0, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "line": 3235,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v2, v0, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ag.smali",
+      "method": "public final run()V",
+      "line": 3514,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v3, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ak.smali",
+      "method": "public static ͳ(Landroid/graphics/Bitmap;)V",
+      "line": 530,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ak.smali",
+      "method": "public static ͳ(Landroid/graphics/Bitmap;)V",
+      "line": 537,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sput-object p0, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ak.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 919,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v4, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ak.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 1052,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object p1, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ak.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 1076,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object p1, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ak.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 1084,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object p1, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/ak.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 1100,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/e8.smali",
+      "method": "public final onPageScrollStateChanged(I)V",
+      "line": 70,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v1, p0, v3, v0, v2}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/f4.smali",
+      "method": "public final Ͱ(Ljava/lang/String;Ljava/util/ArrayList;Lo/e4;II)V",
+      "line": 300,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v3, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/f4.smali",
+      "method": "public final Ͱ(Ljava/lang/String;Ljava/util/ArrayList;Lo/e4;II)V",
+      "line": 338,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v3}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/g8.smali",
+      "method": "public final onSuccess(Lorg/json/JSONObject;)V",
+      "line": 303,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v1, p0, v4, p1, v2}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 596,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1007,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v6, v0, v10, v1, v11}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1315,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v11, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1345,
+      "target": "Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;",
+      "instruction": "iget-object v0, v8, Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1370,
+      "target": "Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;",
+      "instruction": "iput-object v11, v8, Lcom/byd/launcher/MainActivity;->Κ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1522,
+      "target": "Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)",
+      "instruction": "invoke-static {v11, v2, v3, v14, v0}, Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1530,
+      "target": "Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)",
+      "instruction": "invoke-static {v11, v2, v3, v13, v4}, Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1590,
+      "target": "Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)",
+      "instruction": "invoke-static {v11, v2, v3, v6, v1}, Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1663,
+      "target": "Lo/a2;->Β(Landroid/graphics/Bitmap;I)",
+      "instruction": "invoke-static {v1, v3}, Lo/a2;->Β(Landroid/graphics/Bitmap;I)Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1682,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sput-object v2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/h2.smali",
+      "method": "public final run()V",
+      "line": 1774,
+      "target": "Lo/a8;-><init>",
+      "instruction": "invoke-direct/range {v7 .. v13}, Lo/a8;-><init>(Lcom/byd/launcher/MainActivity;ILcom/byd/launcher/NavBarService;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;Landroid/graphics/Bitmap;)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/j9.smali",
+      "method": "public final run()V",
+      "line": 72,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/jj.smali",
+      "method": "public final onClick(Landroid/view/View;)V",
+      "line": 1415,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v2, v4, v5, v0, v6}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/km.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V",
+      "line": 384,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v1, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/km.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;ILjava/util/List;)V",
+      "line": 895,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v1, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/km.smali",
+      "method": "public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;ILjava/util/List;)V",
+      "line": 1010,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v1, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/lII.smali",
+      "method": "public final run()V",
+      "line": 154,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/lII.smali",
+      "method": "public final run()V",
+      "line": 180,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/lII.smali",
+      "method": "public final run()V",
+      "line": 836,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/nd.smali",
+      "method": "public final ˏ(Landroid/view/View;)V",
+      "line": 1880,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v4, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/nd.smali",
+      "method": "public final ͳ()V",
+      "line": 2781,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v2, p0, v3, v1, v4}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/nd.smali",
+      "method": "public final Ύ(Landroid/view/View;)V",
+      "line": 6489,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/oc.smali",
+      "method": "public final onItemClick(Landroid/widget/AdapterView;Landroid/view/View;IJ)V",
+      "line": 224,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {p5, p1, p2, p3, v0}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/vl.smali",
+      "method": "public static Ͱ(Lo/vl;)V",
+      "line": 1557,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/vl.smali",
+      "method": "public final Ψ()V",
+      "line": 11450,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/w3.smali",
+      "method": "public final run()V",
+      "line": 79,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/x7.smali",
+      "method": "public final run()V",
+      "line": 573,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v3, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/x7.smali",
+      "method": "public final run()V",
+      "line": 686,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/x9.smali",
+      "method": "public final run()V",
+      "line": 132,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v5, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/x9.smali",
+      "method": "public final run()V",
+      "line": 249,
+      "target": "Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v2, Lo/ak;->ͺ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 1320,
+      "target": "Lcom/byd/launcher/MainActivity;->Ί()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->Ί()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 1897,
+      "target": "Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "instruction": "invoke-direct {v5, v0, v1, v2, v9}, Lo/h2;-><init>(Ljava/lang/Object;Ljava/lang/Object;II)V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 1956,
+      "target": "Lcom/byd/launcher/MainActivity;->Ί()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->Ί()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 3386,
+      "target": "Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->ͷ()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 3680,
+      "target": "Lcom/byd/launcher/MainActivity;->Ί()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->Ί()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/y7.smali",
+      "method": "public final run()V",
+      "line": 3875,
+      "target": "Lcom/byd/launcher/MainActivity;->Ί()V",
+      "instruction": "invoke-virtual {v0}, Lcom/byd/launcher/MainActivity;->Ί()V",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/Ϋ.smali",
+      "method": "public final run()V",
+      "line": 718,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v4, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/Ϋ.smali",
+      "method": "public final run()V",
+      "line": 3163,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v5, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/Ϋ.smali",
+      "method": "public final run()V",
+      "line": 3171,
+      "target": "Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "instruction": "sget-object v0, Lo/ak;->ͷ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/Ϋ.smali",
+      "method": "public final run()V",
+      "line": 3180,
+      "target": "Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)",
+      "instruction": "invoke-static {v0, v6, v7, v5, v8}, Lo/a2;->ˏ(Landroid/graphics/Bitmap;IIII)Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    },
+    {
+      "file": "smali/o/Ϋ.smali",
+      "method": "public final run()V",
+      "line": 3204,
+      "target": "Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "instruction": "iput-object v0, v2, Lcom/byd/launcher/NavBarService;->ϕ:Landroid/graphics/Bitmap;",
+      "manual_status": "PENDING_OWNERSHIP_REVIEW"
+    }
+  ],
+  "limits": "Textual static references; each selector, dynamic source replacement and publication consumer still needs review. R14 only protects borrowed source at three recycle decisions."
+}

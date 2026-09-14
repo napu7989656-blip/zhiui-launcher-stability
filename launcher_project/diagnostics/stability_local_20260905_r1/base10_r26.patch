@@ -1,0 +1,103 @@
+--- r25/smali/o/ki.smali
++++ r26/smali/o/ki.smali
+@@ -834,39 +834,8 @@
+ 
+     .line 373
+     :try_start_c
+-    iget-object v0, v2, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+-
+-    .line 374
+-    .line 375
+-    if-eqz v0, :cond_c
+-
+-    .line 376
+-    .line 377
+-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
+-
+-    .line 378
+-    .line 379
+-    .line 380
+-    move-result v0
+-
+-    .line 381
+-    if-nez v0, :cond_c
+-
+-    .line 382
+-    .line 383
+-    iget-object v0, v2, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+-
+-    .line 384
+-    .line 385
+-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+-
+-    .line 386
+-    .line 387
+-    .line 388
+     iput-object v3, v2, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+ 
+-    .line 389
+-    .line 390
+     :cond_c
+     iput-object v3, v2, Lo/qi;->Η:Landroid/graphics/Bitmap;
+ 
+--- r25/smali/o/qi.smali
++++ r26/smali/o/qi.smali
+@@ -1419,20 +1419,6 @@
+     if-eq v0, v3, :cond_24
+ 
+     :cond_22
+-    iget-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+-
+-    if-eqz v0, :cond_23
+-
+-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->isRecycled()Z
+-
+-    move-result v0
+-
+-    if-nez v0, :cond_23
+-
+-    iget-object v0, v1, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+-
+-    invoke-virtual {v0}, Landroid/graphics/Bitmap;->recycle()V
+-
+     :cond_23
+     sget-object v0, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+ 
+--- r25/smali/o/ˋ.smali
++++ r26/smali/o/ˋ.smali
+@@ -688,35 +688,6 @@
+     .line 307
+     .line 308
+     :cond_e
+-    iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+-
+-    .line 309
+-    .line 310
+-    if-eqz v3, :cond_f
+-
+-    .line 311
+-    .line 312
+-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->isRecycled()Z
+-
+-    .line 313
+-    .line 314
+-    .line 315
+-    move-result v3
+-
+-    .line 316
+-    if-nez v3, :cond_f
+-
+-    .line 317
+-    .line 318
+-    iget-object v3, v0, Lo/qi;->Ζ:Landroid/graphics/Bitmap;
+-
+-    .line 319
+-    .line 320
+-    invoke-virtual {v3}, Landroid/graphics/Bitmap;->recycle()V
+-
+-    .line 321
+-    .line 322
+-    .line 323
+     :cond_f
+     sget-object v3, Landroid/graphics/Bitmap$Config;->RGB_565:Landroid/graphics/Bitmap$Config;
+ 

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:focusable="true" android:clickable="true" android:layout_width="match_parent" android:layout_height="match_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:id="@id/navbar_editor_panel" android:background="#ff000000" android:paddingTop="24.0dp" android:paddingBottom="12.0dp" android:layout_width="match_parent" android:layout_height="match_parent" android:paddingStart="32.0dp" android:paddingEnd="32.0dp">
+        <FrameLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp">
+            <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ffffff" android:layout_gravity="start|center" android:id="@id/navbar_editor_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="导航栏编辑" />
+            <LinearLayout android:gravity="center_vertical" android:layout_gravity="end|center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <TextView android:textSize="15.0sp" android:textColor="#ffe53935" android:id="@id/btn_navbar_editor_clear" android:background="@drawable/btn_nav_ripple" android:paddingLeft="16.0dp" android:paddingTop="6.0dp" android:paddingRight="16.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="清除" android:layout_marginEnd="8.0dp" android:paddingHorizontal="16.0dp" android:paddingVertical="6.0dp" />
+                <TextView android:textSize="15.0sp" android:textStyle="bold" android:textColor="#ff29b6f6" android:id="@id/btn_navbar_editor_done" android:background="@drawable/btn_nav_ripple" android:paddingLeft="16.0dp" android:paddingTop="6.0dp" android:paddingRight="16.0dp" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="完成" android:paddingHorizontal="16.0dp" android:paddingVertical="6.0dp" />
+            </LinearLayout>
+        </FrameLayout>
+        <LinearLayout android:gravity="center_vertical" android:layout_gravity="center_horizontal" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="12.0dp">
+            <TextView android:textSize="20.0sp" android:textStyle="bold" android:textColor="#ffffff" android:id="@id/tab_widgets" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="控件" android:layout_marginEnd="48.0dp" />
+            <TextView android:textSize="20.0sp" android:textColor="#66ffffff" android:id="@id/tab_nav_apps" android:paddingBottom="6.0dp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="应用" />
+        </LinearLayout>
+        <View android:background="#22ffffff" android:layout_width="match_parent" android:layout_height="1.0dp" />
+        <FrameLayout android:id="@id/content_widgets" android:paddingTop="12.0dp" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0">
+            <androidx.recyclerview.widget.RecyclerView android:id="@id/rv_widgets" android:layout_width="match_parent" android:layout_height="match_parent" />
+        </FrameLayout>
+        <FrameLayout android:id="@id/content_nav_apps" android:paddingTop="12.0dp" android:visibility="gone" android:layout_width="match_parent" android:layout_height="0.0dp" android:layout_weight="1.0">
+            <androidx.viewpager2.widget.ViewPager2 android:orientation="horizontal" android:id="@id/nav_apps_pager" android:layout_width="match_parent" android:layout_height="match_parent" />
+            <LinearLayout android:layout_gravity="center|bottom" android:orientation="horizontal" android:id="@id/nav_apps_indicator" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="4.0dp" />
+        </FrameLayout>
+    </LinearLayout>
+</FrameLayout>

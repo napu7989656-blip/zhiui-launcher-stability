@@ -1,0 +1,9 @@
+{
+  "status": "INTEGRATED_SCOPED_LOCAL_PASS",
+  "manual_audit": "base10_r20_manual_audit.json",
+  "remaining": [
+    "artwork complete chain",
+    "full P1/P2/P3",
+    "ART/OEM validation"
+  ]
+}

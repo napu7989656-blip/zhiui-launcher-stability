@@ -1,0 +1,37 @@
+--- base01_r2/smali/com/byd/launcher/MainActivity.smali
++++ base02_r1/smali/com/byd/launcher/MainActivity.smali
+@@ -2462,6 +2462,13 @@
+     iput-object v1, p0, Lcom/byd/launcher/MainActivity;->ͳ:Lo/e8;
+ 
+     :cond_1
++    # BASE-02: setAdapter(null) runs Adapter.onDetachedFromRecyclerView and recycles holders.
++    iget-object v0, p0, Lcom/byd/launcher/MainActivity;->Ͳ:Landroidx/viewpager2/widget/ViewPager2;
++    if-eqz v0, :base02_adapter_done
++    const/4 v1, 0x0
++    invoke-virtual {v0, v1}, Landroidx/viewpager2/widget/ViewPager2;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
++    iput-object v1, p0, Lcom/byd/launcher/MainActivity;->Ͳ:Landroidx/viewpager2/widget/ViewPager2;
++    :base02_adapter_done
+     invoke-super {p0}, Landroidx/appcompat/app/AppCompatActivity;->onDestroy()V
+ 
+     return-void
+--- base01_r2/smali/o/ak.smali
++++ base02_r1/smali/o/ak.smali
+@@ -1586,7 +1586,7 @@
+ .end method
+ 
+ .method public final onDetachedFromRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
+-    .locals 0
++    .locals 1
+ 
+     .line 1
+     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->onDetachedFromRecyclerView(Landroidx/recyclerview/widget/RecyclerView;)V
+@@ -1599,6 +1599,9 @@
+ 
+     invoke-interface {p1}, Ljava/util/concurrent/ExecutorService;->shutdownNow()Ljava/util/List;
+ 
++    iget-object v0, p0, Lo/ak;->ͱ:Landroid/os/Handler;
++    const/4 p1, 0x0
++    invoke-virtual {v0, p1}, Landroid/os/Handler;->removeCallbacksAndMessages(Ljava/lang/Object;)V
+     return-void
+ .end method
+ 

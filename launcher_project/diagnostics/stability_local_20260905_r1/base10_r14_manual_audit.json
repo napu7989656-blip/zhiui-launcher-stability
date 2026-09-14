@@ -1,0 +1,32 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "EEFFA872B9C1781A6B38765A77283D4F6EA34BD74027EE20DBC5253EBC1092B4",
+  "delta_files": 2,
+  "cumulative_files": 101,
+  "source_final_cases": 238,
+  "review": [
+    "a2 crop helper saves borrowed input in unused v6; locals7 keeps parameters within encoding range and no math/register overwrites v6",
+    "both intermediate recycle decisions retain existing same-output guards and additionally exclude borrowed input; return behavior and exception range preserved",
+    "h2 selector1 full-thumbnail recycle excludes selected source v11; source identity remains live until guard; all unrelated selectors and BASE09 guards unchanged",
+    "four direct crop calls: three in h2 and one in Ϋ.run. Ϋ can use ak last displayed source, so shared helper protection applies without altering caller",
+    "15 actual recycle decision scenarios include three failures reproduced on parent; 223 inherited scenarios per artifact. Not full bitmap allocation/Android runtime testing"
+  ],
+  "jadx": [
+    {
+      "cls": "o.a2",
+      "exit_code": 3,
+      "log": "base10_r14_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.h2",
+      "exit_code": 3,
+      "log": "base10_r14_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "jadx_caveats": "Both requested methods render the new source identity guards correctly and were crosschecked with final smali. a2 task exit3 reports BlockProcessor failure in unchanged CoreService.ʹ(String,String); h2 task exit3 reports the existing NavBarService.Ε RegionMaker failure. Neither is a zero-error whole-decompile claim.",
+  "limits": "Partial allocation cleanup, MainActivity task/result ownership and full V2/V3 reintegration remain pending. Source bitmap may still be returned by existing fallback; callers must not assume exclusive ownership."
+}

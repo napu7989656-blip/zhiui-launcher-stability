@@ -1,0 +1,7 @@
+[
+  {
+    "path": "smali/o/a9.smali",
+    "before": ".method public stabilityCurrent()Z\n    .locals 2\n    iget-boolean v0, p0, Lo/a9;->ͺ:Z\n    if-nez v0, :invalid\n    iget-object v0, p0, Lo/a9;->ˋ:Landroid/content/Context;\n    instance-of v1, v0, Lcom/byd/launcher/NavBarService;\n    if-eqz v1, :invalid\n    check-cast v0, Lcom/byd/launcher/NavBarService;\n    iget-boolean v1, v0, Lcom/byd/launcher/NavBarService;->ˋ:Z\n    if-nez v1, :invalid\n    sget-object v1, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;\n    if-ne v0, v1, :invalid\n    iget-object v1, v0, Lcom/byd/launcher/NavBarService;->ͼ:Lo/a9;\n    if-ne v1, p0, :invalid\n    const/4 v0, 0x1\n    return v0\n    :invalid\n    const/4 v0, 0x0\n    return v0\n.end method",
+    "after": ".method public stabilityCurrent()Z\n    .locals 2\n    iget-boolean v0, p0, Lo/a9;->ͺ:Z\n    if-nez v0, :invalid\n    iget-object v0, p0, Lo/a9;->ʹ:Lo/ia;\n    if-eqz v0, :invalid\n    iget-object v0, v0, Lo/ia;->ˏ:Lcom/byd/launcher/NavBarService;\n    instance-of v1, v0, Lcom/byd/launcher/NavBarService;\n    if-eqz v1, :invalid\n    check-cast v0, Lcom/byd/launcher/NavBarService;\n    iget-boolean v1, v0, Lcom/byd/launcher/NavBarService;->ˋ:Z\n    if-nez v1, :invalid\n    sget-object v1, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;\n    if-ne v0, v1, :invalid\n    iget-object v1, v0, Lcom/byd/launcher/NavBarService;->ͼ:Lo/a9;\n    if-ne v1, p0, :invalid\n    const/4 v0, 0x1\n    return v0\n    :invalid\n    const/4 v0, 0x0\n    return v0\n.end method"
+  }
+]

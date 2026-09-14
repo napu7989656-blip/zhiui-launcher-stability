@@ -1,0 +1,45 @@
+.class public final Lo/n3;
+.super Lo/ΐ;
+.source "SourceFile"
+
+
+# instance fields
+.field public final Ͳ:Lo/m3;
+
+
+# direct methods
+.method public constructor <init>()V
+    .locals 1
+
+    .line 1
+    invoke-direct {p0}, Lo/ΐ;-><init>()V
+
+    new-instance v0, Lo/m3;
+
+    invoke-direct {v0}, Lo/m3;-><init>()V
+
+    iput-object v0, p0, Lo/n3;->Ͳ:Lo/m3;
+
+    return-void
+.end method
+
+
+# virtual methods
+.method public final ˋ()Ljava/util/Random;
+    .locals 2
+
+    .line 1
+    iget-object v0, p0, Lo/n3;->Ͳ:Lo/m3;
+
+    invoke-virtual {v0}, Ljava/lang/ThreadLocal;->get()Ljava/lang/Object;
+
+    move-result-object v0
+
+    const-string v1, "implStorage.get()"
+
+    invoke-static {v0, v1}, Lo/e6;->Ͳ(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v0, Ljava/util/Random;
+
+    return-object v0
+.end method

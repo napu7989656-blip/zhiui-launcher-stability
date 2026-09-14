@@ -1,0 +1,31 @@
+{
+  "parent_reproduction": "Original catch discards an attached root without removing it (actual instructions).",
+  "artifacts": [
+    {
+      "tree": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\worktrees\\base08_statusbar_rollback_r1",
+      "cases": [
+        "cleanup_retry_None",
+        "cleanup_retry_Lcom/byd/launcher/NavBarService;->\u0371:Landroid/view/View;",
+        "cleanup_retry_Lcom/byd/launcher/NavBarService;->\u03c6:Lo/yb;",
+        "cleanup_retry_Lcom/byd/launcher/NavBarService;->\u03bc:Lo/ta;",
+        "cleanup_retry_Lcom/byd/launcher/NavBarService;->\u03b9:Lo/za;",
+        "cleanup_retry_Lcom/byd/launcher/NavBarService;->\u03ba:Lo/va;",
+        "cleanup_retry_Lcom/byd/launcher/NavBarService;->\u03bb:Lo/bb;",
+        "healthy_or_pending_root_reused",
+        "healthy_or_pending_root_reused",
+        "destroyed_create_blocked",
+        "late_refresh_guard_(1, 0)",
+        "late_refresh_guard_(0, 1)",
+        "late_refresh_guard_(0, 0)",
+        "outer_exception_inflate",
+        "outer_exception_bind",
+        "outer_exception_before_add",
+        "outer_exception_after_add",
+        "outer_exception_preferences",
+        "controller_single_owner_single_warmup",
+        "destroy_and_exception_hooks"
+      ],
+      "status": "PASS; scoped actual-smali branches and explicit call doubles; not ART"
+    }
+  ]
+}

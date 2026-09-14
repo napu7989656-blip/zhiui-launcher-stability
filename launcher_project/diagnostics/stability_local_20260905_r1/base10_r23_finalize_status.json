@@ -1,0 +1,41 @@
+{
+  "checks_passed": true,
+  "jadx": [
+    {
+      "cls": "o.a9",
+      "exit_code": 3,
+      "log": "base10_r23_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.ea",
+      "exit_code": 0,
+      "log": "base10_r23_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.llI",
+      "exit_code": 0,
+      "log": "base10_r23_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.c8",
+      "exit_code": 0,
+      "log": "base10_r23_jadx_3_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.MediaManagerStart",
+      "exit_code": 0,
+      "log": "base10_r23_jadx_4_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "JADX errors require explicit review; scoped local checks, not full-plan/ART/vehicle validation"
+}

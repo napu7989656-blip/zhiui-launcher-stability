@@ -1,0 +1,73 @@
+{
+  "parent": "R25 candidate; ki unchanged from R24",
+  "sha256": "57047ba3aa9e727c0ccb299daf24ea3e18a6e5e9a475665b592efb7b704598fd",
+  "cases": [
+    {
+      "injected": null,
+      "operations": [
+        "surface",
+        "texture_listener",
+        "texture",
+        "egl",
+        "bitmap"
+      ],
+      "retained_fields": []
+    },
+    {
+      "injected": "surface",
+      "operations": [
+        "surface"
+      ],
+      "retained_fields": [
+        "Lo/qi;->Ί:Landroid/view/Surface;",
+        "Lo/qi;->Ή:Landroid/graphics/SurfaceTexture;",
+        "Lo/qi;->Ζ:Landroid/graphics/Bitmap;",
+        "Lo/qi;->Η:Landroid/graphics/Bitmap;",
+        "Lo/qi;->Δ:[I"
+      ]
+    },
+    {
+      "injected": "texture_listener",
+      "operations": [
+        "surface",
+        "texture_listener"
+      ],
+      "retained_fields": [
+        "Lo/qi;->Ή:Landroid/graphics/SurfaceTexture;",
+        "Lo/qi;->Ζ:Landroid/graphics/Bitmap;",
+        "Lo/qi;->Η:Landroid/graphics/Bitmap;",
+        "Lo/qi;->Δ:[I"
+      ]
+    },
+    {
+      "injected": "texture",
+      "operations": [
+        "surface",
+        "texture_listener",
+        "texture"
+      ],
+      "retained_fields": [
+        "Lo/qi;->Ή:Landroid/graphics/SurfaceTexture;",
+        "Lo/qi;->Ζ:Landroid/graphics/Bitmap;",
+        "Lo/qi;->Η:Landroid/graphics/Bitmap;",
+        "Lo/qi;->Δ:[I"
+      ]
+    },
+    {
+      "injected": "egl",
+      "operations": [
+        "surface",
+        "texture_listener",
+        "texture",
+        "egl"
+      ],
+      "retained_fields": [
+        "Lo/qi;->Ζ:Landroid/graphics/Bitmap;",
+        "Lo/qi;->Η:Landroid/graphics/Bitmap;",
+        "Lo/qi;->Δ:[I"
+      ]
+    }
+  ],
+  "scope": "Actual close tail and typed Exception dispatch; Surface/Texture/EGL/Bitmap failures substituted. Camera reflection prefix and actual native resources never executed.",
+  "status": "FOUR_DOWNSTREAM_CLEANUP_GAPS_REPRODUCED; NOT_FIXED"
+}

@@ -1,0 +1,13 @@
+--- r20/smali/o/a9.smali
++++ r20b/smali/o/a9.smali
+@@ -2783,7 +2783,9 @@
+     .locals 2
+     iget-boolean v0, p0, Lo/a9;->ͺ:Z
+     if-nez v0, :invalid
+-    iget-object v0, p0, Lo/a9;->ˋ:Landroid/content/Context;
++    iget-object v0, p0, Lo/a9;->ʹ:Lo/ia;
++    if-eqz v0, :invalid
++    iget-object v0, v0, Lo/ia;->ˏ:Lcom/byd/launcher/NavBarService;
+     instance-of v1, v0, Lcom/byd/launcher/NavBarService;
+     if-eqz v1, :invalid
+     check-cast v0, Lcom/byd/launcher/NavBarService;

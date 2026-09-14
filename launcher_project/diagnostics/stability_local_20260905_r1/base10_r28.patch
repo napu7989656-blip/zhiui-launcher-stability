@@ -1,0 +1,82 @@
+--- r27/smali/o/qi.smali
++++ r28/smali/o/qi.smali
+@@ -1516,7 +1516,15 @@
+ 
+     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
+ 
++    :try_start_egl_0
+     invoke-static {v0, v1, v1, v2}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
++    :try_end_egl_0
++    .catch Ljava/lang/Exception; {:try_start_egl_0 .. :try_end_egl_0} :catch_egl_0
++    goto :egl_next_0
++    :catch_egl_0
++    move-exception v0
++    invoke-static {v0}, Lo/qi;->stabilityLogEglCleanupFailure(Ljava/lang/Exception;)V
++    :egl_next_0
+ 
+     iget-object v0, p0, Lo/qi;->Α:Landroid/opengl/EGLSurface;
+ 
+@@ -1524,7 +1532,15 @@
+ 
+     iget-object v1, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;
+ 
++    :try_start_egl_1
+     invoke-static {v1, v0}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
++    :try_end_egl_1
++    .catch Ljava/lang/Exception; {:try_start_egl_1 .. :try_end_egl_1} :catch_egl_1
++    goto :egl_next_1
++    :catch_egl_1
++    move-exception v0
++    invoke-static {v0}, Lo/qi;->stabilityLogEglCleanupFailure(Ljava/lang/Exception;)V
++    :egl_next_1
+ 
+     :cond_0
+     iget-object v0, p0, Lo/qi;->ΐ:Landroid/opengl/EGLContext;
+@@ -1533,12 +1549,28 @@
+ 
+     iget-object v1, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;
+ 
++    :try_start_egl_2
+     invoke-static {v1, v0}, Landroid/opengl/EGL14;->eglDestroyContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z
++    :try_end_egl_2
++    .catch Ljava/lang/Exception; {:try_start_egl_2 .. :try_end_egl_2} :catch_egl_2
++    goto :egl_next_2
++    :catch_egl_2
++    move-exception v0
++    invoke-static {v0}, Lo/qi;->stabilityLogEglCleanupFailure(Ljava/lang/Exception;)V
++    :egl_next_2
+ 
+     :cond_1
+     iget-object v0, p0, Lo/qi;->Ώ:Landroid/opengl/EGLDisplay;
+ 
++    :try_start_egl_3
+     invoke-static {v0}, Landroid/opengl/EGL14;->eglTerminate(Landroid/opengl/EGLDisplay;)Z
++    :try_end_egl_3
++    .catch Ljava/lang/Exception; {:try_start_egl_3 .. :try_end_egl_3} :catch_egl_3
++    goto :egl_next_3
++    :catch_egl_3
++    move-exception v0
++    invoke-static {v0}, Lo/qi;->stabilityLogEglCleanupFailure(Ljava/lang/Exception;)V
++    :egl_next_3
+ 
+     const/4 v0, 0x0
+ 
+@@ -1551,3 +1583,18 @@
+     :cond_2
+     return-void
+ .end method
++
++
++.method public static stabilityLogEglCleanupFailure(Ljava/lang/Exception;)V
++    .locals 2
++    :try_start_log
++    const-string v0, "TurnSignalCamera"
++    const-string v1, "EGL cleanup failed; continuing remaining cleanup"
++    invoke-static {v0, v1, p0}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
++    :try_end_log
++    .catch Ljava/lang/Exception; {:try_start_log .. :try_end_log} :catch_log
++    return-void
++    :catch_log
++    move-exception v0
++    return-void
++.end method

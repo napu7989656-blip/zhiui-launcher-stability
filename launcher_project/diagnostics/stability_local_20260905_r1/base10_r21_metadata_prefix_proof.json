@@ -1,0 +1,5 @@
+{
+  "original_metadata_filter_rating_and_title_prefix_preserved": true,
+  "proof": "Only new entry guard removed, remaining prefix tokens exactly equal through original goto_b; smali inverse also restores all files.",
+  "limits": "No claim that original rating/title behavior is bug-free or fully ART-tested."
+}

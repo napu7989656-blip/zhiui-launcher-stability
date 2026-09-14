@@ -1,0 +1,10 @@
+{
+  "status": "LATE_CLOSE_SEES_NULL_WRAPPER_REPRODUCED_NOT_FIXED",
+  "actual_close_tasks": 1,
+  "wrapper_cleared_before_task": true,
+  "old_wrapper_still_open_in_substitute": true,
+  "task_operations": [
+    "egl_cleanup_substitute"
+  ],
+  "scope": "Actual qi close scheduling, actual service wrapper clear fragment, full ki selector2 with null wrapper. Native Thread/camera/EGL effects substituted. Legal sequential delayed-worker schedule, not measured OEM scheduling. No camera/vehicle instruction executed."
+}

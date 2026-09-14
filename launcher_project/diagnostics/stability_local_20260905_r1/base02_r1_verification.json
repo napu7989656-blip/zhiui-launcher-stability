@@ -1,0 +1,14 @@
+{
+  "candidate": "D:\\apk\\zhiui-stability-local-base02-r1.apk",
+  "sha256": "5C6AEBA4130F81520B3FDDC988130A66EB37F87C08D1D09D4D182583D48D3882",
+  "bytes": 30063935,
+  "parent": "base01_wallpaper_callback_r2",
+  "source_files": 6702,
+  "changed_files": [
+    "smali/com/byd/launcher/MainActivity.smali",
+    "smali/o/ak.smali"
+  ],
+  "unexpected_source_changes": [],
+  "unexpected_final_business_changes": [],
+  "status": "SINGLE_PATCH_LOCAL_PASS; NOT_FULL_PLAN_PASS; NOT_VEHICLE_TESTED"
+}

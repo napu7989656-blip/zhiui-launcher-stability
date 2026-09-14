@@ -1,0 +1,30 @@
+{
+  "fields": 5,
+  "retained_negative_findings": [
+    {
+      "path": "smali/o/Fields.smali",
+      "method": "public check()V",
+      "line": 15,
+      "target": "Lo/Fields;->missing:I",
+      "issue": "unresolved_signature",
+      "source": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\modules\\signature_field_parser_r1\\smali\\o\\Fields.smali"
+    },
+    {
+      "path": "smali/o/Fields.smali",
+      "method": "public check()V",
+      "line": 16,
+      "target": "Lo/Fields;->count:I",
+      "issue": "static_instance_mismatch",
+      "source": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\modules\\signature_field_parser_r1\\smali\\o\\Fields.smali"
+    },
+    {
+      "path": "smali/o/Fields.smali",
+      "method": "public check()V",
+      "line": 17,
+      "target": "Lo/Fields;->TOTAL:I",
+      "issue": "static_instance_mismatch",
+      "source": "D:\\apk\\launcher_project\\diagnostics\\stability_local_20260905_r1\\modules\\signature_field_parser_r1\\smali\\o\\Fields.smali"
+    }
+  ],
+  "pass_": true
+}

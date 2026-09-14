@@ -1,0 +1,7 @@
+{
+  "candidates": [
+    "smali/o/a9.smali",
+    "smali/o/y7.smali"
+  ],
+  "scope": "Text prefilter of133 cumulatively modified files; not dataflow/caller audit and not proof all Context guards are correct."
+}

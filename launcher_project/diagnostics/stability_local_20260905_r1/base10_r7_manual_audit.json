@@ -1,0 +1,23 @@
+{
+  "checkpoint": "base10_r7",
+  "sha256": "A6F8582C03408F2B8FD94780944DCC114D372014A02C80E4B32DF6A2F0D00806",
+  "scope": "Instrument initial/refresh/cached result and retry ownership; close/drag invalidation",
+  "java_assertions": 30213,
+  "java_real_submissions": 10000,
+  "delta_files": 11,
+  "cumulative_files": 73,
+  "protected_apks": 22,
+  "android29_candidates": 127,
+  "known_jadx_limits": [
+    "InstrumentReads exit0 but anonymous result run displays empty try; final smali try_start_1 covers commit/delegate and RuntimeException handler",
+    "Host inspection exit3 from existing NavBarService.Ε(ImageButton,String) RegionMakerVisitor only"
+  ],
+  "build_failure_preserved": "logs/base10_r7_build_failed_label_payload.txt; fixed first-definition-only insertion and added switch-payload check",
+  "still_pending": [
+    "Tile cache/publication identity",
+    "Instrument query wait interruption and full caller audit",
+    "Theme A-B-A, SOC read freshness, user-action callbacks",
+    "Glass worker, V2/V3 feature reintegration, API manual review, combined local gates"
+  ],
+  "vehicle_connected": false
+}

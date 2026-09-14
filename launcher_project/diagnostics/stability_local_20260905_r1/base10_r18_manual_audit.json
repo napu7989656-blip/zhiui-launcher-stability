@@ -1,0 +1,66 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "AEB9E24B4C4FE7F749BBE8F1488AAF495176CEE91CC20A4EC91F6BB62CD13778",
+  "delta_files": 11,
+  "cumulative_files": 130,
+  "source_final_case_groups": 316,
+  "jvm_assertions": {
+    "process": 66,
+    "list": 47,
+    "workflow": 51
+  },
+  "review": [
+    "NavBarService.Κ replaced only notification initialization; remaining Service methods restored byte-for-byte by inverse manifest. Four original m9 selector11/12 media refresh times 2/4/8 and3 seconds retained and wrapped with exact Service identity check.",
+    "Commands no longer prove permission success; Settings.Secure snapshot or successful bounded settings process provides authoritative readback. Unknown/invalid lists never feed settings put; exact normalized component matching preserves other entries from latest successful snapshot.",
+    "Already-granted listener is not revoked and regranted. Original fallback command purposes retained, validated component/list strings quoted for shell dollar characters. Runtime fallback uses argument arrays.",
+    "InitProcess bounds polling time/output, distinguishes nonzero/timeout, restores interruption, requests child termination and closes streams in finally. Actual JVM echo child and fault cases pass. D8 class bytes match the JVM tested classes.",
+    "14 actual Host/callback/fallback-result/timeout smali scenarios plus302 inherited pass source/final; no unexpected final business differences; ten exact added owned classes, no test doubles in DEX.",
+    "JADX Host, workflow, list and callback agree with smali. New Nav Κ wiring decompiles correctly. InitProcess.run Java expression incorrectly shows process creation before nanoTime; final smali samples nanoTime into v2 before ProcessBuilder.start. Collect Java has type-inference/finally reconstruction artifacts; original tested class and exact final smali are authoritative."
+  ],
+  "jadx": [
+    {
+      "cls": "com.byd.launcher.stability.NotificationInitHost",
+      "exit_code": 3,
+      "log": "base10_r18_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.NotificationInit",
+      "exit_code": 0,
+      "log": "base10_r18_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.InitProcess",
+      "exit_code": 0,
+      "log": "base10_r18_jadx_2_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.ListenerList",
+      "exit_code": 0,
+      "log": "base10_r18_jadx_3_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.stability.NotificationInitCallback",
+      "exit_code": 0,
+      "log": "base10_r18_jadx_4_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "com.byd.launcher.NavBarService",
+      "exit_code": 3,
+      "log": "base10_r18_jadx_5_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "jadx_caveats": "Host and NavBarService exits3 report only existing NavBarService.Ε RegionMakerVisitor error; other four exits0. Exit0 does not guarantee faithful InitProcess reconstruction.",
+  "limits": "Not ART/OEM/vehicle validation. Settings provider behavior, process creation/pipe cleanup latency remain external. destroy is a termination request, not command rollback. Read/merge/write cannot atomically exclude concurrent edits by other applications. Repeated same-Service initialization, shared ADB interruption/reconnect, IME and remaining m9/P1/P2/P3 remain open."
+}

@@ -1,0 +1,234 @@
+--- r19/smali/o/a9.smali
++++ r20/smali/o/a9.smali
+@@ -32,7 +32,9 @@
+ 
+ .field public volatile ͻ:Z
+ 
+-.field public final ͼ:Lo/y8;
++.field public volatile ͼ:Lo/y8;
++
++.field public volatile stabilitySessionToken:Ljava/lang/Object;
+ 
+ .field public ͽ:Landroid/graphics/Bitmap;
+ 
+@@ -736,26 +738,25 @@
+ .end method
+ 
+ .method public final ˏ()V
+-    .locals 2
+-
+-    .line 1
++    .locals 3
+     iget-object v0, p0, Lo/a9;->ͳ:Landroid/media/session/MediaController;
+-
+-    if-eqz v0, :cond_0
+-
+-    :try_start_0
+     iget-object v1, p0, Lo/a9;->ͼ:Lo/y8;
+-
++    const/4 v2, 0x0
++    iput-object v2, p0, Lo/a9;->ͼ:Lo/y8;
++    iput-object v2, p0, Lo/a9;->ͳ:Landroid/media/session/MediaController;
++    new-instance v2, Ljava/lang/Object;
++    invoke-direct {v2}, Ljava/lang/Object;-><init>()V
++    iput-object v2, p0, Lo/a9;->stabilitySessionToken:Ljava/lang/Object;
++    if-eqz v0, :done
++    if-eqz v1, :done
++    :try_start
+     invoke-virtual {v0, v1}, Landroid/media/session/MediaController;->unregisterCallback(Landroid/media/session/MediaController$Callback;)V
+-    :try_end_0
+-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+-
+-    :catch_0
+-    const/4 v0, 0x0
+-
+-    iput-object v0, p0, Lo/a9;->ͳ:Landroid/media/session/MediaController;
+-
+-    :cond_0
++    :try_end
++    .catch Ljava/lang/Exception; {:try_start .. :try_end} :failed
++    goto :done
++    :failed
++    move-exception v2
++    :done
+     return-void
+ .end method
+ 
+@@ -1836,6 +1837,11 @@
+ 
+ .method public final Ͷ(Ljava/util/List;)V
+     .locals 9
++    invoke-virtual {p0}, Lo/a9;->stabilityCurrent()Z
++    move-result v0
++    if-nez v0, :session_owner_alive
++    return-void
++    :session_owner_alive
+ 
+     .line 1
+     if-eqz p1, :cond_11
+@@ -2291,11 +2297,27 @@
+ 
+     .line 213
+     .line 214
+-    iget-object v0, p0, Lo/a9;->ͼ:Lo/y8;
++    new-instance v0, Lo/y8;
++    invoke-direct {v0, p0}, Lo/y8;-><init>(Lo/a9;)V
++    iput-object v0, p0, Lo/a9;->ͼ:Lo/y8;
+ 
+     .line 215
+     .line 216
++    :session_register_start
+     invoke-virtual {v3, v0, p1}, Landroid/media/session/MediaController;->registerCallback(Landroid/media/session/MediaController$Callback;Landroid/os/Handler;)V
++    :session_register_end
++    .catch Ljava/lang/Exception; {:session_register_start .. :session_register_end} :session_register_failed
++    const-string p1, ""
++    iput-object p1, p0, Lo/a9;->Ή:Ljava/lang/String;
++    iput-object p1, p0, Lo/a9;->Ί:Ljava/lang/String;
++    const-wide/16 v5, 0x0
++    iput-wide v5, p0, Lo/a9;->Ό:J
++    goto :session_register_ok
++    :session_register_failed
++    move-exception p1
++    invoke-virtual {p0}, Lo/a9;->ˏ()V
++    return-void
++    :session_register_ok
+ 
+     .line 217
+     .line 218
+@@ -2756,3 +2778,24 @@
+     :cond_7
+     return-void
+ .end method
++
++.method public stabilityCurrent()Z
++    .locals 2
++    iget-boolean v0, p0, Lo/a9;->ͺ:Z
++    if-nez v0, :invalid
++    iget-object v0, p0, Lo/a9;->ˋ:Landroid/content/Context;
++    instance-of v1, v0, Lcom/byd/launcher/NavBarService;
++    if-eqz v1, :invalid
++    check-cast v0, Lcom/byd/launcher/NavBarService;
++    iget-boolean v1, v0, Lcom/byd/launcher/NavBarService;->ˋ:Z
++    if-nez v1, :invalid
++    sget-object v1, Lcom/byd/launcher/NavBarService;->O0:Lcom/byd/launcher/NavBarService;
++    if-ne v0, v1, :invalid
++    iget-object v1, v0, Lcom/byd/launcher/NavBarService;->ͼ:Lo/a9;
++    if-ne v1, p0, :invalid
++    const/4 v0, 0x1
++    return v0
++    :invalid
++    const/4 v0, 0x0
++    return v0
++.end method
+--- r19/smali/o/td.smali
++++ r20/smali/o/td.smali
+@@ -1144,6 +1144,11 @@
+     .line 521
+     .line 522
+     check-cast v0, Lo/y8;
++    invoke-virtual {v0}, Lo/y8;->stabilityRecoveryCurrent()Z
++    move-result v2
++    if-nez v2, :session_recovery_alive
++    return-void
++    :session_recovery_alive
+ 
+     .line 523
+     .line 524
+--- r19/smali/o/y8.smali
++++ r20/smali/o/y8.smali
+@@ -4,6 +4,8 @@
+ 
+ 
+ # instance fields
++.field public stabilityRecoveryToken:Ljava/lang/Object;
++
+ .field public ˋ:Z
+ 
+ .field public ˏ:J
+@@ -35,6 +37,11 @@
+ # virtual methods
+ .method public final onMetadataChanged(Landroid/media/MediaMetadata;)V
+     .locals 2
++    invoke-virtual {p0}, Lo/y8;->stabilityCurrent()Z
++    move-result v0
++    if-nez v0, :session_callback_alive
++    return-void
++    :session_callback_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/y8;->Ͱ:Lo/a9;
+@@ -63,6 +70,11 @@
+ 
+ .method public final onPlaybackStateChanged(Landroid/media/session/PlaybackState;)V
+     .locals 6
++    invoke-virtual {p0}, Lo/y8;->stabilityCurrent()Z
++    move-result v0
++    if-nez v0, :session_callback_alive
++    return-void
++    :session_callback_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/y8;->Ͱ:Lo/a9;
+@@ -142,6 +154,11 @@
+ 
+ .method public final onSessionDestroyed()V
+     .locals 4
++    invoke-virtual {p0}, Lo/y8;->stabilityCurrent()Z
++    move-result v0
++    if-nez v0, :session_callback_alive
++    return-void
++    :session_callback_alive
+ 
+     .line 1
+     iget-object v0, p0, Lo/y8;->Ͱ:Lo/a9;
+@@ -160,6 +177,8 @@
+ 
+     :cond_0
+     invoke-virtual {v0}, Lo/a9;->ˏ()V
++    iget-object v1, v0, Lo/a9;->stabilitySessionToken:Ljava/lang/Object;
++    iput-object v1, p0, Lo/y8;->stabilityRecoveryToken:Ljava/lang/Object;
+ 
+     iget-object v0, p0, Lo/y8;->Ͱ:Lo/a9;
+ 
+@@ -185,3 +204,41 @@
+     :goto_0
+     return-void
+ .end method
++
++.method public stabilityCurrent()Z
++    .locals 3
++    iget-object v0, p0, Lo/y8;->Ͱ:Lo/a9;
++    if-eqz v0, :invalid
++    invoke-virtual {v0}, Lo/a9;->stabilityCurrent()Z
++    move-result v1
++    if-eqz v1, :invalid
++    iget-object v1, v0, Lo/a9;->ͼ:Lo/y8;
++    if-ne v1, p0, :invalid
++    iget-object v1, v0, Lo/a9;->ͳ:Landroid/media/session/MediaController;
++    if-eqz v1, :invalid
++    const/4 v0, 0x1
++    return v0
++    :invalid
++    const/4 v0, 0x0
++    return v0
++.end method
++
++.method public stabilityRecoveryCurrent()Z
++    .locals 3
++    iget-object v0, p0, Lo/y8;->Ͱ:Lo/a9;
++    if-eqz v0, :invalid
++    invoke-virtual {v0}, Lo/a9;->stabilityCurrent()Z
++    move-result v1
++    if-eqz v1, :invalid
++    iget-object v1, p0, Lo/y8;->stabilityRecoveryToken:Ljava/lang/Object;
++    if-eqz v1, :invalid
++    iget-object v2, v0, Lo/a9;->stabilitySessionToken:Ljava/lang/Object;
++    if-ne v1, v2, :invalid
++    iget-object v1, v0, Lo/a9;->ͳ:Landroid/media/session/MediaController;
++    if-nez v1, :invalid
++    const/4 v0, 0x1
++    return v0
++    :invalid
++    const/4 v0, 0x0
++    return v0
++.end method

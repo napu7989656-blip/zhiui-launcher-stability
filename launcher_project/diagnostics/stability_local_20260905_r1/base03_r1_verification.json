@@ -1,0 +1,14 @@
+{
+  "candidate": "D:\\apk\\zhiui-stability-local-base03-r1.apk",
+  "sha256": "8BAB75F0A5F722E5C391E2684B5EE6FE4927D7DACB01B1DB06BD5A193D243B56",
+  "bytes": 30063935,
+  "parent": "base02_adapter_detach_r1",
+  "source_files": 6703,
+  "changed_files": [
+    "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+    "smali/o/sj.smali"
+  ],
+  "unexpected_source_changes": [],
+  "unexpected_final_business_changes": [],
+  "status": "SINGLE_PATCH_LOCAL_PASS; NOT_FULL_PLAN_PASS; NOT_VEHICLE_TESTED"
+}

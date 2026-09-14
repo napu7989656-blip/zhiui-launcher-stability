@@ -1,0 +1,7 @@
+{
+  "tag": "base10_r14",
+  "baseline_candidates": 127,
+  "candidate_candidates": 127,
+  "new_signature_findings": [],
+  "limitations": "Public Android 29 declarations; inherited baseline findings remain under caller/ART review. Not access-control/register/ART or vendor API verification."
+}

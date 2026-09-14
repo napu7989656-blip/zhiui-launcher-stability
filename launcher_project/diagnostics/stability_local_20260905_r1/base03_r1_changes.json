@@ -1,0 +1,12 @@
+[
+  {
+    "path": "smali/o/sj.smali",
+    "before_sha": "B8507200F1580CF62052A23027E24ABA7B75827D3ECFCA422E508708638DC5EB",
+    "after_sha": "86B3EA35E8524BA287DFB59C58106F45432DE613683B89DE9AF8ECC6636D21E9"
+  },
+  {
+    "path": "smali/com/byd/launcher/stability/VideoThumbnail.smali",
+    "before_sha": "",
+    "after_sha": "8243C4F0E97ECCE75DDB973852AB62E8A5891562EA21D7E46C37C13F564F7F6A"
+  }
+]

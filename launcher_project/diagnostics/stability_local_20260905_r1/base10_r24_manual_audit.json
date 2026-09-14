@@ -1,0 +1,32 @@
+{
+  "status": "SCOPED_LOCAL_PASS_NOT_FULL_PLAN_PASS",
+  "sha256": "A039CB99F144FDBF94099C1008678433E5DDF69F7C3141C2C599294BBCDB8AC5",
+  "delta_files": 2,
+  "cumulative_files": 161,
+  "source_final_case_groups": 400,
+  "review": [
+    "u8.run and z8.run begin with stabilityCurrent; destroyed, replaced Service/manager or cleared ia causes return before original fields/actions/retry enqueue. v0 scratch overwritten by original prologue; locals5/6 retained, original all selector bodies unchanged after exact inverse.",
+    "R23 actual disposed-owner reproduction for u8 selector2 and z8 requeued once when callbacks escaped removal. R24 executes invalid-owner full methods without any playback transport call or post, and tests current-owner admission only.",
+    "Source/final400 groups,10 new plus390 inherited. Current playback body preserved by exact inverse rather than executed against vehicle/framework. No new API use beyond existing guard.",
+    "JADX u8/z8 exit0 and both new guards match final smali. u8 original retry/logging branch still decompiles with possibly uninitialized string/fallthrough; final unchanged goto_2 skips reset/log after rescheduling, not trusted as Java.",
+    "2 delta/161 cumulative files,22 protected APKs unchanged,API127 no new candidates; build/align/sign/parse/final decode passed.",
+    "Next camera reconnect audit confirmed old qi view/reference abandoned by replacement and two close calls produce two Thread starts, with Thread/native effects substituted; no camera/vehicle calls. Camera fixes not started."
+  ],
+  "jadx": [
+    {
+      "cls": "o.u8",
+      "exit_code": 0,
+      "log": "base10_r24_jadx_0_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    },
+    {
+      "cls": "o.z8",
+      "exit_code": 0,
+      "log": "base10_r24_jadx_1_debug.txt",
+      "output_exists": true,
+      "requires_manual_inspection": true
+    }
+  ],
+  "limits": "Not ART/OEM/vehicle. Does not claim all media or L08/downstream UI complete. Same-manager user-action/session behavior, camera resources, shared ADB/IME, full feature reintegration and P3 remain open."
+}

@@ -1,0 +1,1 @@
+{"output": "PASS 66 assertions, including real JVM child process", "apk_integration": false, "limits": "Fake process faults and virtual clock plus harmless real JVM echo process. No Android commands, ART or vehicle."}

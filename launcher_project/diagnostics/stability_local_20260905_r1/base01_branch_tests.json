@@ -1,0 +1,110 @@
+[
+  {
+    "artifact": "baseline",
+    "case": "own_callback_released",
+    "passed": false,
+    "error": ""
+  },
+  {
+    "artifact": "baseline",
+    "case": "new_activity_callback_preserved",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "baseline",
+    "case": "missing_callback_safe",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "baseline",
+    "case": "destroyed_window_untouched",
+    "passed": false,
+    "error": ""
+  },
+  {
+    "artifact": "baseline",
+    "case": "live_window_unchanged",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "baseline",
+    "case": "callback_cleared_after_read",
+    "passed": false,
+    "error": "null invoke"
+  },
+  {
+    "artifact": "patched",
+    "case": "own_callback_released",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "patched",
+    "case": "new_activity_callback_preserved",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "patched",
+    "case": "missing_callback_safe",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "patched",
+    "case": "destroyed_window_untouched",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "patched",
+    "case": "live_window_unchanged",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "patched",
+    "case": "callback_cleared_after_read",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "final_apk",
+    "case": "own_callback_released",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "final_apk",
+    "case": "new_activity_callback_preserved",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "final_apk",
+    "case": "missing_callback_safe",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "final_apk",
+    "case": "destroyed_window_untouched",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "final_apk",
+    "case": "live_window_unchanged",
+    "passed": true,
+    "error": ""
+  },
+  {
+    "artifact": "final_apk",
+    "case": "callback_cleared_after_read",
+    "passed": true,
+    "error": ""
+  }
+]
