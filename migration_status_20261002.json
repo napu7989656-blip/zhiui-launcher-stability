@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-02",
+  "migration_state": "PROGRESS_DOCUMENTS_ONLY",
+  "full_restore_ready": false,
+  "local_authorized_work_complete": false,
+  "latest_source_payload_uploaded": false,
+  "latest_apk_uploaded": false,
+  "latest_evidence_uploaded": false,
+  "latest_encrypted_recovery_payload_uploaded": false,
+  "historical_release_only": true,
+  "sensitive_details_published": false,
+  "blockers": [
+    "Local execution approval quota exhausted",
+    "Public detailed handoff rejected; encrypted payload required"
+  ]
+}
