@@ -1,16 +1,26 @@
 {
   "date": "2026-10-02",
-  "migration_state": "PROGRESS_DOCUMENTS_ONLY",
-  "full_restore_ready": false,
+  "checkpoint_date": "2026-10-02",
+  "migration_state": "ENCRYPTED_FULL_PAYLOAD_UPLOADED_AND_VERIFIED",
+  "full_restore_ready": true,
   "local_authorized_work_complete": false,
-  "latest_source_payload_uploaded": false,
-  "latest_apk_uploaded": false,
-  "latest_evidence_uploaded": false,
-  "latest_encrypted_recovery_payload_uploaded": false,
-  "historical_release_only": true,
-  "sensitive_details_published": false,
-  "blockers": [
-    "Local execution approval quota exhausted",
-    "Public detailed handoff rejected; encrypted payload required"
-  ]
+  "overall_gate": "NOT_PASSED",
+  "latest_source_payload_uploaded": true,
+  "latest_apk_uploaded": true,
+  "latest_evidence_uploaded": true,
+  "latest_encrypted_recovery_payload_uploaded": true,
+  "source_payload_location": "Encrypted Release assets; main remains historical",
+  "release": "https://github.com/napu7989656-blip/zhiui-launcher-stability/releases/tag/migration-current-20261002",
+  "github_core_asset_sizes_sha256_verified": true,
+  "local_full_restore_verified": true,
+  "restored_input_files_verified": 704651,
+  "actual_core_volume_readback_count": 1,
+  "all_three_core_volumes_read_back": false,
+  "readback_limit": "Second core-volume download was abnormally slow; two core volumes not fully read back. All three GitHub API sizes/SHA256 match tested local ciphertext, which was independently extracted and fully file-hash verified.",
+  "additional_encrypted_handoff_remote_restore_verified": true,
+  "password_uploaded": false,
+  "github_credentials_uploaded": false,
+  "external_android_toolchain_uploaded": false,
+  "main_updated": false,
+  "public_progress_pr": "https://github.com/napu7989656-blip/zhiui-launcher-stability/pull/1"
 }
